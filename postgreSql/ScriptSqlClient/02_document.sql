@@ -1,9 +1,9 @@
-﻿INSERT INTO public.ouvrage(
+﻿INSERT INTO public.document(
 refOuvrage,
 nomOuvrage,
 quantiteTotal,
 nbrEmprunte,
-quantiterestante
+quantiteRestante
 )
 
 VALUES(

@@ -5,7 +5,7 @@ refOuvrage,
 datePret,
 dureePret,
 dateFinPret,
-nbrExemplaireEmprunte,
+nbrExemplaire,
 prolonger
 )
 
