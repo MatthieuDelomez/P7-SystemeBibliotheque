@@ -19,7 +19,7 @@ public class Document implements DocumentInterface, Comparable<Document>  {
     private String nbrEmprunte;
     private String quantiteRestante;
     
-    public Document(String nomOuvrage, int refOuvrage, String quantiteTotal, String nbrEmprunte, String quantiteRestante){
+   public Document(String nomOuvrage, int refOuvrage, String quantiteTotal, String nbrEmprunte, String quantiteRestante){
         this.nomOuvrage = nomOuvrage;
         this.refOuvrage = refOuvrage;
         this.quantiteTotal = quantiteTotal;
