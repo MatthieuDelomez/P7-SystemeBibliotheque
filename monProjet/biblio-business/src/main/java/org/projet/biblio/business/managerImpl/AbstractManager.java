@@ -13,7 +13,7 @@ import org.projet.biblio.consumer.daoImpl.DaoFactoryImpl;
 
 public abstract class AbstractManager {
     
-    private static DaoFactoryImpl daofactory;
+    private static DaoFactoryImpl daoFactory;
     
     
     protected static DaoFactoryImpl getDaoFactory() {
@@ -26,7 +26,7 @@ public abstract class AbstractManager {
     
     public static void setDaoFactory(DaoFactoryImpl daoFactory) {
         
-        AbstractManager.daoFactory = daofactory;
+        AbstractManager.daoFactory = daoFactory;
     }
     
 }

@@ -8,5 +8,10 @@
 
 <body>
     <h2>Bienvenue sur l'application d'une bibliothèque utilisant Apache Struts !</h2>
+    
+    
+        <s:a action="document_list">Liste des documents</s:a>
+
+    
 </body>
 </html>

@@ -7,6 +7,9 @@ package com.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import javassist.NotFoundException;
+import org.projet.biblio.model.Document;
+import webapp.WebappHelper;
 
 /**
  *
@@ -15,14 +18,16 @@ import java.util.List;
 public class GestionProjetAction extends ActionSupport {
     
     //===================Attributs=======================
+    
+    
    //================== Element en sortie===============
     private Integer id;
 
    //================== Element en sortie===============
- /*   private List<Projet> listProjet;
-    private Projet projet;
+    private List<Document> listDocument;
+    private Document document;
     
-   */ 
+   
     //==================Getters & Setters===============
 
     public Integer getId() {
@@ -32,29 +37,54 @@ public class GestionProjetAction extends ActionSupport {
     public void setId(Integer id) {
         this.id = id;
     }
-/*
-    
-    public List<Projet> getListProjet() {
-        return listProjet;
-    }
 
-    public void setListProjet(List<Projet> listProjet) {
-        this.listProjet = listProjet;
+    
+    public List<Document> getListDocument() {
+        return listDocument;
     }
     
 
-    public Projet getProjet() {
-        return projet;
+    public Document getDocument() {
+        return document;
     }
 
-    public void setProjet(Projet projet) {
-        this.projet = projet;
-    }
+
     
+  //==================Méthodes===============
     
-    
+    /*
+    Action listant les {@link Projet}
+    @return succes
     */
+    public String doList(){
+        listDocument = WebappHelper.getManagerFactory().getDocumentManager().getAllDocument();
+        return ActionSupport.SUCCESS;    }
     
     
-    
+     /*
+    Action listant les détails d'un {@link Projet}
+    @return succes / error
+    */
+    public String doDetail() {
+        if (id == null) {
+            this.addActionError("Vous devez indiquer un id de projet");
+        } else {
+            try {
+                document = WebappHelper.getManagerFactory().getDocumentManager().getAllDocument(id);
+            } catch (NotFoundException pE) {
+                this.addActionError("Projet non trouvé. ID = " + id);
+            }
+        }
+
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+    }
 }
+    
+    
+
+    
+    
+    
+    
+
+

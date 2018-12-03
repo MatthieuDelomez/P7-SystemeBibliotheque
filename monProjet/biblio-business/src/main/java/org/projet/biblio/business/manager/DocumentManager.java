@@ -28,9 +28,15 @@ public interface DocumentManager {
     
     void deleteDocument (Document document);
     
-    /*
-    Création d'une liste de document qui sera affichée dans une page jsp
-    */
+
+    /**
+
+     * Renvoie la liste des {@link Projet}
+     *
+     * @return List
+     */
     List<Document> getAllDocument();
+
+
     
 }

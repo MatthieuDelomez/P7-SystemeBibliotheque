@@ -14,6 +14,8 @@ import org.projet.biblio.model.Document;
  * @author Ben Gourion
  */
 public class DocumentManagerImpl extends AbstractManager implements DocumentManager {
+    
+    
 
     @Override
     public void addDocument(Document document) {
