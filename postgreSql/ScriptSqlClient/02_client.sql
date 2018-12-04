@@ -1,7 +1,8 @@
 ﻿
 
-INSERT INTO public.utilisateur(
+INSERT INTO public.client(
 refClient,
+refBibliotheque,
 nom,
 prenom,
 sexe,
@@ -14,6 +15,7 @@ codePostal
 
 VALUES(
 1,
+001,
 'Matthieu',
 'Delomez',
 'Homme',
