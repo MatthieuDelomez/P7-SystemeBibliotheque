@@ -7,23 +7,21 @@ package org.projet.biblio.consumer.dao;
 
 import org.projet.biblio.model.Utilisateur;
 
-
 /*
 Creation du pattern Dao (Data Access Objet) pour communiquer avec la base de données via l'interface UtilisateurDao
 */
-
 public interface UtilisateurDao {
     
-  /* Methodes Ajouter | Recupérer | Supprimer | MAJ  qui seront présentent dans les requetes Sql*/
- 
-    void addUser(Utilisateur user);
+      /* Methodes Ajouter | Recupérer | Supprimer | MAJ  qui seront présentent dans les requetes Sql*/
+
+     void addUtilisateur(Utilisateur utilisateur);
     
-    Utilisateur getUser(Utilisateur user);
+    Utilisateur getUtilisateur(Utilisateur utilisateur);
     
-    void deleteUserPicture(Utilisateur user);
+    void deleteUtilisateurPicture(Utilisateur utilisateur);
     
-    void updateUser(Utilisateur user);
+    void updateUtilisateur(Utilisateur utilisateur);
     
-    void deleteUser(Utilisateur user);
+    void deleteUtilisateur(Utilisateur utilisateur);
     
 }

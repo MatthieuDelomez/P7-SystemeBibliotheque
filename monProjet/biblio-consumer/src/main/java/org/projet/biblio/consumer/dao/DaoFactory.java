@@ -17,5 +17,9 @@ public interface DaoFactory {
         
     PretDao getPretDao();
     
+    ClientDao getClientDao();
+    
+    BibliothequeDao getBibliothequeDao();
+    
     UtilisateurDao getUtilisateurDao();
 }

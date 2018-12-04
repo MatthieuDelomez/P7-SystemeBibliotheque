@@ -19,7 +19,6 @@ public interface ManagerFactory {
     DocumentManager getDocumentManager();
     
     void setDocumentManager(DocumentManager documentManager);
-    
 
     
     PretManager getPretManager();
@@ -27,8 +26,17 @@ public interface ManagerFactory {
     void setPretmanager(PretManager pretManager);
     
     
+    ClientManager getClientManager();
+    
+    void setClientManager(ClientManager clientManager);
+    
+    
+    BibliothequeManager getBibliothequeManager();
+    
+    void setBibliothequeManager(BibliothequeManager bibliothequeManager);
+    
+    
     UtilisateurManager getUtilisateurManager();
     
-    void setUtilisateurManager(UtilisateurManager utilisateurManager);
-    
+    void setUtilisateurManager (UtilisateurManager utilisateurManager);
 }

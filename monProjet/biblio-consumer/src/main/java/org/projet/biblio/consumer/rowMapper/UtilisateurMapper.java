@@ -10,37 +10,33 @@ import java.sql.SQLException;
 import org.projet.biblio.model.Utilisateur;
 import org.springframework.jdbc.core.RowMapper;
 
-/* 
-Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
-*/
-
-public class UtilisateurMapper implements RowMapper<Utilisateur> {
-
-  	public Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
-
-		Utilisateur utilisateur = new Utilisateur();
-                
-                		utilisateur.setRefClient(rs.getInt("refclient"));
-                                
-                                	utilisateur.setNom(rs.getString("nom"));
-                                        
-		utilisateur.setPrenom(rs.getString("prenom"));
-                
-                		utilisateur.setSexe(rs.getString("sexe"));
-
-		utilisateur.setPseudo(rs.getString("pseudo"));
-                
-                                       utilisateur.setMotPasse(rs.getString("motpasse"));
-                                       
-                                       utilisateur.setAdresse(rs.getString("adresse"));
-
-		utilisateur.setEmail(rs.getString("email"));
-                
-                                      utilisateur.setCodePostal(rs.getString("codepostal"));
-
-
-
-		return utilisateur; 
-        }
+/**
+ *
+ * @author Ben Gourion
+ */
+public class UtilisateurMapper implements RowMapper<Utilisateur>{
     
+    
+               	public  Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    
+                     Utilisateur  utilisateur = new  Utilisateur();
+                     
+                                      utilisateur.setIdUtilisateur(rs.getInt("idutilisateur"));
+                    
+                                      utilisateur.setRefBibliotheque(rs.getInt("refbibliotheque"));
+                                      
+                                      	utilisateur.setPseudo(rs.getString("pseudo"));
+                                                                        
+		utilisateur.setMotPasse(rs.getString("motpasse"));
+                
+                		utilisateur.setEmail(rs.getString("email"));
+                
+                                      utilisateur.setNom(rs.getString("nom"));
+
+                                       utilisateur.setPrenom(rs.getString("prenom"));
+                                       
+                                       
+                                       return utilisateur;
+
+                }
 }

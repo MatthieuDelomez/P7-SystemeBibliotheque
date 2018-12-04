@@ -5,10 +5,13 @@
  */
 package org.projet.biblio.consumer.daoImpl;
 
+import org.projet.biblio.consumer.dao.BibliothequeDao;
 import org.projet.biblio.consumer.dao.DaoFactory;
 import org.projet.biblio.consumer.dao.DocumentDao;
 import org.projet.biblio.consumer.dao.PretDao;
+import org.projet.biblio.consumer.dao.ClientDao;
 import org.projet.biblio.consumer.dao.UtilisateurDao;
+
 
 
 /*
@@ -16,6 +19,10 @@ Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC
 */
 
 public class DaoFactoryImpl implements DaoFactory {
+    
+    
+    
+    
     
  /* Implémentation des méthodes se trouvant dans l'interface DaoFactory */
 
@@ -46,6 +53,23 @@ public class DaoFactoryImpl implements DaoFactory {
     }
     
     
+    
+    
+    
+    private ClientDao clientDao;
+    
+    public ClientDao getClientDao(){
+        
+        return clientDao;
+    }
+    
+    public void setClientDao(ClientDao clientDao){
+        this.clientDao = clientDao;
+    }
+    
+    
+    
+    
     private UtilisateurDao utilisateurDao;
     
     public UtilisateurDao getUtilisateurDao(){
@@ -57,7 +81,24 @@ public class DaoFactoryImpl implements DaoFactory {
         this.utilisateurDao = utilisateurDao;
     }
     
+
     
     
+    private BibliothequeDao bibliothequeDao;
     
+    public BibliothequeDao getBibliothequeDao(){
+        
+        return bibliothequeDao;
+        
+    }
+    
+    public void setBibliothequeDao(BibliothequeDao bibliothequeDao){
+     
+        this.bibliothequeDao = bibliothequeDao;
+    }
+    
+
+       
+
+
 }

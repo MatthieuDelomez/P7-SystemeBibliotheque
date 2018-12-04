@@ -14,8 +14,9 @@ package org.projet.biblio.model;
  */
 public class Document  {
     
-    private String nomOuvrage;
     private int refOuvrage;
+    private int refBibliotheque;
+    private String nomOuvrage;
     private String quantiteTotal;
     private String nbrEmprunte;
     private String quantiteRestante;
@@ -24,6 +25,11 @@ public class Document  {
     public String getNomOuvrage() {
         return nomOuvrage;
     }
+
+    public int getRefBibliotheque() {
+        return refBibliotheque;
+    }
+    
 
     public int getRefOuvrage() {
         return refOuvrage;
@@ -43,6 +49,10 @@ public class Document  {
 
     public void setNomOuvrage(String nomOuvrage) {
         this.nomOuvrage = nomOuvrage;
+    }
+
+    public void setRefBibliotheque(int refBibliotheque) {
+        this.refBibliotheque = refBibliotheque;
     }
 
     public void setRefOuvrage(int refOuvrage) {

@@ -12,37 +12,31 @@ import org.projet.biblio.model.Utilisateur;
 /*
 Creation de la classe UtilisateurManagerImpl qui implemente l'interface UtilisateurManager
 */
-
 public class UtilisateurManagerImpl extends AbstractManager implements UtilisateurManager{
 
     @Override
-    public void addUser(Utilisateur user) {
-        
-        getDaoFactory().getUtilisateurDao().addUser(user);   
+    public void addUtilisateur(Utilisateur utilisateur) {
+        getDaoFactory().getUtilisateurDao().addUtilisateur(utilisateur);   
     }
 
-    
     @Override
-    public Utilisateur getUser(Utilisateur user) {
-        return getDaoFactory().getUtilisateurDao().getUser(user);   
+    public Utilisateur getUtilisateur(Utilisateur utilisateur) {
+        return getDaoFactory().getUtilisateurDao().getUtilisateur(utilisateur);   
     }
 
-    
     @Override
-    public void deleteUserPicture(Utilisateur user) {
-       getDaoFactory().getUtilisateurDao().deleteUserPicture(user);  
+    public void deleteUtilisateurPicture(Utilisateur utilisateur) {
+       getDaoFactory().getUtilisateurDao().deleteUtilisateurPicture(utilisateur);  
     }
 
-    
     @Override
-    public void updateUser(Utilisateur user) {
-       getDaoFactory().getUtilisateurDao().updateUser(user);  
+    public void updateUtilisateur(Utilisateur utilisateur) {
+       getDaoFactory().getUtilisateurDao().updateUtilisateur(utilisateur);  
     }
 
-    
     @Override
-    public void deleteUser(Utilisateur user) {
-       getDaoFactory().getUtilisateurDao().deleteUser(user);   
+    public void deleteUtilisateur(Utilisateur utilisateur) {
+       getDaoFactory().getUtilisateurDao().deleteUtilisateur(utilisateur);   
     }
     
 }

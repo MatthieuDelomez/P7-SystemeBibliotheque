@@ -65,18 +65,21 @@ public class GestionProjetAction extends ActionSupport {
     Action listant les détails d'un {@link Projet}
     @return succes / error
     */
+    
     public String doDetail() {
         if (id == null) {
             this.addActionError("Vous devez indiquer un id de projet");
         } else {
             try {
-                document = WebappHelper.getManagerFactory().getDocumentManager().getAllDocument(id);
-            } catch (NotFoundException pE) {
+                listDocument = WebappHelper.getManagerFactory().getDocumentManager().getAllDocument();
+            } catch (Exception pE) {
                 this.addActionError("Projet non trouvé. ID = " + id);
             }
         }
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+
+
     }
 }
     

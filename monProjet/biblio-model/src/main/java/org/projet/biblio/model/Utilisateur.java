@@ -1,45 +1,31 @@
-package org.projet.biblio.model;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package org.projet.biblio.model;
 
-
-import java.util.concurrent.ThreadLocalRandom;
-import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 
-@WebService(serviceName = "biblio")
+@WebService
 public class Utilisateur {
     
-    int refClient ;
-    String sexe = "sexe";
-    String nom = "nom";
-    String prenom = "prenom";
-    String pseudo = "pseudo";
-    String motPasse = "motPasse";
-    String adresse = "adresse";
-    String email = "email";
-    String codePostal = "codePostal";
-
+    private int idUtilisateur;
+    private int refBibliotheque;
     
-    public int getRefClient() {
-        return refClient;
+    private String pseudo = "pseudo";
+    private String motPasse = "motPasse";
+    private String email = "email";
+    private String nom = "nom";
+    private String prenom = "prenom";
+
+    public int getIdUtilisateur() {
+        return idUtilisateur;
     }
 
-    public String getSexe() {
-        return sexe;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
+    public int getRefBibliotheque() {
+        return refBibliotheque;
     }
 
     public String getPseudo() {
@@ -54,30 +40,22 @@ public class Utilisateur {
         return email;
     }
 
-    public String getCodePostal() {
-        return codePostal;
+    public String getNom() {
+        return nom;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getPrenom() {
+        return prenom;
     }
     
-  
     
-    public void setRefClient(int refClient) {
-        this.refClient = refClient;
+
+    public void setIdUtilisateur(int idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
     }
 
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setRefBibliotheque(int refBibliotheque) {
+        this.refBibliotheque = refBibliotheque;
     }
 
     public void setPseudo(String pseudo) {
@@ -92,36 +70,15 @@ public class Utilisateur {
         this.email = email;
     }
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-    
-    
-
-    @WebMethod
-    public String CreerUser (int refClient, String nom ,String prenom, String sexe, String pseudo, String motPasse, String email ){
-        
-        return "Notre bibliotheque vous souhaite la Bienvenue" + prenom + nom ;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
     
     
     
-    @WebMethod
-    public int refClient(String pseudo, String motPasse ){
-           
-        /*
-        Ins�rer le client dans la base de donn�es et retourner son id unique
-        */
-        return ThreadLocalRandom.current().nextInt(1,900);
-    }
     
-    
-
-        
-    }
-    
-
+}

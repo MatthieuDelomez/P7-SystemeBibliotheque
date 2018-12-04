@@ -14,43 +14,35 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-/*
-Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC
-*/
-
+/**
+ *
+ * @author Ben Gourion
+ */
 public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDao {
+    
+                                           /*
+                                      Variable de la DataSource
+                                       */
+                                       private DataSource dataSource;
+    
 
-     /* Variable DataSource*/
-
-	private DataSource dataSource;
-
+                                       /* Méthode pour ajouter un Utilisateur*/
+                                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                                      @Override
+                                       public void addUtilisateur(Utilisateur utilisateur) {
         
-
-                   /* Méthode pour ajouter un Utilisateur*/
-
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
-
-                  @Override
-
-	public void addUser(Utilisateur user) {
-
-
-
-		JdbcTemplate jdbcTemplate =  getJdbcTemplate();
+                                       JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
                                       /* Nom des colonnes se situant dans table de la base de données*/
 
-		String sql = "INSERT INTO utilisateur (refclient, nom, prenom, sexe, pseudo,  motpasse, adresse, email, codepostal) VALUES (?,?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO utilisateur (idutilisateur,refbibliotheque, pseudo, motpasse, email, nom,  prenom) VALUES (?,?,?,?,?,?,?);";
 
 		
 
-	Object[] args = new Object[] {user.getRefClient(),user.getNom(),user.getPrenom(), user.getSexe(), user.getPseudo(), user.getMotPasse(), 
+	                    Object[] args = new Object[] { utilisateur.getIdUtilisateur(),utilisateur.getRefBibliotheque(), utilisateur.getPseudo(), utilisateur.getMotPasse(), 
             
-                                                                                         user.getAdresse(), user.getEmail(), user.getCodePostal() };
+                                                                                          utilisateur.getEmail(),utilisateur.getNom(), utilisateur.getPrenom() };
 
-		
-
-        
 
                                        try {
 
@@ -62,39 +54,20 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
                              }
 
+                  }
+
+    
+                                       @Override
+                                       public Utilisateur getUtilisateur(Utilisateur utilisateur) {
 
 
-
-
-	          }
-
- 
-
-
-
-	
-
-
-
-                   /* Méthode pour récupérer un Utilisateur*/
-
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
-
-	@Override
-
-	public Utilisateur getUser(Utilisateur user) {
-
-
-
-		String sql = "SELECT * FROM utilisateur WHERE  email = ? AND motpasse = ?";
+		String sql = "SELECT * FROM utilisateur WHERE  email = ? AND idutilisateur = ?";
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-		
-
 		Object[] args = new Object[] {
 
-				 user.getEmail(), user.getMotPasse()
+		          utilisateur.getEmail(), utilisateur.getIdUtilisateur()
 
 		};
 
@@ -104,68 +77,38 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
         
 
-        try {
+                                        try {
 
-            RowMapper<Utilisateur> rowMapper = new UtilisateurMapper();
+                                       RowMapper<Utilisateur> rowMapper = new UtilisateurMapper();
 
-            /*Appel de la méthode QueryForObject*/
+                                        /*Appel de la méthode QueryForObject*/
 
-            Utilisateur userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
+                                       Utilisateur userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
 
-            return userQuery;
+                                                         return userQuery;
 
 
 
-        } catch (EmptyResultDataAccessException exception) {
+                                       } catch (EmptyResultDataAccessException exception) {
 
-            System.out.println("Incorrect");
+                                        System.out.println("Incorrect");
 
-            return null;
+                                                         return null;
 
         }
+    }
 
-		
+    @Override
+    public void deleteUtilisateurPicture(Utilisateur utilisateur) {
+    }
 
-		
+    @Override
+    public void updateUtilisateur(Utilisateur utilisateur) {
+    }
 
-	}
+    @Override
+    public void deleteUtilisateur(Utilisateur utilisateur) {
+    }
 
-
-
-	@Override
-
-	public void deleteUserPicture(Utilisateur user) {
-
-		// TODO Auto-generated method stub
-
-
-
-	}
-
-
-
-	@Override
-
-	public void updateUser(Utilisateur user) {
-
-		// TODO Auto-generated method stub
-
-
-
-	}
-
-
-
-	@Override
-
-	public void deleteUser(Utilisateur user) {
-
-		// TODO Auto-generated method stub
-
-
-
-	}
-
-
-
+                                       
 }

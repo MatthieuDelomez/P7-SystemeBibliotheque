@@ -1,1 +1,3 @@
 com\biblio\BiblioService.class
+com\action\GestionProjetAction.class
+webapp\WebappHelper.class
