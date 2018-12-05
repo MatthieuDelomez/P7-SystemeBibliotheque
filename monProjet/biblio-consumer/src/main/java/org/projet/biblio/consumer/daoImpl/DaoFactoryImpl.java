@@ -19,9 +19,7 @@ Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC
 */
 
 public class DaoFactoryImpl implements DaoFactory {
-    
-    
-    
+
     
     
  /* Implémentation des méthodes se trouvant dans l'interface DaoFactory */

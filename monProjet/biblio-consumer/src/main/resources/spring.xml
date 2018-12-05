@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="
+
+            http://www.springframework.org/schema/beans
+
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!-- ===== Dao declaration ===== -->
+
+    <bean id="documentDao" class="org.projet.biblio.consumer.daoImpl.DocumentaireDaoImpl"/>
+
+    <bean id="utilisateurDao" class="org.projet.biblio.consumer.daoImpl.UtilisateurDaoImpl"/>
+
+    <bean id="pretDao" class="org.projet.biblio.consumer.daoImpl.PretDaoImpl"/>
+
+    <bean id="bibliothequeDao" class="org.projet.biblio.consumer.daoImpl.BibliothequeDaoImpl"/>
+
+    <bean id="clientDao" class="org.projet.biblio.consumer.daoImpl.ClientDaoImpl"/>
+
+
+
+
+
+
+
+    <!-- ===== DaoFactory ===== -->
+
+    <bean id="daoFactory" class="org.projet.biblio.consumer.daoImpl.DaoFactoryImpl">
+
+        <property name="documentDao" ref="documentDao"/>
+
+        <property name="utilisateurDao" ref="utilisateurDao"/>
+
+        <property name="pretDao" ref="pretDao"/>
+
+        <property name="bibliothequeDao" ref="bibliothequeDao"/>
+
+        <property name="clientDao" ref="clientDao"/>
+
+
+
+    </bean>
+
+
+
+    <!-- ==== AbstractDao ===== -->
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+
+        <property name="targetClass" value="org.projet.biblio.consumer.daoImpl.AbstractDaoImpl"/>
+
+        <property name="targetMethod" value="setDataSource"/>
+
+        <property name="arguments" ref="dataSourceBiblio"/>
+
+    </bean>
+
+</beans>

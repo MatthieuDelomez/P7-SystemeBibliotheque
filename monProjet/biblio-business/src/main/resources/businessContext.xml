@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xmlns="http://www.springframework.org/schema/beans"
+
+	xsi:schemaLocation="
+
+            http://www.springframework.org/schema/beans
+
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+
+            <!-- Déclaration des Managers de l'application -->
+
+            
+
+            <bean id = "utilisateurManager" class="org.projet.biblio.business.managerImpl.UtilisateurManagerImpl"></bean>
+
+            <bean id = "pretManager" class="org.projet.biblio.business.managerImpl.PretManagerImpl"></bean>
+
+            <bean id = "bibliothequeManager" class="org.projet.biblio.business.managerImpl.BibliothequeManagerImpl"></bean>
+
+            <bean id = "clientManager" class="org.projet.biblio.business.managerImpl.ClientManagerImpl"></bean>
+
+            <bean id = "documentManager" class="org.projet.biblio.business.managerImpl.DocumentManagerImpl"></bean>
+
+
+
+            
+
+            <!-- ManagerFactory -->
+
+
+
+            <bean id= "managerFactory" class="org.projet.biblio.business.managerImpl.ManagerFactoryImpl">
+
+            <property name="utilisateurManager" ref="utilisateurManager"></property> 
+
+            <property name="pretManager" ref="pretManager"></property>  
+
+            <property name="documentManager" ref="documentManager"></property>
+
+            <property name="clientManager" ref="clientManager"></property>
+
+            <property name="bibliothequeManager" ref="bibliothequeManager"></property>
+
+            </bean>
+
+            
+
+           <!-- AbstractResources -->
+
+            
+
+            <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+
+            <property name="targetClass" value="org.projet.biblio.business.managerImpl.AbstractManager"/>
+
+            <property name="targetMethod" value="setDaoFactory"/>
+
+            <property name="arguments" ref="daoFactory"/>
+
+    </bean>
+
+
+</beans>

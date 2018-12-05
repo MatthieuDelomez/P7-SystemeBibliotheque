@@ -6,15 +6,7 @@
 
     <display-name> biblio</display-name>
     
-    <!-- Listener Spring 
-     <listener>
-         <listener-class>org.springframework.web.ContextLoaderListener</listener-class> 
-     </listener>
-     <context-param>
-         <param-name>contextConfigLocation</param-name>
-         <param-value>classpath:/boostrapContext.xml</param-value>
-     </context-param>
-     -->
+
     
     
     <!-- Filter Struts -->
@@ -26,4 +18,71 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+  
+  <!-- Spring IoC container -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/bootstrapContext.xml</param-value>
+    </context-param>
+  
+  <servlet>
+  	<servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>
+             org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/dispatcherServlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+ 	<servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+   <!-- JNDI resource -->
+    <resource-ref>
+        <res-ref-name>jdbc/Biblio</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    
+    
+    <!-- Set character encoding -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+  
+ <context-param>
+  <param-name>contextConfigLocation</param-name> 
+  <param-value>/WEB-INF/mvc-dispatcher.xml</param-value> 
+  </context-param>
+  
+  <listener> 
+     <listener-class> org.springframework.web.context.ContextLoaderListener </listener-class> 
+  </listener>
+
 </web-app>
+
+
+
+
+
+
