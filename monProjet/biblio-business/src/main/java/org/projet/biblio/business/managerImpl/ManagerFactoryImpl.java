@@ -44,7 +44,7 @@ public class ManagerFactoryImpl implements ManagerFactory{
     }
 
     @Override
-    public void setPretmanager(PretManager pretManager) {
+    public void setPretManager(PretManager pretManager) {
         this.pretManager = pretManager;
     }
 

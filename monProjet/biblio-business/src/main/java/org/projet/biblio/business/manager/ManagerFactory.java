@@ -23,7 +23,7 @@ public interface ManagerFactory {
     
     PretManager getPretManager();
     
-    void setPretmanager(PretManager pretManager);
+    void setPretManager(PretManager pretManager);
     
     
     ClientManager getClientManager();

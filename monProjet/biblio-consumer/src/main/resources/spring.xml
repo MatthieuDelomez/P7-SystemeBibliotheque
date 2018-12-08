@@ -14,7 +14,7 @@
 
     <!-- ===== Dao declaration ===== -->
 
-    <bean id="documentDao" class="org.projet.biblio.consumer.daoImpl.DocumentaireDaoImpl"/>
+    <bean id="documentDao" class="org.projet.biblio.consumer.daoImpl.DocumentDaoImpl"/>
 
     <bean id="utilisateurDao" class="org.projet.biblio.consumer.daoImpl.UtilisateurDaoImpl"/>
 

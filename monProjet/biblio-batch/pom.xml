@@ -38,10 +38,7 @@
       <groupId>org.projet.biblio</groupId>
       <artifactId>biblio-model</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-    </dependency>
+
 
     <dependency>
       <groupId>junit</groupId>
