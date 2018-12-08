@@ -15,7 +15,7 @@
 
     <!-- Inclusion d'autres fichiers de contexte Spring -->
 
-    <import resource="classpath:/org/biblio/webappContext.xml" />
+    <import resource="classpath:org/biblio/webappContext.xml" />
 
     <import resource="classpath:org/biblio/businessContext.xml" />
 

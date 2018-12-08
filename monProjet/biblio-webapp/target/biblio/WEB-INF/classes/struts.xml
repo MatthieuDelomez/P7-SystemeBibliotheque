@@ -9,17 +9,17 @@
 
         <!-- Action "index" -->
         <action name="index">
-            <result>/jsp/index.jsp</result>
+            <result>/index.jsp</result>
             
                     <!-- Action listant les projets -->
         <action name="document_list"
-                class="com.action.GestionProjetAction"
+                class="com.controllers.GestionProjetAction"
                 method="doList">
             <result>/jsp/list.jsp</result>
         </action>
         <!-- Action affichant le détail d'un projet -->
         <action name="document_detail"
-                class="com.action.GestionProjetAction"
+                class="com.controllers.GestionProjetAction"
                 method="doDetail">
             <result name="success">/jsp/projet/detail.jsp</result>
             <result name="error">/jsp/error.jsp</result>
@@ -27,7 +27,7 @@
 
         <!-- Action affichant le détail d'un utilisateur -->
         <action name="utilisateur_detail"
-                class="com.action.GestionProjetAction"
+                class="com.controllers.GestionProjetAction"
                 method="doDetail">
             <result name="success">/jsp/utilisateur/detail.jsp</result>
             <result name="error">/jsp/error.jsp</result>

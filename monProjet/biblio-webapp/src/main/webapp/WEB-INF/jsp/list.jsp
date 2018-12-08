@@ -14,13 +14,13 @@
     <ul>
         <s:iterator value="listDocument">
             <li>
-                <s:a action="document_detail">
+                <s:a action="document_list">
                     <s:param name="id" value="id" />
                     <s:property value="nom"/>
                 </s:a>
 
                 - Responsable :
-                <s:a action="utilisateur_detail">
+                <s:a action="document_list">
                     <s:param name="id" value="responsable.id" />
                     <s:property value="responsable.prenom"/> <s:property value="responsable.nom"/>
                 </s:a>

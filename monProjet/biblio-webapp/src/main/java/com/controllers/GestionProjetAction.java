@@ -7,7 +7,6 @@ package com.controllers;
 
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
-import javassist.NotFoundException;
 import org.projet.biblio.model.Document;
 import webapp.WebappHelper;
 
