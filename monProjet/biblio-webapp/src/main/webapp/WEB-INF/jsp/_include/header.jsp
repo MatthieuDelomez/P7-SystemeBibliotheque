@@ -1,75 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
+<header>
+    <s:if test="#session.user">
+            Utilisateur connecté :
+            <s:property value="#session.user.prenom" />
+            <s:property value="#session.user.nom" />
 
+            <s:a action="logout">Déconnexion</s:a>
+    </s:if>
+    <s:else>
+        <s:a action="login">Connexion</s:a>
+    </s:else>
+</header>
 
-<meta charset="utf-8" />
+<nav>
+    <s:a action="projet_list">
+        <s:text name="nav.listProjet" />
+    </s:a>
 
-<title>4 Climb</title>
-
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-
-	<div class="container">
-
-		<div class="navbar-header">
-
-			<button type="button" class="navbar-toggle collapsed"
-
-				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-
-				aria-controls="navbar">
-
-				<span class="sr-only">Connexion</span> 
-
-				<span
-
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-
-					class="icon-bar"></span>
-
-			</button>
-
-			<a class="navbar-brand" href="#">${application.name}</a>
-
-		</div>
-
-		
-
-		<div id="navbar" class="collapse navbar-collapse">
-
-			<ul class="nav navbar-nav">
-
-			
-
-				<li class="active"><a href="${pageContext.request.contextPath}/">Accueil</a></li>
-
-				<li><a href="${pageContext.request.contextPath}/login">Se connecter</a></li>
-
-                                                                             <li><a href="${pageContext.request.contextPath}/inscription">Inscription</a></li>
-
-                                		                   <li><a href="${pageContext.request.contextPath}/topo">Topo</a></li>
-
-				<li><a href="${pageContext.request.contextPath}/about">A propos</a></li>
-
-
-
-
-
-				
-
-			</ul>
-
-                                
-
-
-
-
-
-		</div>
-
-		<!--/.nav-collapse -->
-
-	</div>
-
+    <s:a action="projet_new">Créer un nouveau projet</s:a>
 </nav>
+
+<s:actionerror/>
+<s:actionmessage/>
