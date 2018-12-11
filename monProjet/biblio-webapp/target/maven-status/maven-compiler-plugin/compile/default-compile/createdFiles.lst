@@ -1,0 +1,5 @@
+com\controllers\GestionProjetAction.class
+com\resources\AbstractResources.class
+com\controllers\ClientGestion.class
+com\biblio\BiblioService.class
+webapp\WebappHelper.class

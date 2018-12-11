@@ -7,13 +7,12 @@ package org.projet.biblio.model;
  */
 
 
-import javax.jws.WebService;
 
 /**
  *
  * @author Ben Gourion
  */
-@WebService
+
 public class Pret  {
     
     private int refPret;

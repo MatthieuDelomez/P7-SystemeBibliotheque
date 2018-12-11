@@ -5,10 +5,8 @@
  */
 package org.projet.biblio.model;
 
-import javax.jws.WebService;
 
 
-@WebService
 public class Bibliotheque {
     
     private int refBibliotheque;

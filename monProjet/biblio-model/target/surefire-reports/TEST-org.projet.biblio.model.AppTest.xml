@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="org.projet.biblio.model.AppTest" name="testApp" time="0"/>
+  <testcase classname="org.projet.biblio.model.AppTest" name="testApp" time="0.001"/>
 </testsuite>

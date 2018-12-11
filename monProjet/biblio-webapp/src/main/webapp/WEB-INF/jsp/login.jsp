@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@ include file="jsp/_include/head.jsp" %>
 </head>
 
 <body>

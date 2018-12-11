@@ -7,11 +7,6 @@ package org.projet.biblio.model;
  */
 
 
-
-import javax.jws.WebService;
-
-
-@WebService(serviceName = "biblio")
 public class Client{
     
   private  int refClient ;

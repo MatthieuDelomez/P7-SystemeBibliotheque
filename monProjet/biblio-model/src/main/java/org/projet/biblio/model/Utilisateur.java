@@ -5,10 +5,9 @@
  */
 package org.projet.biblio.model;
 
-import javax.jws.WebService;
 
 
-@WebService
+
 public class Utilisateur {
     
     private int idUtilisateur;
