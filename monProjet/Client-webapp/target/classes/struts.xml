@@ -19,35 +19,40 @@
                         </action>
                         
                         
-                                                <!-- Global Result-->
+                       <!-- Action permettant de creer un nouvel utilisateur -->
+                        <action name="new_user"
+                                       class="com.client.action.CreerUserAction"
+                                       method="doCreate">
+                            <result name="input">jsp/utilisateur.jsp</result>
+                            <result name="success" type="redirectAction">jsp/accueil.jsp</result>
+
+                        </action>
+                        
+                        
+                       <!-- Global Result-->
                         <global-results>                       
                             <result name="error">jsp/error.jsp</result>
                             <result name="error-forbidden">jsp/error/707.jsp</result>
                         </global-results>
                         
-                        
-                                                <!-- Global Result-->
-                        <global-results>                 
-                            <result name="error">jsp/error.jsp</result>
-                            <result name="error-forbidden">jsp/error/707.jsp</result>
-                        </global-results>
+                      
                         
             
                         <!-- Login - Action-->
-                        <action name="login" class="com.client.action.AuthenAction" method="login">
+                        <action name="login" class="com.client.action.LoginAction" method="doLogin">
                                                        
                             <result name="input">jsp/login.jsp</result>
                             <!-- En cas d'erreur rester sur la page login.jsp -->
                             <result name="error">jsp/login.jsp</result>
                             <!-- Si success s'enregistrer en tant qu'utilisateur -->
-                            <result name="success" type="redirectAction">utilisateur</result>
+                            <result name="success" type="redirectAction">index</result>
 
                         </action>
                         
                         
                         <!-- Logout - Action-->
-                        <action name="logout" class="com.client.action.AuthenAction" method="logout">
-                            <result name="sucess" type="redirectAction"> index</result>
+                        <action name="logout" class="com.client.action.LoginAction" method="doLogout">
+                            <result  type="redirectAction"> index</result>
                             
                         </action>
                         
