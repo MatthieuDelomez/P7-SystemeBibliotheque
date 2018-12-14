@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\OP\Systeme Biblio\P7-SystemeBibliotheque-master\monProjet"/>
+    <property name="user.dir" value="D:\OP\Systeme Biblio\P7-SystemeBibliotheque-master\essai\P7-SystemeBibliotheque-master\monProjet"/>
     <property name="java.runtime.version" value="1.8.0_181-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\endorsed"/>
@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="org.projet.biblio.model.AppTest" name="testApp" time="0"/>
+  <testcase classname="org.projet.biblio.model.AppTest" name="testApp" time="0.001"/>
 </testsuite>

@@ -1,2 +1,2 @@
-com\resources\AbstractResources.class
-webapp\WebappHelper.class
+com\responses\UtilisateurResponse.class
+com\biblio\UtilisateurServices.class
