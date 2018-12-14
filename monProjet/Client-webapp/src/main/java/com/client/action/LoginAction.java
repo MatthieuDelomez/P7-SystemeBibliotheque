@@ -1,13 +1,12 @@
+
+
 package com.client.action;
 
-import com.opensymphony.xwork2.ActionSupport;
-import java.util.Map;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.struts2.interceptor.SessionAware;
 
 
-public class LoginAction extends ActionSupport implements SessionAware{
-    
+
+public class LoginAction{
+/*  
         // ----- Eléments Struts
     private Map<String, Object> session;
 
@@ -44,7 +43,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
     Action permettant la connexion d'un utilisateur 
     @return input / succes
     */
-    public String doLogin(){
+  /*  public String doLogin(){
         
         String vResult = ActionSupport.INPUT;
         
@@ -71,7 +70,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
     Action de déconnexion d'un utilisateur
     @return success
     */
-    public String doLogout(){
+ /*   public String doLogout(){
         
         //Suppression de l'utilisateur lors de la déconnexion
         this.session.remove("utilisateur");
@@ -81,5 +80,5 @@ public class LoginAction extends ActionSupport implements SessionAware{
    }
     
     
-    
+    */
 }
