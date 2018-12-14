@@ -19,13 +19,49 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "UtilisateurResponse")
 public class UtilisateurResponse {
     
+    private int refBibliotheque;
     
     private String pseudo;
+    
+    private String motPasse;
     
     private String nom;
     
     private String prenom;
+    
+    private String email;
 
+    
+    
+    
+    public int getRefBibliotheque() {
+        return refBibliotheque;
+    }
+    
+    @XmlElement(name = "refbibliotheque")
+    public void setRefBibliotheque(int refBibliotheque) {
+        this.refBibliotheque = refBibliotheque;
+    }
+
+    public String getMotPasse() {
+        return motPasse;
+    }
+    
+    @XmlElement(name = "motpasse")
+    public void setMotPasse(String motPasse) {
+        this.motPasse = motPasse;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
+    @XmlElement(name = "email")
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    
     public String getPseudo() {
         return pseudo;
     }
