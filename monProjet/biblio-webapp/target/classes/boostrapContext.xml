@@ -8,7 +8,7 @@
             http://www.springframework.org/schema/context/spring-context-4.2.xsd">
     
 
-    <!-- Inclusion d'autres fichiers de contexte Spring 
+    <!-- Inclusion d'autres fichiers de contexte Spring     -->
 
     <import resource="classpath:webappContext.xml" />
 
@@ -16,7 +16,7 @@
 
     <import resource="classpath:spring.xml" />
     
-    -->
+
 
 
 

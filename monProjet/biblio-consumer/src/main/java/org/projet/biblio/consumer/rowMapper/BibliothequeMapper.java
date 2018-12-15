@@ -19,19 +19,19 @@ public class BibliothequeMapper implements RowMapper<Bibliotheque> {
 
            	public Bibliotheque mapRow(ResultSet rs, int rowNum) throws SQLException {
                     
-                    Bibliotheque bibliotheque = new Bibliotheque();
+                                 Bibliotheque bibliotheque = new Bibliotheque();
                     
-                                      bibliotheque.setRefBibliotheque(rs.getInt("refbibliotheque"));
+                                 bibliotheque.setRefBibliotheque(rs.getInt("refbibliotheque"));
                                 
-                                	bibliotheque.setNom(rs.getString("nom"));
+                                 bibliotheque.setNom(rs.getString("nom"));
                                         
-		bibliotheque.setAdresse(rs.getString("adresse"));
+	           bibliotheque.setAdresse(rs.getString("adresse"));
                 
-                		bibliotheque.setVille(rs.getString("ville"));
+                	           bibliotheque.setVille(rs.getString("ville"));
 
-		bibliotheque.setCodePostal(rs.getString("codepostal"));
+	           bibliotheque.setCodePostal(rs.getString("codepostal"));
                 
-                                       bibliotheque.setDescription(rs.getString("description"));
+                                 bibliotheque.setDescription(rs.getString("description"));
                                        
                                        
                                        return bibliotheque;

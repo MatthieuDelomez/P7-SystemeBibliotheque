@@ -13,7 +13,7 @@ public class Bibliotheque {
     private String nom = "nom";
     private String adresse = "adresse";
     private String ville = "ville";
-    private String codePostal = "codePostal";
+    private String codePostal = "codepostal";
     private String description = "description";
     
     

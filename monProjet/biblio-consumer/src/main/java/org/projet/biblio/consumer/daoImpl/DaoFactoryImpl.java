@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.projet.biblio.consumer.daoImpl;
 
 import org.projet.biblio.consumer.dao.BibliothequeDao;
@@ -84,6 +80,7 @@ public class DaoFactoryImpl implements DaoFactory {
     
     private BibliothequeDao bibliothequeDao;
     
+   
     public BibliothequeDao getBibliothequeDao(){
         
         return bibliothequeDao;

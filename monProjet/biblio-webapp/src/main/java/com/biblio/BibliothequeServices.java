@@ -26,14 +26,21 @@ public class BibliothequeServices extends AbstractResource {
             
            Bibliotheque bibliotheque = new Bibliotheque(); 
            BibliothequeResponse response = new BibliothequeResponse();
-               
+           
+           
+               bibliotheque.setRefBibliotheque(2);
+               bibliotheque.setNom(nom);
+               bibliotheque.setAdresse(adresse);
+               bibliotheque.setVille(ville);
+               bibliotheque.setCodePostal(codePostal);
+               bibliotheque.setDescription(description);
 
-               response.setRefBibliotheque(1);
-               response.setNom("nom");
-               response.setAdresse("adresse");
-               response.setVille("ville");
-               response.setCodePostal("codepostal");
-               response.setDescription("description");
+               response.setRefBibliotheque(2);
+               response.setNom(nom);
+               response.setAdresse(adresse);
+               response.setVille(ville);
+               response.setCodePostal(codePostal);
+               response.setDescription(description);
                
                bibliothequeManager.addBibliotheque(bibliotheque);
 
