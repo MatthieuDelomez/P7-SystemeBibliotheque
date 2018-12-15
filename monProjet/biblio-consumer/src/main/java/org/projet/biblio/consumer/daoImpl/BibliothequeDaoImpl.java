@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.projet.biblio.consumer.daoImpl;
 
 import javax.sql.DataSource;
@@ -14,10 +9,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-/**
- *
- * @author Ben Gourion
- */
+
 public class BibliothequeDaoImpl extends AbstractDaoImpl implements BibliothequeDao {
     
                                        /*
@@ -33,15 +25,14 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
         
                                        JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
-                                      /* Nom des colonnes se situant dans table de la base de données*/
 
-		String sql = "INSERT INTO bibliotheque (refbibliotheque, nom, adresse, ville, codepostal, description) VALUES (?,?,?,?,?,?);";
+                                       String sql = "INSERT INTO bibliotheque (refbibliotheque, nom, adresse, ville, codepostal, description) VALUES (?,?,?,?,?,?);";
 
 		
 
-	                    Object[] args = new Object[] { bibliotheque.getRefBibliotheque(), bibliotheque.getNom(), bibliotheque.getVille(), 
+	                 Object[] args = new Object[] { bibliotheque.getRefBibliotheque(), bibliotheque.getNom(), bibliotheque.getAdresse(), 
             
-                                                                                          bibliotheque.getCodePostal(),bibliotheque.getAdresse(), bibliotheque.getDescription() };
+                                                                                               bibliotheque.getVille(),bibliotheque.getCodePostal(), bibliotheque.getDescription() };
 
 
                                        try {

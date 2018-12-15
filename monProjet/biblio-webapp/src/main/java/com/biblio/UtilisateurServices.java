@@ -14,7 +14,7 @@ public class UtilisateurServices extends AbstractResource{
     
    
     
-         //  private UtilisateurManager utilisateurManager = getManagerFactory().getUtilisateurManager();
+           private UtilisateurManager utilisateurManager = getManagerFactory().getUtilisateurManager();
     
            @WebMethod(operationName = "doLogin")
            public UtilisateurResponse doLogin( @WebParam(name="pseudo") String pseudo,  
@@ -24,8 +24,10 @@ public class UtilisateurServices extends AbstractResource{
            UtilisateurResponse response = new UtilisateurResponse();
                
 
-               response.setNom("nom");
-               response.setPrenom("prenom");
+               utilisateur.setMotPasse("motpasse");
+               utilisateur.setPseudo("pseudo");
+           
+               response.setMotPasse("motpasse");
                response.setPseudo("pseudo");
                
                
@@ -42,18 +44,29 @@ public class UtilisateurServices extends AbstractResource{
                                                                                           @WebParam(name="nom") String nom,
                                                                                           @WebParam(name="prenom") String prenom,
                                                                                           @WebParam(name="email") String email,
-                                                                                          @WebParam(name="refbibliotheque") int refBibliotheque ){
+                                                                                          @WebParam(name="refbibliotheque") int refBibliotheque,
+                                                                                          @WebParam(name="idutilisateur") int idUtilisateur) {
                
            UtilisateurResponse response = new UtilisateurResponse();
            Utilisateur utilisateur = new Utilisateur();
            
            
+           utilisateur.setNom("nom");
+           utilisateur.setPrenom("prenom");
+           utilisateur.setPseudo("pseudo");
+           utilisateur.setEmail("email");
+           utilisateur.setRefBibliotheque(1);
+           utilisateur.setNom("nom");
+           utilisateur.setIdUtilisateur(2);
+           
            response.setNom("nom");
            response.setPrenom("prenom");
            response.setPseudo("pseudo");
            response.setEmail("email");
-           response.setRefBibliotheque(2);
+           response.setRefBibliotheque(1);
            response.setNom("nom");
+           response.setIdUtilisateur(2);
+
 
            
            utilisateurManager.addUtilisateur(utilisateur);

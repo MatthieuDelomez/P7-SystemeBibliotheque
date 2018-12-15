@@ -28,6 +28,13 @@ public class PretServices extends AbstractResource {
            PretResponse response = new PretResponse();
                
 
+               pret.setRefOuvrage(1);
+               pret.setDatePret(datePret);
+               pret.setDureePret(dureePret);
+               pret.setDateFinPret(dateFinPret);
+               pret.setNbrExemplaire(nbrExemplaire);
+               pret.setProlonger(prolonger);
+               
                response.setRefOuvrage(1);
                response.setDatePret("datepret");
                response.setDureePret("dureepret");

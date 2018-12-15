@@ -21,7 +21,9 @@ public class UtilisateurResponse {
     
     private int refBibliotheque;
     
-    private String pseudo;
+    private int idUtilisateur;
+    
+    private String pseudo ;
     
     private String motPasse;
     
@@ -30,8 +32,17 @@ public class UtilisateurResponse {
     private String prenom;
     
     private String email;
-
     
+    
+
+    public int getIdUtilisateur() {
+        return idUtilisateur;
+    }
+    
+    @XmlElement(name = "idutilisateur")
+    public void setIdUtilisateur(int idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
+    }   
     
     
     public int getRefBibliotheque() {

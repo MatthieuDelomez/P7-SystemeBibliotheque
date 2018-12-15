@@ -9,7 +9,7 @@ package org.projet.biblio.model;
 
 public class Bibliotheque {
     
-    private int refBibliotheque;
+    private int refBibliotheque ;
     private String nom = "nom";
     private String adresse = "adresse";
     private String ville = "ville";

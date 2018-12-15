@@ -17,7 +17,7 @@ public class DocumentServices extends AbstractResource {
 
     
     @WebMethod(operationName="DocumentServices") 
-    public DocumentResponse doSearchBook(@WebParam(name="refouvrage") int refOuvrage,  
+    public DocumentResponse doAddBook(@WebParam(name="refouvrage") int refOuvrage,  
                                                                                      @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                      @WebParam(name="nomouvrage") String nomOuvrage,
                                                                                      @WebParam(name="quantitetotal") String quantiteTotal,
@@ -27,7 +27,13 @@ public class DocumentServices extends AbstractResource {
          Document document = new Document(); 
          DocumentResponse response = new DocumentResponse();
                
-
+               document.setRefOuvrage(1);
+               document.setRefBibliotheque(1);
+               document.setNomOuvrage("nomouvrage");
+               document.setQuantiteTotal("quantitetotal");
+               document.setNbrEmprunte("nbremprunte");
+               document.setQuantiteRestante("quantiterestante");
+         
                response.setRefOuvrage(1);
                response.setRefBibliotheque(1);
                response.setNomOuvrage("nomouvrage");
