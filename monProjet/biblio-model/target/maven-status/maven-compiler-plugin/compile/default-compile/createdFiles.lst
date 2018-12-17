@@ -1,0 +1,6 @@
+org\projet\biblio\model\Document.class
+org\projet\biblio\model\Utilisateur.class
+org\projet\biblio\model\App.class
+org\projet\biblio\model\Bibliotheque.class
+org\projet\biblio\model\Client.class
+org\projet\biblio\model\Pret.class

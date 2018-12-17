@@ -1,0 +1,14 @@
+org\projet\biblio\business\App.class
+org\projet\biblio\business\managerImpl\ManagerFactoryImpl.class
+org\projet\biblio\business\managerImpl\DocumentManagerImpl.class
+org\projet\biblio\business\manager\DocumentManager.class
+org\projet\biblio\business\managerImpl\ClientManagerImpl.class
+org\projet\biblio\business\manager\ClientManager.class
+org\projet\biblio\business\manager\PretManager.class
+org\projet\biblio\business\managerImpl\AbstractManager.class
+org\projet\biblio\business\manager\BibliothequeManager.class
+org\projet\biblio\business\manager\UtilisateurManager.class
+org\projet\biblio\business\managerImpl\BibliothequeManagerImpl.class
+org\projet\biblio\business\managerImpl\PretManagerImpl.class
+org\projet\biblio\business\manager\ManagerFactory.class
+org\projet\biblio\business\managerImpl\UtilisateurManagerImpl.class
