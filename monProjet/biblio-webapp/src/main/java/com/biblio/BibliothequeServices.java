@@ -13,9 +13,19 @@ import org.projet.biblio.model.Bibliotheque;
 public class BibliothequeServices extends AbstractResource {
     
     
-        private BibliothequeManager bibliothequeManager = getManagerFactory().getBibliothequeManager();
-    
-        @WebMethod(operationName="DocumentServices") 
+     private BibliothequeManager bibliothequeManager = getManagerFactory().getBibliothequeManager();
+
+    /**
+     *
+     * @param refBibliotheque
+     * @param nom
+     * @param adresse
+     * @param ville
+     * @param codePostal
+     * @param description
+     * @return
+     */
+        @WebMethod(operationName="BibliothequeServices") 
         public BibliothequeResponse doAddBibliotheque(@WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                                      @WebParam(name="nom") String nom,
                                                                                                      @WebParam(name="adresse") String adresse,

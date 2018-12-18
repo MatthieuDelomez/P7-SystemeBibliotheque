@@ -13,9 +13,18 @@ import org.projet.biblio.model.Pret;
 public class PretServices extends AbstractResource {
     
     
-           private PretManager pretManager = getManagerFactory().getPretManager();
+          private PretManager pretManager = getManagerFactory().getPretManager();
 
-    
+    /**
+     *
+     * @param refOuvrage
+     * @param datePret
+     * @param dureePret
+     * @param dateFinPret
+     * @param nbrExemplaire
+     * @param prolonger
+     * @return
+     */
            @WebMethod(operationName = "doCreatePret")
            public PretResponse doCreatePret(@WebParam(name="refouvrage") int refOuvrage,  
                                                                              @WebParam(name="datepret") String datePret,
@@ -42,7 +51,7 @@ public class PretServices extends AbstractResource {
                response.setDureePret("nbrexemplaire");
                response.setProlonger(false);
 
-               pretManager.addPret(pret);
+              pretManager.addPret(pret);
 
                
                return response;               

@@ -14,8 +14,14 @@ public class UtilisateurServices extends AbstractResource{
     
    
     
-           private UtilisateurManager utilisateurManager = getManagerFactory().getUtilisateurManager();
-    
+     //      private UtilisateurManager utilisateurManager = getManagerFactory().getUtilisateurManager();
+
+    /**
+     *
+     * @param pseudo
+     * @param motPasse
+     * @return
+     */
            @WebMethod(operationName = "doLogin")
            public UtilisateurResponse doLogin( @WebParam(name="pseudo") String pseudo,  
                                                                                @WebParam(name="motPasse") String motPasse ){

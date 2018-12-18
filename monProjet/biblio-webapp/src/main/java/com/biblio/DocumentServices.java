@@ -15,7 +15,16 @@ public class DocumentServices extends AbstractResource {
     
     private DocumentManager documentManager = getManagerFactory().getDocumentManager();
 
-    
+    /**
+     *
+     * @param refOuvrage
+     * @param refBibliotheque
+     * @param nomOuvrage
+     * @param quantiteTotal
+     * @param nbrEmprunte
+     * @param quantiteRestante
+     * @return
+     */
     @WebMethod(operationName="DocumentServices") 
     public DocumentResponse doAddBook(@WebParam(name="refouvrage") int refOuvrage,  
                                                                                      @WebParam(name="refbibliotheque") int refBibliotheque,

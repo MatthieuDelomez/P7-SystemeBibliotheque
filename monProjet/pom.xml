@@ -88,13 +88,13 @@
                 <scope>import</scope>
             </dependency>
             
-            <dependency>
-            <groupId>com.sun.xml.ws</groupId>
+
+      <dependency>
+        <groupId>com.sun.xml.ws</groupId>
         <artifactId>jaxws-rt</artifactId>
         <version>2.3.0</version>
         <type>pom</type>
       </dependency>
-            
             
            <dependency>
               <groupId>org.springframework</groupId>
@@ -172,25 +172,11 @@
                 <version>1.1.0.Final</version>
             </dependency>
             
-            
-            <dependency>
 
-                <groupId>org.glassfish.jersey</groupId>
-
-                <artifactId>jersey-bom</artifactId>
-
-                <version>${jersey.version}</version>
-
-                <type>pom</type>
-
-                <scope>import</scope>
-
-            </dependency>
-            
             
 
             
-     <!-- Serveur d'application 
+     <!-- Serveur d'application -->
          <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-rt</artifactId>
@@ -198,7 +184,7 @@
             <scope>provided</scope>
         </dependency>
         
-        -->
+        
 
             <!-- JSR - 250 -->
             <dependency>
