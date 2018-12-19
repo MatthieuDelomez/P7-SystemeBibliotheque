@@ -18,8 +18,7 @@ public class Document  {
     private int refBibliotheque;
     private String nomOuvrage;
     private String quantiteTotal;
-    private String nbrEmprunte;
-    private String quantiteRestante;
+
 
 
     public String getNomOuvrage() {
@@ -39,13 +38,6 @@ public class Document  {
         return quantiteTotal;
     }
 
-    public String getNbrEmprunte() {
-        return nbrEmprunte;
-    }
-
-    public String getQuantiteRestante() {
-        return quantiteRestante;
-    }
 
     public void setNomOuvrage(String nomOuvrage) {
         this.nomOuvrage = nomOuvrage;
@@ -63,14 +55,6 @@ public class Document  {
         this.quantiteTotal = quantiteTotal;
     }
 
-    public void setNbrEmprunte(String nbrEmprunte) {
-        this.nbrEmprunte = nbrEmprunte;
-    }
-
-    public void setQuantiteRestante(String quantiteRestante) {
-        this.quantiteRestante = quantiteRestante;
-    }
-    
     
 
     

@@ -5,52 +5,50 @@ import com.responses.DocumentResponse;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.projet.biblio.business.manager.DocumentManager;
+import org.projet.biblio.consumer.dao.DocumentDao;
 import org.projet.biblio.model.Document;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @WebService(name="DocumentServices") 
 public class DocumentServices extends AbstractResource {
     
     
-    private DocumentManager documentManager = getManagerFactory().getDocumentManager();
-
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+    
+		/* Créer un utilisateur */
+    DocumentDao bibliothequeDao = ctx.getBean("documentDao", DocumentDao.class);
+    
     /**
      *
      * @param refOuvrage
      * @param refBibliotheque
      * @param nomOuvrage
      * @param quantiteTotal
-     * @param nbrEmprunte
-     * @param quantiteRestante
      * @return
      */
     @WebMethod(operationName="DocumentServices") 
     public DocumentResponse doAddBook(@WebParam(name="refouvrage") int refOuvrage,  
-                                                                                     @WebParam(name="refbibliotheque") int refBibliotheque,
-                                                                                     @WebParam(name="nomouvrage") String nomOuvrage,
-                                                                                     @WebParam(name="quantitetotal") String quantiteTotal,
-                                                                                     @WebParam(name="nbremprunte") String nbrEmprunte,
-                                                                                     @WebParam(name="quantiterestante") String quantiteRestante ){
+                                                                                @WebParam(name="refbibliotheque") int refBibliotheque,
+                                                                                @WebParam(name="nomouvrage") String nomOuvrage,
+                                                                                @WebParam(name="quantitetotal") String quantiteTotal) {
         
          Document document = new Document(); 
          DocumentResponse response = new DocumentResponse();
                
-               document.setRefOuvrage(1);
-               document.setRefBibliotheque(1);
-               document.setNomOuvrage("nomouvrage");
-               document.setQuantiteTotal("quantitetotal");
-               document.setNbrEmprunte("nbremprunte");
-               document.setQuantiteRestante("quantiterestante");
+               document.setRefOuvrage(refOuvrage);
+               document.setRefBibliotheque(refBibliotheque);
+               document.setNomOuvrage(nomOuvrage);
+               document.setQuantiteTotal(quantiteTotal);
+
          
-               response.setRefOuvrage(1);
-               response.setRefBibliotheque(1);
-               response.setNomOuvrage("nomouvrage");
-               response.setQuantiteTotal("quantitetotal");
-               response.setNbrEmprunte("nbremprunte");
-               response.setQuantiteRestante("quantiterestante");
+               response.setRefOuvrage(refOuvrage);
+               response.setRefBibliotheque(refBibliotheque);
+               response.setNomOuvrage(nomOuvrage);
+               response.setQuantiteTotal(quantiteTotal);
+
                
-               documentManager.addDocument(document);
+               bibliothequeDao.addDocument(document);
 
 
                

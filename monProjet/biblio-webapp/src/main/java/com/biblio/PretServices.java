@@ -5,19 +5,26 @@ import com.responses.PretResponse;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.projet.biblio.business.manager.PretManager;
+import org.projet.biblio.consumer.dao.PretDao;
 import org.projet.biblio.model.Pret;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @WebService(name="PretServices") 
 public class PretServices extends AbstractResource {
     
     
-          private PretManager pretManager = getManagerFactory().getPretManager();
-
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+    
+		/* Créer un utilisateur */
+    PretDao bibliothequeDao = ctx.getBean("pretDao", PretDao.class);
+    
+    
     /**
      *
      * @param refOuvrage
+     * @param refClient
+     * @param refPret
      * @param datePret
      * @param dureePret
      * @param dateFinPret
@@ -27,6 +34,8 @@ public class PretServices extends AbstractResource {
      */
            @WebMethod(operationName = "doCreatePret")
            public PretResponse doCreatePret(@WebParam(name="refouvrage") int refOuvrage,  
+                                                                             @WebParam(name="refclient") int refClient,
+                                                                             @WebParam(name="refpret") int refPret,
                                                                              @WebParam(name="datepret") String datePret,
                                                                              @WebParam(name="dureepret") String dureePret,
                                                                              @WebParam(name="datefinpret") String dateFinPret,
@@ -37,21 +46,27 @@ public class PretServices extends AbstractResource {
            PretResponse response = new PretResponse();
                
 
-               pret.setRefOuvrage(1);
+               pret.setRefOuvrage(refOuvrage);
                pret.setDatePret(datePret);
                pret.setDureePret(dureePret);
                pret.setDateFinPret(dateFinPret);
                pret.setNbrExemplaire(nbrExemplaire);
                pret.setProlonger(prolonger);
-               
-               response.setRefOuvrage(1);
-               response.setDatePret("datepret");
-               response.setDureePret("dureepret");
-               response.setDateFinPret("datefinpret");
-               response.setDureePret("nbrexemplaire");
-               response.setProlonger(false);
+               pret.setRefClient(refClient);
+               pret.setRefPret(refPret);
 
-              pretManager.addPret(pret);
+                       
+                       
+               response.setRefOuvrage(refOuvrage);
+               response.setDatePret(datePret);
+               response.setDureePret(dureePret);
+               response.setDateFinPret(dateFinPret);
+               response.setDureePret(nbrExemplaire);
+               response.setProlonger(prolonger);
+               response.setRefClient(refClient);
+               response.setRefPret(refPret);
+
+              bibliothequeDao.addPret(pret);
 
                
                return response;               

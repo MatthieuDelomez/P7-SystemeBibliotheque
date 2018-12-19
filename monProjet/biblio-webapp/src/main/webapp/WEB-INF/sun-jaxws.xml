@@ -1,6 +1,24 @@
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
     version="2.0">
+    
     <endpoint name="BibliothequeServices"
         implementation="com.biblio.BibliothequeServices"
-        url-pattern="/biblio-webapp" />
-</endpoints>
+        url-pattern="/bibliothequeB" />
+    
+     <endpoint name="PretServices"
+        implementation="com.biblio.PretServices"
+        url-pattern="/bibliothequeP" />
+    
+    <endpoint name="DocumentServices"
+        implementation="com.biblio.DocumentServices"
+        url-pattern="/bibliothequeD" />
+    
+    <endpoint name="UtilisateurServices"
+        implementation="com.biblio.UtilisateurServices"
+        url-pattern="/bibliothequeU" />
+    
+    
+    </endpoints>
+
+
+

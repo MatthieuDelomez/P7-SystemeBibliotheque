@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlType;
 public class PretResponse {
     
     private int refOuvrage;
+    private int refClient;
+    private int refPret;
     
     private String datePret;
     private String dureePret;
@@ -23,7 +25,28 @@ public class PretResponse {
     
     private boolean prolonger;
     
+    
+    
 
+    public int getRefClient() {
+        return refClient;
+    }
+    
+    @XmlElement(name = "refclient")
+    public void setRefClient(int refClient) {
+        this.refClient = refClient;
+    }
+
+    public int getRefPret() {
+        return refPret;
+    }
+    
+    @XmlElement(name = "refpret")
+    public void setRefPret(int refPret) {
+        this.refPret = refPret;
+    }
+    
+    
     public int getRefOuvrage() {
         return refOuvrage;
     }

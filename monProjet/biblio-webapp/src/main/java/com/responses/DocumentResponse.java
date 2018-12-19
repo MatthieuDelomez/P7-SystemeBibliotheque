@@ -14,8 +14,6 @@ public class DocumentResponse {
     
     private String nomOuvrage;
     private String quantiteTotal;
-    private String nbrEmprunte;
-    private String quantiteRestante;
     
     
 
@@ -55,23 +53,7 @@ public class DocumentResponse {
         this.quantiteTotal = quantiteTotal;
     }
 
-    public String getNbrEmprunte() {
-        return nbrEmprunte;
-    }
-    
-    @XmlElement(name = "nbremprunte")
-    public void setNbrEmprunte(String nbrEmprunte) {
-        this.nbrEmprunte = nbrEmprunte;
-    }
 
-    public String getQuantiteRestante() {
-        return quantiteRestante;
-    }
-    
-    @XmlElement(name = "quantiterestante")
-    public void setQuantiteRestante(String quantiteRestante) {
-        this.quantiteRestante = quantiteRestante;
-    }
     
     
     

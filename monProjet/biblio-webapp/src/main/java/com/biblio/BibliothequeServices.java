@@ -5,15 +5,19 @@ import com.responses.BibliothequeResponse;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.projet.biblio.business.manager.BibliothequeManager;
+import org.projet.biblio.consumer.dao.BibliothequeDao;
 import org.projet.biblio.model.Bibliotheque;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @WebService(name="BibliothequeServices") 
 public class BibliothequeServices extends AbstractResource {
     
     
-     private BibliothequeManager bibliothequeManager = getManagerFactory().getBibliothequeManager();
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+    
+		/* Créer un utilisateur */
+    BibliothequeDao bibliothequeDao = ctx.getBean("bibliothequeDao", BibliothequeDao.class);
 
     /**
      *
@@ -38,21 +42,21 @@ public class BibliothequeServices extends AbstractResource {
            BibliothequeResponse response = new BibliothequeResponse();
            
            
-               bibliotheque.setRefBibliotheque(2);
+               bibliotheque.setRefBibliotheque(refBibliotheque);
                bibliotheque.setNom(nom);
                bibliotheque.setAdresse(adresse);
                bibliotheque.setVille(ville);
                bibliotheque.setCodePostal(codePostal);
                bibliotheque.setDescription(description);
 
-               response.setRefBibliotheque(2);
+               response.setRefBibliotheque(refBibliotheque);
                response.setNom(nom);
                response.setAdresse(adresse);
                response.setVille(ville);
                response.setCodePostal(codePostal);
                response.setDescription(description);
                
-               bibliothequeManager.addBibliotheque(bibliotheque);
+               bibliothequeDao.addBibliotheque(bibliotheque);
 
 
                
@@ -64,3 +68,5 @@ public class BibliothequeServices extends AbstractResource {
     
     
 }
+
+

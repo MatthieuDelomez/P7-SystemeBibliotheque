@@ -18,7 +18,7 @@ public class DocumentMapper implements RowMapper<Document> {
     
       	public Document mapRow(ResultSet rs, int rowNum) throws SQLException {
             
-		Document document = new Document();
+                                    Document document = new Document();
                                      
                                      document.setRefOuvrage(rs.getInt("refouvrage"));
                                      
@@ -28,10 +28,7 @@ public class DocumentMapper implements RowMapper<Document> {
                                      
                                      document.setQuantiteTotal(rs.getString("quantitetotal"));
                                      
-                                     document.setNbrEmprunte(rs.getString("nbremprunte"));
-                                     
-                                     document.setQuantiteRestante(rs.getString("quantiterestante"));
-                                     
+
                                      
                                        return document;
 

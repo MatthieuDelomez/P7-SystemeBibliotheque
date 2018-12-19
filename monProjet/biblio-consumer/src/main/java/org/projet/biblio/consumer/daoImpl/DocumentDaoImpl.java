@@ -41,11 +41,11 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 
                                       /* Nom des colonnes se situant dans table de la base de données*/
 
-		String sql = "INSERT INTO document (refouvrage, refbibliotheque, nomouvrage, quantitetotal, nbremprunte, quantiterestante) VALUES (?,?,?,?,?,?);";
+		String sql = "INSERT INTO document (refouvrage, refbibliotheque, nomouvrage, quantitetotal) VALUES (?,?,?,?);";
 
 		
 
-	Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal(), document.getNbrEmprunte(), document.getQuantiteRestante() };
+	Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal() };
 
 		
 

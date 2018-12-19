@@ -3,7 +3,7 @@ package com.biblio.resources;
 import org.projet.biblio.business.managerImpl.ManagerFactoryImpl;
 
 
-public class AbstractResource {
+public abstract class AbstractResource {
     
 
     private static ManagerFactoryImpl managerFactory;

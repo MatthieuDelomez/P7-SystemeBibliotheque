@@ -23,7 +23,7 @@
 
     <!-- ==== AbstractResource ===== -->
 
-    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <bean  class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 
         <property name="targetClass" value="com.biblio.resources.AbstractResource"/>
 
@@ -32,5 +32,24 @@
         <property name="arguments" ref="managerFactory"/>
 
     </bean>
+    
+    
+                <!-- ManagerFactory -->
+
+
+
+            <bean id= "managerFactory" class="org.projet.biblio.business.managerImpl.ManagerFactoryImpl">
+
+            <property name="utilisateurManager" ref="utilisateurManager"></property> 
+
+            <property name="pretManager" ref="pretManager"></property>  
+
+            <property name="documentManager" ref="documentManager"></property>
+
+            <property name="clientManager" ref="clientManager"></property>
+
+            <property name="bibliothequeManager" ref="bibliothequeManager"></property>
+
+            </bean>
 
 </beans>

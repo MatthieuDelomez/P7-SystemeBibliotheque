@@ -5,8 +5,9 @@ import com.responses.UtilisateurResponse;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import org.projet.biblio.business.manager.UtilisateurManager;
+import org.projet.biblio.consumer.dao.UtilisateurDao;
 import org.projet.biblio.model.Utilisateur;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @WebService(name="UtilisateurServices")
@@ -14,8 +15,12 @@ public class UtilisateurServices extends AbstractResource{
     
    
     
-     //      private UtilisateurManager utilisateurManager = getManagerFactory().getUtilisateurManager();
-
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+    
+		/* Créer un utilisateur */
+    UtilisateurDao utilisateurDao = ctx.getBean("utilisateurDao", UtilisateurDao.class);
+    
+    
     /**
      *
      * @param pseudo
@@ -42,7 +47,7 @@ public class UtilisateurServices extends AbstractResource{
 
         }
            
-           /*
+           
            
            @WebMethod(operationName ="doCreateUser")
            public UtilisateurResponse doCreateUser( @WebParam(name="pseudo") String pseudo, 
@@ -57,25 +62,25 @@ public class UtilisateurServices extends AbstractResource{
            Utilisateur utilisateur = new Utilisateur();
            
            
-           utilisateur.setNom("nom");
-           utilisateur.setPrenom("prenom");
-           utilisateur.setPseudo("pseudo");
-           utilisateur.setEmail("email");
-           utilisateur.setRefBibliotheque(1);
-           utilisateur.setNom("nom");
-           utilisateur.setIdUtilisateur(2);
+           utilisateur.setNom(nom);
+           utilisateur.setPrenom(prenom);
+           utilisateur.setPseudo(pseudo);
+           utilisateur.setEmail(email);
+           utilisateur.setRefBibliotheque(refBibliotheque);
+           utilisateur.setNom(nom);
+           utilisateur.setIdUtilisateur(idUtilisateur);
            
-           response.setNom("nom");
-           response.setPrenom("prenom");
-           response.setPseudo("pseudo");
-           response.setEmail("email");
-           response.setRefBibliotheque(1);
-           response.setNom("nom");
-           response.setIdUtilisateur(2);
+           response.setNom(nom);
+           response.setPrenom(prenom);
+           response.setPseudo(pseudo);
+           response.setEmail(email);
+           response.setRefBibliotheque(refBibliotheque);
+           response.setNom(nom);
+           response.setIdUtilisateur(idUtilisateur);
 
 
            
-           utilisateurManager.addUtilisateur(utilisateur);
+           utilisateurDao.addUtilisateur(utilisateur);
                
            
                return response;
@@ -83,6 +88,6 @@ public class UtilisateurServices extends AbstractResource{
                
                
            }
-*/
+
     
 }
