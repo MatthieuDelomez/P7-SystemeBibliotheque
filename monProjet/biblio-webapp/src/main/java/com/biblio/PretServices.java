@@ -17,7 +17,7 @@ public class PretServices extends AbstractResource {
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
     
 		/* Créer un utilisateur */
-    PretDao bibliothequeDao = ctx.getBean("pretDao", PretDao.class);
+    PretDao pretDao = ctx.getBean("pretDao", PretDao.class);
     
     
     /**
@@ -33,9 +33,9 @@ public class PretServices extends AbstractResource {
      * @return
      */
            @WebMethod(operationName = "doCreatePret")
-           public PretResponse doCreatePret(@WebParam(name="refouvrage") int refOuvrage,  
+           public PretResponse doCreatePret(@WebParam(name="refouvrage") int refPret ,  
                                                                              @WebParam(name="refclient") int refClient,
-                                                                             @WebParam(name="refpret") int refPret,
+                                                                             @WebParam(name="refpret") int refOuvrage,
                                                                              @WebParam(name="datepret") String datePret,
                                                                              @WebParam(name="dureepret") String dureePret,
                                                                              @WebParam(name="datefinpret") String dateFinPret,
@@ -45,32 +45,57 @@ public class PretServices extends AbstractResource {
            Pret pret = new Pret(); 
            PretResponse response = new PretResponse();
                
-
+               pret.setRefPret(refPret);
+               pret.setRefClient(refClient);
                pret.setRefOuvrage(refOuvrage);
                pret.setDatePret(datePret);
                pret.setDureePret(dureePret);
                pret.setDateFinPret(dateFinPret);
                pret.setNbrExemplaire(nbrExemplaire);
                pret.setProlonger(prolonger);
-               pret.setRefClient(refClient);
-               pret.setRefPret(refPret);
 
                        
-                       
+               response.setRefPret(refPret);
                response.setRefOuvrage(refOuvrage);
+               response.setRefClient(refClient);
                response.setDatePret(datePret);
                response.setDureePret(dureePret);
                response.setDateFinPret(dateFinPret);
                response.setDureePret(nbrExemplaire);
                response.setProlonger(prolonger);
-               response.setRefClient(refClient);
-               response.setRefPret(refPret);
 
-              bibliothequeDao.addPret(pret);
+              pretDao.addPret(pret);
 
                
                return response;               
                
+               
+           }
+           
+           
+           
+           
+           @WebMethod(operationName = "searchPret")
+           public PretResponse doSearchPret( @WebParam(name="refpret") int refPret){
+                
+               
+               Pret pret = new Pret();
+               PretResponse response = new PretResponse();
+               
+               
+               pret = pretDao.getPret(pret);
+               
+               response.setRefPret(pret.getRefPret());
+               response.setRefOuvrage(pret.getRefOuvrage());
+               response.setRefClient(pret.getRefClient());
+               response.setDatePret(pret.getDatePret());
+               response.setDureePret(pret.getDureePret());
+               response.setDateFinPret(pret.getDateFinPret());
+               response.setNbrExemplaire(pret.getNbrExemplaire());
+               response.setProlonger(pret.isProlonger());
+               
+               
+               return response;
                
            }
 

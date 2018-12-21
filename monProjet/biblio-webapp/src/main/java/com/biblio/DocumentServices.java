@@ -17,7 +17,7 @@ public class DocumentServices extends AbstractResource {
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
     
 		/* Créer un utilisateur */
-    DocumentDao bibliothequeDao = ctx.getBean("documentDao", DocumentDao.class);
+    DocumentDao documentDao = ctx.getBean("documentDao", DocumentDao.class);
     
     /**
      *
@@ -48,15 +48,35 @@ public class DocumentServices extends AbstractResource {
                response.setQuantiteTotal(quantiteTotal);
 
                
-               bibliothequeDao.addDocument(document);
+               documentDao.addDocument(document);
 
 
                
                return response;               
                
-        
-        
-        
-    }
+                    
+              }
+    
+    
+           @WebMethod(operationName = "searchBook")
+           public DocumentResponse doSearchBook( @WebParam(name="refouvrage") int refOuvrage) {
+               
+               
+               Document document = new Document();
+               DocumentResponse response = new DocumentResponse();
+               
+               
+               document = documentDao.getDocument(document);
+               
+               response.setRefOuvrage(document.getRefOuvrage());
+               response.setRefBibliotheque(document.getRefBibliotheque());
+               response.setNomOuvrage(document.getNomOuvrage());
+               response.setQuantiteTotal(document.getQuantiteTotal());
+
+               
+               return response;
+               
+           }
+    
     
 }

@@ -96,6 +96,7 @@ public class PretResponse {
         return prolonger;
     }
     
+    
     @XmlElement(name = "prolonger")
     public void setProlonger(boolean prolonger) {
         this.prolonger = prolonger;

@@ -73,7 +73,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
                    @Override
 	public Pret getPret(Pret pret) {
 
-		String sql = "SELECT * FROM espace_de_pret WHERE disponible = ?";
+		String sql = "SELECT * FROM pret WHERE refpret = ? ";
 
 
 
@@ -81,7 +81,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 
 
-		Object[] args = new Object[] { };
+		Object[] args = new Object[] { pret.getRefPret() };
 
 
 

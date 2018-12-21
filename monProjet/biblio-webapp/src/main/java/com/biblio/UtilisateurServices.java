@@ -34,18 +34,23 @@ public class UtilisateurServices extends AbstractResource{
            Utilisateur utilisateur = new Utilisateur(); 
            UtilisateurResponse response = new UtilisateurResponse();
                
+               
+               utilisateur = utilisateurDao.getUtilisateur(utilisateur);
+               
+               response.setPseudo(utilisateur.getPseudo());
+               response.setMotPasse(utilisateur.getMotPasse());
+               response.setNom(utilisateur.getNom());
+               response.setPrenom(utilisateur.getPrenom());
+               response.setEmail(utilisateur.getEmail());
+               response.setRefBibliotheque(utilisateur.getRefBibliotheque());
+               response.setIdUtilisateur(utilisateur.getIdUtilisateur());
 
-               utilisateur.setMotPasse("motpasse");
-               utilisateur.setPseudo("pseudo");
-           
-               response.setMotPasse("motpasse");
-               response.setPseudo("pseudo");
                
                
                return response;
            
 
-        }
+               }
            
            
            
@@ -61,7 +66,7 @@ public class UtilisateurServices extends AbstractResource{
            UtilisateurResponse response = new UtilisateurResponse();
            Utilisateur utilisateur = new Utilisateur();
            
-           
+           utilisateur.setMotPasse(motPasse);
            utilisateur.setNom(nom);
            utilisateur.setPrenom(prenom);
            utilisateur.setPseudo(pseudo);
@@ -70,6 +75,7 @@ public class UtilisateurServices extends AbstractResource{
            utilisateur.setNom(nom);
            utilisateur.setIdUtilisateur(idUtilisateur);
            
+           response.setMotPasse(motPasse);
            response.setNom(nom);
            response.setPrenom(prenom);
            response.setPseudo(pseudo);

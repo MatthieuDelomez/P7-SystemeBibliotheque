@@ -61,13 +61,13 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
                                        public Utilisateur getUtilisateur(Utilisateur utilisateur) {
 
 
-		String sql = "SELECT * FROM utilisateur WHERE  email = ? AND idutilisateur = ?";
+		String sql = "SELECT * FROM utilisateur WHERE pseudo  = ? AND motpasse = ?";
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
 		Object[] args = new Object[] {
 
-		          utilisateur.getEmail(), utilisateur.getIdUtilisateur()
+		          utilisateur.getPseudo(), utilisateur.getMotPasse()
 
 		};
 
