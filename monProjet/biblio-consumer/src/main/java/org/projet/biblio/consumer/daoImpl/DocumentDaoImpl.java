@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.projet.biblio.consumer.daoImpl;
 
 import java.util.List;
@@ -16,73 +12,59 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-/**
- *
- * @author Ben Gourion
- */
+
+
 public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
     
-  /* Variable DataSource*/
+                       /* Variable DataSource*/
 
 	private DataSource dataSource;
 
         
 
-                   /* Méthode pour ajouter un Utilisateur*/
+                      /* Méthode pour ajouter un Utilisateur*/
 
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
 
-                  @Override
+                     @Override
 	public void addDocument(Document document) {
-
-
 
 		JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
-                                      /* Nom des colonnes se situant dans table de la base de données*/
+                                             /* Nom des colonnes se situant dans table de la base de données*/
 
 		String sql = "INSERT INTO document (refouvrage, refbibliotheque, nomouvrage, quantitetotal) VALUES (?,?,?,?);";
 
+	
+	                      Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal() };
+
 		
-
-	Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal() };
-
-		
-
-        
-
-                                       try {
+                                             try {
 
                                              jdbcTemplate.update(sql, args);
 
-                                       } catch (DuplicateKeyException exception) {
+                                             } catch (DuplicateKeyException exception) {
 
                                             System.out.println(exception.getMessage());
 
-                             }
-         }
+                                             }
+                                         
+                                             }
 
 
 
 
-                   /* Méthode pour récupérer un Utilisateur*/
+                                             /* Méthode pour récupérer un Document*/
 
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
+	                      @Override
+	                      public Document getDocument(Document document) {
+  
+		String sql = "SELECT * FROM document WHERE  nomouvrage = ? ";
 
-	@Override
-	public Document getDocument(Document document) {
-
-
-
-		String sql = "SELECT * FROM document WHERE  refouvrage = ? AND nomouvrage = ?";
-
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
-		
+		JdbcTemplate jdbcTemplate = getJdbcTemplate();	
 
 		Object[] args = new Object[] {
-
-				 document.getRefOuvrage(), document.getNomOuvrage()
+				            document.getNomOuvrage()
 
 		};
 
@@ -92,32 +74,29 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 
         
 
-        try {
+                                             try {
 
-            RowMapper<Document> rowMapper = new DocumentMapper();
+                                             RowMapper<Document> rowMapper = new DocumentMapper();
 
-            /*Appel de la méthode QueryForObject*/
+                                            /*Appel de la méthode QueryForObject*/
 
-            Document userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
+                                             Document userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
 
-            return userQuery;
+                                             return userQuery;
 
 
 
-        } catch (EmptyResultDataAccessException exception) {
+                                             } catch (EmptyResultDataAccessException exception) {
 
-            System.out.println("Incorrect");
+                                            System.out.println("Incorrect");
+            
+                                             return null;
 
-            return null;
+                                             }
 
-        }
-
-		
-
-		
-
-	}
-
+                                           	}
+ 
+                              
 
 
 	@Override
@@ -151,28 +130,19 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 
 	}
 
-        /*Classe hérité de la classe Parente AbstractDaoImpl*/
-                   @Override
+                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                     @Override
         	public List<Document> getAllDocument() {
 
-            
 
-                                                         /* Log console*/
+                                                       String sql = "SELECT * FROM document";
 
-			System.out.println("Entree4Doc");
-
-
-
-                                     String sql = "SELECT * FROM document";
+		           JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
 
 
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
-
-
-		try {
-
+		          try {
+ 
 			List<Document> publicationQuery = jdbcTemplate.query(sql,
 
 			new BeanPropertyRowMapper(Document.class));
@@ -181,19 +151,15 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 
 
 
-		} catch (EmptyResultDataAccessException exception) {
-
+		           } catch (EmptyResultDataAccessException exception) {
+ 
 			System.out.println("Incorrect");
 
 			return null;
 
 		}
 
-            
-
-
-
-	}
+                          	}
 
 
 }

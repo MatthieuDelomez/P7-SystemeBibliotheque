@@ -32,7 +32,6 @@ public class DaoFactoryImpl implements DaoFactory {
     
     
     
-
     
     
     private PretDao pretDao;
@@ -45,7 +44,6 @@ public class DaoFactoryImpl implements DaoFactory {
     public void setPretDao(PretDao pretDao){
         this.pretDao = pretDao;
     }
-    
     
     
     

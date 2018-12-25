@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.projet.biblio.consumer.rowMapper;
 
 import java.sql.ResultSet;
@@ -15,6 +10,7 @@ Implementation pour définir le mapping entre les lignes de résultats d'une req
 */
 
 public class ClientMapper implements RowMapper<Client> {
+    
 
   	public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
 
@@ -22,7 +18,7 @@ public class ClientMapper implements RowMapper<Client> {
                 
                 		client.setRefClient(rs.getInt("refclient"));
                                 
-                                      client.setRefBibliotheque(rs.getInt("refbibliotheque"));
+                                            client.setRefBibliotheque(rs.getInt("refbibliotheque"));
                                 
                                 	client.setNom(rs.getString("nom"));
                                         
@@ -32,17 +28,15 @@ public class ClientMapper implements RowMapper<Client> {
 
 		client.setPseudo(rs.getString("pseudo"));
                 
-                                       client.setMotPasse(rs.getString("motpasse"));
+                                            client.setMotPasse(rs.getString("motpasse"));
                                        
-                                       client.setAdresse(rs.getString("adresse"));
+                                            client.setAdresse(rs.getString("adresse"));
 
 		client.setEmail(rs.getString("email"));
                 
-                                      client.setCodePostal(rs.getString("codepostal"));
+                                            client.setCodePostal(rs.getString("codepostal"));
 
-
-
-		return client; 
+	                      return client; 
         }
     
 }

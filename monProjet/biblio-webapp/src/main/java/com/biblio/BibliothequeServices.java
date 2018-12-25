@@ -63,6 +63,44 @@ public class BibliothequeServices extends AbstractResource {
                return response;     
             
         }
+        
+        
+       /**
+       *
+       * @param refBibliotheque
+       * @return
+       */
+           
+           @WebMethod(operationName = "searchBiblio")
+           public BibliothequeResponse doSearchBiblio( @WebParam(name="refbibliotheque") int refBibliotheque){
+                
+               
+               Bibliotheque bibliotheque = new Bibliotheque();
+               BibliothequeResponse response = new BibliothequeResponse();
+               
+               bibliotheque.setRefBibliotheque(refBibliotheque);
+               
+               
+               bibliotheque = bibliothequeDao.getBibliotheque(bibliotheque);
+               
+               try {
+               
+               response.setRefBibliotheque(bibliotheque.getRefBibliotheque());
+               response.setNom(bibliotheque.getNom());
+               response.setAdresse(bibliotheque.getAdresse());
+               response.setVille(bibliotheque.getVille());
+               response.setCodePostal(bibliotheque.getCodePostal());
+               response.setDescription(bibliotheque.getDescription());
+
+               
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
+               
+               
+               return response;
+               
+           }
 
     
     

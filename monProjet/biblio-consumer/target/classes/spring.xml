@@ -27,9 +27,6 @@
 
 
 
-
-
-
     <!-- ===== DaoFactory ===== -->
 
     <bean id="daoFactory" class="org.projet.biblio.consumer.daoImpl.DaoFactoryImpl">

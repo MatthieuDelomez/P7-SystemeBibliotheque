@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.projet.biblio.consumer.daoImpl;
 
 import java.util.List;
@@ -21,29 +17,25 @@ import org.springframework.jdbc.core.RowMapper;
  */
 public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
-     /* Méthode pour ajouter un espace de pret */
 
 
 
                    /*Classe hérité de la classe Parente AbstractDaoImpl*/    
-                   @Override
+                     @Override
 	public void addPret(Pret pret) {
 
 		
 
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
+	JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-                                      /* Nom des colonnes se situant dans table de la base de données*/
+                      /* Nom des colonnes se situant dans table de la base de données*/
 
-		String sql = "INSERT INTO pret ( refpret, refclient, refouvrage, datepret, dureepret, datefinpret, nbrexemplaire, prolonger) VALUES (?,?,?,?,?,?,?,?);";
+	String sql = "INSERT INTO pret ( refpret, refclient, refouvrage, datepret, dureepret, datefinpret, nbrexemplaire, prolonger) VALUES (?,?,?,?,?,?,?,?);";
 
-		
 
-                
-
-	                   Object[] args = new Object[] {pret.getRefPret(), pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
+	                      Object[] args = new Object[] {pret.getRefPret(), pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
                                    
-                                                                                             pret.getNbrExemplaire(), pret.isProlonger() };
+                                                                                                  pret.getNbrExemplaire(), pret.isProlonger() };
 
 		
 
@@ -63,33 +55,25 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 	}
 
-        
-
-                   /* Méthode pour récupérer un espace de pret */
 
 
-
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
-                   @Override
+                     /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                     @Override
 	public Pret getPret(Pret pret) {
 
 		String sql = "SELECT * FROM pret WHERE refpret = ? ";
 
-
-
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
-
 
 		Object[] args = new Object[] { pret.getRefPret() };
 
 
 
-		try {
+		                      try {
 
 			RowMapper<Pret> rowMapper = new PretMapper();
 
-                                                          /* Appel à la méthodes QueryForObject*/
+                                                                   /* Appel à la méthodes QueryForObject*/
 
 			Pret pretQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
 
@@ -97,7 +81,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 
 
-		} catch (EmptyResultDataAccessException exception) {
+		                      } catch (EmptyResultDataAccessException exception) {
 
 			System.out.println("Incorrect");
 
@@ -109,6 +93,38 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 
 
+                     /*Méthode pour afficher une liste de pret*/
+                     @Override
+        	public List<Pret> getAllPret() {
+
+
+                                            String sql = "SELECT * FROM document";
+
+                                            JdbcTemplate jdbcTemplate = getJdbcTemplate();
+
+
+
+		                       try {
+
+			List<Pret> publicationQuery = jdbcTemplate.query(sql,
+
+			new BeanPropertyRowMapper(Pret.class));
+
+			return publicationQuery;
+
+
+		                      } catch (EmptyResultDataAccessException exception) {
+
+			System.out.println("Incorrect");
+
+			return null;
+
+		}
+
+	}
+                
+                
+                
                     @Override
 
 	public void deletePretPicture(Pret pret) {
@@ -128,50 +144,6 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
                     @Override
 
 	public void deletePret(Pret pret) {
-
-
-
-	}
-
-        /*Classe hérité de la classe Parente AbstractDaoImpl*/
-                   @Override
-        	public List<Pret> getAllPret() {
-
-            
-
-                                                         /* Log console*/
-
-			System.out.println("Entree4Doc");
-
-
-
-                                     String sql = "SELECT * FROM document";
-
-
-
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
-
-
-		try {
-
-			List<Pret> publicationQuery = jdbcTemplate.query(sql,
-
-			new BeanPropertyRowMapper(Pret.class));
-
-			return publicationQuery;
-
-
-
-		} catch (EmptyResultDataAccessException exception) {
-
-			System.out.println("Incorrect");
-
-			return null;
-
-		}
-
-            
 
 
 

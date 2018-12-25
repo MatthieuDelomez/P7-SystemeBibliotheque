@@ -34,8 +34,13 @@ public class UtilisateurServices extends AbstractResource{
            Utilisateur utilisateur = new Utilisateur(); 
            UtilisateurResponse response = new UtilisateurResponse();
                
-               
+               utilisateur.setPseudo(pseudo);
+               utilisateur.setMotPasse(motPasse);
                utilisateur = utilisateurDao.getUtilisateur(utilisateur);
+               System.out.println(utilisateur.getPseudo());
+               System.out.println(utilisateur.getMotPasse());
+
+               
                
                response.setPseudo(utilisateur.getPseudo());
                response.setMotPasse(utilisateur.getMotPasse());

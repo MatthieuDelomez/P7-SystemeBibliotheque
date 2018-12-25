@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.projet.biblio.business.managerImpl;
 
 import org.projet.biblio.business.manager.BibliothequeManager;
@@ -20,9 +15,9 @@ public class ManagerFactoryImpl implements ManagerFactory{
     
     
 
-                   /*
-                   Configuration des differentes interfaces Manager
-                   */
+    /*
+   Configuration des differentes interfaces Manager
+   */
 
     private DocumentManager documentManager;
     public DocumentManager getDocumentManager() {

@@ -14,10 +14,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DocumentServices extends AbstractResource {
     
     
+    
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
     
 		/* Créer un utilisateur */
     DocumentDao documentDao = ctx.getBean("documentDao", DocumentDao.class);
+    
+    
     
     /**
      *
@@ -58,21 +61,42 @@ public class DocumentServices extends AbstractResource {
               }
     
     
+        /**
+       *
+       * @param nomOuvrage
+       * @return
+       */
+        
            @WebMethod(operationName = "searchBook")
-           public DocumentResponse doSearchBook( @WebParam(name="refouvrage") int refOuvrage) {
+           public DocumentResponse doSearchBook( @WebParam(name="nomouvrage") String nomOuvrage) {
                
                
                Document document = new Document();
                DocumentResponse response = new DocumentResponse();
                
+               document.setNomOuvrage(nomOuvrage);
+
                
                document = documentDao.getDocument(document);
                
+               try {
+                   
+                      System.out.println(nomOuvrage);
+                      System.out.println(document.getRefOuvrage());
+
+                   
                response.setRefOuvrage(document.getRefOuvrage());
                response.setRefBibliotheque(document.getRefBibliotheque());
                response.setNomOuvrage(document.getNomOuvrage());
                response.setQuantiteTotal(document.getQuantiteTotal());
+                   
+               } catch (Exception e) {
+                   e.printStackTrace();
+                   
+               }
+               
 
+               
                
                return response;
                

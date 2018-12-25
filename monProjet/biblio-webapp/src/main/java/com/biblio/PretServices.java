@@ -73,7 +73,11 @@ public class PretServices extends AbstractResource {
            }
            
            
-           
+       /**
+       *
+       * @param refPret
+       * @return
+       */
            
            @WebMethod(operationName = "searchPret")
            public PretResponse doSearchPret( @WebParam(name="refpret") int refPret){
@@ -82,8 +86,12 @@ public class PretServices extends AbstractResource {
                Pret pret = new Pret();
                PretResponse response = new PretResponse();
                
+               pret.setRefPret(refPret);
+               
                
                pret = pretDao.getPret(pret);
+               
+               try {
                
                response.setRefPret(pret.getRefPret());
                response.setRefOuvrage(pret.getRefOuvrage());
@@ -93,6 +101,10 @@ public class PretServices extends AbstractResource {
                response.setDateFinPret(pret.getDateFinPret());
                response.setNbrExemplaire(pret.getNbrExemplaire());
                response.setProlonger(pret.isProlonger());
+               
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
                
                
                return response;

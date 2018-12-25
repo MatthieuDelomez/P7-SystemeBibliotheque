@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.projet.biblio.business.managerImpl;
 
 import java.util.List;
 import org.projet.biblio.business.manager.PretManager;
 import org.projet.biblio.model.Pret;
 
-/**
- *
- * @author Ben Gourion
- */
+
 public class PretManagerImpl extends AbstractManager implements PretManager {
 
     @Override
@@ -43,10 +35,10 @@ public class PretManagerImpl extends AbstractManager implements PretManager {
     
     
    /* Implementation de la methode liste des publications /*/
-                   public List<Pret> getAllPret() {
+   public List<Pret> getAllPret() {
 
-                                      System.out.println("---->>> manager getAllPret");
-                                      return getDaoFactory().getPretDao().getAllPret();
+                      System.out.println("---->>> manager getAllPret");
+                       return getDaoFactory().getPretDao().getAllPret();
 
                    }
     

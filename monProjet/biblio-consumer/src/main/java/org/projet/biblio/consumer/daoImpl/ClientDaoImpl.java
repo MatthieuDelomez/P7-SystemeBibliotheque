@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.projet.biblio.consumer.daoImpl;
 
 import javax.sql.DataSource;
@@ -33,73 +29,49 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
                   @Override
 	public void addClient(Client client) {
 
+            
+	JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
+                      /* Nom des colonnes se situant dans table de la base de données*/
 
-		JdbcTemplate jdbcTemplate =  getJdbcTemplate();
-
-                                      /* Nom des colonnes se situant dans table de la base de données*/
-
-		String sql = "INSERT INTO client (refclient, refbibliotheque, nom, prenom, sexe, pseudo,  motpasse, adresse, email, codepostal) VALUES (?,?,?,?,?,?,?,?,?,?);";
+	String sql = "INSERT INTO client (refclient, refbibliotheque, nom, prenom, sexe, pseudo,  motpasse, adresse, email, codepostal) VALUES (?,?,?,?,?,?,?,?,?,?);";
 
 		
 
 	Object[] args = new Object[] {client.getRefClient(), client.getRefBibliotheque(), client.getNom(),client.getPrenom(), client.getSexe(), client.getPseudo(), client.getMotPasse(), 
             
-                                                                                         client.getAdresse(), client.getEmail(), client.getCodePostal() };
+                                                                             client.getAdresse(), client.getEmail(), client.getCodePostal() };
 
-		
 
-        
 
-		
+                       try {
 
-        
+                       jdbcTemplate.update(sql, args);
 
-                                       try {
+                      } catch (DuplicateKeyException exception) {
 
-                                             jdbcTemplate.update(sql, args);
-
-                                       } catch (DuplicateKeyException exception) {
-
-                                            System.out.println(exception.getMessage());
+                      System.out.println(exception.getMessage());
 
                              }
 
+	       }
 
 
+                       /* Méthode pour récupérer un Client*/
 
+                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
 
-
-	          }
-
- 
-
-
-
-	
-
-
-
-                   /* Méthode pour récupérer un Utilisateur*/
-
-                   /*Classe hérité de la classe Parente AbstractDaoImpl*/
-
-	                     @Override
-                                        public Client getClient(Client client) {
-
+	 @Override
+                        public Client getClient(Client client) {
 
 
 		String sql = "SELECT * FROM utilisateur WHERE  email = ? AND motpasse = ?";
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-		
 
 		Object[] args = new Object[] {
-
-				 client.getEmail(), client.getMotPasse()
-
-		};
+				            client.getEmail(), client.getMotPasse() };
 
 
 
@@ -107,29 +79,25 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
         
 
-        try {
+                       try {
 
-            RowMapper<Client> rowMapper = new ClientMapper();
+                      RowMapper<Client> rowMapper = new ClientMapper();
 
-            /*Appel de la méthode QueryForObject*/
+                       /*Appel de la méthode QueryForObject*/
 
-            Client userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
+                       Client userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
 
-            return userQuery;
+                       return userQuery;
 
 
 
-        } catch (EmptyResultDataAccessException exception) {
+                       } catch (EmptyResultDataAccessException exception) {
 
-            System.out.println("Incorrect");
+                      System.out.println("Incorrect");
 
-            return null;
+                      return null;
 
-        }
-
-		
-
-		
+                      }
 
 	}
 

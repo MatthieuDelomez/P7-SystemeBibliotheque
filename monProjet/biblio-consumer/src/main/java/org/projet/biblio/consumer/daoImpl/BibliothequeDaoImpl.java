@@ -18,7 +18,7 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
                                        private DataSource dataSource;
     
 
-                                       /* Méthode pour ajouter un Utilisateur*/
+                                       /* Méthode pour ajouter une Bibliotheque*/
                                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
                                       @Override
                                        public void addBibliotheque(Bibliotheque bibliotheque) {
@@ -53,13 +53,11 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
                                        public Bibliotheque getBibliotheque(Bibliotheque bibliotheque) {
 
 
-		String sql = "SELECT * FROM bibliotheque WHERE  nom = ? AND refbibliotheque = ?";
+		String sql = "SELECT * FROM bibliotheque WHERE   refbibliotheque = ?";
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-		Object[] args = new Object[] {
-
-		          bibliotheque.getNom(), bibliotheque.getRefBibliotheque()
+		Object[] args = new Object[] { bibliotheque.getRefBibliotheque()
 
 		};
 
