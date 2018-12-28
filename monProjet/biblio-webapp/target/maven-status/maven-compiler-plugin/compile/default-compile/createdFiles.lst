@@ -1,9 +1,6 @@
 com\responses\UtilisateurResponse.class
 com\biblio\BibliothequeServices.class
-com\biblio\UtilisateurServices.class
-com\biblio\PretServices.class
 com\biblio\resources\AbstractResource.class
 com\responses\BibliothequeResponse.class
 com\responses\PretResponse.class
 com\responses\DocumentResponse.class
-com\biblio\DocumentServices.class
