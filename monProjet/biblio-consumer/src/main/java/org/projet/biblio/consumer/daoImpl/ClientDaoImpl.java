@@ -65,13 +65,13 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
                         public Client getClient(Client client) {
 
 
-		String sql = "SELECT * FROM utilisateur WHERE  email = ? AND motpasse = ?";
+		String sql = "SELECT * FROM client WHERE  pseudo = ? AND motpasse = ?";
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
 
 		Object[] args = new Object[] {
-				            client.getEmail(), client.getMotPasse() };
+				            client.getPseudo(), client.getMotPasse() };
 
 
 

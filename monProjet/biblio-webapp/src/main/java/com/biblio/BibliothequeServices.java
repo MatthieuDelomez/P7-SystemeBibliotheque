@@ -4,15 +4,18 @@ import com.responses.BibliothequeResponse;
 import org.projet.biblio.consumer.dao.BibliothequeDao;
 import org.projet.biblio.model.Bibliotheque;
 import com.biblio.resources.AbstractResource;
+import com.responses.ClientResponse;
 import com.responses.DocumentResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import org.projet.biblio.consumer.dao.ClientDao;
 import org.projet.biblio.consumer.dao.DocumentDao;
 import org.projet.biblio.consumer.dao.PretDao;
 import org.projet.biblio.consumer.dao.UtilisateurDao;
+import org.projet.biblio.model.Client;
 import org.projet.biblio.model.Document;
 import org.projet.biblio.model.Pret;
 import org.projet.biblio.model.Utilisateur;
@@ -332,11 +335,17 @@ public class BibliothequeServices extends AbstractResource {
                
                utilisateur.setPseudo(pseudo);
                utilisateur.setMotPasse(motPasse);
+               
+               
                utilisateur = utilisateurDao.getUtilisateur(utilisateur);
+               
+               
                System.out.println(utilisateur.getPseudo());
                System.out.println(utilisateur.getMotPasse());
 
                
+               try{
+                   
                
                response.setPseudo(utilisateur.getPseudo());
                response.setMotPasse(utilisateur.getMotPasse());
@@ -347,6 +356,9 @@ public class BibliothequeServices extends AbstractResource {
                response.setIdUtilisateur(utilisateur.getIdUtilisateur());
 
                
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
                
                return response;
            
@@ -395,8 +407,114 @@ public class BibliothequeServices extends AbstractResource {
                
                
            }
+           
+           
+           
+     /******************************************************************************************************/
+    /************************************************Client************************************************
+    /******************************************************************************************************/
+
+           		/* Créer un utilisateur */
+    ClientDao clientDao = ctx.getBean("clientDao", ClientDao.class);
+    
+    
+        
+    /**
+     *
+     * @param pseudo
+     * @param motPasse
+     * @return
+     */
+           @WebMethod(operationName = "doLoginClient")
+           public ClientResponse doLoginClient( @WebParam(name="pseudo") String pseudo,  
+                                                                                  @WebParam(name="motpasse") String motPasse ){
+
+           Client client = new Client(); 
+           ClientResponse response = new ClientResponse();
+               
+               client.setPseudo(pseudo);
+               client.setMotPasse(motPasse);
+               
+               
+               client = clientDao.getClient(client);
+               
+               
+               System.out.println(client.getPseudo());
+               System.out.println(client.getMotPasse());
+              
+               
+               try{
+               
+               response.setPseudo(client.getPseudo());
+               response.setMotPasse(client.getMotPasse());
+               response.setNom(client.getNom());
+               response.setPrenom(client.getPrenom());
+               response.setEmail(client.getEmail());
+               response.setRefBibliotheque(client.getRefBibliotheque());
+               response.setRefClient(client.getRefClient());
+               response.setSexe(client.getSexe());
+               response.setAdresse(client.getAdresse());
+               response.setCodePostal(client.getCodePostal());
 
 
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
+               
+               return response;
+           
+
+               }
+           
+           
+           
+           @WebMethod(operationName ="addClient")
+           public ClientResponse doCreateClient( @WebParam(name="pseudo") String pseudo, 
+                                                                                            @WebParam(name="motPasse") String motPasse,
+                                                                                            @WebParam(name="nom") String nom,
+                                                                                            @WebParam(name="prenom") String prenom,
+                                                                                            @WebParam(name="sexe") String sexe,
+                                                                                            @WebParam(name="adresse") String adresse,
+                                                                                            @WebParam(name="codepostal") String codePostal,
+                                                                                            @WebParam(name="email") String email,
+                                                                                            @WebParam(name="refbibliotheque") int refBibliotheque,
+                                                                                            @WebParam(name="refclient") int refClient) {
+               
+           ClientResponse response = new ClientResponse();
+           Client client = new Client();
+           
+           client.setMotPasse(motPasse);
+           client.setCodePostal(codePostal);
+           client.setNom(nom);
+           client.setPrenom(prenom);
+           client.setPseudo(pseudo);
+           client.setSexe(sexe);
+           client.setEmail(email);
+           client.setRefBibliotheque(refBibliotheque);
+           client.setNom(nom);
+           client.setRefClient(refClient);
+           
+           response.setMotPasse(motPasse);
+           response.setNom(nom);
+           response.setPrenom(prenom);
+           response.setPseudo(pseudo);
+           response.setSexe(sexe);
+           response.setEmail(email);
+           response.setRefBibliotheque(refBibliotheque);
+           response.setNom(nom);
+           response.setRefClient(refClient);
+           response.setCodePostal(codePostal);
+
+
+           
+           clientDao.addClient(client);
+               
+           
+               return response;
+           
+               
+               
+           }
 
            
     
