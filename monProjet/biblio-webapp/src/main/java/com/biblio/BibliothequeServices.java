@@ -44,7 +44,7 @@ public class BibliothequeServices extends AbstractResource {
      * @param description
      * @return
      */
-        @WebMethod(operationName="BibliothequeServices") 
+        @WebMethod(operationName="addBiblio") 
         public BibliothequeResponse doAddBibliotheque(@WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                                      @WebParam(name="nom") String nom,
                                                                                                      @WebParam(name="adresse") String adresse,
@@ -137,7 +137,7 @@ public class BibliothequeServices extends AbstractResource {
      * @param quantiteTotal
      * @return
      */
-    @WebMethod(operationName="DocumentServices") 
+    @WebMethod(operationName="addDocument") 
     public DocumentResponse doAddBook(@WebParam(name="refouvrage") int refOuvrage,  
                                                                                 @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                 @WebParam(name="nomouvrage") String nomOuvrage,
@@ -229,7 +229,7 @@ public class BibliothequeServices extends AbstractResource {
      * @param prolonger
      * @return
      */
-           @WebMethod(operationName = "doCreatePret")
+           @WebMethod(operationName = "addPret")
            public PretResponse doCreatePret(@WebParam(name="refouvrage") int refPret ,  
                                                                              @WebParam(name="refclient") int refClient,
                                                                              @WebParam(name="refpret") int refOuvrage,
@@ -355,7 +355,7 @@ public class BibliothequeServices extends AbstractResource {
            
            
            
-           @WebMethod(operationName ="doCreateUser")
+           @WebMethod(operationName ="addUser")
            public UtilisateurResponse doCreateUser( @WebParam(name="pseudo") String pseudo, 
                                                                                           @WebParam(name="motPasse") String motPasse,
                                                                                           @WebParam(name="nom") String nom,
@@ -395,6 +395,7 @@ public class BibliothequeServices extends AbstractResource {
                
                
            }
+
 
 
            
