@@ -41,6 +41,17 @@
 	<version>${cxf.version}</version>
        </dependency>
        
+       
+        <dependency>
+
+            <groupId>org.apache.struts</groupId>
+
+            <artifactId>struts2-core</artifactId>
+            
+            <version>2.5.18</version>
+
+        </dependency>
+       
 
     </dependencies>
 
@@ -76,8 +87,13 @@
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${cxf.version}</version>
+                
+                
+                
             <executions>
               
+                <!--
+                
                 <execution>
 	<id>generate-sources</id>
 	<phase>generate-sources</phase>
@@ -93,6 +109,8 @@
                      <goal>wsdl2java</goal>
 	</goals>
 	</execution>
+        
+        -->
 	</executions>
                 </plugin>
             
