@@ -2,14 +2,42 @@
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
+        
 <struts>
-    <package name="default" extends="struts-default">
+    
+    
+    <package name="default" extends="struts-default">        
+     
+
         <!-- Action par défaut -->
         <default-action-ref name="index" />
 
         <!-- Action "index" -->
         <action name="index">
-            <result>/jsp/accueilClient.jsp</result>
+            <result>index.jsp</result>
         </action>
+        
+        <!-- Action "header" -->
+        <action name="header">
+            <result>WEB-INF/jsp/_include/header.jsp</result>
+        </action>
+        
+       <!-- Action pour permettre à l'utilisateur de se connecter -->
+      <action name="login"
+                     class="com.client.action.LoginAction"
+                     method="doLogin"
+                 <result name="input">WEB-INF/jsp/login.jsp</result>
+                 <result name="success" type="redirectAction">index</result>
+      </action>
+      
+      <action name="logout"
+                     class="com.client.action.LoginAction"
+                     method="doLogout"
+      <result name="success" type="redirectAction">index</result>
+      </action> 
+      
+      
+ 
+        
     </package>
 </struts>

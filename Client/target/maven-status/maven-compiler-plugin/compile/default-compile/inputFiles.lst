@@ -4,6 +4,7 @@ D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\BibliothequeServi
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\PretResponse.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\AddUser.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\AddClientResponse.java
+D:\OP\Systeme Biblio\Client\src\main\java\com\client\action\WelcomeUserAction.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\DoCreatePret.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\BibliothequeServices.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\DoLoginResponse.java
@@ -11,7 +12,6 @@ D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\SearchPret.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\SearchBookResponse.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\SearchPretResponse.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\SearchBiblio.java
-D:\OP\Systeme Biblio\Client\src\main\java\com\client\services\ClientServices.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\SearchBook.java
 D:\OP\Systeme Biblio\Client\src\main\java\com\client\client\Test.java
 D:\OP\Systeme Biblio\Client\src\main\java\generated\com\biblio\DoCreateUser.java

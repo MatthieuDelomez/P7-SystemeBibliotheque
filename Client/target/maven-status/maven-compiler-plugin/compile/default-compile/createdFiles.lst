@@ -25,7 +25,6 @@ com\biblio\DocumentServicesResponse.class
 com\biblio\AddDocument.class
 com\biblio\AddUser.class
 com\client\client\Test.class
-com\client\services\ClientServices.class
 com\biblio\BibliothequeResponse.class
 com\biblio\package-info.class
 com\biblio\AddBiblio.class
@@ -38,4 +37,5 @@ com\biblio\AddPretResponse.class
 com\biblio\DoCreatePret.class
 com\biblio\AddBiblioResponse.class
 com\biblio\DoCreateUser.class
+com\client\action\WelcomeUserAction.class
 com\biblio\DoLoginClient.class

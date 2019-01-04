@@ -29,8 +29,7 @@ public class Test {
                    
                    System.out.println(bibliothequeResponse.getDescription());
                    
-                   /*
-
+                   
                    DocumentResponse documentResponse  = port.searchBook("1984 - George Orwell");
                    
                    System.out.println(documentResponse.getRefbibliotheque());
@@ -44,7 +43,7 @@ public class Test {
                    UtilisateurResponse utilisateurResponse  = port.doLogin("Martine59", "admin");
                    
                    System.out.println(utilisateurResponse.getPrenom());
-                   */
+                   
 
     }
 }
