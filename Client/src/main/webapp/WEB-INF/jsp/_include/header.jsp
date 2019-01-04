@@ -42,11 +42,11 @@
                                     
                                                                                         <a href="${pageContext.request.contextPath}/">Accueil</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/WEB-INF/jsp/login">Se connecter</a></li>
+				<li><a href="${pageContext.request.contextPath}/login">Se connecter</a></li>
 
-                                                                                        <li><a href="${pageContext.request.contextPath}/WEB-INF/jsp/addClient">Inscription</a></li>
+                                                                                        <li><a href="${pageContext.request.contextPath}/addClient">Inscription</a></li>
 
-                                		                      <li><a href="${pageContext.request.contextPath}/WEB-INF/jsp/recherche">Recherche</a></li>
+                                		                      <li><a href="${pageContext.request.contextPath}/recherche">Recherche</a></li>
 
 	
 

@@ -10,12 +10,12 @@ com\biblio\DoLoginClientResponse.class
 com\biblio\DocumentResponse.class
 com\biblio\DoLogin.class
 com\biblio\DoLoginResponse.class
+com\client\action\LoginAction.class
 com\biblio\AddClientResponse.class
 com\biblio\DoCreatePretResponse.class
 com\biblio\UtilisateurResponse.class
 com\biblio\SearchBiblio.class
 com\biblio\BibliothequeServices_Type.class
-com\client\action\AccueilBiblioAction.class
 com\biblio\PretResponse.class
 com\biblio\AddUserResponse.class
 com\biblio\ObjectFactory.class
@@ -27,6 +27,7 @@ com\biblio\AddUser.class
 com\client\client\Test.class
 com\biblio\BibliothequeResponse.class
 com\biblio\package-info.class
+com\client\action\AddClientAction.class
 com\biblio\AddBiblio.class
 com\biblio\BibliothequeServicesService.class
 com\biblio\DocumentServices.class
@@ -37,5 +38,4 @@ com\biblio\AddPretResponse.class
 com\biblio\DoCreatePret.class
 com\biblio\AddBiblioResponse.class
 com\biblio\DoCreateUser.class
-com\client\action\WelcomeUserAction.class
 com\biblio\DoLoginClient.class

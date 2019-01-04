@@ -6,18 +6,19 @@ import com.biblio.BibliothequeServicesService;
 import com.biblio.UtilisateurResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.net.URL;
+import java.util.Map;
 import javax.xml.namespace.QName;
 import org.apache.commons.lang3.StringUtils;
 
 
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport {
     
                       /*
                       Import des attributs qui serviront à la récupération des données via le WebService
                       */
-                      URL wsdlURL = BibliothequeServicesService.WSDL_LOCATION; 
+                    //  URL wsdlURL = BibliothequeServicesService.WSDL_LOCATION; 
                               
-                      QName qName = new QName( "http://biblio.net", "BibliothequeServicesService");
+                   //   QName qName = new QName( "http://biblio.net", "BibliothequeServicesService");
 
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
                    
@@ -57,15 +58,16 @@ public class LoginAction extends ActionSupport{
                           
                           if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
                               
-                          
-                              try{                     
-                                  
+                                                     
+                              try {               
+                                                               
                              UtilisateurResponse utilisateurResponse  = port.doLogin("Martine59", "admin");
                              vResult = ActionSupport.SUCCESS;
                               
-                              }catch (Exception pe){
+                              } catch (Exception pe){
                                       this.addActionError("Identifiant ou mot motPasse invalide !");
-                                      }
+                                      
+                              }
                               }
                         
                           
@@ -81,5 +83,6 @@ public class LoginAction extends ActionSupport{
                           return ActionSupport.SUCCESS;
                           
                       }
-    
-}
+                      
+                      
+                      }

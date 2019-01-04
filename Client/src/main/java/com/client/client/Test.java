@@ -16,6 +16,7 @@ public class Test {
     
     public static void main( String[] args ) {
         
+        
         URL wsdlURL = BibliothequeServicesService.WSDL_LOCATION; 
         
 

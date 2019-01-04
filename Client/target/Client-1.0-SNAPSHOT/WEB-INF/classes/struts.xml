@@ -22,22 +22,29 @@
             <result>WEB-INF/jsp/_include/header.jsp</result>
         </action>
         
-       <!-- Action pour permettre à l'utilisateur de se connecter -->
-      <action name="login"
-                     class="com.client.action.LoginAction"
-                     method="doLogin"
-                 <result name="input">WEB-INF/jsp/login.jsp</result>
-                 <result name="success" type="redirectAction">index</result>
+        <!-- Action "login" success -->
+        <action name="welcome_user">
+            <result>WEB-INF/jsp/welcome_user.jsp</result>
+        </action>
+        
+        <!-- Action pour s'inscrire -->
+        <action name="addClient">
+            <result>WEB-INF/jsp/addClient.jsp</result>
+        </action>
+        
+      <!-- Action pour permettre à l'utilisateur de se connecter -->
+      <action name="login">
+                 <result>WEB-INF/jsp/login.jsp</result>
       </action>
-      
+     
+       <!-- Action pour permettre à l'utilisateur de se déconnecter -->
       <action name="logout"
                      class="com.client.action.LoginAction"
-                     method="doLogout"
+                     method="doLogout">
       <result name="success" type="redirectAction">index</result>
       </action> 
-      
-      
- 
         
+
+
     </package>
 </struts>
