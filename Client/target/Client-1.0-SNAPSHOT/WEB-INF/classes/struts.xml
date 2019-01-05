@@ -33,8 +33,8 @@
         </action>
         
       <!-- Action pour permettre à l'utilisateur de se connecter -->
-      <action name="login">
-                 <result>WEB-INF/jsp/login.jsp</result>
+      <action name="login"  class="com.client.action.LoginAction" method="doLogin">
+                <result name="success">WEB-INF/jsp/welcome_user.jsp</result>
       </action>
      
        <!-- Action pour permettre à l'utilisateur de se déconnecter -->
