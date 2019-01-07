@@ -32,8 +32,18 @@
             <result>WEB-INF/jsp/addClient.jsp</result>
         </action>
         
+                <!-- Action pour s'inscrire
+        <action name="login">
+            <result>WEB-INF/jsp/login.jsp</result>
+        </action>  -->
+        
+        <!-- Action pour effectuer une recherche -->
+        <action name="recherche">
+            <result>WEB-INF/jsp/recherche.jsp</result>
+        </action> 
+        
       <!-- Action pour permettre à l'utilisateur de se connecter -->
-      <action name="login"  class="com.client.action.LoginAction" method="doLogin">
+      <action name="login"  class="com.client.action.LoginAction" method="doLoginClient">
                 <result name="success">WEB-INF/jsp/welcome_user.jsp</result>
       </action>
      
@@ -43,6 +53,14 @@
                      method="doLogout">
       <result name="success" type="redirectAction">index</result>
       </action> 
+      
+      
+        <!-- Action pour vérif les employes -->
+        <action name="employe"
+                       class="com.client.action.GestionEmployeAction"
+                       method= "verfiEmploye">
+            <result name="success">WEB-INF/jsp/accueilEmploye.jsp</result>
+        </action> 
         
 
 

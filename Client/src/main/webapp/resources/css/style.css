@@ -119,6 +119,44 @@
 .titrageLog{
     margin-top: 10%;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-left: 35%;
+    margin-right: 0%;
+}
+
+  /**********************************************************
+                                     PAGE ADDCLIENT
+  ***********************************************************/
+  
+  .FormulaireAdd{
+    margin-top: 10%;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-left: 40%;
+    margin-right: 0%;
+  }
+  
+  
+    /**********************************************************
+                                     GESTION EMPLOYE
+  ***********************************************************/
+  
+.MiseFormulaire{
+    margin-top: 10%;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin-left: 30%;
     margin-right: 0%;
 }
+
+.BoutonFormu{
+    margin-top: 3%;
+    margin-left: 41%;
+}
+
+.form-control{
+    width: 20%;
+}
+
+.BoutonFormu{
+    margin-top:3%;
+    margin-left: 0%;
+}
+

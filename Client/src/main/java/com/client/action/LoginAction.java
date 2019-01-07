@@ -3,7 +3,7 @@ package com.client.action;
 
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
-import com.biblio.UtilisateurResponse;
+import com.biblio.ClientResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.net.URL;
 import java.util.Map;
@@ -52,7 +52,7 @@ public class LoginAction extends ActionSupport {
                       Action permettant la connexion d'un utilisateur
                       @return input / success
                       */
-                      public String doLogin(){
+                      public String doLoginClient(){
                           
                           String vResult = ActionSupport.INPUT;
                           
@@ -61,7 +61,7 @@ public class LoginAction extends ActionSupport {
                                                      
                               try {               
                                                                
-                             UtilisateurResponse utilisateurResponse  = port.doLogin("Martine59", "admin");
+                             ClientResponse clientResponse  = port.doLoginClient("Marko", "admin");
                              vResult = ActionSupport.SUCCESS;
                               
                               } catch (Exception pe){

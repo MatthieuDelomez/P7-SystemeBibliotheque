@@ -23,17 +23,21 @@
                       <!-- Chargement du fichier style.css -->
                       
                       <link rel="stylesheet" href="resources/css/style.css" />
-    </head>
-    
-                       <!-- Inclusion du Header -->
+                      
+                      
+                      <!-- Inclusion du Header -->
                       
                       <%@ include file="_include/header.jsp"%>
+    </head>
+    
+
     
     <body>
         
+                      <div class="FormulaireAdd">
+                      <h1>Ajouter un utilisateur</h1>
         
-                      <div class="formulaireLogin">
-                      <div class="login">
+
 	<s:form action="addClient">
 	<s:textfield name="nom" label="nom" />
         	<s:textfield name="prenom" label="prenom" />
@@ -44,7 +48,6 @@
 	<s:password name="motpasse" label="motpasse" />
 	<s:submit />
 	</s:form>
-                      </div>
                       </div>
                           
         

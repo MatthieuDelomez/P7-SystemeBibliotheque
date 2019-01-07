@@ -18,27 +18,26 @@
                       <!-- Chargement du fichier style.css -->
                       
                       <link rel="stylesheet" href="resources/css/style.css" />
-        
-    </head>
-    
+                      
+                      
                       <!-- Inclusion du Header -->
                       
                       <%@ include file="_include/header.jsp"%>
+        
+    </head>
+    
+
 
 <body>
     
                       <div class="titrageLog">
                       <h1>Veuillez vous enregistrer</h1>
-                      </div>
-
-                      <div class="form-group">
-                      <div class="login">
-	<s:form action="doLogin">
+           
+	<s:form action="doLoginClient">
 	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
 	<s:password name="motPasse" label="motPasse" value="password" />
 	<s:submit />
 	</s:form>
-                      </div>
                       </div>
     
    

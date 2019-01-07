@@ -5,6 +5,7 @@ import com.biblio.BibliothequeResponse;
 import com.biblio.BibliothequeServices;
 import java.net.URL;
 import com.biblio.BibliothequeServicesService;
+import com.biblio.ClientResponse;
 import com.biblio.DocumentResponse;
 import com.biblio.PretResponse;
 import com.biblio.UtilisateurResponse;
@@ -44,6 +45,11 @@ public class Test {
                    UtilisateurResponse utilisateurResponse  = port.doLogin("Martine59", "admin");
                    
                    System.out.println(utilisateurResponse.getPrenom());
+                   
+                   
+                   ClientResponse clientResponse  = port.doLoginClient("Marko", "admin");
+                   
+                   System.out.println(clientResponse.getPrenom());
                    
 
     }

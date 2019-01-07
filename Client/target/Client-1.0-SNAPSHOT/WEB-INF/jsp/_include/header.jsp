@@ -42,9 +42,9 @@
                                     
                                                                                         <a href="${pageContext.request.contextPath}/">Accueil</a></li>
 
-				<li><a href="${pageContext.request.contextPath}/login">Se connecter</a></li>
-
-                                                                                        <li><a href="${pageContext.request.contextPath}/addClient">Inscription</a></li>
+                                                                                         <li><a href="${pageContext.request.contextPath}/login">Se connecter</a></li>
+                                                                                         
+                                                                                         <li><a href="${pageContext.request.contextPath}/addClient">Inscription</a></li>
 
                                 		                      <li><a href="${pageContext.request.contextPath}/recherche">Recherche</a></li>
 
