@@ -87,13 +87,12 @@ public class GestionEmployeAction extends ActionSupport{
                               } catch (Exception pe){
                                       this.addActionError("Identifiant ou mot motPasse invalide !");
                                       System.out.println("Vous n'avez pas les autorisations d'accès");
-                                      vResult = ActionSupport.ERROR;
                                       
                               }
                               }
                         
                           
-                          return vResult;
+                          return SUCCESS;
                       }
     
 

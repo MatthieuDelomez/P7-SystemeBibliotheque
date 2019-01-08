@@ -9,8 +9,9 @@
     <package name="default" extends="struts-default">        
      
 
-        <!-- Action par défaut -->
+        <!-- Action par défaut-->
         <default-action-ref name="index" />
+ 
 
         <!-- Action "index" -->
         <action name="index">
@@ -43,8 +44,11 @@
         </action> 
         
       <!-- Action pour permettre à l'utilisateur de se connecter -->
-      <action name="login"  class="com.client.action.LoginAction" method="doLoginClient">
-                <result name="success">WEB-INF/jsp/welcome_user.jsp</result>
+      <action name="login" 
+                     class="com.client.action.LoginAction" 
+                     method="doLoginClient">
+                <result name="input">WEB-INF/jsp/login.jsp</result>
+                <result name="success" type="redirectAction">welcome_user</result>
       </action>
      
        <!-- Action pour permettre à l'utilisateur de se déconnecter -->
@@ -59,7 +63,13 @@
         <action name="employe"
                        class="com.client.action.GestionEmployeAction"
                        method= "verfiEmploye">
-            <result name="success">WEB-INF/jsp/accueilEmploye.jsp</result>
+            <result name="input">WEB-INF/jsp/employe.jsp</result>
+            <result name="success" type="redirectAction">accueilEmploye</result>
+        </action> 
+        
+        <!-- Action pour effectuer une redirection employe -->
+        <action name="accueilEmploye">
+            <result>WEB-INF/jsp/accueilEmploye.jsp</result>
         </action> 
         
 

@@ -20,7 +20,7 @@ public class LoginAction extends ActionSupport {
                               
                    //   QName qName = new QName( "http://biblio.net", "BibliothequeServicesService");
 
-                      BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
+                     BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
                    
                        BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
                        
@@ -48,12 +48,17 @@ public class LoginAction extends ActionSupport {
 
                       //=========Méthodes============
                       
-                      /*
-                      Action permettant la connexion d'un utilisateur
-                      @return input / success
-                      */
+
+
+                       /**
+                       *
+                       * @return
+                       */
+
                       public String doLoginClient(){
                           
+                          System.out.println("test test");
+
                           String vResult = ActionSupport.INPUT;
                           
                           if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
@@ -61,12 +66,17 @@ public class LoginAction extends ActionSupport {
                                                      
                               try {               
                                                                
-                             ClientResponse clientResponse  = port.doLoginClient("Marko", "admin");
-                             vResult = ActionSupport.SUCCESS;
+                             ClientResponse clientResponse  = new ClientResponse();
+                             if(clientResponse == port.doLoginClient(pseudo, motPasse))  {
+                             vResult = ActionSupport.SUCCESS; 
+                             
+                             }
                               
                               } catch (Exception pe){
                                       this.addActionError("Identifiant ou mot motPasse invalide !");
-                                      
+                                      System.out.println("Prise en compte de la methode !!");
+
+                   
                               }
                               }
                         

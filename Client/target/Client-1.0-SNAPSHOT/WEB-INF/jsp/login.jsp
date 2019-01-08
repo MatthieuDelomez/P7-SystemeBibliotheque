@@ -35,7 +35,7 @@
            
 	<s:form action="doLoginClient">
 	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
-	<s:password name="motPasse" label="motPasse" value="password" />
+	<s:password name="motPasse" label="motPasse" value="motPasse" />
 	<s:submit />
 	</s:form>
                       </div>
