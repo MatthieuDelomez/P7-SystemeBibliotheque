@@ -20,8 +20,7 @@ public class ClientResponse {
     private String adresse;
     private String email;
     private String codePostal;
-    
-    
+        
     
 
     public int getRefClient() {

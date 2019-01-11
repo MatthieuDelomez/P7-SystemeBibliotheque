@@ -4,6 +4,7 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
         
 <struts>
+    <constant name="struts.devMode" value="false" />
     
     
     <package name="default" extends="struts-default">        
@@ -45,32 +46,68 @@
         
       <!-- Action pour permettre à l'utilisateur de se connecter -->
       <action name="login" 
-                     class="com.client.action.LoginAction" 
+                     class="com.client.action.LoginAction">
+          <result>WEB-INF/jsp/login.jsp</result>
+      </action>
+      
+      
+      <action name="doLogin"
+                     class="com.client.action.LoginAction"
                      method="doLoginClient">
-                <result name="input">WEB-INF/jsp/login.jsp</result>
-                <result name="success" type="redirectAction">welcome_user</result>
+          <result name="input" >WEB-INF/jsp/login.jsp</result>
+          <result name="success" >WEB-INF/jsp/welcome_user.jsp</result>
+      </action>
+      
+      
+      
+      
+      
+              <!-- Action pour effectuer une redirection employe -->
+        <action name="accueilEmploye">
+            <result>WEB-INF/jsp/accueilEmploye.jsp</result>
+        </action> 
+      
+            <!-- Action pour permettre des verifier les employés -->
+      <action name="employe" 
+                     class="com.client.action.GestionEmployeAction">
+          <result>WEB-INF/jsp/employe.jsp</result>
+      </action>
+      
+      
+      <action name="doVerifEmploye"
+                     class="com.client.action.GestionEmployeAction"
+                     method="verifEmploye">
+          <result name="input" >WEB-INF/jsp/employe.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
       </action>
      
-       <!-- Action pour permettre à l'utilisateur de se déconnecter -->
+
+        
+         <!-- Action pour accéder aux prets -->
+       <action name="pret">
+          <result>WEB-INF/jsp/pret.jsp</result>
+      </action>
+      
+       <!-- Action pour accueil du client une fois log -->
+       <action name="accueilLog">
+          <result>WEB-INF/jsp/accueilLog.jsp</result>
+      </action>
+      
+      
+       <!-- Action pour accéder aux actualités -->
+       <action name="actu">
+          <result>WEB-INF/jsp/actu.jsp</result>
+      </action>
+
+        
+        
+        
+              <!-- Action pour permettre à l'utilisateur de se déconnecter -->
       <action name="logout"
                      class="com.client.action.LoginAction"
                      method="doLogout">
       <result name="success" type="redirectAction">index</result>
-      </action> 
-      
-      
-        <!-- Action pour vérif les employes -->
-        <action name="employe"
-                       class="com.client.action.GestionEmployeAction"
-                       method= "verfiEmploye">
-            <result name="input">WEB-INF/jsp/employe.jsp</result>
-            <result name="success" type="redirectAction">accueilEmploye</result>
-        </action> 
-        
-        <!-- Action pour effectuer une redirection employe -->
-        <action name="accueilEmploye">
-            <result>WEB-INF/jsp/accueilEmploye.jsp</result>
-        </action> 
+      </action>  
         
 
 

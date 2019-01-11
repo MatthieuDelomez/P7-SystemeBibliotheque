@@ -34,41 +34,15 @@
 <div class="MiseFormulaire">
 
 
-
-    <h1>Connexion</h1>
-
-
-        <div class="form-group">
-
-            <label class="control-label col-sm-2" for="logEmploye">Password :</label>
-
-            <div class="col-sm-10">
-
-                <input type="logEmploye" class="form-control" name="logEmploye" id="logEmploye" placeholder="Enter motpasse" value="mot passe" />
-
-            </div>
-
-        </div>
-
-
-
- <!-- Bouton Se connecter -->
-
-        <div class="form-group">
-
-            <div class="BoutonFormu">
-
-                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> se connecter</button>
-
-
-
-            </div>
-
-        </div>
-
-    </form>
-
-</div>
+                      <div class="titrageLog">
+                      <h1>Veuillez vous enregistrer</h1>
+           
+	<s:form action="doVerifEmploye">
+	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
+	<s:password name="motPasse" label="motPasse" value="motPasse" />
+	<s:submit />
+	</s:form>
+                      </div>
     
 
                       <!-- Bootstrap core JavaScript -->

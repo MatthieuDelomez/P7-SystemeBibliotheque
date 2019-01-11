@@ -25,6 +25,11 @@
                       <!-- Chargement du fichier style.css -->
                       
                       <link rel="stylesheet" href="resources/css/style.css" />
+                      
+                                            
+                      <!-- Inclusion du Header -->
+                      
+                      <%@ include file="_include/headerEmploye.jsp"%>
 
 </head>
 

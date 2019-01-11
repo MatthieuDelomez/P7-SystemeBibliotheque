@@ -14,7 +14,7 @@ public class GestionEmployeAction extends ActionSupport{
     private String nom;
     private String prenom;
     
-    private static String logEmploye = "12345";
+    private static String logEmploye;
     
 
     public static String getLogEmploye() {
@@ -74,28 +74,27 @@ public class GestionEmployeAction extends ActionSupport{
    @return input / success
   */
     
-    public String verfiEmploye() {
+    public String verifEmploye() {
     
-           String vResult = ActionSupport.INPUT;
-           
-           if (logEmploye.equals("12345")) {
-               
-                              try {               
-                                                               
-                             vResult = ActionSupport.SUCCESS;
-                              
-                              } catch (Exception pe){
-                                      this.addActionError("Identifiant ou mot motPasse invalide !");
-                                      System.out.println("Vous n'avez pas les autorisations d'accès");
+                      String vResult = ActionSupport.INPUT;
+                                               
+                       try {
+                           
+                      if(pseudo.equals("Martine59") && motPasse.equals("admin"))  {
+                      vResult = ActionSupport.SUCCESS;
                                       
-                              }
-                              }
-                        
-                          
-                          return SUCCESS;
+                       }
+                      
+                      
+                       } catch (Exception pe){
+                           
+                       this.addActionError("Identifiant ou mot motPasse invalide !");
+                      System.out.println("Prise en compte de la methode !!");
+                                                                  
+                      }
+                                                            
+                      return vResult;
+                         
                       }
     
-
-    
-    
-}
+           }

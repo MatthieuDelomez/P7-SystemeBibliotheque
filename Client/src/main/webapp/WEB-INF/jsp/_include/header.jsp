@@ -23,20 +23,20 @@
 
 				<span
 
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
+				            class="icon-bar"></span> <span class="icon-bar"></span> <span
 
-					class="icon-bar"></span>
+				            class="icon-bar"></span>
 
 			</button>
 
-			<a class="navbar-brand" href="#">${application.name}</a>
+			                            <a class="navbar-brand" href="#">${application.name}</a>
 
 		</div>
 
 
 		<div id="navbar" class="collapse navbar-collapse">
 
-			<ul class="nav navbar-nav">
+			   <ul class="nav navbar-nav">
 
 				<li class="active">
                                     
@@ -45,9 +45,6 @@
                                                                                          <li><a href="${pageContext.request.contextPath}/login">Se connecter</a></li>
                                                                                          
                                                                                          <li><a href="${pageContext.request.contextPath}/addClient">Inscription</a></li>
-
-                                		                      <li><a href="${pageContext.request.contextPath}/recherche">Recherche</a></li>
-
 	
 
 			</ul>

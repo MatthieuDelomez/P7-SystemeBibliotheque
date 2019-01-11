@@ -33,7 +33,7 @@
                       <div class="titrageLog">
                       <h1>Veuillez vous enregistrer</h1>
            
-	<s:form action="doLoginClient">
+	<s:form action="doLogin">
 	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
 	<s:password name="motPasse" label="motPasse" value="motPasse" />
 	<s:submit />
