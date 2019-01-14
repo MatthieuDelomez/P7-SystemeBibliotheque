@@ -12,18 +12,8 @@ public class GestionEmployeAction extends ActionSupport{
     private String motPasse;
     private String email;
     private String nom;
-    private String prenom;
-    
-    private static String logEmploye;
-    
+    private String prenom;    
 
-    public static String getLogEmploye() {
-        return logEmploye;
-    }
-
-    public static void setLogEmploye(String logEmploye) {
-        GestionEmployeAction.logEmploye = logEmploye;
-    }
 
     
     public String getPseudo() {

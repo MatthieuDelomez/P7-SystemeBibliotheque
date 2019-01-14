@@ -33,6 +33,16 @@
         
         
 
+
+                      <div id="searchbar">
+                
+                       <h1>What would you like to search?</h1>
+                       <form action="" class="formulaire">
+                       <input class="champ" type="text" value="Search...)"/>
+                       <input class="bouton" type="button" value=" " />
+                     
+                      </form>
+                      </div>
         
         
         

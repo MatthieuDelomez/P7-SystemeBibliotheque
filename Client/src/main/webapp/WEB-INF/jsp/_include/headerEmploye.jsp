@@ -40,11 +40,11 @@
 
 				<li class="active">
                                     
-                                                                                        <a href="${pageContext.request.contextPath}/accueilLog">Home</a></li>
+                                                                                        <a href="${pageContext.request.contextPath}/accueilEmploye">Home</a></li>
 
                                                                                          <li><a href="${pageContext.request.contextPath}/pret">Pret</a></li>
                                                                                          
-                                		                      <li><a href="${pageContext.request.contextPath}/recherche">Recherche</a></li>
+                                		                      <li><a href="${pageContext.request.contextPath}/rechercheEmploye">Recherche</a></li>
 
 	
 

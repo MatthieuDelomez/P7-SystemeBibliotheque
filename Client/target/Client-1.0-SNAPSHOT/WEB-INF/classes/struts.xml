@@ -23,26 +23,43 @@
         <action name="header">
             <result>WEB-INF/jsp/_include/header.jsp</result>
         </action>
+       
         
-        <!-- Action "login" success -->
-        <action name="welcome_user">
-            <result>WEB-INF/jsp/welcome_user.jsp</result>
-        </action>
+        
+        
         
         <!-- Action pour s'inscrire -->
-        <action name="addClient">
+        <action name="addClient"
+                       class="com.client.action.AddClientAction">
             <result>WEB-INF/jsp/addClient.jsp</result>
         </action>
         
-                <!-- Action pour s'inscrire
-        <action name="login">
-            <result>WEB-INF/jsp/login.jsp</result>
-        </action>  -->
+       <action name="ajouterClient"
+                     class="com.client.action.AddClientAction"
+                     method="doAddClient">
+          <result name="input" >WEB-INF/jsp/addClient.jsp</result>
+          <result name="success" >WEB-INF/jsp/actu.jsp</result>
+      </action>
+        
+        
+        
+        
+        
+
         
         <!-- Action pour effectuer une recherche -->
         <action name="recherche">
             <result>WEB-INF/jsp/recherche.jsp</result>
         </action> 
+        
+                
+        <!-- Action pour effectuer une recherche -->
+        <action name="rechercheEmploye">
+            <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
+        </action> 
+        
+        
+        
         
       <!-- Action pour permettre à l'utilisateur de se connecter -->
       <action name="login" 
@@ -55,7 +72,7 @@
                      class="com.client.action.LoginAction"
                      method="doLoginClient">
           <result name="input" >WEB-INF/jsp/login.jsp</result>
-          <result name="success" >WEB-INF/jsp/welcome_user.jsp</result>
+          <result name="success" >WEB-INF/jsp/actu.jsp</result>
       </action>
       
       

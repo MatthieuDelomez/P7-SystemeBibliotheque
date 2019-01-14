@@ -18,6 +18,7 @@ com\biblio\UtilisateurResponse.class
 com\biblio\SearchBiblio.class
 com\biblio\BibliothequeServices_Type.class
 com\biblio\PretResponse.class
+com\client\action\RechercheAction.class
 com\biblio\AddUserResponse.class
 com\biblio\ObjectFactory.class
 com\client\response\ClientResponse.class

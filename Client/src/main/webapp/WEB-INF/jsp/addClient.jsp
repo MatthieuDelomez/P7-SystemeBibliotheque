@@ -38,14 +38,14 @@
                       <h1>Ajouter un utilisateur</h1>
         
 
-	<s:form action="addClient">
-	<s:textfield name="nom" label="nom" />
-        	<s:textfield name="prenom" label="prenom" />
-	<s:textfield name="sexe" label="sexe" />
-	<s:textfield name="adresse" label="adresse" />
-	<s:textfield name="email" label="email" />
-	<s:textfield name="pseudo" label="pseudo" />
-	<s:password name="motpasse" label="motpasse" />
+	<s:form action="ajouterClient">
+	<s:textfield name="nom" label="nom" value="nom"/>
+        	<s:textfield name="prenom" label="prenom" value="prenom" />
+	<s:textfield name="sexe" label="sexe" value="sexe" />
+	<s:textfield name="adresse" label="adresse" value="adresse" />
+	<s:textfield name="email" label="email" value="email"/>
+	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
+	<s:password name="motpasse" label="motpasse" value="password" />
 	<s:submit />
 	</s:form>
                       </div>

@@ -159,9 +159,13 @@
     margin-left: 0%;
 }
 
+
+
+
   /**********************************************************
-                                     PAGE WELCOME CLIENT
+                                     PAGE ACTU
   ***********************************************************/
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -189,6 +193,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
+  background-color: #777;
 }
 .carousel-item > img {
   position: absolute;
@@ -251,5 +256,33 @@ body {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+  /**********************************************************
+                                     PAGE RECHERCHE
+  ***********************************************************/
+  
+  #searchbar{
+      position:relative; 
+      width:1040px; height:auto;
+      margin-top: 11%;
+     margin-left: 30%;
+  }
+
+.formulaire{
+    display:inline-block;
+}
+
+.formulaire .champ{
+    width:600px;
+    height:35px;
+}
+
+.formulaire .bouton {
+    background-image: url(resources/img/valid.jpg);
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    padding: 0;
 }
  
