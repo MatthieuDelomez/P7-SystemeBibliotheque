@@ -39,13 +39,16 @@
         
 
 	<s:form action="ajouterClient">
+                    	<s:textfield name="refBibliotheque" label="refBibliotheque" value="refBibliotheque"/>
+	<s:textfield name="refClient" label="refClient" value="refClient"/>
 	<s:textfield name="nom" label="nom" value="nom"/>
         	<s:textfield name="prenom" label="prenom" value="prenom" />
 	<s:textfield name="sexe" label="sexe" value="sexe" />
 	<s:textfield name="adresse" label="adresse" value="adresse" />
 	<s:textfield name="email" label="email" value="email"/>
+        	<s:textfield name="codePostal" label="codePostal" value="codePostal"/>
 	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
-	<s:password name="motpasse" label="motpasse" value="password" />
+	<s:password name="motPasse" label="motPasse" value="motPasse" />
 	<s:submit />
 	</s:form>
                       </div>

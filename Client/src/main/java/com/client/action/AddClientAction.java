@@ -1,12 +1,18 @@
 
 package com.client.action;
 
-import com.biblio.ClientResponse;
+import com.biblio.BibliothequeServices;
+import com.biblio.BibliothequeServicesService;
+import com.client.response.ClientResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang3.StringUtils;
 
 
 public class AddClientAction extends ActionSupport {
+    
+    
+       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
+       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
 
 
    //=========Attributs=============
@@ -19,13 +25,30 @@ public class AddClientAction extends ActionSupport {
                       private String motPasse;
                       private String codePostal;
                       private String email;
+                      
+                      private int refBibliotheque;
+                      private int refClient;
 
                       
 
    //=========Getters & Setters=============
+                      
 
+    public int getRefBibliotheque() {
+        return refBibliotheque;
+    }
 
+    public void setRefBibliotheque(int refBibliotheque) {
+        this.refBibliotheque = refBibliotheque;
+    }
 
+    public int getRefClient() {
+        return refClient;
+    }
+
+    public void setRefClient(int refClient) {
+        this.refClient = refClient;
+    }
 
 
     public String getNom() {
@@ -117,20 +140,30 @@ public class AddClientAction extends ActionSupport {
     ClientResponse clientResponse = new ClientResponse();
     
     clientResponse.setAdresse(adresse);
-    clientResponse.setCodepostal(codePostal);
+    clientResponse.setCodePostal(codePostal);
     clientResponse.setEmail(email);
     clientResponse.setMotPasse(motPasse);
     clientResponse.setNom(nom);
     clientResponse.setPrenom(prenom);
     clientResponse.setPseudo(pseudo);
-    clientResponse.setSexe(sexe);
+    clientResponse.setRefBibliotheque(refBibliotheque);
+    clientResponse.setRefClient(refClient);
+
+
+
+
     
     
-    
-        
+
         try{
             
         if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+            
+       port.addClient(refClient, refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
+       
+
+
+
             
         System.out.println("test test");
         vResult = ActionSupport.SUCCESS;
@@ -140,6 +173,17 @@ public class AddClientAction extends ActionSupport {
         } catch(Exception pe) {
             this.addActionError("Veuillez remplir tout les champs correctement");
             System.out.println("Champs manquant !!");
+            
+        System.out.println(nom);
+        System.out.println(prenom);
+        System.out.println(sexe);
+        System.out.println(adresse);
+        System.out.println(email);
+        System.out.println(codePostal);
+        System.out.println(pseudo);
+        System.out.println(motPasse);
+        System.out.println(refBibliotheque);
+        System.out.println(refClient);
           
        }
   

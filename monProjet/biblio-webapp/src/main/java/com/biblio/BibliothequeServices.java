@@ -469,41 +469,46 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="addClient")
-           public ClientResponse doCreateClient( @WebParam(name="pseudo") String pseudo, 
-                                                                                            @WebParam(name="motPasse") String motPasse,
+           public ClientResponse doCreateClient(         @WebParam(name="refclient") int refClient,
+                                                                                            @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                             @WebParam(name="nom") String nom,
                                                                                             @WebParam(name="prenom") String prenom,
                                                                                             @WebParam(name="sexe") String sexe,
+                                                                                            @WebParam(name="pseudo") String pseudo, 
+                                                                                            @WebParam(name="motPasse") String motPasse,
                                                                                             @WebParam(name="adresse") String adresse,
-                                                                                            @WebParam(name="codepostal") String codePostal,
                                                                                             @WebParam(name="email") String email,
-                                                                                            @WebParam(name="refbibliotheque") int refBibliotheque,
-                                                                                            @WebParam(name="refclient") int refClient) {
+                                                                                            @WebParam(name="codepostal") String codePostal) {
                
            ClientResponse response = new ClientResponse();
            Client client = new Client();
            
-           client.setMotPasse(motPasse);
-           client.setCodePostal(codePostal);
-           client.setNom(nom);
-           client.setPrenom(prenom);
-           client.setPseudo(pseudo);
-           client.setSexe(sexe);
-           client.setEmail(email);
+
+           
+           client.setRefClient(refClient);
            client.setRefBibliotheque(refBibliotheque);
            client.setNom(nom);
-           client.setRefClient(refClient);
+           client.setPrenom(prenom);
+           client.setSexe(sexe);
+           client.setPseudo(pseudo);
+           client.setMotPasse(motPasse);
+           client.setAdresse(adresse);
+           client.setEmail(email);
+           client.setCodePostal(codePostal);
+
+
            
-           response.setMotPasse(motPasse);
-           response.setNom(nom);
-           response.setPrenom(prenom);
-           response.setPseudo(pseudo);
-           response.setSexe(sexe);
-           response.setEmail(email);
+           response.setRefClient(refClient);
            response.setRefBibliotheque(refBibliotheque);
            response.setNom(nom);
-           response.setRefClient(refClient);
+           response.setPrenom(prenom);
+           response.setSexe(sexe);
+           response.setPseudo(pseudo);
+           response.setMotPasse(motPasse);
+           response.setAdresse(adresse);
+           response.setEmail(email);
            response.setCodePostal(codePostal);
+
 
 
            

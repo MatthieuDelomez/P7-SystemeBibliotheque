@@ -1,12 +1,16 @@
 
 package com.client.action;
 
-import com.biblio.UtilisateurResponse;
+import com.biblio.BibliothequeServices;
+import com.biblio.BibliothequeServicesService;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.lang3.StringUtils;
 
 
 public class GestionEmployeAction extends ActionSupport{
     
+    BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
+    BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
     
     private String pseudo;
     private String motPasse;
@@ -70,7 +74,8 @@ public class GestionEmployeAction extends ActionSupport{
                                                
                        try {
                            
-                      if(pseudo.equals("Martine59") && motPasse.equals("admin"))  {
+                      if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+                      port.doLogin(pseudo, motPasse);
                       vResult = ActionSupport.SUCCESS;
                                       
                        }

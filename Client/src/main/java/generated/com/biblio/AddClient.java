@@ -16,16 +16,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="motPasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="refbibliotheque" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="prenom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sexe" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="motPasse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="adresse" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="codepostal" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="refbibliotheque" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="codepostal" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,76 +36,60 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addClient", propOrder = {
-    "pseudo",
-    "motPasse",
+    "refclient",
+    "refbibliotheque",
     "nom",
     "prenom",
     "sexe",
+    "pseudo",
+    "motPasse",
     "adresse",
-    "codepostal",
     "email",
-    "refbibliotheque",
-    "refclient"
+    "codepostal"
 })
 public class AddClient {
 
-    protected String pseudo;
-    protected String motPasse;
+    protected int refclient;
+    protected int refbibliotheque;
     protected String nom;
     protected String prenom;
     protected String sexe;
+    protected String pseudo;
+    protected String motPasse;
     protected String adresse;
-    protected String codepostal;
     protected String email;
-    protected int refbibliotheque;
-    protected int refclient;
+    protected String codepostal;
 
     /**
-     * Obtient la valeur de la propriété pseudo.
+     * Obtient la valeur de la propriété refclient.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getPseudo() {
-        return pseudo;
+    public int getRefclient() {
+        return refclient;
     }
 
     /**
-     * Définit la valeur de la propriété pseudo.
+     * Définit la valeur de la propriété refclient.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setPseudo(String value) {
-        this.pseudo = value;
+    public void setRefclient(int value) {
+        this.refclient = value;
     }
 
     /**
-     * Obtient la valeur de la propriété motPasse.
+     * Obtient la valeur de la propriété refbibliotheque.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getMotPasse() {
-        return motPasse;
+    public int getRefbibliotheque() {
+        return refbibliotheque;
     }
 
     /**
-     * Définit la valeur de la propriété motPasse.
+     * Définit la valeur de la propriété refbibliotheque.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setMotPasse(String value) {
-        this.motPasse = value;
+    public void setRefbibliotheque(int value) {
+        this.refbibliotheque = value;
     }
 
     /**
@@ -181,6 +165,54 @@ public class AddClient {
     }
 
     /**
+     * Obtient la valeur de la propriété pseudo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    /**
+     * Définit la valeur de la propriété pseudo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPseudo(String value) {
+        this.pseudo = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété motPasse.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMotPasse() {
+        return motPasse;
+    }
+
+    /**
+     * Définit la valeur de la propriété motPasse.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMotPasse(String value) {
+        this.motPasse = value;
+    }
+
+    /**
      * Obtient la valeur de la propriété adresse.
      * 
      * @return
@@ -202,30 +234,6 @@ public class AddClient {
      */
     public void setAdresse(String value) {
         this.adresse = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété codepostal.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCodepostal() {
-        return codepostal;
-    }
-
-    /**
-     * Définit la valeur de la propriété codepostal.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCodepostal(String value) {
-        this.codepostal = value;
     }
 
     /**
@@ -253,35 +261,27 @@ public class AddClient {
     }
 
     /**
-     * Obtient la valeur de la propriété refbibliotheque.
+     * Obtient la valeur de la propriété codepostal.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getRefbibliotheque() {
-        return refbibliotheque;
+    public String getCodepostal() {
+        return codepostal;
     }
 
     /**
-     * Définit la valeur de la propriété refbibliotheque.
+     * Définit la valeur de la propriété codepostal.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setRefbibliotheque(int value) {
-        this.refbibliotheque = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété refclient.
-     * 
-     */
-    public int getRefclient() {
-        return refclient;
-    }
-
-    /**
-     * Définit la valeur de la propriété refclient.
-     * 
-     */
-    public void setRefclient(int value) {
-        this.refclient = value;
+    public void setCodepostal(String value) {
+        this.codepostal = value;
     }
 
 }

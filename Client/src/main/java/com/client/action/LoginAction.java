@@ -1,10 +1,17 @@
 
 package com.client.action;
 
+import com.biblio.BibliothequeServices;
+import com.biblio.BibliothequeServicesService;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.lang3.StringUtils;
 
 
 public class LoginAction extends ActionSupport {
+    
+    
+                      BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
+                      BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
     
                       /*
                       Import des attributs qui serviront à la récupération des données via le WebService
@@ -46,7 +53,11 @@ public class LoginAction extends ActionSupport {
                                                
                        try {
                            
-                      if(pseudo.equals("Marko") && motPasse.equals("admin"))  {
+                      if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+                          
+                                port.doLoginClient(pseudo, motPasse);
+                      
+                          
                       vResult = ActionSupport.SUCCESS;
                                       
                        }
@@ -56,6 +67,8 @@ public class LoginAction extends ActionSupport {
                            
                        this.addActionError("Identifiant ou mot motPasse invalide !");
                       System.out.println("Prise en compte de la methode !!");
+
+
                                                                   
                       }
                                                             

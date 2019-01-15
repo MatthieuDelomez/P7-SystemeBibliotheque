@@ -1,14 +1,9 @@
 
 package com.client.client;
 
-import com.biblio.BibliothequeResponse;
-import com.biblio.BibliothequeServices;
+
 import java.net.URL;
-import com.biblio.BibliothequeServicesService;
-import com.biblio.ClientResponse;
-import com.biblio.DocumentResponse;
-import com.biblio.PretResponse;
-import com.biblio.UtilisateurResponse;
+
 import javax.xml.namespace.QName;
 
 
@@ -16,7 +11,7 @@ import javax.xml.namespace.QName;
 public class Test {
     
     public static void main( String[] args ) {
-        
+        /*
         
         URL wsdlURL = BibliothequeServicesService.WSDL_LOCATION; 
         
@@ -51,6 +46,6 @@ public class Test {
                    
                    System.out.println(clientResponse.getPrenom());
                    
-
+*/
     }
 }

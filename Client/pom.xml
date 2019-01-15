@@ -82,7 +82,7 @@
                 
             <executions>
               
-                <!--
+               
                 
                 <execution>
 	<id>generate-sources</id>
@@ -91,7 +91,11 @@
                          <sourceRoot>${basedir}/src/main/java/generated</sourceRoot>
                       <wsdlOptions>
 	<wsdlOption>
-	   <wsdl>${basedir}/src/main/resources/biblio.wsdl</wsdl>
+	   <!-- <wsdl>${basedir}/src/main/resources/biblio.wsdl</wsdl> 
+             <wsdl>http://localhost:8085/bibliotheque/bibliothequeB?wsdl</wsdl>
+            -->
+           <wsdl>http://localhost:8084/bibliotheque/bibliothequeB?wsdl</wsdl>
+           
 	</wsdlOption>
 	</wsdlOptions>
 	</configuration>
@@ -100,7 +104,7 @@
 	</goals>
 	</execution>
         
-        -->
+        
 	</executions>
                 </plugin>
             
