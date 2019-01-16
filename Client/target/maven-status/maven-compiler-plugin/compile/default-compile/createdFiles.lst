@@ -17,6 +17,7 @@ com\biblio\PretResponse.class
 com\client\action\RechercheAction.class
 com\biblio\AddUserResponse.class
 com\biblio\ObjectFactory.class
+com\client\action\PretAction.class
 com\client\response\ClientResponse.class
 com\biblio\BibliothequeServices.class
 com\biblio\AddDocument.class
@@ -25,6 +26,7 @@ com\client\client\Test.class
 com\biblio\BibliothequeResponse.class
 com\biblio\package-info.class
 com\client\action\AddClientAction.class
+com\client\action\AddUserAction.class
 com\biblio\AddBiblio.class
 com\biblio\BibliothequeServicesService.class
 com\biblio\SearchPret.class

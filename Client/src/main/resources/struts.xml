@@ -40,6 +40,19 @@
           <result name="input" >WEB-INF/jsp/addClient.jsp</result>
           <result name="success" >WEB-INF/jsp/actu.jsp</result>
       </action>
+      
+              <!-- Action pour inscrire un employé -->
+        <action name="addUser"
+                       class="com.client.action.AddUserAction">
+            <result>WEB-INF/jsp/addUser.jsp</result>
+        </action>
+        
+       <action name="ajouterEmploye"
+                     class="com.client.action.AddUserAction"
+                     method="doAddUser">
+          <result name="input" >WEB-INF/jsp/addUser.jsp</result>
+          <result name="success" >WEB-INF/jsp/actu.jsp</result>
+      </action>
         
         
         

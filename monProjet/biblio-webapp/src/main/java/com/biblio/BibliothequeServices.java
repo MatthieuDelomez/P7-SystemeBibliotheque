@@ -8,6 +8,7 @@ import com.responses.ClientResponse;
 import com.responses.DocumentResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -19,11 +20,13 @@ import org.projet.biblio.model.Client;
 import org.projet.biblio.model.Document;
 import org.projet.biblio.model.Pret;
 import org.projet.biblio.model.Utilisateur;
+import org.projet.biblio.business.manager.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @WebService(name="BibliothequeServices") 
 public class BibliothequeServices extends AbstractResource {
+    
     
     
     /******************************************************************************************************/
@@ -311,6 +314,51 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
+           /*
+           @WebMethod(operationName="afficherPret")
+           public PretResponse doAfficherPret(@WebParam(name="refouvrage") int refPret ,  
+                                                                               @WebParam(name="refclient") int refClient,
+                                                                               @WebParam(name="refpret") int refOuvrage,
+                                                                               @WebParam(name="datepret") String datePret,
+                                                                               @WebParam(name="dureepret") String dureePret,
+                                                                               @WebParam(name="datefinpret") String dateFinPret,
+                                                                               @WebParam(name="nbrexemplaire") String nbrExemplaire,
+                                                                               @WebParam(name="prolonger") boolean prolonger  ) {
+               
+                              
+               Pret pret = new Pret();
+               PretResponse response = new PretResponse();
+               
+               pret = pretDao.getPret(pret);
+               
+               try {
+
+               response.setRefPret(pret.getRefPret());
+               response.setRefOuvrage(pret.getRefOuvrage());
+               response.setRefClient(pret.getRefClient());
+               response.setDatePret(pret.getDatePret());
+               response.setDureePret(pret.getDureePret());
+               response.setDateFinPret(pret.getDateFinPret());
+               response.setNbrExemplaire(pret.getNbrExemplaire());
+               response.setProlonger(pret.isProlonger());
+               
+                // Création de la liste des Pret qui sera chargé de récupérer les données dans le Dao pour l'injecter dans la Vue
+                List<Pret> listPrets = pretManager.getAllPret() ;
+                listPrets.addAll(refPret, listPrets);
+                System.out.println("---->>> get all topo: " + listPrets.size() );
+               
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
+               
+               
+               return response;
+               
+           }
+               
+*/
+           
+           
            
      /******************************************************************************************************/
     /********************************************Utilisateur************************************************
@@ -368,13 +416,13 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="addUser")
-           public UtilisateurResponse doCreateUser( @WebParam(name="pseudo") String pseudo, 
-                                                                                          @WebParam(name="motPasse") String motPasse,
-                                                                                          @WebParam(name="nom") String nom,
-                                                                                          @WebParam(name="prenom") String prenom,
-                                                                                          @WebParam(name="email") String email,
+           public UtilisateurResponse doCreateUser( @WebParam(name="idutilisateur") int idUtilisateur,
                                                                                           @WebParam(name="refbibliotheque") int refBibliotheque,
-                                                                                          @WebParam(name="idutilisateur") int idUtilisateur) {
+                                                                                          @WebParam(name="pseudo") String pseudo, 
+                                                                                          @WebParam(name="motPasse") String motPasse,
+                                                                                          @WebParam(name="email") String email,
+                                                                                          @WebParam(name="nom") String nom,
+                                                                                          @WebParam(name="prenom") String prenom)  {
                
            UtilisateurResponse response = new UtilisateurResponse();
            Utilisateur utilisateur = new Utilisateur();

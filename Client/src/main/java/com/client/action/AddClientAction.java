@@ -150,9 +150,6 @@ public class AddClientAction extends ActionSupport {
     clientResponse.setRefClient(refClient);
 
 
-
-
-    
     
 
         try{
@@ -160,9 +157,6 @@ public class AddClientAction extends ActionSupport {
         if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
             
        port.addClient(refClient, refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
-       
-
-
 
             
         System.out.println("test test");
