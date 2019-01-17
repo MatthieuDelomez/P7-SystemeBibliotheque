@@ -37,9 +37,11 @@
                       <div id="searchbar">
                 
                        <h1>What would you like to search?</h1>
-                       <form action="" class="formulaire">
-                       <input class="champ" type="text" value="Search...)"/>
-                       <input class="bouton" type="button" value=" " />
+                       <s:form action="rechercheLivre" class="formulaire">
+                           <s:textfield class="champ" name="nomOuvrage" label="nomOuvrage"  value="Search...)"/>
+                    <!--   <input class="bouton" type="button" value=" " /> -->
+                       <s:submit/>
+                       </s:form>
                      
                       </form>
                       </div>
