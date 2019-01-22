@@ -38,8 +38,7 @@
                 
                        <h1>What would you like to search?</h1>
                        <s:form action="rechercheLivre" class="formulaire">
-                           <s:textfield class="champ" name="nomOuvrage" label="nomOuvrage"  value="Search...)"/>
-                    <!--   <input class="bouton" type="button" value=" " /> -->
+                           <s:textfield class="champ" name="nomOuvrage" label="nomOuvrage"  value="Nom de l'ouvrage - Nom de l'auteur"/>
                        <s:submit/>
                        </s:form>
                      

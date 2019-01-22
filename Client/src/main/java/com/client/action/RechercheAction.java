@@ -61,11 +61,8 @@ public class RechercheAction extends ActionSupport {
        
     public String doSearchBook() {
         
-   String vResult = ActionSupport.INPUT;
+                      String vResult = ActionSupport.INPUT;
    
-
-   
-                      
                       try {
    
                        if(!StringUtils.isAllEmpty(nomOuvrage)){

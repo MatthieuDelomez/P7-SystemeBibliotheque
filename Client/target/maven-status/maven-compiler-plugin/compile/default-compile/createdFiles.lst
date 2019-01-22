@@ -2,6 +2,7 @@ com\biblio\SearchBook.class
 com\client\action\GestionEmployeAction.class
 com\biblio\SearchPretResponse.class
 com\biblio\AddDocumentResponse.class
+com\biblio\ListPretResponse.class
 com\biblio\SearchBiblioResponse.class
 com\biblio\SearchBookResponse.class
 com\biblio\ClientResponse.class
@@ -34,4 +35,5 @@ com\biblio\AddPret.class
 com\biblio\AddClient.class
 com\biblio\AddPretResponse.class
 com\biblio\AddBiblioResponse.class
+com\biblio\ListPret.class
 com\biblio\DoLoginClient.class

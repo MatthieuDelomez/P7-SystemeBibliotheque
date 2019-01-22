@@ -143,7 +143,7 @@
     margin-top: 10%;
     margin-left: 37%;
     margin-right: 0%;
-        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
 
@@ -368,4 +368,17 @@
     height: 35px;
     padding: 0;
 }
+
+
+
+  /**********************************************************
+                                     PAGE PRETS
+  ***********************************************************/
+  
+  .listePret{
+    margin-top: 10%;
+    margin-left: 37%;
+    margin-right: 0%;
+     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
  

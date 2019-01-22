@@ -7,6 +7,9 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.PretResponse;
 import com.opensymphony.xwork2.ActionSupport;
+import java.net.URL;
+import java.util.ArrayList;
+import javax.xml.namespace.QName;
 
 
 public class PretAction extends ActionSupport {
@@ -26,15 +29,21 @@ public class PretAction extends ActionSupport {
     protected String nbrexemplaire;
     
     protected boolean prolonger;
+    
+    protected List listPret = new ArrayList();
+       
+       
 
-       
-       // ----- Eléments en sortie
-    /*
-       private List<Pret> listPrets;
-       private Pret pret;
-       */
-       
-  //=========Getters & Setters=======
+
+    //=========Getters & Setters=======
+    
+    
+    public List getListPret() {
+       return listPret;
+    }
+    public void setListPret(List listPret) {
+        this.listPret = listPret;
+    }
 
     public int getRefclient() {
         return refclient;
@@ -101,39 +110,50 @@ public class PretAction extends ActionSupport {
     }
 
 
-
-
- 
-       
+    
   //=========Méthodes============
     
   /**
   Action permettant aux employés de consulter les prêts
  @return input / success
-      
+  */
    public String affichagePrets() {
            
-       String vResult = ActionSupport.INPUT;
-
-                            
-           PretResponse pretResponse = new PretResponse();
-                                
-                      pretResponse.getRefpret();
-                      pretResponse.getRefclient();
-                      pretResponse.getRefouvrage();
-                      pretResponse.getDatepret();
-                      pretResponse.getDureePret();
-                      pretResponse.getDatefinpret();
-                      pretResponse.getNbrexemplaire();
-                                 
-                      pretResponse.isProlonger();
+              
+           BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
+           BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+           
+           
+           for (PretResponse pretResponse: port.listPret()) {
+               
+                      listPret.add(port.listPret());
+                      
+                      System.out.println("--> RefOuvrage : "+pretResponse.getRefouvrage() + "\n" +
+                      
+                                                        "--> RefClient : " + pretResponse.getRefclient() + "\n" +
+                              
+                                                        "--> RefClient : " + pretResponse.getRefclient() + "\n" +
+                      
+                                                         "--> Date de Fin de prêt : " + pretResponse.getDatepret() + "\n" +
+                              
+                                                         "--> Durée de prêt : " + pretResponse.getDureePret() + "\n" +
+                              
+                                                         "--> Date de fin de prêt : "+ pretResponse.getDatefinpret() + "\n" +
+                              
+                                                         "--> Nombre d'exemplaire disponible : " + pretResponse.getNbrexemplaire() + "\n" +
+                      
+                                                         "--> Prologation de ce même prêt  : "+ pretResponse.isProlonger() + "\n" +"\n");
+               
+        
+            
+                                                        }
+           
+                                                       return SUCCESS ;
                       
 
-                      }
-                       return vResult;
-                            */
+                                                        }
                             
-                        }
+                                                        }
 
 
        

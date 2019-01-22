@@ -32,9 +32,11 @@ public class ObjectFactory {
     private final static QName _SearchPretResponse_QNAME = new QName("http://biblio.com/", "searchPretResponse");
     private final static QName _DoLoginClientResponse_QNAME = new QName("http://biblio.com/", "doLoginClientResponse");
     private final static QName _SearchBook_QNAME = new QName("http://biblio.com/", "searchBook");
+    private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
     private final static QName _DoLogin_QNAME = new QName("http://biblio.com/", "doLogin");
     private final static QName _PretResponse_QNAME = new QName("http://biblio.com/", "PretResponse");
     private final static QName _AddUserResponse_QNAME = new QName("http://biblio.com/", "addUserResponse");
+    private final static QName _ListPret_QNAME = new QName("http://biblio.com/", "listPret");
     private final static QName _SearchPret_QNAME = new QName("http://biblio.com/", "searchPret");
     private final static QName _AddBiblio_QNAME = new QName("http://biblio.com/", "addBiblio");
     private final static QName _BibliothequeResponse_QNAME = new QName("http://biblio.com/", "BibliothequeResponse");
@@ -178,11 +180,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListPret }
+     * 
+     */
+    public ListPret createListPret() {
+        return new ListPret();
+    }
+
+    /**
      * Create an instance of {@link SearchPret }
      * 
      */
     public SearchPret createSearchPret() {
         return new SearchPret();
+    }
+
+    /**
+     * Create an instance of {@link ListPretResponse }
+     * 
+     */
+    public ListPretResponse createListPretResponse() {
+        return new ListPretResponse();
     }
 
     /**
@@ -330,6 +348,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListPretResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listPretResponse")
+    public JAXBElement<ListPretResponse> createListPretResponse(ListPretResponse value) {
+        return new JAXBElement<ListPretResponse>(_ListPretResponse_QNAME, ListPretResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DoLogin }{@code >}}
      * 
      */
@@ -354,6 +381,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "addUserResponse")
     public JAXBElement<AddUserResponse> createAddUserResponse(AddUserResponse value) {
         return new JAXBElement<AddUserResponse>(_AddUserResponse_QNAME, AddUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListPret }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listPret")
+    public JAXBElement<ListPret> createListPret(ListPret value) {
+        return new JAXBElement<ListPret>(_ListPret_QNAME, ListPret.class, null, value);
     }
 
     /**

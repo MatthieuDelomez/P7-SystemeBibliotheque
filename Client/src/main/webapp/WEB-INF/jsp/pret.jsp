@@ -29,9 +29,7 @@
                       <link rel="stylesheet" href="resources/css/style.css" />
                       
                       
-                      <!-- Inclusion du Header -->
-                      
-                      <%@ include file="_include/headerEmploye.jsp"%>
+
         
     </head>
 
@@ -42,12 +40,19 @@
     
     
     <body>
-        <h1>Liste de Pret, uniquement visible par les employés !</h1>
         
         
         
-        
+      <logic:iterate id="pret" name="pret">
+       <tr>
+       <td><bean:write name="pret" property="refouvrage"/></td>
+       <td><bean:write name="pret" property="refclient"/></td>
+       <td>
+       </tr> 
+     </logic:iterate>
         
         
     </body>
+    
+    
 </html>

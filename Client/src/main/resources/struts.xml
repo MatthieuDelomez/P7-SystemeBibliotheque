@@ -61,9 +61,12 @@
 
         
         <!-- Action pour effectuer une recherche -->
-        <action name="recherche"
-                       class="com.client.action.RechercheAction">
+        <action name="recherche">
             <result>WEB-INF/jsp/recherche.jsp</result>
+        </action> 
+        
+                <action name="resultRecherche">
+            <result>WEB-INF/jsp/resultRecherche.jsp</result>
         </action> 
         
         
@@ -122,11 +125,22 @@
       </action>
      
 
+
+
+
+
         
          <!-- Action pour accéder aux prets -->
-       <action name="pret">
+       <action name="pret"
+                      class="com.client.action.PretAction"
+                      method="affichagePrets">
           <result>WEB-INF/jsp/pret.jsp</result>
       </action>
+      
+
+             
+
+      
       
        <!-- Action pour accueil du client une fois log -->
        <action name="accueilLog">
