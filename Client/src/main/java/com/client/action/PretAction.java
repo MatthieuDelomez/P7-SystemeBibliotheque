@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.net.URL;
 import java.util.ArrayList;
 import javax.xml.namespace.QName;
+import org.apache.commons.lang3.StringUtils;
 
 
 public class PretAction extends ActionSupport {
@@ -111,23 +112,22 @@ public class PretAction extends ActionSupport {
 
 
     
-  //=========Méthodes============
+  //================Méthodes===================
     
-  /**
-  Action permettant aux employés de consulter les prêts
- @return input / success
-  */
-   public String affichagePrets() {
+    
+                      /**
+                      Action permettant aux employés de consulter les prêts
+                      @return input / success
+                      */
+                      public String affichagePrets() {
            
               
-           BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
-           BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+                      BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
+                      BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
            
            
-           for (PretResponse pretResponse: port.listPret()) {
-               
-                      listPret.add(port.listPret());
-                      
+                      for (PretResponse pretResponse: port.listPret()) {
+                               
                       System.out.println("--> RefOuvrage : "+pretResponse.getRefouvrage() + "\n" +
                       
                                                         "--> RefClient : " + pretResponse.getRefclient() + "\n" +
@@ -153,7 +153,71 @@ public class PretAction extends ActionSupport {
 
                                                         }
                             
-                                                        }
+                                                        
+
+
+                      
+                      public String doAddPret() {
+                          
+                                                 
+                      BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
+                      BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+ 
+                      String vResult = ActionSupport.INPUT;
+
+                      PretResponse pretResponse = new PretResponse();
+
+                      pretResponse.setRefpret(refpret);
+                      pretResponse.setRefclient(refclient);
+                      pretResponse.setRefouvrage(refouvrage);
+                      pretResponse.setDatepret(datepret);
+                      pretResponse.setDureePret(dureePret);
+                      pretResponse.setDatefinpret(datefinpret);
+                      pretResponse.setNbrexemplaire(nbrexemplaire);
+                      pretResponse.setProlonger(prolonger);
+
+
+                      try {
+                          
+                      if (!StringUtils.isAllEmpty(datepret, dureePret, datefinpret)) {
+                          
+                      port.addPret(refpret, refclient, refouvrage, datepret, dureePret, datefinpret, nbrexemplaire, prolonger);
+                      
+                      System.out.println("Ajout d'un pret dans la base");
+                      vResult = ActionSupport.SUCCESS;          
+                      
+                      
+                      System.out.println(refpret);
+                      System.out.println(refclient);
+                      System.out.println(refouvrage);
+                      System.out.println(datepret);
+                      System.out.println(dureePret);
+                      System.out.println(datefinpret);
+                      System.out.println(nbrexemplaire);
+                      System.out.println(prolonger);
+                      
+                      }
+                      
+                      } catch (Exception pe) {
+                          this.addActionError("Veuillez remplir les champs correctement");
+                          
+                      System.out.println(refpret);
+                      System.out.println(refclient);
+                      System.out.println(refouvrage);
+                      System.out.println(datepret);
+                      System.out.println(dureePret);
+                      System.out.println(datefinpret);
+                      System.out.println(nbrexemplaire);
+                      System.out.println(prolonger);
+                      }
+                      
+                      
+                      return vResult;
+
+
+                      }
+
+                      } 
 
 
        

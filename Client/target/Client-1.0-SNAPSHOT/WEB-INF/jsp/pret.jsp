@@ -50,6 +50,20 @@
        <td>
        </tr> 
      </logic:iterate>
+    
+    
+    
+       <!-- Bouton Reserver   
+
+        <div class="form-group">
+            <div class="BoutonFormuPret">
+                <button type="submit" class="btn btn-primary" ><span  class="glyphicon glyphicon-log-in"></span> Réserver</button>
+            </div>
+        </div>
+    </form>
+    -->
+    
+    <a href="${pageContext.request.contextPath}/addPret" target="_blank"> <input type="button" value="Bouton"> </a>
         
         
     </body>

@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="refouvrage" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="refpret" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="refouvrage" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="datepret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dureepret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="datefinpret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -34,9 +34,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addPret", propOrder = {
-    "refouvrage",
-    "refclient",
     "refpret",
+    "refclient",
+    "refouvrage",
     "datepret",
     "dureepret",
     "datefinpret",
@@ -45,9 +45,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AddPret {
 
-    protected int refouvrage;
-    protected int refclient;
     protected int refpret;
+    protected int refclient;
+    protected int refouvrage;
     protected String datepret;
     protected String dureepret;
     protected String datefinpret;
@@ -55,19 +55,19 @@ public class AddPret {
     protected boolean prolonger;
 
     /**
-     * Obtient la valeur de la propriété refouvrage.
+     * Obtient la valeur de la propriété refpret.
      * 
      */
-    public int getRefouvrage() {
-        return refouvrage;
+    public int getRefpret() {
+        return refpret;
     }
 
     /**
-     * Définit la valeur de la propriété refouvrage.
+     * Définit la valeur de la propriété refpret.
      * 
      */
-    public void setRefouvrage(int value) {
-        this.refouvrage = value;
+    public void setRefpret(int value) {
+        this.refpret = value;
     }
 
     /**
@@ -87,19 +87,19 @@ public class AddPret {
     }
 
     /**
-     * Obtient la valeur de la propriété refpret.
+     * Obtient la valeur de la propriété refouvrage.
      * 
      */
-    public int getRefpret() {
-        return refpret;
+    public int getRefouvrage() {
+        return refouvrage;
     }
 
     /**
-     * Définit la valeur de la propriété refpret.
+     * Définit la valeur de la propriété refouvrage.
      * 
      */
-    public void setRefpret(int value) {
-        this.refpret = value;
+    public void setRefouvrage(int value) {
+        this.refouvrage = value;
     }
 
     /**

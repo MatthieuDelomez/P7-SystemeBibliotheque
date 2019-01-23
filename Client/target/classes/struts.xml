@@ -23,16 +23,17 @@
         <action name="header">
             <result>WEB-INF/jsp/_include/header.jsp</result>
         </action>
+        
        
-        
-        
-        
-        
+                               <!--  CLIENT  -->
+  
+
         <!-- Action pour s'inscrire -->
         <action name="addClient"
                        class="com.client.action.AddClientAction">
             <result>WEB-INF/jsp/addClient.jsp</result>
         </action>
+        
         
        <action name="ajouterClient"
                      class="com.client.action.AddClientAction"
@@ -41,52 +42,7 @@
           <result name="success" >WEB-INF/jsp/actu.jsp</result>
       </action>
       
-              <!-- Action pour inscrire un employé -->
-        <action name="addUser"
-                       class="com.client.action.AddUserAction">
-            <result>WEB-INF/jsp/addUser.jsp</result>
-        </action>
-        
-       <action name="ajouterEmploye"
-                     class="com.client.action.AddUserAction"
-                     method="doAddUser">
-          <result name="input" >WEB-INF/jsp/addUser.jsp</result>
-          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
-      </action>
-        
-        
-        
-        
-        
-
-        
-        <!-- Action pour effectuer une recherche -->
-        <action name="recherche">
-            <result>WEB-INF/jsp/recherche.jsp</result>
-        </action> 
-        
-                <action name="resultRecherche">
-            <result>WEB-INF/jsp/resultRecherche.jsp</result>
-        </action> 
-        
-        
-        
-       <action name="rechercheLivre"
-                     class="com.client.action.RechercheAction"
-                     method="doSearchBook">
-          <result name="input" >WEB-INF/jsp/recherche.jsp</result>
-          <result name="success" >WEB-INF/jsp/resultRecherche.jsp</result>
-      </action>
-        
-                
-        <!-- Action pour effectuer une recherche -->
-        <action name="rechercheEmploye">
-            <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
-        </action> 
-        
-        
-        
-        
+      
       <!-- Action pour permettre à l'utilisateur de se connecter -->
       <action name="login" 
                      class="com.client.action.LoginAction">
@@ -102,15 +58,50 @@
       </action>
       
       
+      <!-- Action pour permettre à l'utilisateur de se déconnecter -->
+      <action name="logout"
+                     class="com.client.action.LoginAction"
+                     method="doLogout">
+      <result name="success" type="redirectAction">index</result>
+      </action>  
+      
+      
+       <!-- Action pour accueil du client une fois log -->
+       <action name="accueilLog">
+          <result>WEB-INF/jsp/accueilLog.jsp</result>
+      </action>
+      
+       <!-- Action pour accéder aux actualités -->
+       <action name="actu">
+          <result>WEB-INF/jsp/actu.jsp</result>
+      </action>
       
       
       
-              <!-- Action pour effectuer une redirection employe -->
+                            <!--  EMPLOYES -->
+
+      
+       <!-- Action pour inscrire un employé -->
+        <action name="addUser"
+                       class="com.client.action.AddUserAction">
+            <result>WEB-INF/jsp/addUser.jsp</result>
+        </action>
+        
+        
+       <action name="ajouterEmploye"
+                     class="com.client.action.AddUserAction"
+                     method="doAddUser">
+          <result name="input" >WEB-INF/jsp/addUser.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+      </action>
+      
+      
+        <!-- Action pour effectuer une redirection employe -->
         <action name="accueilEmploye">
             <result>WEB-INF/jsp/accueilEmploye.jsp</result>
         </action> 
       
-            <!-- Action pour permettre des verifier les employés -->
+      <!-- Action pour permettre des verifier les employés -->
       <action name="employe" 
                      class="com.client.action.GestionEmployeAction">
           <result>WEB-INF/jsp/employe.jsp</result>
@@ -123,12 +114,41 @@
           <result name="input" >WEB-INF/jsp/employe.jsp</result>
           <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
       </action>
-     
+        
+        
+        
+        
+                               <!-- RECHERCHE -->
+  
+
+        
+        <!-- Action pour effectuer une recherche -->
+        <action name="recherche">
+            <result>WEB-INF/jsp/recherche.jsp</result>
+        </action> 
+        
+        <action name="resultRecherche">
+            <result>WEB-INF/jsp/resultRecherche.jsp</result>
+        </action> 
+        
+        
+       <action name="rechercheLivre"
+                     class="com.client.action.RechercheAction"
+                     method="doSearchBook">
+          <result name="input" >WEB-INF/jsp/recherche.jsp</result>
+          <result name="success" >WEB-INF/jsp/resultRecherche.jsp</result>
+      </action>
+        
+                
+        <!-- Action pour effectuer une recherche -->
+        <action name="rechercheEmploye">
+            <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
+        </action> 
+        
 
 
 
-
-
+                                       <!--  PRETS  -->
         
          <!-- Action pour accéder aux prets -->
        <action name="pret"
@@ -137,32 +157,20 @@
           <result>WEB-INF/jsp/pret.jsp</result>
       </action>
       
+      
+     <action name="ajouterPret"
+                     class="com.client.action.PretAction"
+                     method="doAddPret">
+          <result name="input" >WEB-INF/jsp/addPret.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+     </action>
+     
+     
+       <action name="addPret">
+            <result>WEB-INF/jsp/addPret.jsp</result>
+        </action> 
+      
 
-             
-
-      
-      
-       <!-- Action pour accueil du client une fois log -->
-       <action name="accueilLog">
-          <result>WEB-INF/jsp/accueilLog.jsp</result>
-      </action>
-      
-      
-       <!-- Action pour accéder aux actualités -->
-       <action name="actu">
-          <result>WEB-INF/jsp/actu.jsp</result>
-      </action>
-
-        
-        
-        
-              <!-- Action pour permettre à l'utilisateur de se déconnecter -->
-      <action name="logout"
-                     class="com.client.action.LoginAction"
-                     method="doLogout">
-      <result name="success" type="redirectAction">index</result>
-      </action>  
-        
 
 
     </package>

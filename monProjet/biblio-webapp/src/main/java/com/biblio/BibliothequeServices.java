@@ -8,10 +8,12 @@ import com.responses.ClientResponse;
 import com.responses.DocumentResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
+import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.xml.ws.Holder;
 import org.projet.biblio.consumer.dao.ClientDao;
 import org.projet.biblio.consumer.dao.DocumentDao;
 import org.projet.biblio.consumer.dao.PretDao;
@@ -219,7 +221,7 @@ public class BibliothequeServices extends AbstractResource {
     /******************************************************************************************************/
            
            
-           		/* Créer un utilisateur */
+           		/* Créer un pret */
     PretDao pretDao = ctx.getBean("pretDao", PretDao.class);
     
     
@@ -236,9 +238,9 @@ public class BibliothequeServices extends AbstractResource {
      * @return
      */
            @WebMethod(operationName = "addPret")
-           public PretResponse doCreatePret(@WebParam(name="refouvrage") int refPret ,  
+           public PretResponse doCreatePret(@WebParam(name="refpret") int refPret ,  
                                                                              @WebParam(name="refclient") int refClient,
-                                                                             @WebParam(name="refpret") int refOuvrage,
+                                                                             @WebParam(name="refouvrage") int refOuvrage,
                                                                              @WebParam(name="datepret") String datePret,
                                                                              @WebParam(name="dureepret") String dureePret,
                                                                              @WebParam(name="datefinpret") String dateFinPret,
@@ -314,51 +316,68 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
-           /*
-           @WebMethod(operationName="afficherPret")
-           public PretResponse doAfficherPret(@WebParam(name="refouvrage") int refPret ,  
-                                                                               @WebParam(name="refclient") int refClient,
-                                                                               @WebParam(name="refpret") int refOuvrage,
-                                                                               @WebParam(name="datepret") String datePret,
-                                                                               @WebParam(name="dureepret") String dureePret,
-                                                                               @WebParam(name="datefinpret") String dateFinPret,
-                                                                               @WebParam(name="nbrexemplaire") String nbrExemplaire,
-                                                                               @WebParam(name="prolonger") boolean prolonger  ) {
-               
-                              
-               Pret pret = new Pret();
-               PretResponse response = new PretResponse();
-               
-               pret = pretDao.getPret(pret);
-               
-               try {
+           
+           
+           @WebMethod(operationName ="listPret")
+           public void listPret2(@WebParam(name = "listPrets", mode = WebParam.Mode.OUT) Holder<List<PretResponse>> listPrets){
 
-               response.setRefPret(pret.getRefPret());
-               response.setRefOuvrage(pret.getRefOuvrage());
-               response.setRefClient(pret.getRefClient());
-               response.setDatePret(pret.getDatePret());
-               response.setDureePret(pret.getDureePret());
-               response.setDateFinPret(pret.getDateFinPret());
-               response.setNbrExemplaire(pret.getNbrExemplaire());
-               response.setProlonger(pret.isProlonger());
-               
-                // Création de la liste des Pret qui sera chargé de récupérer les données dans le Dao pour l'injecter dans la Vue
-                List<Pret> listPrets = pretManager.getAllPret() ;
-                listPrets.addAll(refPret, listPrets);
-                System.out.println("---->>> get all topo: " + listPrets.size() );
-               
-               } catch (Exception e){
-                   e.printStackTrace();
-               }
-               
-               
-               return response;
-               
+                listPrets.value = new ArrayList<>();
+                  
+                /*
+                creer 2 pret pour test
+                */
+                PretResponse pr1 = new PretResponse();
+                
+                PretResponse pr2 = new PretResponse();
+                
+                PretResponse pr3 = new PretResponse();
+
+                
+                pr1.setRefPret(1);
+                pr1.setRefClient(1);
+                pr1.setRefOuvrage(1);
+                pr1.setDatePret("04/12/2018");
+                pr1.setDureePret("4 semaines");
+                pr1.setDateFinPret("21/12/2018");            
+                pr1.setNbrExemplaire("1");
+                pr1.setProlonger(false);
+                
+                
+                pr2.setRefPret(2);
+                pr2.setRefClient(1);
+                pr2.setRefOuvrage(2);
+                pr2.setDatePret("19/12/2018");
+                pr2.setDureePret("4 semaines");
+                pr2.setDateFinPret("16/01/2019");            
+                pr2.setNbrExemplaire("1");
+                pr2.setProlonger(false);
+                
+                
+                pr3.setRefPret(3);
+                pr3.setRefClient(1);
+                pr3.setRefOuvrage(1);
+                pr3.setDatePret("21/12/2018");
+                pr3.setDureePret("2 jours");
+                pr3.setDateFinPret("23/12/2019");            
+                pr3.setNbrExemplaire("1");
+                pr3.setProlonger(true);
+      
+                
+                /*
+                 Ajouter les 2 prêts à la list
+                */
+                listPrets.value.add(pr1);
+                listPrets.value.add(pr2);
+                listPrets.value.add(pr3);
+                
+                 System.out.println(listPrets.value.size());
+                 System.out.println(pr1);
+                 System.out.println(pr2);
+
+                             
+           
            }
-               
-*/
-           
-           
+
            
      /******************************************************************************************************/
     /********************************************Utilisateur************************************************
