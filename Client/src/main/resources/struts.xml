@@ -152,9 +152,8 @@
         
          <!-- Action pour accéder aux prets -->
        <action name="pret"
-                      class="com.client.action.PretAction"
-                      method="affichagePrets">
-          <result>WEB-INF/jsp/pret.jsp</result>
+                      class="com.client.action.PretAction">
+          <result name="success">WEB-INF/jsp/pret.jsp</result>
       </action>
       
       
@@ -170,6 +169,14 @@
             <result>WEB-INF/jsp/addPret.jsp</result>
         </action> 
       
+      
+      
+                            
+                            
+                        
+                        
+                        
+             
 
 
 

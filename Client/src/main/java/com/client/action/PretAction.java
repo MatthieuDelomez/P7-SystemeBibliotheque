@@ -7,9 +7,7 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.PretResponse;
 import com.opensymphony.xwork2.ActionSupport;
-import java.net.URL;
 import java.util.ArrayList;
-import javax.xml.namespace.QName;
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -31,18 +29,17 @@ public class PretAction extends ActionSupport {
     
     protected boolean prolonger;
     
-    protected List listPret = new ArrayList();
-       
+    private List<String> listPret;
        
 
 
     //=========Getters & Setters=======
-    
-    
-    public List getListPret() {
-       return listPret;
+
+    public List<String> getListPret() {
+        return listPret;
     }
-    public void setListPret(List listPret) {
+
+    public void setListPret(List<String> listPret) {
         this.listPret = listPret;
     }
 
@@ -115,6 +112,21 @@ public class PretAction extends ActionSupport {
   //================Méthodes===================
     
     
+                      public String execute(){
+                          
+                          
+                      listPret = new ArrayList();
+                      listPret.add("Snack Plate");
+	listPret.add("Dinner Plate");
+	listPret.add("Colonel Chicken Rice Combo");
+	listPret.add("Colonel Burger");
+	listPret.add("O.R. Fillet Burger");
+	listPret.add("Zinger Burger");
+                
+                          return SUCCESS;
+                      }
+    
+    
                       /**
                       Action permettant aux employés de consulter les prêts
                       @return input / success
@@ -124,9 +136,12 @@ public class PretAction extends ActionSupport {
               
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
                       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+                      
            
            
                       for (PretResponse pretResponse: port.listPret()) {
+                          
+
                                
                       System.out.println("--> RefOuvrage : "+pretResponse.getRefouvrage() + "\n" +
                       
@@ -216,6 +231,7 @@ public class PretAction extends ActionSupport {
 
 
                       }
+                      
 
                       } 
 
