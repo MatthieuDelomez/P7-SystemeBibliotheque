@@ -30,12 +30,14 @@ public class ObjectFactory {
     private final static QName _DoLoginClient_QNAME = new QName("http://biblio.com/", "doLoginClient");
     private final static QName _AddClientResponse_QNAME = new QName("http://biblio.com/", "addClientResponse");
     private final static QName _SearchPretResponse_QNAME = new QName("http://biblio.com/", "searchPretResponse");
+    private final static QName _ListClient_QNAME = new QName("http://biblio.com/", "listClient");
     private final static QName _DoLoginClientResponse_QNAME = new QName("http://biblio.com/", "doLoginClientResponse");
     private final static QName _SearchBook_QNAME = new QName("http://biblio.com/", "searchBook");
     private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
     private final static QName _DoLogin_QNAME = new QName("http://biblio.com/", "doLogin");
     private final static QName _PretResponse_QNAME = new QName("http://biblio.com/", "PretResponse");
     private final static QName _AddUserResponse_QNAME = new QName("http://biblio.com/", "addUserResponse");
+    private final static QName _ListClientResponse_QNAME = new QName("http://biblio.com/", "listClientResponse");
     private final static QName _ListPret_QNAME = new QName("http://biblio.com/", "listPret");
     private final static QName _SearchPret_QNAME = new QName("http://biblio.com/", "searchPret");
     private final static QName _AddBiblio_QNAME = new QName("http://biblio.com/", "addBiblio");
@@ -180,6 +182,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListClientResponse }
+     * 
+     */
+    public ListClientResponse createListClientResponse() {
+        return new ListClientResponse();
+    }
+
+    /**
      * Create an instance of {@link ListPret }
      * 
      */
@@ -249,6 +259,14 @@ public class ObjectFactory {
      */
     public SearchPretResponse createSearchPretResponse() {
         return new SearchPretResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListClient }
+     * 
+     */
+    public ListClient createListClient() {
+        return new ListClient();
     }
 
     /**
@@ -330,6 +348,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listClient")
+    public JAXBElement<ListClient> createListClient(ListClient value) {
+        return new JAXBElement<ListClient>(_ListClient_QNAME, ListClient.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DoLoginClientResponse }{@code >}}
      * 
      */
@@ -381,6 +408,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "addUserResponse")
     public JAXBElement<AddUserResponse> createAddUserResponse(AddUserResponse value) {
         return new JAXBElement<AddUserResponse>(_AddUserResponse_QNAME, AddUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listClientResponse")
+    public JAXBElement<ListClientResponse> createListClientResponse(ListClientResponse value) {
+        return new JAXBElement<ListClientResponse>(_ListClientResponse_QNAME, ListClientResponse.class, null, value);
     }
 
     /**

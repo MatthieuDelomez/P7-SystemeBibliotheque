@@ -12,6 +12,7 @@ com\biblio\DoLogin.class
 com\biblio\DoLoginResponse.class
 com\client\action\LoginAction.class
 com\biblio\AddClientResponse.class
+com\biblio\ListClientResponse.class
 com\biblio\UtilisateurResponse.class
 com\biblio\SearchBiblio.class
 com\biblio\PretResponse.class
@@ -32,6 +33,7 @@ com\biblio\AddBiblio.class
 com\biblio\BibliothequeServicesService.class
 com\biblio\SearchPret.class
 com\biblio\AddPret.class
+com\biblio\ListClient.class
 com\biblio\AddClient.class
 com\biblio\AddPretResponse.class
 com\biblio\AddBiblioResponse.class

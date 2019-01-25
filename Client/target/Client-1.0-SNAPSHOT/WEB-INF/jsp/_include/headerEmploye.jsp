@@ -46,6 +46,8 @@
 
                                                                                          <li><a href="${pageContext.request.contextPath}/pret">Pret</a></li>
                                                                                          
+                                                                                         <li><a href="${pageContext.request.contextPath}/listeClient">Base Client</a></li>
+                                                                                         
                                 		                      <li><a href="${pageContext.request.contextPath}/rechercheEmploye">Recherche</a></li>
 
 	

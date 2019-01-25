@@ -3,8 +3,10 @@ package com.client.action;
 
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
-import com.client.response.ClientResponse;
+import com.biblio.ClientResponse;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -28,11 +30,29 @@ public class AddClientAction extends ActionSupport {
                       
                       private int refBibliotheque;
                       private int refClient;
+                      
+                      private List <String> listClient;
+                      private List <ClientResponse> listClientResponse;
 
                       
 
    //=========Getters & Setters=============
-                      
+
+    public List<String> getListClient() {
+        return listClient;
+    }
+
+    public void setListClient(List<String> listClient) {
+        this.listClient = listClient;
+    }
+
+    public List<ClientResponse> getListClientResponse() {
+        return listClientResponse;
+    }
+
+    public void setListClientResponse(List<ClientResponse> listClientResponse) {
+        this.listClientResponse = listClientResponse;
+    }                 
 
     public int getRefBibliotheque() {
         return refBibliotheque;
@@ -140,14 +160,14 @@ public class AddClientAction extends ActionSupport {
     ClientResponse clientResponse = new ClientResponse();
     
     clientResponse.setAdresse(adresse);
-    clientResponse.setCodePostal(codePostal);
+    clientResponse.setCodepostal(codePostal);
     clientResponse.setEmail(email);
-    clientResponse.setMotPasse(motPasse);
+    clientResponse.setMotpasse(motPasse);
     clientResponse.setNom(nom);
     clientResponse.setPrenom(prenom);
     clientResponse.setPseudo(pseudo);
-    clientResponse.setRefBibliotheque(refBibliotheque);
-    clientResponse.setRefClient(refClient);
+    clientResponse.setRefbibliotheque(refBibliotheque);
+    clientResponse.setRefclient(refClient);
 
 
     
@@ -185,6 +205,22 @@ public class AddClientAction extends ActionSupport {
     
             return vResult;
             
+    }
+    
+    
+    
+    public String execute () {
+
+        
+        listClient = new ArrayList();
+        listClientResponse = port.listClient();
+
+        
+        return SUCCESS;
+        
+
+
+
     }
     
     }

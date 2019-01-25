@@ -375,10 +375,70 @@
                                      PAGE PRETS
   ***********************************************************/
   
+  ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+  }
+  
+  li{
+      list-style: none;
+      margin-bottom: 15px;
+  }
+  
+  
+  .tablePret {
+      margin-top: 2%;
+      border-collapse: separate;
+      border-spacing: 40px 17px;
+  }
+  
+  table {
+      border-spacing: 0px 10px;
+      border-collapse: separate;
+
+  }
+  
   .listePret{
-    margin-top: 10%;
-    margin-left: 37%;
-    margin-right: 0%;
-     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin-top: 0%;
+      margin-left: 15%
+  }
+  
+  .titrePret {
+      margin-top: 10%;
+      margin-left: 40%;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+  }
+  
+  .boutonPret {
+     margin-left: 45%;
+     margin-top: 2%
+      
+  }
+  
+  
+    /**********************************************************
+                                     PAGE BASE CLIENT
+  ***********************************************************/
+    
+      .titreClient {
+      margin-top: 10%;
+      margin-left: 40%;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+  }
+  
+  .listeClient{
+      margin-top: 0%;
+      margin-left: 0%
+  }
+  
+  
+  .tableClient{
+      margin-top: 2%;
+      border-collapse: separate;
+      border-spacing: 40px 20px;
+      font-size: 14px;
   }
  

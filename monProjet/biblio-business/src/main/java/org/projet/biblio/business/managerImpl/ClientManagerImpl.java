@@ -1,6 +1,8 @@
 package org.projet.biblio.business.managerImpl;
 
+import java.util.List;
 import org.projet.biblio.business.manager.ClientManager;
+import static org.projet.biblio.business.managerImpl.AbstractManager.getDaoFactory;
 import org.projet.biblio.model.Client;
 
 
@@ -39,5 +41,13 @@ public class ClientManagerImpl extends AbstractManager implements ClientManager{
     public void deleteClient(Client client) {
        getDaoFactory().getClientDao().deleteClient(client);   
     }
+    
+       /* Implementation de la methode liste des publications /*/
+   public List<Client> getAllClient() {
+       
+   System.out.println("---->>> manager getAllClient");
+   return getDaoFactory().getClientDao().getAllClient();
+
+                   }
     
 }

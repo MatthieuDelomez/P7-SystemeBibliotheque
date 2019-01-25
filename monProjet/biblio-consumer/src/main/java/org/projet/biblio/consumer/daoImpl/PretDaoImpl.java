@@ -98,7 +98,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
         	public List<Pret> getAllPret() {
 
 
-                                            String sql = "SELECT * FROM document";
+                                            String sql = "SELECT * FROM pret";
 
                                             JdbcTemplate jdbcTemplate = getJdbcTemplate();
 

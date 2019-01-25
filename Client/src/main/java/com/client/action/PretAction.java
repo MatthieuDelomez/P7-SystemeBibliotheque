@@ -30,10 +30,19 @@ public class PretAction extends ActionSupport {
     protected boolean prolonger;
     
     private List<String> listPret;
-       
+    private List<PretResponse> listPretResponse;
+    
 
 
     //=========Getters & Setters=======
+    
+     public List<PretResponse> getListPretResponse() {       
+        return listPretResponse;
+    }
+    
+    public void setListPretResponse(List<PretResponse> listPretResponse) {
+        this.listPretResponse = listPretResponse;
+    }
 
     public List<String> getListPret() {
         return listPret;
@@ -114,38 +123,17 @@ public class PretAction extends ActionSupport {
     
                       public String execute(){
                           
-                          
-                      listPret = new ArrayList();
-                      listPret.add("Snack Plate");
-	listPret.add("Dinner Plate");
-	listPret.add("Colonel Chicken Rice Combo");
-	listPret.add("Colonel Burger");
-	listPret.add("O.R. Fillet Burger");
-	listPret.add("Zinger Burger");
-                
-                          return SUCCESS;
-                      }
-    
-    
-                      /**
-                      Action permettant aux employés de consulter les prêts
-                      @return input / success
-                      */
-                      public String affichagePrets() {
-           
-              
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
                       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
-                      
-           
-           
-                      for (PretResponse pretResponse: port.listPret()) {
-                          
+                      listPret = new ArrayList();
+                      listPretResponse = port.listPret();
+                      PretResponse pretResponse = new PretResponse();
 
+                                              
                                
-                      System.out.println("--> RefOuvrage : "+pretResponse.getRefouvrage() + "\n" +
+                      System.out.println("--> RefOuvrage : "+pretResponse.getRefpret()+ "\n" +
                       
-                                                        "--> RefClient : " + pretResponse.getRefclient() + "\n" +
+                                                        "--> RefClient : " + pretResponse.getRefouvrage()+ "\n" +
                               
                                                         "--> RefClient : " + pretResponse.getRefclient() + "\n" +
                       
@@ -161,14 +149,12 @@ public class PretAction extends ActionSupport {
                
         
             
-                                                        }
+                                                        
            
                                                        return SUCCESS ;
                       
 
                                                         }
-                            
-                                                        
 
 
                       

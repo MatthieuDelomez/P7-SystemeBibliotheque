@@ -28,72 +28,57 @@
                       
                       <link rel="stylesheet" href="resources/css/style.css" />
                       
+                      <!-- Inclusion du Header -->
                       
+                      <%@ include file="_include/headerEmploye.jsp"%>
 
         
-    </head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Liste des prêts</title>
+                      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     
     
     
     <body>
         
-                      <h1>Struts 2 Iterator tag example</h1>
-
-                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                      <ins class="adsbygoogle"
-                      style="display:block"
-                      data-ad-client="ca-pub-2836379775501347"
-                      data-ad-slot="8821506761"
-                      data-ad-format="auto"
-                      data-ad-region=""></ins>
-                      <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script><h2>Simple Iterator</h2>
+                      <div class="titrePret">
+                      <h2>Historique des Prêts</h2>
+                      </div>
         
-        
-                      <ol>
-                      <s:iterator value="listPret">
-                      <li><s:property /></li>
-                      </s:iterator>
-                      </ol>
-
-                      <h2>Iterator with IteratorStatus</h2>
-                      <table>
-                      <s:iterator value="listPret" status="listPretStatus">
+                      <div class="listePret">
+                          <table class="tablePret">
                       <tr>
-  	<s:if test="#listPretStatus.even == true">
-                      <td style="background: #CCCCCC"><s:property/></td>
-                     </s:if>
-    
-                      <s:elseif test="#listPretStatus.first == true">
-                      <td><s:property/> (This is first value) </td>
-                      </s:elseif>
-    
-                      <s:else>
-                      <td><s:property/></td>
-                      </s:else>
+                              <th>Ref pret</th>
+                              <th>Ref ouvrage</th>
+                              <th>Ref client</th>
+                              <th>Date du pret</th>
+                              <th>Durée du prêt</th>
+                              <th>Fin du prêt</th>
+                              <th>Exemplaire</th>
+                              <th>Prolongé</th>
                       </tr>
-                      </s:iterator>
-                      </table>
-    
-    
-    
-       <!-- Bouton Reserver   
+                      <tr>    
+                      <ul>
+                      <s:iterator value="listPretResponse" var="pret">
 
-        <div class="form-group">
-            <div class="BoutonFormuPret">
-                <button type="submit" class="btn btn-primary" ><span  class="glyphicon glyphicon-log-in"></span> Réserver</button>
-            </div>
-        </div>
-    </form>
-    -->
-    
-    <a href="${pageContext.request.contextPath}/addPret" target="_blank"> <input type="button" value="Bouton"> </a>
-        
+                      <li><td><s:property value="#pret.refPret" /></td></li> 
+                      <li><td><s:property value="#pret.refOuvrage" /></td></li>
+                      <li><td><s:property value="#pret.refClient" /></td></li>
+                      <li><td><s:property value="#pret.datePret" /></td></li>
+                      <li><td><s:property value="#pret.dureePret" /></td></li>
+                      <li><td><s:property value="#pret.dateFinPret" /></td></li>
+                      <li><td><s:property value="#pret.nbrExemplaire" /></td></li>
+                      <li><td><s:property value="#pret.isProlonger" /></td></li>
+                      </ul></tr>
+                      </s:iterator>
+                          </table></div>
+                      </div>
+
+                      
+ 
+                      <div class="boutonPret">
+                       <a href="${pageContext.request.contextPath}/addPret" target="_blank"> 
+                       <input type="button" value="Ajoutez un prêt"> </a>
+                      </div>
         
     </body>
     

@@ -319,64 +319,35 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="listPret")
-           public void listPret2(@WebParam(name = "listPrets", mode = WebParam.Mode.OUT) Holder<List<PretResponse>> listPrets){
+           public void listPret2(@WebParam(name = "listPret", mode = WebParam.Mode.OUT) Holder<List<PretResponse>> listPrets){
 
-                listPrets.value = new ArrayList<>();
-                  
-                /*
-                creer 2 pret pour test
-                */
-                PretResponse pr1 = new PretResponse();
+                    listPrets.value = new ArrayList<>();
                 
-                PretResponse pr2 = new PretResponse();
-                
-                PretResponse pr3 = new PretResponse();
+                List<Pret>listPret  = new ArrayList<>();
+                List<PretResponse>listPretResponse  = new ArrayList<>();
+                listPret = pretDao.getAllPret();
 
-                
-                pr1.setRefPret(1);
-                pr1.setRefClient(1);
-                pr1.setRefOuvrage(1);
-                pr1.setDatePret("04/12/2018");
-                pr1.setDureePret("4 semaines");
-                pr1.setDateFinPret("21/12/2018");            
-                pr1.setNbrExemplaire("1");
-                pr1.setProlonger(false);
-                
-                
-                pr2.setRefPret(2);
-                pr2.setRefClient(1);
-                pr2.setRefOuvrage(2);
-                pr2.setDatePret("19/12/2018");
-                pr2.setDureePret("4 semaines");
-                pr2.setDateFinPret("16/01/2019");            
-                pr2.setNbrExemplaire("1");
-                pr2.setProlonger(false);
-                
-                
-                pr3.setRefPret(3);
-                pr3.setRefClient(1);
-                pr3.setRefOuvrage(1);
-                pr3.setDatePret("21/12/2018");
-                pr3.setDureePret("2 jours");
-                pr3.setDateFinPret("23/12/2019");            
-                pr3.setNbrExemplaire("1");
-                pr3.setProlonger(true);
-      
-                
-                /*
-                 Ajouter les 2 prêts à la list
-                */
-                listPrets.value.add(pr1);
-                listPrets.value.add(pr2);
-                listPrets.value.add(pr3);
-                
-                 System.out.println(listPrets.value.size());
-                 System.out.println(pr1);
-                 System.out.println(pr2);
 
-                             
+                      for(Pret pret : listPret){
+	PretResponse pretResponse = new PretResponse();
+                      
+                      pretResponse.setRefPret(pret.getRefPret());
+	pretResponse.setRefOuvrage(pret.getRefOuvrage());
+                      pretResponse.setRefClient(pret.getRefClient());
+                      pretResponse.setDatePret(pret.getDatePret());
+                      pretResponse.setDureePret(pret.getDureePret());
+                      pretResponse.setDateFinPret(pret.getDateFinPret());
+                      pretResponse.setNbrExemplaire(pret.getNbrExemplaire());
+                      pretResponse.setProlonger(pret.isProlonger());
+
+	listPretResponse.add(pretResponse);
+
+                      }
+
+                      listPrets.value = listPretResponse;
+               
            
-           }
+                      }
 
            
      /******************************************************************************************************/
@@ -587,6 +558,43 @@ public class BibliothequeServices extends AbstractResource {
                
                
            }
+           
+           
+           
+           
+           @WebMethod(operationName ="listClient")
+           public void listClient2(@WebParam(name = "listClient", mode = WebParam.Mode.OUT) Holder<List<ClientResponse>> listClients){
+
+                      listClients.value = new ArrayList<>();
+                
+                      List<Client>listClient  = new ArrayList<>();
+                      List<ClientResponse>listClientResponse  = new ArrayList<>();
+                      listClient = clientDao.getAllClient();
+
+
+                      for(Client client : listClient){
+	ClientResponse clientResponse = new ClientResponse();
+                      
+                      clientResponse.setRefClient(client.getRefClient());
+	clientResponse.setRefBibliotheque(client.getRefBibliotheque());
+                      clientResponse.setNom(client.getNom());
+                      clientResponse.setPrenom(client.getPrenom());
+                      clientResponse.setSexe(client.getSexe());
+                      clientResponse.setPseudo(client.getPseudo());
+                      clientResponse.setMotPasse(client.getMotPasse());
+                      clientResponse.setAdresse(client.getAdresse());
+                      clientResponse.setEmail(client.getEmail());
+                      clientResponse.setCodePostal(client.getCodePostal());
+                      
+
+	listClientResponse.add(clientResponse);
+
+                      }
+
+                      listClients.value = listClientResponse;
+               
+           
+                      }
 
            
     

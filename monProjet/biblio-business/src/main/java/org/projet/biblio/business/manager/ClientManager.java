@@ -2,6 +2,7 @@
 package org.projet.biblio.business.manager;
 
 
+import java.util.List;
 import org.projet.biblio.model.Client;
 
 
@@ -24,6 +25,11 @@ public interface ClientManager {
     void updateClient(Client client);
     
     void deleteClient(Client client);
+    
+        /*
+    Création d'une liste de pret
+    */
+    List<Client> getAllClient();
     
     
 }

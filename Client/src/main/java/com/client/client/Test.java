@@ -36,6 +36,12 @@ public class Test {
                System.out.println("--> RefOuvrage : "+pretResponse.getRefouvrage());
             
         }
+           
+                      for (ClientResponse clientResponse: port.listClient()) {
+               
+               System.out.println("--> RefOuvrage : "+clientResponse.getRefclient());
+            
+        }
 
                                    
                    BibliothequeResponse bibliothequeResponse  = port.searchBiblio(1);

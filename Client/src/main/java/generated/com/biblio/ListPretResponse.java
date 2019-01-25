@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="listPrets" type="{http://biblio.com/}PretResponse" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="listPret" type="{http://biblio.com/}PretResponse" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,25 +29,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "listPretResponse", propOrder = {
-    "listPrets"
+    "listPret"
 })
 public class ListPretResponse {
 
-    protected List<PretResponse> listPrets;
+    protected List<PretResponse> listPret;
 
     /**
-     * Gets the value of the listPrets property.
+     * Gets the value of the listPret property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the listPrets property.
+     * This is why there is not a <CODE>set</CODE> method for the listPret property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getListPrets().add(newItem);
+     *    getListPret().add(newItem);
      * </pre>
      * 
      * 
@@ -57,11 +57,11 @@ public class ListPretResponse {
      * 
      * 
      */
-    public List<PretResponse> getListPrets() {
-        if (listPrets == null) {
-            listPrets = new ArrayList<PretResponse>();
+    public List<PretResponse> getListPret() {
+        if (listPret == null) {
+            listPret = new ArrayList<PretResponse>();
         }
-        return this.listPrets;
+        return this.listPret;
     }
 
 }

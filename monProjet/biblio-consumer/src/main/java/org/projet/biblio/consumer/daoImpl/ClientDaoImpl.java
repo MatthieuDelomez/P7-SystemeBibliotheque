@@ -1,12 +1,15 @@
 
 package org.projet.biblio.consumer.daoImpl;
 
+import java.util.List;
 import javax.sql.DataSource;
 import org.projet.biblio.consumer.dao.ClientDao;
+import static org.projet.biblio.consumer.daoImpl.AbstractDaoImpl.getJdbcTemplate;
 import org.projet.biblio.consumer.rowMapper.ClientMapper;
 import org.projet.biblio.model.Client;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -98,6 +101,37 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
                       return null;
 
                       }
+
+	}
+                        
+                        
+                                             /*Méthode pour afficher une liste de client*/
+                     @Override
+        	public List<Client> getAllClient() {
+
+
+                                            String sql = "SELECT * FROM client";
+
+                                            JdbcTemplate jdbcTemplate = getJdbcTemplate();
+
+
+
+		                       try {
+
+			List<Client> publicationQuery = jdbcTemplate.query(sql,
+
+			new BeanPropertyRowMapper(Client.class));
+
+			return publicationQuery;
+
+
+		                      } catch (EmptyResultDataAccessException exception) {
+
+			System.out.println("Incorrect");
+
+			return null;
+
+		}
 
 	}
 

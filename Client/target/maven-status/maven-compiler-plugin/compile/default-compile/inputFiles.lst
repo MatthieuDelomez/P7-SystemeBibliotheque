@@ -17,6 +17,7 @@ D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\ge
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\action\AddClientAction.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListPret.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\DoLoginClient.java
+D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListClient.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\SearchBookResponse.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddBiblio.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddDocument.java
@@ -26,6 +27,7 @@ D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\ge
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\action\PretAction.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\PretResponse.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\action\LoginAction.java
+D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListClientResponse.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\package-info.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\SearchPretResponse.java
 D:\OP\Systeme Biblio\15-01\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\UtilisateurResponse.java

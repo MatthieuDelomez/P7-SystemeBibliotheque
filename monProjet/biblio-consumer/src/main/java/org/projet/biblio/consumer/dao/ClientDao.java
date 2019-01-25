@@ -1,5 +1,6 @@
 package org.projet.biblio.consumer.dao;
 
+import java.util.List;
 import org.projet.biblio.model.Client;
 
 
@@ -20,5 +21,7 @@ public interface ClientDao {
     void updateClient(Client client);
     
     void deleteClient(Client client);
+    
+    List <Client>getAllClient();
     
 }
