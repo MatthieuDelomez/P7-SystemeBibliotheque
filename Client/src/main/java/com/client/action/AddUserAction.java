@@ -5,10 +5,12 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.UtilisateurResponse;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 
-public class AddUserAction extends ActionSupport {
+public class AddUserAction extends ActionSupport implements SessionAware{
     
         
        BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
@@ -25,6 +27,9 @@ public class AddUserAction extends ActionSupport {
                       private String email;
                       private String nom;
                       private String prenom;
+                      
+                      // ----- Eléments Struts
+                      private Map<String, Object> session;
                       
   //=========Getters & Setters=============
 
@@ -83,6 +88,11 @@ public class AddUserAction extends ActionSupport {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+    
+    @Override
+    public void setSession(Map<String, Object> pSession) {
+    this.session = pSession;
+    }
 
     
     public String doAddUser(){
@@ -107,6 +117,7 @@ public class AddUserAction extends ActionSupport {
     
     System.out.println("test test");
     vResult = ActionSupport.SUCCESS;
+    this.session.put("employe", vResult);
     
         }
         

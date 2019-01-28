@@ -7,10 +7,12 @@ import com.biblio.ClientResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 
-public class AddClientAction extends ActionSupport {
+public class AddClientAction extends ActionSupport implements SessionAware {
     
     
        BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
@@ -33,6 +35,9 @@ public class AddClientAction extends ActionSupport {
                       
                       private List <String> listClient;
                       private List <ClientResponse> listClientResponse;
+                      
+                       // ----- Eléments Struts
+                      private Map<String, Object> session;
 
                       
 
@@ -150,6 +155,11 @@ public class AddClientAction extends ActionSupport {
         this.email = email;
     }
     
+   @Override
+    public void setSession(Map<String, Object> pSession) {
+    this.session = pSession;
+    }
+    
    
     
     public String doAddClient(){
@@ -181,6 +191,7 @@ public class AddClientAction extends ActionSupport {
             
         System.out.println("test test");
         vResult = ActionSupport.SUCCESS;
+        this.session.put("user", vResult);
 
         }
         

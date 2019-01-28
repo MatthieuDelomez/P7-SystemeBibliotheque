@@ -7,9 +7,55 @@
     <constant name="struts.devMode" value="false" />
     
     
-    <package name="default" extends="struts-default">        
-     
+    <package name="baseEmploye" abstract="true" extends="struts-default">
+        
+                 <interceptors>
+                <interceptor name="authEmplo" class="com.client.interceptors.EmployeAuthInterceptor"/> 
+            <interceptor-stack name="authenticatedEmplo">
+            <interceptor-ref name="authEmplo"/>
+            <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+        </interceptors>
+        
+        
+              <!-- Resultat globaux -->
+      <global-results>
+          <result name="error">/jsp/error.jsp</result>
+          <result name="error-forbidden" type="httpheader">
+              <param name="error">403</param>
+          </result>
+      </global-results>
+        
+    </package>
+    
+                         <!--  PACKAGE DE CONFIG -->
+    
+    <package name="base" abstract="true" extends="struts-default">
+    
+            <interceptors>
+                <interceptor name="auth" class="com.client.interceptors.AuthInterceptor"/> 
+            <interceptor-stack name="authenticatedStack">
+            <interceptor-ref name="auth"/>
+            <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+        </interceptors>
+      
 
+      <!-- Resultat globaux -->
+      <global-results>
+          <result name="error">/jsp/error.jsp</result>
+          <result name="error-forbidden" type="httpheader">
+              <param name="error">403</param>
+          </result>
+      </global-results>
+      
+    </package>
+    
+    
+                    <!--  PACKAGE PUBLIC -->
+                    
+    <package name="public" extends="base">        
+     
         <!-- Action par défaut-->
         <default-action-ref name="index" />
  
@@ -23,10 +69,8 @@
         <action name="header">
             <result>WEB-INF/jsp/_include/header.jsp</result>
         </action>
-        
-       
+          
                                <!--  CLIENT  -->
-  
 
         <!-- Action pour s'inscrire -->
         <action name="addClient"
@@ -57,15 +101,39 @@
           <result name="success" >WEB-INF/jsp/actu.jsp</result>
       </action>
       
+                            <!--  EMPLOYES -->
+
+      <!-- Action pour permettre des verifier les employés -->
+      <action name="employe" 
+                     class="com.client.action.GestionEmployeAction">
+          <result>WEB-INF/jsp/employe.jsp</result>
+      </action>
+       
+      <action name="doVerifEmploye"
+                     class="com.client.action.GestionEmployeAction"
+                     method="verifEmploye">
+          <result name="input" >WEB-INF/jsp/employe.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+      </action>
       
-      <!-- Action pour permettre à l'utilisateur de se déconnecter -->
-      <action name="logout"
-                     class="com.client.action.LoginAction"
-                     method="doLogout">
-      <result name="success" type="redirectAction">index</result>
-      </action>  
+    </package>
       
       
+      
+      
+      
+      
+      
+        
+
+                        <!--PACKAGE CLIENT-->
+    
+    <package name="private" extends="base">
+ 
+        <default-interceptor-ref name="authenticatedStack"/>
+        
+                                 <!--  CLIENT  -->
+              
        <!-- Action pour accueil du client une fois log -->
        <action name="accueilLog">
           <result>WEB-INF/jsp/accueilLog.jsp</result>
@@ -75,53 +143,9 @@
        <action name="actu">
           <result>WEB-INF/jsp/actu.jsp</result>
       </action>
-      
-      
-      
-                            <!--  EMPLOYES -->
-
-      
-       <!-- Action pour inscrire un employé -->
-        <action name="addUser"
-                       class="com.client.action.AddUserAction">
-            <result>WEB-INF/jsp/addUser.jsp</result>
-        </action>
-        
-        
-       <action name="ajouterEmploye"
-                     class="com.client.action.AddUserAction"
-                     method="doAddUser">
-          <result name="input" >WEB-INF/jsp/addUser.jsp</result>
-          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
-      </action>
-      
-      
-        <!-- Action pour effectuer une redirection employe -->
-        <action name="accueilEmploye">
-            <result>WEB-INF/jsp/accueilEmploye.jsp</result>
-        </action> 
-      
-      <!-- Action pour permettre des verifier les employés -->
-      <action name="employe" 
-                     class="com.client.action.GestionEmployeAction">
-          <result>WEB-INF/jsp/employe.jsp</result>
-      </action>
-      
-      
-      <action name="doVerifEmploye"
-                     class="com.client.action.GestionEmployeAction"
-                     method="verifEmploye">
-          <result name="input" >WEB-INF/jsp/employe.jsp</result>
-          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
-      </action>
-        
-        
-        
-        
-                               <!-- RECHERCHE -->
+         
+                           <!-- RECHERCHE -->
   
-
-        
         <!-- Action pour effectuer une recherche -->
         <action name="recherche">
             <result>WEB-INF/jsp/recherche.jsp</result>
@@ -130,25 +154,34 @@
         <action name="resultRecherche">
             <result>WEB-INF/jsp/resultRecherche.jsp</result>
         </action> 
-        
-        
+               
        <action name="rechercheLivre"
                      class="com.client.action.RechercheAction"
                      method="doSearchBook">
           <result name="input" >WEB-INF/jsp/recherche.jsp</result>
           <result name="success" >WEB-INF/jsp/resultRecherche.jsp</result>
       </action>
+                     
+    </package>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                       <!--PACKAGE EMPLOYE-->
+    
+    
+    <package name="privateEmplo" extends="baseEmploye">
         
-                
-        <!-- Action pour effectuer une recherche -->
-        <action name="rechercheEmploye">
-            <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
-        </action> 
-        
+        <default-interceptor-ref name="authenticatedEmplo"/>
 
-
-
-                                       <!--  PRETS  -->
+                                <!--  PRETS  -->
         
          <!-- Action pour accéder aux prets -->
        <action name="pret"
@@ -171,19 +204,42 @@
       
       
                               <!--  BASE CLIENT  -->
-                              
-                              
+                   
        <action name="listeClient"
                       class="com.client.action.AddClientAction">
           <result name="success">WEB-INF/jsp/listeClient.jsp</result>
       </action>
-                            
-                        
-                        
-                        
-             
-
-
+      
+      
+            
+       <!-- Action pour inscrire un employé -->
+        <action name="addUser"
+                       class="com.client.action.AddUserAction">
+            <result>WEB-INF/jsp/addUser.jsp</result>
+        </action>
+        
+        
+       <action name="ajouterEmploye"
+                     class="com.client.action.AddUserAction"
+                     method="doAddUser">
+          <result name="input" >WEB-INF/jsp/addUser.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+      </action>
+      
+      
+        <!-- Action pour effectuer une redirection employe -->
+        <action name="accueilEmploye">
+            <result>WEB-INF/jsp/accueilEmploye.jsp</result>
+        </action> 
+        
+       <!-- Action pour effectuer une recherche -->
+        <action name="rechercheEmploye">
+            <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
+        </action>
+                 
 
     </package>
+    
+    
+    
 </struts>

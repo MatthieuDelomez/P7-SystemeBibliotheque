@@ -31,11 +31,13 @@ com\client\action\AddClientAction.class
 com\client\action\AddUserAction.class
 com\biblio\AddBiblio.class
 com\biblio\BibliothequeServicesService.class
+com\client\interceptors\AuthInterceptor.class
 com\biblio\SearchPret.class
 com\biblio\AddPret.class
 com\biblio\ListClient.class
 com\biblio\AddClient.class
 com\biblio\AddPretResponse.class
+com\client\interceptors\EmployeAuthInterceptor.class
 com\biblio\AddBiblioResponse.class
 com\biblio\ListPret.class
 com\biblio\DoLoginClient.class

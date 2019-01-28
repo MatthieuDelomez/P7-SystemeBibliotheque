@@ -4,10 +4,12 @@ package com.client.action;
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements SessionAware{
     
     
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
@@ -20,6 +22,9 @@ public class LoginAction extends ActionSupport {
                        //=========Attributs=============
                       private String pseudo;
                       private String motPasse; 
+                      
+                      // ----- Eléments Struts
+                      private Map<String, Object> session;
 
                       
 	 //=========Getters & Setters=======
@@ -59,6 +64,8 @@ public class LoginAction extends ActionSupport {
                       
                           
                       vResult = ActionSupport.SUCCESS;
+                      
+                      this.session.put("user", vResult);
                                       
                        }
                       
@@ -84,6 +91,11 @@ public class LoginAction extends ActionSupport {
                       public String doLogout(){
                       return ActionSupport.SUCCESS;
                           
+                      }
+                      
+                      @Override
+                      public void setSession(Map<String, Object> pSession) {
+                      this.session = pSession;
                       }
                       
                       

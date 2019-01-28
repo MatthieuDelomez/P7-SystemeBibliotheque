@@ -4,10 +4,12 @@ package com.client.action;
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 
-public class GestionEmployeAction extends ActionSupport{
+public class GestionEmployeAction extends ActionSupport implements SessionAware {
     
     BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
     BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
@@ -17,6 +19,9 @@ public class GestionEmployeAction extends ActionSupport{
     private String email;
     private String nom;
     private String prenom;    
+    
+    // ----- Eléments Struts
+    private Map<String, Object> session;
 
 
     
@@ -60,6 +65,11 @@ public class GestionEmployeAction extends ActionSupport{
         this.prenom = prenom;
     }
     
+    @Override
+    public void setSession(Map<String, Object> pSession) {
+    this.session = pSession;
+    }
+    
     
    //=========Méthodes============
                       
@@ -77,6 +87,7 @@ public class GestionEmployeAction extends ActionSupport{
                       if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
                       port.doLogin(pseudo, motPasse);
                       vResult = ActionSupport.SUCCESS;
+                      this.session.put("employe", vResult);
                                       
                        }
                       
