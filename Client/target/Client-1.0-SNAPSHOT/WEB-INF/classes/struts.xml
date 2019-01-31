@@ -155,9 +155,8 @@
             <result>WEB-INF/jsp/resultRecherche.jsp</result>
         </action> 
                
-       <action name="rechercheLivre"
-                     class="com.client.action.RechercheAction"
-                     method="doSearchBook">
+       <action name="listDocument"
+                     class="com.client.action.RechercheAction">
           <result name="input" >WEB-INF/jsp/recherche.jsp</result>
           <result name="success" >WEB-INF/jsp/resultRecherche.jsp</result>
       </action>

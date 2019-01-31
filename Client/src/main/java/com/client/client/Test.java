@@ -49,9 +49,7 @@ public class Test {
                    System.out.println(bibliothequeResponse.getDescription());
                    
                    
-                   DocumentResponse documentResponse  = port.searchBook("1984 - George Orwell");
-                   
-                   System.out.println(documentResponse.getRefbibliotheque());
+
                    
                    
                    PretResponse pretResponse  = port.searchPret(1);

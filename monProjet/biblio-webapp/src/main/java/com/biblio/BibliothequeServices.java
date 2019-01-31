@@ -22,7 +22,6 @@ import org.projet.biblio.model.Client;
 import org.projet.biblio.model.Document;
 import org.projet.biblio.model.Pret;
 import org.projet.biblio.model.Utilisateur;
-import org.projet.biblio.business.manager.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -39,7 +38,7 @@ public class BibliothequeServices extends AbstractResource {
     
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
     
-		/* Créer un utilisateur */
+		/* Créer une bibliotheque */
     BibliothequeDao bibliothequeDao = ctx.getBean("bibliothequeDao", BibliothequeDao.class);
 
     /**
@@ -132,7 +131,7 @@ public class BibliothequeServices extends AbstractResource {
     /******************************************************************************************************/
            
     
-		/* Créer un utilisateur */
+		/* Créer un document */
     DocumentDao documentDao = ctx.getBean("documentDao", DocumentDao.class);
     
     
@@ -176,45 +175,45 @@ public class BibliothequeServices extends AbstractResource {
               }
     
     
-        /**
-       *
-       * @param nomOuvrage
-       * @return
-       */
-        
-           @WebMethod(operationName = "searchBook")
-           public DocumentResponse doSearchBook( @WebParam(name="nomouvrage") String nomOuvrage) {
-               
-               
-               Document document = new Document();
-               DocumentResponse response = new DocumentResponse();
-               
-               document.setNomOuvrage(nomOuvrage);
 
-               
-               document = documentDao.getDocument(document);
-               
-               try {
-                   
-                      System.out.println(nomOuvrage);
-                      System.out.println(document.getRefOuvrage());
+         
+@WebMethod(operationName = "listDocument")
+          public void listDocument2(@WebParam(name = "nomOuvrage") String nomOuvrage, @WebParam(name = "listDocument", mode = WebParam.Mode.OUT) Holder<List<DocumentResponse>> listDocuments){
 
-                   
-               response.setRefOuvrage(document.getRefOuvrage());
-               response.setRefBibliotheque(document.getRefBibliotheque());
-               response.setNomOuvrage(document.getNomOuvrage());
-               response.setQuantiteTotal(document.getQuantiteTotal());
-                   
-               } catch (Exception e) {
-                   e.printStackTrace();
-                   
-               }
-               
-  
-               
-               return response;
-               
-           }
+                     listDocuments.value = new ArrayList<>();
+
+                     List<Document>listDocument  = new ArrayList<>();
+                     List<DocumentResponse>listDocumentResponse  = new ArrayList<>();
+                    Document doc = new Document();
+
+                     doc.setNomOuvrage(nomOuvrage);
+
+
+
+                     listDocument = documentDao.getAllDocument(doc);
+
+
+                     for(Document document : listDocument){
+
+                     DocumentResponse documentResponse = new DocumentResponse();
+
+                     documentResponse.setRefOuvrage(document.getRefOuvrage());
+                     documentResponse.setRefBibliotheque(document.getRefBibliotheque());
+                     documentResponse.setNomOuvrage(document.getNomOuvrage());
+                     documentResponse.setQuantiteTotal(document.getQuantiteTotal());
+
+
+                      listDocumentResponse.add(documentResponse);
+
+                     }
+
+                     listDocuments.value = listDocumentResponse;
+
+                     
+                     System.out.println(listDocument);
+
+                     }
+
     
      /******************************************************************************************************/
     /***********************************************Pret***************************************************
@@ -452,7 +451,7 @@ public class BibliothequeServices extends AbstractResource {
     /************************************************Client************************************************
     /******************************************************************************************************/
 
-           		/* Créer un utilisateur */
+           		/* Créer un client */
     ClientDao clientDao = ctx.getBean("clientDao", ClientDao.class);
     
     
@@ -507,7 +506,7 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="addClient")
-           public ClientResponse doCreateClient(         @WebParam(name="refclient") int refClient,
+           public ClientResponse doCreateClient(        @WebParam(name="refclient") int refClient,
                                                                                             @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                             @WebParam(name="nom") String nom,
                                                                                             @WebParam(name="prenom") String prenom,

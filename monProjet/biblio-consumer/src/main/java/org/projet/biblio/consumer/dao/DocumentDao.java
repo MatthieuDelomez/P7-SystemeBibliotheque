@@ -18,7 +18,7 @@ public interface DocumentDao {
     
     void deleteDocumentPicture(Document document);
     
-    List<Document> getAllDocument();
+    List<Document> getAllDocument(Document document);
     
     void updateDocument(Document document);
     

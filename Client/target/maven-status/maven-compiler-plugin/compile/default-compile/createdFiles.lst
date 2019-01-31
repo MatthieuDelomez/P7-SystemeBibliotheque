@@ -1,4 +1,5 @@
 com\biblio\SearchBook.class
+com\biblio\ListDocument.class
 com\client\action\GestionEmployeAction.class
 com\biblio\SearchPretResponse.class
 com\biblio\AddDocumentResponse.class
@@ -28,6 +29,7 @@ com\client\client\Test.class
 com\biblio\BibliothequeResponse.class
 com\biblio\package-info.class
 com\client\action\AddClientAction.class
+com\biblio\ListDocumentResponse.class
 com\client\action\AddUserAction.class
 com\biblio\AddBiblio.class
 com\biblio\BibliothequeServicesService.class

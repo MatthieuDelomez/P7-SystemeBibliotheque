@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -38,6 +39,9 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                       
                        // ----- Eléments Struts
                       private Map<String, Object> session;
+                      
+                      
+                      
 
                       
 
@@ -160,6 +164,8 @@ public class AddClientAction extends ActionSupport implements SessionAware {
     this.session = pSession;
     }
     
+    
+    
    
     
     public String doAddClient(){
@@ -186,12 +192,12 @@ public class AddClientAction extends ActionSupport implements SessionAware {
             
         if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
             
-       port.addClient(refClient, refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
+        port.addClient(refClient ,refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
-            
         System.out.println("test test");
         vResult = ActionSupport.SUCCESS;
         this.session.put("user", vResult);
+        
 
         }
         
@@ -208,7 +214,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         System.out.println(pseudo);
         System.out.println(motPasse);
         System.out.println(refBibliotheque);
-        System.out.println(refClient);
+        //        System.out.println(refClient);
           
        }
   
@@ -229,10 +235,10 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         
         return SUCCESS;
         
-
-
-
     }
+    
+    
+
     
     }
 

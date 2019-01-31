@@ -1,11 +1,12 @@
 
 package com.client.action;
 
-import com.biblio.BibliothequeResponse;
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.DocumentResponse;
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -22,6 +23,9 @@ public class RechercheAction extends ActionSupport {
        
        private String nomOuvrage;
        private String quantiteTotal;
+       
+       private List <String> listDocument;
+       private List <DocumentResponse> listDocumentResponse;
        
        
    //=========Getters & Setters=============
@@ -58,33 +62,31 @@ public class RechercheAction extends ActionSupport {
         this.quantiteTotal = quantiteTotal;
     }
 
+    public List<String> getListDocument() {
+        return listDocument;
+    }
+
+    public void setListDocument(List<String> listDocument) {
+        this.listDocument = listDocument;
+    }
+
+    public List<DocumentResponse> getListDocumentResponse() {
+        return listDocumentResponse;
+    }
+
+    public void setListDocumentResponse(List<DocumentResponse> listDocumentResponse) {
+        this.listDocumentResponse = listDocumentResponse;
+    }
+    
+    
+
        
-    public String doSearchBook() {
+    public String execute() {
         
-                      String vResult = ActionSupport.INPUT;
-   
-                      try {
-   
-                       if(!StringUtils.isAllEmpty(nomOuvrage)){
-       
-                      port.searchBook(nomOuvrage);
-    
-                      vResult = ActionSupport.SUCCESS;
-       
-                       }
-                      
-                      
-                       } catch (Exception pe){
-                           
-                       this.addActionError("Rentrez le nom comple de l'ouvrage");
-                      System.out.println("Pour afficher les documents");
-
-
-                                                                  
-                      }
-                                                            
-                      return vResult;
+        listDocument = new ArrayList ();
+        listDocumentResponse = port.listDocument(nomOuvrage);
+        
+        return SUCCESS;
                          
-                      }
-    
-}
+        }  
+        }

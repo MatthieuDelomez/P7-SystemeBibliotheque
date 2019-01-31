@@ -36,11 +36,13 @@ public class DocumentManagerImpl extends AbstractManager implements DocumentMana
     
 
       /* Implementation de la methode liste des publications /*/
-    @Override
-    public List<Document> getAllDocument() {
+    public List<Document> getAllDocument(Document document) {
         
                        System.out.println("---->>> manager getAllDocument");
-                       return getDaoFactory().getDocumentDao().getAllDocument();
+                       
+                       
+                       
+                       return getDaoFactory().getDocumentDao().getAllDocument(document);
                                       
          }
     

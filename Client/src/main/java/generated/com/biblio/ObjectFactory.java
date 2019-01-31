@@ -32,7 +32,7 @@ public class ObjectFactory {
     private final static QName _SearchPretResponse_QNAME = new QName("http://biblio.com/", "searchPretResponse");
     private final static QName _ListClient_QNAME = new QName("http://biblio.com/", "listClient");
     private final static QName _DoLoginClientResponse_QNAME = new QName("http://biblio.com/", "doLoginClientResponse");
-    private final static QName _SearchBook_QNAME = new QName("http://biblio.com/", "searchBook");
+    private final static QName _ListDocument_QNAME = new QName("http://biblio.com/", "listDocument");
     private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
     private final static QName _DoLogin_QNAME = new QName("http://biblio.com/", "doLogin");
     private final static QName _PretResponse_QNAME = new QName("http://biblio.com/", "PretResponse");
@@ -43,10 +43,10 @@ public class ObjectFactory {
     private final static QName _AddBiblio_QNAME = new QName("http://biblio.com/", "addBiblio");
     private final static QName _BibliothequeResponse_QNAME = new QName("http://biblio.com/", "BibliothequeResponse");
     private final static QName _AddDocumentResponse_QNAME = new QName("http://biblio.com/", "addDocumentResponse");
-    private final static QName _SearchBookResponse_QNAME = new QName("http://biblio.com/", "searchBookResponse");
     private final static QName _DocumentResponse_QNAME = new QName("http://biblio.com/", "DocumentResponse");
     private final static QName _AddDocument_QNAME = new QName("http://biblio.com/", "addDocument");
     private final static QName _DoLoginResponse_QNAME = new QName("http://biblio.com/", "doLoginResponse");
+    private final static QName _ListDocumentResponse_QNAME = new QName("http://biblio.com/", "listDocumentResponse");
     private final static QName _SearchBiblioResponse_QNAME = new QName("http://biblio.com/", "searchBiblioResponse");
     private final static QName _AddBiblioResponse_QNAME = new QName("http://biblio.com/", "addBiblioResponse");
     private final static QName _AddPretResponse_QNAME = new QName("http://biblio.com/", "addPretResponse");
@@ -83,6 +83,14 @@ public class ObjectFactory {
      */
     public AddUser createAddUser() {
         return new AddUser();
+    }
+
+    /**
+     * Create an instance of {@link ListDocumentResponse }
+     * 
+     */
+    public ListDocumentResponse createListDocumentResponse() {
+        return new ListDocumentResponse();
     }
 
     /**
@@ -131,14 +139,6 @@ public class ObjectFactory {
      */
     public AddDocumentResponse createAddDocumentResponse() {
         return new AddDocumentResponse();
-    }
-
-    /**
-     * Create an instance of {@link SearchBookResponse }
-     * 
-     */
-    public SearchBookResponse createSearchBookResponse() {
-        return new SearchBookResponse();
     }
 
     /**
@@ -230,11 +230,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SearchBook }
+     * Create an instance of {@link ListDocument }
      * 
      */
-    public SearchBook createSearchBook() {
-        return new SearchBook();
+    public ListDocument createListDocument() {
+        return new ListDocument();
     }
 
     /**
@@ -366,12 +366,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchBook }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListDocument }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://biblio.com/", name = "searchBook")
-    public JAXBElement<SearchBook> createSearchBook(SearchBook value) {
-        return new JAXBElement<SearchBook>(_SearchBook_QNAME, SearchBook.class, null, value);
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listDocument")
+    public JAXBElement<ListDocument> createListDocument(ListDocument value) {
+        return new JAXBElement<ListDocument>(_ListDocument_QNAME, ListDocument.class, null, value);
     }
 
     /**
@@ -465,15 +465,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchBookResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://biblio.com/", name = "searchBookResponse")
-    public JAXBElement<SearchBookResponse> createSearchBookResponse(SearchBookResponse value) {
-        return new JAXBElement<SearchBookResponse>(_SearchBookResponse_QNAME, SearchBookResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DocumentResponse }{@code >}}
      * 
      */
@@ -498,6 +489,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "doLoginResponse")
     public JAXBElement<DoLoginResponse> createDoLoginResponse(DoLoginResponse value) {
         return new JAXBElement<DoLoginResponse>(_DoLoginResponse_QNAME, DoLoginResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListDocumentResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listDocumentResponse")
+    public JAXBElement<ListDocumentResponse> createListDocumentResponse(ListDocumentResponse value) {
+        return new JAXBElement<ListDocumentResponse>(_ListDocumentResponse_QNAME, ListDocumentResponse.class, null, value);
     }
 
     /**

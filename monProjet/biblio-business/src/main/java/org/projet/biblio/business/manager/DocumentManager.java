@@ -29,9 +29,10 @@ public interface DocumentManager {
 
      * Renvoie la liste des {@link Projet}
      *
+     * @param document
      * @return List
      */
-    List<Document> getAllDocument();
+    List<Document> getAllDocument(Document document);
 
 
     

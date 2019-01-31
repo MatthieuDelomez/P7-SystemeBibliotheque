@@ -49,7 +49,30 @@
     
     
     <body>
-        <h1>Hello World!</h1>
+                      <div class="titreClient">
+                      <h2>Recherche ouvrage</h2>
+                      </div>
+        
+                      <div class="listeClient">
+                          <table class="tableClient">
+                      <tr>
+                              <th>Ref ouvrage</th>
+                              <th>Ref bibliotheque</th>
+                              <th>Nom de l'ouvrage</th>
+                              <th>Quantité total</th>
+                      </tr>
+                      <tr>    
+                      <ul>
+                      <s:iterator value="listDocumentResponse" var="listDocument">
+
+                      <li><td><s:property value="#listDocument.refOuvrage" /></td></li> 
+                      <li><td><s:property value="#listDocument.refBibliotheque" /></td></li>
+                      <li><td><s:property value="#listDocument.nomOuvrage" /></td></li>
+                      <li><td><s:property value="#listDocument.quantiteTotal" /></td></li>
+                      </ul></tr>
+                      </s:iterator>
+                      </table></div>
+                      </div>
     </body>
     
     

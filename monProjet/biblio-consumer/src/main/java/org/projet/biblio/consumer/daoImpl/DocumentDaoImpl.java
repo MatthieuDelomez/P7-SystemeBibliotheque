@@ -1,16 +1,21 @@
 
 package org.projet.biblio.consumer.daoImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.sql.DataSource;
 import org.projet.biblio.consumer.dao.DocumentDao;
 import org.projet.biblio.consumer.rowMapper.DocumentMapper;
 import org.projet.biblio.model.Document;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 
 
@@ -69,9 +74,6 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 		};
 
 
-
-                
-
         
 
                                              try {
@@ -92,10 +94,10 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
             
                                              return null;
 
-                                             }
+                                            }
 
                                            	}
- 
+                              
                               
 
 
@@ -131,35 +133,35 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 	}
 
                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
-                     @Override
-        	public List<Document> getAllDocument() {
+                   public List<Document> getAllDocument(Document document) {
+
+        if (document.getNomOuvrage() == null) return null;
+
+        JdbcTemplate jdbcTemplate = getJdbcTemplate();    
+
+                                           try {
+
+                                           String sql = "SELECT * FROM document WHERE nomouvrage LIKE '%"+document.getNomOuvrage()+"%' "; 
+
+                                           List<Document> publicationQuery = jdbcTemplate.query(sql,
+
+            new BeanPropertyRowMapper(Document.class));
+
+            return publicationQuery;
+            
+            
 
 
-                                                       String sql = "SELECT * FROM document";
+                                          } catch (EmptyResultDataAccessException exception) {
 
-		           JdbcTemplate jdbcTemplate = getJdbcTemplate();
+            System.out.println("Incorrect");
 
+            return null;
+           }
+                                           
+                                           
+                   }
 
-
-		          try {
- 
-			List<Document> publicationQuery = jdbcTemplate.query(sql,
-
-			new BeanPropertyRowMapper(Document.class));
-
-			return publicationQuery;
-
-
-
-		           } catch (EmptyResultDataAccessException exception) {
- 
-			System.out.println("Incorrect");
-
-			return null;
-
-		}
-
-                          	}
 
 
 }
