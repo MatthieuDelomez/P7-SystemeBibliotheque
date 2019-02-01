@@ -6,6 +6,7 @@ import com.biblio.BibliothequeServicesService;
 import com.biblio.UtilisateurResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -30,6 +31,8 @@ public class AddUserAction extends ActionSupport implements SessionAware{
                       
                       // ----- Eléments Struts
                       private Map<String, Object> session;
+                      
+                      private static AtomicInteger genId = new AtomicInteger(8);
                       
   //=========Getters & Setters=============
 
@@ -88,6 +91,16 @@ public class AddUserAction extends ActionSupport implements SessionAware{
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+    public static AtomicInteger getGenId() {
+        return genId;
+    }
+
+    public static void setGenId(AtomicInteger genId) {
+        AddUserAction.genId = genId;
+    }
+    
+    
     
     @Override
     public void setSession(Map<String, Object> pSession) {
@@ -112,6 +125,8 @@ public class AddUserAction extends ActionSupport implements SessionAware{
     try {
      
     if(!StringUtils.isAllEmpty( pseudo, motPasse)){
+        
+        idUtilisateur = genId.incrementAndGet();
     
     port.addUser(idUtilisateur, refBibliotheque, pseudo, motPasse, email, nom, prenom);
     

@@ -39,7 +39,6 @@
         
 
 	<s:form action="ajouterEmploye">
-                      <s:textfield name="idUtilisateur" label="idUtilisateur" value="idUtilisateur"/>
                     	<s:textfield name="refBibliotheque" label="refBibliotheque" value="refBibliotheque"/>
                       <s:textfield name="pseudo" label="pseudo" value="pseudo" />
                       <s:password name="motPasse" label="motPasse" value="motPasse" />

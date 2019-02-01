@@ -33,12 +33,14 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                       
                       private int refBibliotheque;
                       private int refClient;
-                      
+                                            
                       private List <String> listClient;
                       private List <ClientResponse> listClientResponse;
                       
                        // ----- Eléments Struts
                       private Map<String, Object> session;
+                      
+                      public static  AtomicInteger genId = new AtomicInteger(1);
                       
                       
                       
@@ -158,13 +160,22 @@ public class AddClientAction extends ActionSupport implements SessionAware {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public static AtomicInteger getGenId() {
+        return genId;
+    }
+
+    public static void setGenId(AtomicInteger genId) {
+        AddClientAction.genId = genId;
+    }
+
+
     
    @Override
     public void setSession(Map<String, Object> pSession) {
     this.session = pSession;
     }
-    
-    
+
     
    
     
@@ -175,15 +186,16 @@ public class AddClientAction extends ActionSupport implements SessionAware {
     
     ClientResponse clientResponse = new ClientResponse();
     
-    clientResponse.setAdresse(adresse);
-    clientResponse.setCodepostal(codePostal);
-    clientResponse.setEmail(email);
-    clientResponse.setMotpasse(motPasse);
+    clientResponse.setRefclient(refClient);
+    clientResponse.setRefbibliotheque(refBibliotheque);
     clientResponse.setNom(nom);
     clientResponse.setPrenom(prenom);
+    clientResponse.setSexe(sexe);
     clientResponse.setPseudo(pseudo);
-    clientResponse.setRefbibliotheque(refBibliotheque);
-    clientResponse.setRefclient(refClient);
+    clientResponse.setMotpasse(motPasse);
+    clientResponse.setAdresse(adresse);
+    clientResponse.setEmail(email);
+    clientResponse.setCodepostal(codePostal);
 
 
     
@@ -191,6 +203,8 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         try{
             
         if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+            
+        refClient = genId.incrementAndGet();
             
         port.addClient(refClient ,refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
@@ -214,7 +228,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         System.out.println(pseudo);
         System.out.println(motPasse);
         System.out.println(refBibliotheque);
-        //        System.out.println(refClient);
+        System.out.println(refClient);
           
        }
   

@@ -8,14 +8,12 @@ import com.biblio.BibliothequeServicesService;
 import com.biblio.PretResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 
 
 public class PretAction extends ActionSupport {
-    /*
-       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
-       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
-*/
+    
 
    //=========Attributs=============
     protected int refclient;
@@ -31,6 +29,8 @@ public class PretAction extends ActionSupport {
     
     private List<String> listPret;
     private List<PretResponse> listPretResponse;
+    
+    private static AtomicInteger genId = new AtomicInteger(0);
     
 
 
@@ -116,6 +116,15 @@ public class PretAction extends ActionSupport {
         this.prolonger = prolonger;
     }
 
+    public static AtomicInteger getGenId() {
+        return genId;
+    }
+
+    public static void setGenId(AtomicInteger genId) {
+        PretAction.genId = genId;
+    }
+    
+
 
     
   //================Méthodes===================
@@ -182,6 +191,8 @@ public class PretAction extends ActionSupport {
                           
                       if (!StringUtils.isAllEmpty(datepret, dureePret, datefinpret)) {
                           
+                      refpret = genId.getAndIncrement();
+                      
                       port.addPret(refpret, refclient, refouvrage, datepret, dureePret, datefinpret, nbrexemplaire, prolonger);
                       
                       System.out.println("Ajout d'un pret dans la base");

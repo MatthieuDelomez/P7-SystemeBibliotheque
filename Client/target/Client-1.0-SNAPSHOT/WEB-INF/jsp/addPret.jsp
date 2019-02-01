@@ -41,7 +41,6 @@
         
 
 	<s:form action="ajouterPret">
-                    	<s:textfield name="refpret" label="refpret" value="refpret"/>
 	<s:textfield name="refclient" label="refclient" value="refclient"/>
 	<s:textfield name="refouvrage" label="refouvrage" value="refouvrage"/>
         	<s:textfield name="datepret" label="datepret" value="datepret" />
