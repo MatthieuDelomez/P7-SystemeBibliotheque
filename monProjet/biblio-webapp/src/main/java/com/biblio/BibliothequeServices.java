@@ -176,15 +176,20 @@ public class BibliothequeServices extends AbstractResource {
     
     
 
-         
-@WebMethod(operationName = "listDocument")
-          public void listDocument2(@WebParam(name = "nomOuvrage") String nomOuvrage, @WebParam(name = "listDocument", mode = WebParam.Mode.OUT) Holder<List<DocumentResponse>> listDocuments){
+      /**
+     *
+     * @param listDocuments 
+     * @param nomOuvrage
+     */
+          @WebMethod(operationName = "listDocument")
+          public void listDocument2(@WebParam(name = "nomOuvrage") String nomOuvrage, 
+                                                           @WebParam(name = "listDocument", mode = WebParam.Mode.OUT) Holder<List<DocumentResponse>> listDocuments){
 
                      listDocuments.value = new ArrayList<>();
 
                      List<Document>listDocument  = new ArrayList<>();
                      List<DocumentResponse>listDocumentResponse  = new ArrayList<>();
-                    Document doc = new Document();
+                     Document doc = new Document();
 
                      doc.setNomOuvrage(nomOuvrage);
 
@@ -205,12 +210,13 @@ public class BibliothequeServices extends AbstractResource {
 
                       listDocumentResponse.add(documentResponse);
 
+
                      }
 
                      listDocuments.value = listDocumentResponse;
 
                      
-                     System.out.println(listDocument);
+                     
 
                      }
 

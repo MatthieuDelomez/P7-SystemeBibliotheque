@@ -150,15 +150,12 @@
         <action name="recherche">
             <result>WEB-INF/jsp/recherche.jsp</result>
         </action> 
-        
-        <action name="resultRecherche">
-            <result>WEB-INF/jsp/resultRecherche.jsp</result>
-        </action> 
+
                
-       <action name="listDocument"
+       <action name="listeDocument"
                      class="com.client.action.RechercheAction">
-          <result name="input" >WEB-INF/jsp/recherche.jsp</result>
           <result name="success" >WEB-INF/jsp/resultRecherche.jsp</result>
+          <result name="input" >WEB-INF/jsp/recherche.jsp</result>
       </action>
                      
     </package>

@@ -63,12 +63,12 @@
                       </tr>
                       <tr>    
                       <ul>
-                      <s:iterator value="listDocumentResponse" var="listDocument">
+                      <s:iterator value="listDocumentResponse" var="listeDocument">
 
-                      <li><td><s:property value="#listDocument.refOuvrage" /></td></li> 
-                      <li><td><s:property value="#listDocument.refBibliotheque" /></td></li>
-                      <li><td><s:property value="#listDocument.nomOuvrage" /></td></li>
-                      <li><td><s:property value="#listDocument.quantiteTotal" /></td></li>
+                      <li><td><s:property value="#listeDocument.refOuvrage" /></td></li> 
+                      <li><td><s:property value="#listeDocument.refBibliotheque" /></td></li>
+                      <li><td><s:property value="#listeDocument.nomOuvrage" /></td></li>
+                      <li><td><s:property value="#listeDocument.quantiteTotal" /></td></li>
                       </ul></tr>
                       </s:iterator>
                       </table></div>

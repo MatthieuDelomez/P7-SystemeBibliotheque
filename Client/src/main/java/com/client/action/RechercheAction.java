@@ -12,8 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class RechercheAction extends ActionSupport {
     
-       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
-       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+       
 
 
    //=========Attributs=============
@@ -81,10 +80,17 @@ public class RechercheAction extends ActionSupport {
     
 
        
+    @Override
     public String execute() {
+        
+        BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
+        BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+        
         
         listDocument = new ArrayList ();
         listDocumentResponse = port.listDocument(nomOuvrage);
+        
+
         
         return SUCCESS;
                          

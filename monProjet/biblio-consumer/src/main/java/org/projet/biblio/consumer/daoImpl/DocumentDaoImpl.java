@@ -133,6 +133,7 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 	}
 
                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                  @Override
                    public List<Document> getAllDocument(Document document) {
 
         if (document.getNomOuvrage() == null) return null;
@@ -145,9 +146,11 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 
                                            List<Document> publicationQuery = jdbcTemplate.query(sql,
 
-            new BeanPropertyRowMapper(Document.class));
+            new BeanPropertyRowMapper(Document.class)); 
 
             return publicationQuery;
+            
+            
             
             
 
