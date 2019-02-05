@@ -5,7 +5,7 @@ import java.util.List;
 import org.projet.biblio.model.Pret;
 
 /*
-Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Utilisateur
+Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Pret
 */
 
 public interface PretManager {

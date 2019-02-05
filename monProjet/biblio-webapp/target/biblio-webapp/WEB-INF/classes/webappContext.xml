@@ -11,8 +11,6 @@
 
     <!-- ==== Resource JNDI===== -->
 
-
-
 <bean id="dataSourceBiblio" class="org.springframework.jndi.JndiObjectFactoryBean">
 
     <property name="jndiName" value="java:comp/env/jdbc/Biblio"/>
@@ -35,8 +33,6 @@
     
     
                 <!-- ManagerFactory -->
-
-
 
             <bean id= "managerFactory" class="org.projet.biblio.business.managerImpl.ManagerFactoryImpl">
 

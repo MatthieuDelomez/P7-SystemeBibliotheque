@@ -11,8 +11,6 @@ public abstract class AbstractResource {
 
     protected static ManagerFactoryImpl getManagerFactory() {
 
-        System.out.println("--->>>> get manager factory : "+ managerFactory);
-
         return managerFactory ;
 
     }

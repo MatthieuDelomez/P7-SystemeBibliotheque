@@ -19,7 +19,7 @@ Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC
 
 public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
-     /* Variable DataSource*/
+                      /* Variable DataSource*/
 
 	private DataSource dataSource;
 
@@ -29,7 +29,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
                    /*Classe hérité de la classe Parente AbstractDaoImpl*/
 
-                  @Override
+                     @Override
 	public void addClient(Client client) {
 
             
@@ -55,9 +55,9 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
                       System.out.println(exception.getMessage());
 
-                             }
+                       }
 
-	       }
+	 }
 
 
                        /* Méthode pour récupérer un Client*/
@@ -68,19 +68,12 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
                         public Client getClient(Client client) {
 
 
-		String sql = "SELECT * FROM client WHERE  pseudo = ? AND motpasse = ?";
+	String sql = "SELECT * FROM client WHERE  pseudo = ? AND motpasse = ?";
 
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
+	JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
+	Object[] args = new Object[] {   client.getPseudo(), client.getMotPasse() };
 
-		Object[] args = new Object[] {
-				            client.getPseudo(), client.getMotPasse() };
-
-
-
-                
-
-        
 
                        try {
 
@@ -105,72 +98,56 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	}
                         
                         
-                                             /*Méthode pour afficher une liste de client*/
+                      /*Méthode pour afficher une liste de client*/
                      @Override
         	public List<Client> getAllClient() {
 
 
-                                            String sql = "SELECT * FROM client";
+                      String sql = "SELECT * FROM client";
 
-                                            JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
-
-
-		                       try {
-
-			List<Client> publicationQuery = jdbcTemplate.query(sql,
-
-			new BeanPropertyRowMapper(Client.class));
-
-			return publicationQuery;
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
 
-		                      } catch (EmptyResultDataAccessException exception) {
+                      try {
 
-			System.out.println("Incorrect");
+	List<Client> publicationQuery = jdbcTemplate.query(sql,
 
-			return null;
+	new BeanPropertyRowMapper(Client.class));
 
-		}
+	return publicationQuery;
+
+
+	} catch (EmptyResultDataAccessException exception) {
+
+	System.out.println("Incorrect");
+
+	return null;
+
+	}
 
 	}
 
 
 
 	@Override
-
 	public void deleteClientPicture(Client client) {
 
-		// TODO Auto-generated method stub
-
-
-
 	}
 
 
-
 	@Override
-
 	public void updateClient(Client client) {
 
-		// TODO Auto-generated method stub
-
-
 
 	}
 
 
 
 	@Override
-
 	public void deleteClient(Client client) {
-
-		// TODO Auto-generated method stub
 
 
 
 	}
 
-
-
-}
+                      }

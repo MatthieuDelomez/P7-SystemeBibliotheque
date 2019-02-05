@@ -5,7 +5,7 @@ import java.util.List;
 import org.projet.biblio.model.Document;
 
 /*
-Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Utilisateur
+Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Document
 */
 
 public interface DocumentManager {
@@ -25,13 +25,7 @@ public interface DocumentManager {
     void deleteDocument (Document document);
     
 
-    /**
 
-     * Renvoie la liste des {@link Projet}
-     *
-     * @param document
-     * @return List
-     */
     List<Document> getAllDocument(Document document);
 
 

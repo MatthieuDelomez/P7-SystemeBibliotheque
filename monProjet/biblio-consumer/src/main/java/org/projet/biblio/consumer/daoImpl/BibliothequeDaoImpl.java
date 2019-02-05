@@ -39,13 +39,13 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
 
                                              jdbcTemplate.update(sql, args);
 
-                                       } catch (DuplicateKeyException exception) {
+                                             } catch (DuplicateKeyException exception) {
 
                                             System.out.println(exception.getMessage());
 
-                             }
+                                             }
 
-                  }
+                                             }
 
     
 
@@ -62,11 +62,7 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
 		};
 
 
-
                 
-
-        
-
                                         try {
 
                                        RowMapper<Bibliotheque> rowMapper = new BibliothequeMapper();
@@ -85,8 +81,8 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
 
                                                          return null;
 
-        }
-    }
+                                       }
+                                       }
 
                                        
                                        

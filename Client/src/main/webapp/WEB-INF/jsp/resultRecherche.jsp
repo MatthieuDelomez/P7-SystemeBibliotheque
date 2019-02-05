@@ -49,12 +49,12 @@
     
     
     <body>
-                      <div class="titreClient">
+                      <div class="titreDocument">
                       <h2>Recherche ouvrage</h2>
                       </div>
         
-                      <div class="listeClient">
-                          <table class="tableClient">
+                      <div class="listeDocument">
+                          <table class="tableDocument">
                       <tr>
                               <th>Ref ouvrage</th>
                               <th>Ref bibliotheque</th>

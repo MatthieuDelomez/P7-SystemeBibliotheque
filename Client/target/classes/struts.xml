@@ -101,6 +101,7 @@
           <result name="success" >WEB-INF/jsp/actu.jsp</result>
       </action>
       
+      
                             <!--  EMPLOYES -->
 
       <!-- Action pour permettre des verifier les employés -->
@@ -228,10 +229,34 @@
             <result>WEB-INF/jsp/accueilEmploye.jsp</result>
         </action> 
         
-       <!-- Action pour effectuer une recherche -->
+                        
+                                   <!-- RECHERCHE -->
+  
+        <!-- Action pour effectuer une recherche -->
         <action name="rechercheEmploye">
             <result>WEB-INF/jsp/rechercheEmploye.jsp</result>
+        </action> 
+
+               
+       <action name="listeDoc"
+                     class="com.client.action.RechercheAction">
+          <result name="success" >WEB-INF/jsp/resultRechercheEmploye.jsp</result>
+          <result name="input" >WEB-INF/jsp/rechercheEmploye.jsp</result>
+      </action>
+      
+       <!-- Action pour inscrire un employé -->
+        <action name="addDocument"
+                       class="com.client.action.AddDocumentAction">
+            <result>WEB-INF/jsp/addDocument.jsp</result>
         </action>
+        
+        
+       <action name="ajouterDocument"
+                     class="com.client.action.AddDocumentAction"
+                     method="doAddDocument">
+          <result name="input" >WEB-INF/jsp/addDocument.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+      </action>
                  
 
     </package>

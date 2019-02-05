@@ -17,26 +17,27 @@ import org.springframework.jdbc.core.RowMapper;
 public class UtilisateurMapper implements RowMapper<Utilisateur>{
     
     
+                     @Override
                	public  Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
                     
                      Utilisateur  utilisateur = new  Utilisateur();
                      
-                                      utilisateur.setIdUtilisateur(rs.getInt("idutilisateur"));
+                      utilisateur.setIdUtilisateur(rs.getInt("idutilisateur"));
                     
-                                      utilisateur.setRefBibliotheque(rs.getInt("refbibliotheque"));
+                      utilisateur.setRefBibliotheque(rs.getInt("refbibliotheque"));
                                       
-                                      	utilisateur.setPseudo(rs.getString("pseudo"));
+                      utilisateur.setPseudo(rs.getString("pseudo"));
                                                                         
-		utilisateur.setMotPasse(rs.getString("motpasse"));
+	utilisateur.setMotPasse(rs.getString("motpasse"));
                 
-                		utilisateur.setEmail(rs.getString("email"));
+                	utilisateur.setEmail(rs.getString("email"));
                 
-                                      utilisateur.setNom(rs.getString("nom"));
+                      utilisateur.setNom(rs.getString("nom"));
 
-                                       utilisateur.setPrenom(rs.getString("prenom"));
+                      utilisateur.setPrenom(rs.getString("prenom"));
                                        
                                        
-                                       return utilisateur;
+                       return utilisateur;
 
                 }
 }

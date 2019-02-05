@@ -198,6 +198,8 @@ public class BibliothequeServices extends AbstractResource {
                      listDocument = documentDao.getAllDocument(doc);
 
 
+                     System.out.println(listDocument);
+                     
                      for(Document document : listDocument){
 
                      DocumentResponse documentResponse = new DocumentResponse();
@@ -382,9 +384,6 @@ public class BibliothequeServices extends AbstractResource {
                
                utilisateur = utilisateurDao.getUtilisateur(utilisateur);
                
-               
-               System.out.println(utilisateur.getPseudo());
-               System.out.println(utilisateur.getMotPasse());
 
                
                try{
@@ -481,9 +480,6 @@ public class BibliothequeServices extends AbstractResource {
                
                client = clientDao.getClient(client);
                
-               
-               System.out.println(client.getPseudo());
-               System.out.println(client.getMotPasse());
               
                
                try{

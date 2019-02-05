@@ -4,11 +4,23 @@
 <xsd:import namespace="http://biblio.com/" schemaLocation="http://localhost:8084/bibliotheque/bibliothequeB?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="addUser">
-<part name="parameters" element="tns:addUser"/>
+<message name="addBiblio">
+<part name="parameters" element="tns:addBiblio"/>
 </message>
-<message name="addUserResponse">
-<part name="parameters" element="tns:addUserResponse"/>
+<message name="addBiblioResponse">
+<part name="parameters" element="tns:addBiblioResponse"/>
+</message>
+<message name="listPret">
+<part name="parameters" element="tns:listPret"/>
+</message>
+<message name="listPretResponse">
+<part name="parameters" element="tns:listPretResponse"/>
+</message>
+<message name="addPret">
+<part name="parameters" element="tns:addPret"/>
+</message>
+<message name="addPretResponse">
+<part name="parameters" element="tns:addPretResponse"/>
 </message>
 <message name="searchPret">
 <part name="parameters" element="tns:searchPret"/>
@@ -22,23 +34,11 @@
 <message name="doLoginResponse">
 <part name="parameters" element="tns:doLoginResponse"/>
 </message>
-<message name="addClient">
-<part name="parameters" element="tns:addClient"/>
+<message name="searchBiblio">
+<part name="parameters" element="tns:searchBiblio"/>
 </message>
-<message name="addClientResponse">
-<part name="parameters" element="tns:addClientResponse"/>
-</message>
-<message name="addPret">
-<part name="parameters" element="tns:addPret"/>
-</message>
-<message name="addPretResponse">
-<part name="parameters" element="tns:addPretResponse"/>
-</message>
-<message name="listClient">
-<part name="parameters" element="tns:listClient"/>
-</message>
-<message name="listClientResponse">
-<part name="parameters" element="tns:listClientResponse"/>
+<message name="searchBiblioResponse">
+<part name="parameters" element="tns:searchBiblioResponse"/>
 </message>
 <message name="listDocument">
 <part name="parameters" element="tns:listDocument"/>
@@ -46,23 +46,23 @@
 <message name="listDocumentResponse">
 <part name="parameters" element="tns:listDocumentResponse"/>
 </message>
-<message name="searchBiblio">
-<part name="parameters" element="tns:searchBiblio"/>
-</message>
-<message name="searchBiblioResponse">
-<part name="parameters" element="tns:searchBiblioResponse"/>
-</message>
 <message name="addDocument">
 <part name="parameters" element="tns:addDocument"/>
 </message>
 <message name="addDocumentResponse">
 <part name="parameters" element="tns:addDocumentResponse"/>
 </message>
-<message name="listPret">
-<part name="parameters" element="tns:listPret"/>
+<message name="addClient">
+<part name="parameters" element="tns:addClient"/>
 </message>
-<message name="listPretResponse">
-<part name="parameters" element="tns:listPretResponse"/>
+<message name="addClientResponse">
+<part name="parameters" element="tns:addClientResponse"/>
+</message>
+<message name="listClient">
+<part name="parameters" element="tns:listClient"/>
+</message>
+<message name="listClientResponse">
+<part name="parameters" element="tns:listClientResponse"/>
 </message>
 <message name="doLoginClient">
 <part name="parameters" element="tns:doLoginClient"/>
@@ -70,16 +70,24 @@
 <message name="doLoginClientResponse">
 <part name="parameters" element="tns:doLoginClientResponse"/>
 </message>
-<message name="addBiblio">
-<part name="parameters" element="tns:addBiblio"/>
+<message name="addUser">
+<part name="parameters" element="tns:addUser"/>
 </message>
-<message name="addBiblioResponse">
-<part name="parameters" element="tns:addBiblioResponse"/>
+<message name="addUserResponse">
+<part name="parameters" element="tns:addUserResponse"/>
 </message>
 <portType name="BibliothequeServices">
-<operation name="addUser">
-<input wsam:Action="http://biblio.com/BibliothequeServices/addUserRequest" message="tns:addUser"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/addUserResponse" message="tns:addUserResponse"/>
+<operation name="addBiblio">
+<input wsam:Action="http://biblio.com/BibliothequeServices/addBiblioRequest" message="tns:addBiblio"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/addBiblioResponse" message="tns:addBiblioResponse"/>
+</operation>
+<operation name="listPret">
+<input wsam:Action="http://biblio.com/BibliothequeServices/listPretRequest" message="tns:listPret"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/listPretResponse" message="tns:listPretResponse"/>
+</operation>
+<operation name="addPret">
+<input wsam:Action="http://biblio.com/BibliothequeServices/addPretRequest" message="tns:addPret"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/addPretResponse" message="tns:addPretResponse"/>
 </operation>
 <operation name="searchPret">
 <input wsam:Action="http://biblio.com/BibliothequeServices/searchPretRequest" message="tns:searchPret"/>
@@ -89,46 +97,56 @@
 <input wsam:Action="http://biblio.com/BibliothequeServices/doLoginRequest" message="tns:doLogin"/>
 <output wsam:Action="http://biblio.com/BibliothequeServices/doLoginResponse" message="tns:doLoginResponse"/>
 </operation>
-<operation name="addClient">
-<input wsam:Action="http://biblio.com/BibliothequeServices/addClientRequest" message="tns:addClient"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/addClientResponse" message="tns:addClientResponse"/>
-</operation>
-<operation name="addPret">
-<input wsam:Action="http://biblio.com/BibliothequeServices/addPretRequest" message="tns:addPret"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/addPretResponse" message="tns:addPretResponse"/>
-</operation>
-<operation name="listClient">
-<input wsam:Action="http://biblio.com/BibliothequeServices/listClientRequest" message="tns:listClient"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/listClientResponse" message="tns:listClientResponse"/>
+<operation name="searchBiblio">
+<input wsam:Action="http://biblio.com/BibliothequeServices/searchBiblioRequest" message="tns:searchBiblio"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/searchBiblioResponse" message="tns:searchBiblioResponse"/>
 </operation>
 <operation name="listDocument">
 <input wsam:Action="http://biblio.com/BibliothequeServices/listDocumentRequest" message="tns:listDocument"/>
 <output wsam:Action="http://biblio.com/BibliothequeServices/listDocumentResponse" message="tns:listDocumentResponse"/>
 </operation>
-<operation name="searchBiblio">
-<input wsam:Action="http://biblio.com/BibliothequeServices/searchBiblioRequest" message="tns:searchBiblio"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/searchBiblioResponse" message="tns:searchBiblioResponse"/>
-</operation>
 <operation name="addDocument">
 <input wsam:Action="http://biblio.com/BibliothequeServices/addDocumentRequest" message="tns:addDocument"/>
 <output wsam:Action="http://biblio.com/BibliothequeServices/addDocumentResponse" message="tns:addDocumentResponse"/>
 </operation>
-<operation name="listPret">
-<input wsam:Action="http://biblio.com/BibliothequeServices/listPretRequest" message="tns:listPret"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/listPretResponse" message="tns:listPretResponse"/>
+<operation name="addClient">
+<input wsam:Action="http://biblio.com/BibliothequeServices/addClientRequest" message="tns:addClient"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/addClientResponse" message="tns:addClientResponse"/>
+</operation>
+<operation name="listClient">
+<input wsam:Action="http://biblio.com/BibliothequeServices/listClientRequest" message="tns:listClient"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/listClientResponse" message="tns:listClientResponse"/>
 </operation>
 <operation name="doLoginClient">
 <input wsam:Action="http://biblio.com/BibliothequeServices/doLoginClientRequest" message="tns:doLoginClient"/>
 <output wsam:Action="http://biblio.com/BibliothequeServices/doLoginClientResponse" message="tns:doLoginClientResponse"/>
 </operation>
-<operation name="addBiblio">
-<input wsam:Action="http://biblio.com/BibliothequeServices/addBiblioRequest" message="tns:addBiblio"/>
-<output wsam:Action="http://biblio.com/BibliothequeServices/addBiblioResponse" message="tns:addBiblioResponse"/>
+<operation name="addUser">
+<input wsam:Action="http://biblio.com/BibliothequeServices/addUserRequest" message="tns:addUser"/>
+<output wsam:Action="http://biblio.com/BibliothequeServices/addUserResponse" message="tns:addUserResponse"/>
 </operation>
 </portType>
 <binding name="BibliothequeServicesPortBinding" type="tns:BibliothequeServices">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="addUser">
+<operation name="addBiblio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listPret">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addPret">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -155,25 +173,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addClient">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addPret">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listClient">
+<operation name="searchBiblio">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -191,15 +191,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="searchBiblio">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="addDocument">
 <soap:operation soapAction=""/>
 <input>
@@ -209,7 +200,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listPret">
+<operation name="addClient">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listClient">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -227,7 +227,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addBiblio">
+<operation name="addUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

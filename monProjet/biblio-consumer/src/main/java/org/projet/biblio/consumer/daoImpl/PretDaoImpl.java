@@ -33,25 +33,19 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	String sql = "INSERT INTO pret ( refpret, refclient, refouvrage, datepret, dureepret, datefinpret, nbrexemplaire, prolonger) VALUES (?,?,?,?,?,?,?,?);";
 
 
-	                      Object[] args = new Object[] {pret.getRefPret(), pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
+	 Object[] args = new Object[] {pret.getRefPret(), pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
                                    
-                                                                                                  pret.getNbrExemplaire(), pret.isProlonger() };
+                                                                              pret.getNbrExemplaire(), pret.isProlonger() };
 
-		
+                      try {
 
-        
+                      jdbcTemplate.update(sql, args);
 
-                                      try {
+                      } catch (DuplicateKeyException exception) {
 
-                                      jdbcTemplate.update(sql, args);
+                      System.out.println(exception.getMessage());
 
-                                      } catch (DuplicateKeyException exception) {
-
-                                      System.out.println(exception.getMessage());
-
-                                      
-
-                                      }
+                      }
 
 	}
 
@@ -61,91 +55,74 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
                      @Override
 	public Pret getPret(Pret pret) {
 
-		String sql = "SELECT * FROM pret WHERE refpret = ? ";
+	String sql = "SELECT * FROM pret WHERE refpret = ? ";
 
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();
+	JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-		Object[] args = new Object[] { pret.getRefPret() };
-
-
-
-		                      try {
-
-			RowMapper<Pret> rowMapper = new PretMapper();
-
-                                                                   /* Appel à la méthodes QueryForObject*/
-
-			Pret pretQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
-
-			return pretQuery;
+	Object[] args = new Object[] { pret.getRefPret() };
 
 
 
-		                      } catch (EmptyResultDataAccessException exception) {
+	try {
 
-			System.out.println("Incorrect");
+	RowMapper<Pret> rowMapper = new PretMapper();
 
-			return null;
+                      /* Appel à la méthodes QueryForObject*/
 
-		}
+	Pret pretQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
+
+	return pretQuery;
+
+
+	} catch (EmptyResultDataAccessException exception) {
+
+	return null;
 
 	}
 
+	}
 
 
                      /*Méthode pour afficher une liste de pret*/
                      @Override
         	public List<Pret> getAllPret() {
 
+                      String sql = "SELECT * FROM pret";
 
-                                            String sql = "SELECT * FROM pret";
-
-                                            JdbcTemplate jdbcTemplate = getJdbcTemplate();
-
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
 
-		                       try {
+	try {
 
-			List<Pret> publicationQuery = jdbcTemplate.query(sql,
+	List<Pret> publicationQuery = jdbcTemplate.query(sql,
 
-			new BeanPropertyRowMapper(Pret.class));
+	new BeanPropertyRowMapper(Pret.class));
 
-			return publicationQuery;
+	return publicationQuery;
 
 
-		                      } catch (EmptyResultDataAccessException exception) {
+	} catch (EmptyResultDataAccessException exception) {
 
-			System.out.println("Incorrect");
+	return null;
 
-			return null;
-
-		}
+	}
 
 	}
                 
                 
                 
                     @Override
-
 	public void deletePretPicture(Pret pret) {
 
-
-
 	}
 
                     @Override
-
 	public void updatePret(Pret pret) {
 
-
-
 	}
 
                     @Override
-
 	public void deletePret(Pret pret) {
-
-
 
 	}
 

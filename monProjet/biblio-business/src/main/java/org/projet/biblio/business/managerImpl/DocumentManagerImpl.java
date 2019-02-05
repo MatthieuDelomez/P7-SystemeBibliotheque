@@ -7,7 +7,6 @@ import org.projet.biblio.model.Document;
 
 public class DocumentManagerImpl extends AbstractManager implements DocumentManager {
     
-    
 
     @Override
     public void addDocument(Document document) {
@@ -36,13 +35,10 @@ public class DocumentManagerImpl extends AbstractManager implements DocumentMana
     
 
       /* Implementation de la methode liste des publications /*/
+    @Override
     public List<Document> getAllDocument(Document document) {
-        
-                       System.out.println("---->>> manager getAllDocument");
-                       
-                       
-                       
-                       return getDaoFactory().getDocumentDao().getAllDocument(document);
+                                                                    
+          return getDaoFactory().getDocumentDao().getAllDocument(document);
                                       
          }
     

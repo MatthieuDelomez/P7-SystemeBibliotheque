@@ -15,7 +15,6 @@
             <!-- Déclaration des Managers de l'application -->
 
             
-
             <bean id = "utilisateurManager" class="org.projet.biblio.business.managerImpl.UtilisateurManagerImpl"></bean>
 
             <bean id = "pretManager" class="org.projet.biblio.business.managerImpl.PretManagerImpl"></bean>
@@ -31,7 +30,6 @@
             
 
             <!-- ManagerFactory -->
-
 
 
             <bean id= "managerFactory" class="org.projet.biblio.business.managerImpl.ManagerFactoryImpl">
@@ -53,7 +51,6 @@
            <!-- AbstractResources -->
 
             
-
             <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 
             <property name="targetClass" value="org.projet.biblio.business.managerImpl.AbstractManager"/>

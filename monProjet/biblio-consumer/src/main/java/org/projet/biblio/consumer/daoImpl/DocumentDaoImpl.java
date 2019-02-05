@@ -34,79 +34,70 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
                      @Override
 	public void addDocument(Document document) {
 
-		JdbcTemplate jdbcTemplate =  getJdbcTemplate();
+	JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
-                                             /* Nom des colonnes se situant dans table de la base de données*/
+                      /* Nom des colonnes se situant dans table de la base de données*/
 
-		String sql = "INSERT INTO document (refouvrage, refbibliotheque, nomouvrage, quantitetotal) VALUES (?,?,?,?);";
+	String sql = "INSERT INTO document (refouvrage, refbibliotheque, nomouvrage, quantitetotal) VALUES (?,?,?,?);";
 
 	
-	                      Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal() };
+	Object[] args = new Object[] {document.getRefOuvrage(), document.getRefBibliotheque(),document.getNomOuvrage(),document.getQuantiteTotal() };
 
 		
-                                             try {
+                      try {
 
-                                             jdbcTemplate.update(sql, args);
+                       jdbcTemplate.update(sql, args);
 
-                                             } catch (DuplicateKeyException exception) {
+                      } catch (DuplicateKeyException exception) {
 
-                                            System.out.println(exception.getMessage());
+                      System.out.println(exception.getMessage());
 
-                                             }
+                      }
                                          
-                                             }
+                      }
 
 
+                      /* Méthode pour récupérer un Document*/
 
-
-                                             /* Méthode pour récupérer un Document*/
-
-	                      @Override
-	                      public Document getDocument(Document document) {
+	@Override
+	public Document getDocument(Document document) {
   
-		String sql = "SELECT * FROM document WHERE  nomouvrage = ? ";
+	String sql = "SELECT * FROM document WHERE  nomouvrage = ? ";
 
-		JdbcTemplate jdbcTemplate = getJdbcTemplate();	
+	JdbcTemplate jdbcTemplate = getJdbcTemplate();	
 
-		Object[] args = new Object[] {
-				            document.getNomOuvrage()
-
-		};
-
-
+	Object[] args = new Object[] { document.getNomOuvrage()
         
-
-                                             try {
-
-                                             RowMapper<Document> rowMapper = new DocumentMapper();
-
-                                            /*Appel de la méthode QueryForObject*/
-
-                                             Document userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
-
-                                             return userQuery;
+                      };
 
 
+                      try {
 
-                                             } catch (EmptyResultDataAccessException exception) {
+                      RowMapper<Document> rowMapper = new DocumentMapper();
 
-                                            System.out.println("Incorrect");
+                      /*Appel de la méthode QueryForObject*/
+
+                      Document userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
+
+                      return userQuery;
+
+
+
+                       } catch (EmptyResultDataAccessException exception) {
+
+                      System.out.println("Incorrect");
             
-                                             return null;
+                      return null;
 
-                                            }
+                       }
 
-                                           	}
+                      }
                               
                               
 
 
 	@Override
 	public void deleteDocumentPicture(Document document) {
-
-		// TODO Auto-generated method stub
-
-
 
 	}
 
@@ -115,10 +106,6 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 	@Override
 	public void updateDocument(Document document) {
 
-		// TODO Auto-generated method stub
-
-
-
 	}
 
 
@@ -126,45 +113,36 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
 	@Override
 	public void deleteDocument(Document document) {
 
-		// TODO Auto-generated method stub
-
-
-
 	}
+        
+        
 
                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
-                  @Override
-                   public List<Document> getAllDocument(Document document) {
+                      @Override
+                      public List<Document> getAllDocument(Document document) {
 
-        if (document.getNomOuvrage() == null) return null;
+                      if (document.getNomOuvrage() == null) return null;
 
-        JdbcTemplate jdbcTemplate = getJdbcTemplate();    
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();    
 
-                                           try {
+                      try {
 
-                                           String sql = "SELECT * FROM document WHERE nomouvrage LIKE '%"+document.getNomOuvrage()+"%' "; 
+                      String sql = "SELECT * FROM document WHERE nomouvrage LIKE '%"+document.getNomOuvrage()+"%' "; 
 
-                                           List<Document> publicationQuery = jdbcTemplate.query(sql,
+                      List<Document> publicationQuery = jdbcTemplate.query(sql,
 
-            new BeanPropertyRowMapper(Document.class)); 
+                      new BeanPropertyRowMapper(Document.class)); 
 
-            return publicationQuery;
-            
-            
-            
+                       return publicationQuery;
             
 
-
-                                          } catch (EmptyResultDataAccessException exception) {
-
-            System.out.println("Incorrect");
-
-            return null;
-           }
-                                           
-                                           
-                   }
+                      } catch (EmptyResultDataAccessException exception) {
 
 
+                       return null;
+                   
+                      }
+                                                                                   
+                      }
 
-}
+                      }

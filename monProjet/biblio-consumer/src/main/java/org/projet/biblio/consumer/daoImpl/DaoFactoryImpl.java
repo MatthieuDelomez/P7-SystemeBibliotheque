@@ -22,6 +22,7 @@ public class DaoFactoryImpl implements DaoFactory {
 
     private DocumentDao documentDao;
     
+    @Override
     public DocumentDao getDocumentDao(){
         return documentDao;
     }
@@ -31,11 +32,11 @@ public class DaoFactoryImpl implements DaoFactory {
     }
     
     
-    
-    
-    
+ //*****************************************************************************//   
+      
     private PretDao pretDao;
     
+    @Override
     public PretDao getPretDao(){
         
         return pretDao;
@@ -46,10 +47,11 @@ public class DaoFactoryImpl implements DaoFactory {
     }
     
     
-    
-    
+ //*****************************************************************************//   
+  
     private ClientDao clientDao;
     
+    @Override
     public ClientDao getClientDao(){
         
         return clientDao;
@@ -60,10 +62,11 @@ public class DaoFactoryImpl implements DaoFactory {
     }
     
     
-    
+  //*****************************************************************************//    
     
     private UtilisateurDao utilisateurDao;
     
+    @Override
     public UtilisateurDao getUtilisateurDao(){
         
         return utilisateurDao;
@@ -74,11 +77,12 @@ public class DaoFactoryImpl implements DaoFactory {
     }
     
 
-    
+  //*****************************************************************************//      
     
     private BibliothequeDao bibliothequeDao;
     
    
+    @Override
     public BibliothequeDao getBibliothequeDao(){
         
         return bibliothequeDao;

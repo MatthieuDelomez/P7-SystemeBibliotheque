@@ -39,7 +39,7 @@
                        <h1>What would you like to search?</h1>
                        <s:form action="listeDocument">
 
-	<s:textfield key="#listeDocument.nomOuvrage" />
+	<s:textfield name="nomOuvrage" label="nomOuvrage" value="nomOuvrage" />
 	<s:submit key="submit" name="submit" />
 	
                       </s:form>

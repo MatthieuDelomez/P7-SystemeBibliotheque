@@ -30,7 +30,7 @@ public class PretAction extends ActionSupport {
     private List<String> listPret;
     private List<PretResponse> listPretResponse;
     
-    private static AtomicInteger genId = new AtomicInteger(0);
+    private static AtomicInteger genId = new AtomicInteger(2);
     
 
 
@@ -136,35 +136,12 @@ public class PretAction extends ActionSupport {
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
                       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
                       listPret = new ArrayList();
-                      listPretResponse = port.listPret();
-                      PretResponse pretResponse = new PretResponse();
-
-                                              
-                               
-                      System.out.println("--> RefOuvrage : "+pretResponse.getRefpret()+ "\n" +
-                      
-                                                        "--> RefClient : " + pretResponse.getRefouvrage()+ "\n" +
-                              
-                                                        "--> RefClient : " + pretResponse.getRefclient() + "\n" +
-                      
-                                                         "--> Date de Fin de prêt : " + pretResponse.getDatepret() + "\n" +
-                              
-                                                         "--> Durée de prêt : " + pretResponse.getDureePret() + "\n" +
-                              
-                                                         "--> Date de fin de prêt : "+ pretResponse.getDatefinpret() + "\n" +
-                              
-                                                         "--> Nombre d'exemplaire disponible : " + pretResponse.getNbrexemplaire() + "\n" +
-                      
-                                                         "--> Prologation de ce même prêt  : "+ pretResponse.isProlonger() + "\n" +"\n");
-               
-        
-            
-                                                        
+                      listPretResponse = port.listPret();                                                        
            
-                                                       return SUCCESS ;
+                       return SUCCESS ;
                       
 
-                                                        }
+                       }
 
 
                       
@@ -199,29 +176,13 @@ public class PretAction extends ActionSupport {
                       System.out.println("Ajout d'un pret dans la base");
                       vResult = ActionSupport.SUCCESS;          
                       
-                      
-                      System.out.println(refpret);
-                      System.out.println(refclient);
-                      System.out.println(refouvrage);
-                      System.out.println(datepret);
-                      System.out.println(dureePret);
-                      System.out.println(datefinpret);
-                      System.out.println(nbrexemplaire);
-                      System.out.println(prolonger);
+
                       
                       }
                       
                       } catch (Exception pe) {
-                          this.addActionError("Veuillez remplir les champs correctement");
-                          
-                      System.out.println(refpret);
-                      System.out.println(refclient);
-                      System.out.println(refouvrage);
-                      System.out.println(datepret);
-                      System.out.println(dureePret);
-                      System.out.println(datefinpret);
-                      System.out.println(nbrexemplaire);
-                      System.out.println(prolonger);
+                        this.addActionError("Veuillez remplir les champs correctement");
+
                       }
                       
                       

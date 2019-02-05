@@ -14,9 +14,7 @@ public abstract class AbstractManager {
     
     
     protected static DaoFactoryImpl getDaoFactory() {
-        
-           System.out.println("----> getDaoFactory :" +daoFactory);
-        
+                
            return daoFactory;
     } 
     

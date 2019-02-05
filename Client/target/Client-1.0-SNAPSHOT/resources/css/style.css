@@ -369,6 +369,24 @@
     padding: 0;
 }
 
+  .listeDocument{
+      margin-top: 0%;
+      margin-left: 27%
+  }
+  
+  .titreDocument {
+      margin-top: 10%;
+      margin-left: 40%;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 20px;
+  }
+  
+    .tableDocument {
+      margin-top: 2%;
+      border-collapse: separate;
+      border-spacing: 45px 25px;
+  }
+
 
 
   /**********************************************************
@@ -431,14 +449,14 @@
   
   .listeClient{
       margin-top: 0%;
-      margin-left: 0%
+      margin-left: 7%
   }
   
   
   .tableClient{
       margin-top: 2%;
       border-collapse: separate;
-      border-spacing: 40px 20px;
+      border-spacing: 60px 30px;
       font-size: 14px;
   }
  

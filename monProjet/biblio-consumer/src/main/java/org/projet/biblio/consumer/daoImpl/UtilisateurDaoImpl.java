@@ -48,9 +48,9 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
                                        System.out.println(exception.getMessage());
 
-                             }
+                                        }
 
-                             }
+                                        }
 
     
                                        @Override
@@ -63,17 +63,10 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
 		JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-		Object[] args = new Object[] {
-
-		          utilisateur.getPseudo(), utilisateur.getMotPasse()
+		Object[] args = new Object[] { utilisateur.getPseudo(), utilisateur.getMotPasse()
 
 		};
 
-
-
-                
-
-        
 
                                         try {
 
@@ -83,15 +76,12 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
                                        Utilisateur userQuery = jdbcTemplate.queryForObject(sql, args, rowMapper);
 
-                                                         return userQuery;
-
+                                       return userQuery;
 
 
                                        } catch (EmptyResultDataAccessException exception) {
 
-                                        System.out.println("Incorrect");
-
-                                                         return null;
+                                       return null;
 
         }
     }

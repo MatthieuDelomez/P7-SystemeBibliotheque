@@ -12,6 +12,7 @@ Implementation pour définir le mapping entre les lignes de résultats d'une req
 public class ClientMapper implements RowMapper<Client> {
     
 
+                     @Override
   	public Client mapRow(ResultSet rs, int rowNum) throws SQLException {
 
 		Client client = new Client();

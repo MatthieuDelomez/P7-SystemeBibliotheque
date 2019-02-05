@@ -43,9 +43,9 @@ public class ClientManagerImpl extends AbstractManager implements ClientManager{
     }
     
        /* Implementation de la methode liste des publications /*/
+    @Override
    public List<Client> getAllClient() {
        
-   System.out.println("---->>> manager getAllClient");
    return getDaoFactory().getClientDao().getAllClient();
 
                    }

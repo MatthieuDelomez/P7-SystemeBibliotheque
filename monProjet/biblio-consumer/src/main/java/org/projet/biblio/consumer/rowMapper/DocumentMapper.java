@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.RowMapper;
  */
 public class DocumentMapper implements RowMapper<Document> {
     
+                      @Override
       	public Document mapRow(ResultSet rs, int rowNum) throws SQLException {
             
                                     Document document = new Document();

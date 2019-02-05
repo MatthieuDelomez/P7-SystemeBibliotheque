@@ -9,6 +9,5 @@
 <body>
     <h2>Bienvenue sur l'application d'une Bien belle bibliotheque :)</h2>
 
-    <s:a action="document_list">Liste des documents</s:a>
 </body>
 </html>

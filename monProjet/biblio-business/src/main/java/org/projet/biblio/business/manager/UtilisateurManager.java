@@ -5,7 +5,7 @@ import org.projet.biblio.model.Utilisateur;
 
 
 /*
-Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Utilisateur
+Creation de l'interface qui servira à implémenter les méthodes: Ajouter | Recuperer | Supp | MAJ un Utilisateur (Employé)
 */
 public interface UtilisateurManager {
     

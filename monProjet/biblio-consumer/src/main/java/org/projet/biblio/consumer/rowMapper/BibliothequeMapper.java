@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 public class BibliothequeMapper implements RowMapper<Bibliotheque> {
     
 
+                      @Override
            	public Bibliotheque mapRow(ResultSet rs, int rowNum) throws SQLException {
                     
                                  Bibliotheque bibliotheque = new Bibliotheque();

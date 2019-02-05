@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.RowMapper;
  */
 public class PretMapper implements RowMapper<Pret> {
     
+                      @Override
           	public Pret mapRow(ResultSet rs, int rowNum) throws SQLException {
             
 		Pret pret = new Pret();

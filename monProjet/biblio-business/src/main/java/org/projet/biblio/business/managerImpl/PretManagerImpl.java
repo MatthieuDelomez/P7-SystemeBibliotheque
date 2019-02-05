@@ -34,11 +34,10 @@ public class PretManagerImpl extends AbstractManager implements PretManager {
 
     
     
-   /* Implementation de la methode liste des publications /*/
+   /* Implementation de la methode liste des prets /*/
+    @Override
    public List<Pret> getAllPret() {
-
-                      System.out.println("---->>> manager getAllPret");
-                       return getDaoFactory().getPretDao().getAllPret();
+         return getDaoFactory().getPretDao().getAllPret();
 
                    }
     

@@ -138,15 +138,6 @@ public class AddUserAction extends ActionSupport implements SessionAware{
         
         } catch(Exception pe) {
             this.addActionError("Veuillez remplir tout les champs correctement");
-            System.out.println("Champs manquant !!");
-            
-        System.out.println(nom);
-        System.out.println(prenom);
-        System.out.println(email);
-        System.out.println(pseudo);
-        System.out.println(motPasse);
-        System.out.println(refBibliotheque);
-        System.out.println(idUtilisateur);
             
           
        }
