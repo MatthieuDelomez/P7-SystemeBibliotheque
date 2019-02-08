@@ -173,11 +173,9 @@ public class PretAction extends ActionSupport {
                       
                       port.addPret(refpret, refclient, refouvrage, datepret, dureePret, datefinpret, nbrexemplaire, prolonger);
                       
-                      System.out.println("Ajout d'un pret dans la base");
                       vResult = ActionSupport.SUCCESS;          
                       
-
-                      
+     
                       }
                       
                       } catch (Exception pe) {
@@ -191,8 +189,44 @@ public class PretAction extends ActionSupport {
 
                       }
                       
+                      
+                      public String doDeletePret() {
+                          
+                      BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
+                      BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
+                      
+                      String vResult = ActionSupport.INPUT;
 
-                      } 
+                      PretResponse pretResponse = new PretResponse();
+
+                      pretResponse.setRefpret(refpret);
+                      
+                      try {
+                          
+                      if (!StringUtils.isAllEmpty(datefinpret)) {
+                          
+                      
+                     port.deletePret(refpret, datefinpret);
+                      
+                      vResult = ActionSupport.SUCCESS;          
+                      
+     
+                      }
+                      
+                      } catch (Exception pe) {
+                        this.addActionError("Veuillez remplir les champs correctement");
+
+                      }
+                      
+                      
+                      return vResult;
+                          
+                      }
+
+
+                      }
+
+                      
 
 
        

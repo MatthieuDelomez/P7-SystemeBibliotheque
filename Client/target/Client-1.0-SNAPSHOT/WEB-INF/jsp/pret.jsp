@@ -79,6 +79,12 @@
                        <a href="${pageContext.request.contextPath}/addPret" target="_blank"> 
                        <input type="button" value="Ajoutez un prêt"> </a>
                       </div>
+                       
+                       
+                       <div class="boutonSupp">
+                       <a href="${pageContext.request.contextPath}/deletePret" target="_blank"> 
+                       <input type="button" value="Supprimez un prêt"> </a>
+                      </div>
         
     </body>
     

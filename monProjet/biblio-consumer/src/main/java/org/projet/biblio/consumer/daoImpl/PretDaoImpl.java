@@ -120,12 +120,36 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	public void updatePret(Pret pret) {
 
 	}
+        
+        
 
                     @Override
 	public void deletePret(Pret pret) {
+            
+                     JdbcTemplate jdbcTemplate = getJdbcTemplate();
+                     
+                     String sql = "DELETE FROM pret WHERE refpret = ? AND datefinpret = ?";
+                     
+                     System.out.println(sql);
+                     
+                     Object[] args = new Object[] { pret.getRefPret(), pret.getDateFinPret() };
+                     
+                     
+                     try {
+
+                      jdbcTemplate.update(sql, args);
+
+                      } catch (DuplicateKeyException exception) {
+
+                      System.out.println(exception.getMessage());
+
+                      }
+
+	}
+            
 
 	}
 
 
-}
+
 

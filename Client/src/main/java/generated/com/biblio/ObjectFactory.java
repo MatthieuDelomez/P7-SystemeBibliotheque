@@ -31,6 +31,7 @@ public class ObjectFactory {
     private final static QName _AddClientResponse_QNAME = new QName("http://biblio.com/", "addClientResponse");
     private final static QName _SearchPretResponse_QNAME = new QName("http://biblio.com/", "searchPretResponse");
     private final static QName _ListClient_QNAME = new QName("http://biblio.com/", "listClient");
+    private final static QName _DeletePretResponse_QNAME = new QName("http://biblio.com/", "deletePretResponse");
     private final static QName _DoLoginClientResponse_QNAME = new QName("http://biblio.com/", "doLoginClientResponse");
     private final static QName _ListDocument_QNAME = new QName("http://biblio.com/", "listDocument");
     private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
@@ -46,6 +47,7 @@ public class ObjectFactory {
     private final static QName _DocumentResponse_QNAME = new QName("http://biblio.com/", "DocumentResponse");
     private final static QName _AddDocument_QNAME = new QName("http://biblio.com/", "addDocument");
     private final static QName _DoLoginResponse_QNAME = new QName("http://biblio.com/", "doLoginResponse");
+    private final static QName _DeletePret_QNAME = new QName("http://biblio.com/", "deletePret");
     private final static QName _ListDocumentResponse_QNAME = new QName("http://biblio.com/", "listDocumentResponse");
     private final static QName _SearchBiblioResponse_QNAME = new QName("http://biblio.com/", "searchBiblioResponse");
     private final static QName _AddBiblioResponse_QNAME = new QName("http://biblio.com/", "addBiblioResponse");
@@ -166,6 +168,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeletePret }
+     * 
+     */
+    public DeletePret createDeletePret() {
+        return new DeletePret();
+    }
+
+    /**
      * Create an instance of {@link PretResponse }
      * 
      */
@@ -219,6 +229,14 @@ public class ObjectFactory {
      */
     public DoLogin createDoLogin() {
         return new DoLogin();
+    }
+
+    /**
+     * Create an instance of {@link DeletePretResponse }
+     * 
+     */
+    public DeletePretResponse createDeletePretResponse() {
+        return new DeletePretResponse();
     }
 
     /**
@@ -357,6 +375,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeletePretResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "deletePretResponse")
+    public JAXBElement<DeletePretResponse> createDeletePretResponse(DeletePretResponse value) {
+        return new JAXBElement<DeletePretResponse>(_DeletePretResponse_QNAME, DeletePretResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DoLoginClientResponse }{@code >}}
      * 
      */
@@ -489,6 +516,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "doLoginResponse")
     public JAXBElement<DoLoginResponse> createDoLoginResponse(DoLoginResponse value) {
         return new JAXBElement<DoLoginResponse>(_DoLoginResponse_QNAME, DoLoginResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeletePret }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "deletePret")
+    public JAXBElement<DeletePret> createDeletePret(DeletePret value) {
+        return new JAXBElement<DeletePret>(_DeletePret_QNAME, DeletePret.class, null, value);
     }
 
     /**

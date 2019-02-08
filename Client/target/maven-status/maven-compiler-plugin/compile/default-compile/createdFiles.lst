@@ -23,10 +23,12 @@ com\biblio\ListClient.class
 com\biblio\AddClient.class
 com\biblio\AddPretResponse.class
 com\biblio\AddBiblioResponse.class
+com\biblio\DeletePretResponse.class
 com\biblio\ListPret.class
 com\biblio\DoLoginClient.class
 com\biblio\SearchBook.class
 com\biblio\ListDocument.class
+com\biblio\DeletePret.class
 com\biblio\ListPretResponse.class
 com\biblio\SearchBiblioResponse.class
 com\biblio\SearchBookResponse.class

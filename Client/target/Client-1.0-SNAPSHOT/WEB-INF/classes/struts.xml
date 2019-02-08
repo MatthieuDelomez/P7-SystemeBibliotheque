@@ -198,6 +198,18 @@
        <action name="addPret">
             <result>WEB-INF/jsp/addPret.jsp</result>
         </action> 
+        
+        
+        <action name="deletePret">
+            <result>WEB-INF/jsp/deletePret.jsp</result>
+        </action>
+        
+        <action name="supprimerPret"
+                     class="com.client.action.PretAction"
+                     method="doDeletePret">
+          <result name="input" >WEB-INF/jsp/deletePret.jsp</result>
+          <result name="success" >WEB-INF/jsp/accueilEmploye.jsp</result>
+     </action>
       
       
                               <!--  BASE CLIENT  -->

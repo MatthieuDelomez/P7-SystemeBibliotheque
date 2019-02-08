@@ -194,11 +194,8 @@ public class BibliothequeServices extends AbstractResource {
                      doc.setNomOuvrage(nomOuvrage);
 
 
-
                      listDocument = documentDao.getAllDocument(doc);
-
-
-                     System.out.println(listDocument);
+                     
                      
                      for(Document document : listDocument){
 
@@ -283,6 +280,46 @@ public class BibliothequeServices extends AbstractResource {
                
                
            }
+           
+           
+           @WebMethod(operationName = "deletePret")
+           public PretResponse doSuppPret(@WebParam(name="refpret") int refPret,
+                                                                                                                                   String dateFinPret) {
+               
+           Pret pret = new Pret(); 
+           PretResponse response = new PretResponse();
+               
+               pret.setRefPret(refPret);
+               pret.setDateFinPret(dateFinPret);
+               
+               
+               
+               pretDao.deletePret(pret);
+               
+              
+               
+               try{
+               
+               response.setRefPret(pret.getRefPret());
+               response.setRefOuvrage(pret.getRefOuvrage());
+               response.setRefClient(pret.getRefClient());
+               response.setDatePret(pret.getDatePret());
+               response.setDureePret(pret.getDureePret());
+               response.setDateFinPret(pret.getDateFinPret());
+               response.setNbrExemplaire(pret.getNbrExemplaire());
+               response.setProlonger(pret.isProlonger());
+
+
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
+               
+               return response;
+           
+
+               }
+
+
            
            
        /**
