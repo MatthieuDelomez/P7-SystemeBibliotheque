@@ -40,7 +40,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                        // ----- Eléments Struts
                       private Map<String, Object> session;
                       
-                      public static  AtomicInteger genId = new AtomicInteger(1);
+                      public static  AtomicInteger genId = new AtomicInteger(3);
                       
                       
                       
@@ -183,7 +183,12 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         
     String vResult = ActionSupport.INPUT;
     
-    
+    /*
+    if (pseudo == null || motPasse == null || email == null) {
+        
+        vResult = ActionSupport.INPUT;
+    }
+    */
     ClientResponse clientResponse = new ClientResponse();
     
     clientResponse.setRefclient(refClient);
@@ -202,16 +207,27 @@ public class AddClientAction extends ActionSupport implements SessionAware {
 
         try{
             
-        if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+           if (StringUtils.isAllEmpty(pseudo)) {
+               if(StringUtils.isAllEmpty(motPasse)){
+                   if(StringUtils.isAllEmpty(email)){
+               
+        
+           vResult = ActionSupport.INPUT;
+           
+           }
+           }
+           }
             
+            
+        else {
+               
         refClient = genId.incrementAndGet();
             
         port.addClient(refClient ,refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
         System.out.println("test test");
-        vResult = ActionSupport.SUCCESS;
         this.session.put("user", vResult);
-        
+        vResult = ActionSupport.SUCCESS;        
 
         }
         
@@ -219,16 +235,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
             this.addActionError("Veuillez remplir tout les champs correctement");
             System.out.println("Champs manquant !!");
             
-        System.out.println(nom);
-        System.out.println(prenom);
-        System.out.println(sexe);
-        System.out.println(adresse);
-        System.out.println(email);
-        System.out.println(codePostal);
-        System.out.println(pseudo);
-        System.out.println(motPasse);
-        System.out.println(refBibliotheque);
-        System.out.println(refClient);
+        
           
        }
   

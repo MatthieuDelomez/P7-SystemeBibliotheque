@@ -34,20 +34,22 @@
     
     <body>
         
+        
+        
                       <div class="FormulaireAdd">
                       <h1>Ajouter un utilisateur</h1>
         
 
 	<s:form action="ajouterClient">
-                    	<s:textfield name="refBibliotheque" label="refBibliotheque" value="refBibliotheque"/>
-	<s:textfield name="nom" label="nom" value="nom"/>
-        	<s:textfield name="prenom" label="prenom" value="prenom" />
-	<s:textfield name="sexe" label="sexe" value="sexe" />
-	<s:textfield name="adresse" label="adresse" value="adresse" />
-	<s:textfield name="email" label="email" value="email"/>
-        	<s:textfield name="codePostal" label="codePostal" value="codePostal"/>
-	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
-	<s:password name="motPasse" label="motPasse" value="motPasse" />
+                    	<s:textfield name="refBibliotheque" label="N° Bibliotheque" />
+	<s:textfield name="nom" label="Nom" />
+        	<s:textfield name="prenom" label="Prenom"  />
+	<s:textfield name="sexe" label="Civilité"  />
+	<s:textfield name="adresse" label="Adresse"  />
+	<s:textfield name="email" label="Email" />
+        	<s:textfield name="codePostal" label="Code Postal" />
+	<s:textfield name="pseudo" label="Pseudo" />
+	<s:password name="motPasse" label="Mot de Passe"  />
 	<s:submit />
 	</s:form>
                       </div>

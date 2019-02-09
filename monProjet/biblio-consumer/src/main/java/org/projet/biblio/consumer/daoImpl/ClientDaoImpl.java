@@ -34,6 +34,10 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
             
 	JdbcTemplate jdbcTemplate =  getJdbcTemplate();
+        
+                      if (client.getPseudo() == null ) {
+                          
+                      }
 
                       /* Nom des colonnes se situant dans table de la base de données*/
 
@@ -44,8 +48,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	Object[] args = new Object[] {client.getRefClient(), client.getRefBibliotheque(), client.getNom(),client.getPrenom(), client.getSexe(), client.getPseudo(), client.getMotPasse(), 
             
                                                                              client.getAdresse(), client.getEmail(), client.getCodePostal() };
-
-
+ 
 
                        try {
 
@@ -126,6 +129,37 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	}
 
 	}
+                
+                
+                      @Override
+                      public List<Client> getEmailClient() {
+                          
+                      String sql = "SELECT * FROM client";
+                      
+                      
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
+                      
+                      
+                      try {
+
+	List<Client> publicationQuery = jdbcTemplate.query(sql,
+
+	new BeanPropertyRowMapper(Client.class));
+
+	return publicationQuery;
+
+
+	} catch (EmptyResultDataAccessException exception) {
+
+	System.out.println("Incorrect");
+
+	return null;
+
+	}
+
+	
+                          
+                      }
 
 
 
@@ -145,9 +179,30 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
 	@Override
 	public void deleteClient(Client client) {
+            
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
+                     
+                     String sql = "DELETE FROM client WHERE refclient = ?";
+                     
+                     System.out.println(sql);
+                     
+                     Object[] args = new Object[] { client.getRefClient() };
+                     
+                     
+                     try {
+
+                      jdbcTemplate.update(sql, args);
+
+                      } catch (DuplicateKeyException exception) {
+
+                      System.out.println(exception.getMessage());
+
+                      }
+
+	}
 
 
 
 	}
 
-                      }
+                      

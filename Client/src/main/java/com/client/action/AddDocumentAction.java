@@ -90,6 +90,14 @@ public class AddDocumentAction extends ActionSupport {
         try {
             
         if(!StringUtils.isAllEmpty(nomOuvrage)) {
+                if(!StringUtils.isAllEmpty(quantiteTotal)){
+                    
+                    vResult = ActionSupport.INPUT;
+                }
+            }
+        
+        
+        else{
             
         refOuvrage = genId.incrementAndGet();
         

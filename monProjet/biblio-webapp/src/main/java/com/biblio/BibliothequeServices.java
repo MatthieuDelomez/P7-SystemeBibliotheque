@@ -597,6 +597,43 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
+           @WebMethod(operationName = "deleteClient")
+           public ClientResponse doSuppClient(@WebParam(name="refclient") int refClient) {
+               
+           Client client = new Client(); 
+           ClientResponse response = new ClientResponse();
+               
+               client.setRefClient(refClient);
+               
+               
+               
+               clientDao.deleteClient(client);
+               
+              
+               
+               try{
+               
+                      response.setNom(client.getNom());
+                      response.setRefClient(client.getRefClient());
+	response.setRefBibliotheque(client.getRefBibliotheque());
+                      response.setPrenom(client.getPrenom());
+                      response.setSexe(client.getSexe());
+                      response.setPseudo(client.getPseudo());
+                      response.setMotPasse(client.getMotPasse());
+                      response.setAdresse(client.getAdresse());
+                      response.setEmail(client.getEmail());
+                      response.setCodePostal(client.getCodePostal());
+
+
+               } catch (Exception e){
+                   e.printStackTrace();
+               }
+               
+               return response;
+           
+
+               }
+           
            
            
            
@@ -633,6 +670,41 @@ public class BibliothequeServices extends AbstractResource {
                
            
                       }
+           
+           
+           
+           @WebMethod(operationName = "listEmailClient")
+           public void listEmailClient2(  
+                   @WebParam(name = "listEmailClient", mode = WebParam.Mode.OUT) Holder<List<ClientResponse>> listEmailClients) {
+               
+
+                      listEmailClients.value = new ArrayList<>();
+                                      
+
+                      List<Client>listClient  = new ArrayList<>();
+                      List<ClientResponse>listClientResponse  = new ArrayList<>();
+                      listClient = clientDao.getAllClient();
+
+
+                      for(Client client : listClient){
+	ClientResponse clientResponse = new ClientResponse();
+                      
+                      clientResponse.setRefClient(client.getRefClient());
+                      clientResponse.setRefBibliotheque(client.getRefBibliotheque());
+                      clientResponse.setNom(client.getNom());
+                      clientResponse.setPrenom(client.getPrenom());
+                      clientResponse.setEmail(client.getEmail());
+                      
+
+	listClientResponse.add(clientResponse);
+
+                      }
+
+                      listEmailClients.value = listClientResponse;
+               
+           
+                      }
+           
 
            
     

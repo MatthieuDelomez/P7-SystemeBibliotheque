@@ -24,4 +24,6 @@ public interface ClientDao {
     
     List <Client>getAllClient();
     
+    List<Client>getEmailClient();
+    
 }

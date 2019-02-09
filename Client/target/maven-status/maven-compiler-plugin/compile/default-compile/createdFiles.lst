@@ -4,16 +4,19 @@ com\biblio\AddDocumentResponse.class
 com\client\action\AddDocumentAction.class
 com\biblio\DoLoginClientResponse.class
 com\biblio\DocumentResponse.class
+com\biblio\ListEmailClientResponse.class
 com\biblio\DoLogin.class
 com\biblio\AddClientResponse.class
 com\biblio\ListClientResponse.class
 com\biblio\SearchBiblio.class
 com\biblio\PretResponse.class
+com\biblio\DeleteClient.class
 com\client\action\RechercheAction.class
 com\client\response\ClientResponse.class
 com\biblio\AddDocument.class
 com\biblio\AddUser.class
 com\client\client\Test.class
+com\biblio\ListEmailClient.class
 com\biblio\package-info.class
 com\client\action\AddUserAction.class
 com\biblio\AddBiblio.class
@@ -22,6 +25,7 @@ com\biblio\AddPret.class
 com\biblio\ListClient.class
 com\biblio\AddClient.class
 com\biblio\AddPretResponse.class
+com\biblio\DeleteClientResponse.class
 com\biblio\AddBiblioResponse.class
 com\biblio\DeletePretResponse.class
 com\biblio\ListPret.class

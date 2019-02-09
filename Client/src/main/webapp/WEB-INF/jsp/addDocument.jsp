@@ -53,9 +53,9 @@
         
 
 	<s:form action="ajouterDocument">
-                    	<s:textfield name="refBibliotheque" label="refBibliotheque" value="refBibliotheque"/>
-                      <s:textfield name="nomOuvrage" label="nomOuvrage" value="nomOuvrage"/>
-                      <s:textfield name="quantiteTotal" label="quantiteTotal" value="quantiteTotal"/>
+                    	<s:textfield name="refBibliotheque" label="N° Bibliotheque"/>
+                      <s:textfield name="nomOuvrage" label="Nom de l'ouvrage" />
+                      <s:textfield name="quantiteTotal" label="Quantite total" />
 		
 	<s:submit />
 	</s:form>

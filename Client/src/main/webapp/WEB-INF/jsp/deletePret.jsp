@@ -34,8 +34,8 @@
                       <h1>Supprimez un prêt</h1>
            
 	<s:form action="supprimerPret">
-	<s:textfield name="refpret" label="refpret" value="refpret" />
-	<s:textfield name="datefinpret" label="datefinpret" value="datefinpret" />
+	<s:textfield name="refpret" label="Réference du pret"  />
+	<s:textfield name="datefinpret" label="Fin du pret"  />
 	<s:submit />
 	</s:form>
                      </div >

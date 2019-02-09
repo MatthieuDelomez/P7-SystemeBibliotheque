@@ -57,7 +57,9 @@
                               <th>Email</th>
                               <th>Code postal</th>
                       </tr>
-                      <tr>    
+                      
+                      
+                      <tr>                             
                       <ul>
                       <s:iterator value="listClientResponse" var="listeClient">
 

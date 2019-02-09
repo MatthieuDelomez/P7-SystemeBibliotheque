@@ -27,5 +27,10 @@ public interface ClientManager {
     */
     List<Client> getAllClient();
     
+    /*
+    Création d'une liste des emails clients
+    */
+    List<Client> getEmailClient();
+    
     
 }

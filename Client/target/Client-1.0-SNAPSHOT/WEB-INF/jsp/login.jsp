@@ -34,8 +34,8 @@
                       <h1>Veuillez vous enregistrer</h1>
            
 	<s:form action="doLogin">
-	<s:textfield name="pseudo" label="pseudo" value="pseudo" />
-	<s:password name="motPasse" label="motPasse" value="motPasse" />
+	<s:textfield name="pseudo" label="Pseudo"  />
+	<s:password name="motPasse" label="Mot de Passe"  />
 	<s:submit />
 	</s:form>
                       </div>

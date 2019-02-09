@@ -5,14 +5,14 @@ public class Client{
   private  int refClient ;
   private  int refBibliotheque;
   
-  private  String sexe = "sexe";
-  private  String nom = "nom";
-  private  String prenom = "prenom";
-  private  String pseudo = "pseudo";
-  private  String motPasse = "motPasse";
-  private  String adresse = "adresse";
-  private  String email = "email";
-  private  String codePostal = "codePostal";
+  private  String sexe;
+  private  String nom;
+  private  String prenom ;
+  private  String pseudo ;
+  private  String motPasse ;
+  private  String adresse ;
+  private  String email;
+  private  String codePostal;
 
     
     public int getRefClient() {

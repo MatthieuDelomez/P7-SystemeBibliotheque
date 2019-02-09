@@ -39,12 +39,12 @@
         
 
 	<s:form action="ajouterEmploye">
-                    	<s:textfield name="refBibliotheque" label="refBibliotheque" value="refBibliotheque"/>
-                      <s:textfield name="pseudo" label="pseudo" value="pseudo" />
-                      <s:password name="motPasse" label="motPasse" value="motPasse" />
-                      <s:textfield name="email" label="email" value="email"/>
-	<s:textfield name="nom" label="nom" value="nom"/>
-        	<s:textfield name="prenom" label="prenom" value="prenom" />
+                    	<s:textfield name="refBibliotheque" label="N° Bibliotheque" />
+                      <s:textfield name="pseudo" label="Pseudo"  />
+                      <s:password name="motPasse" label="Mot de Passe"/>
+                      <s:textfield name="email" label="Email" />
+	<s:textfield name="nom" label="Nom" />
+        	<s:textfield name="prenom" label="Prenom"  />
 	
 	
 	<s:submit />

@@ -36,6 +36,8 @@ public class ObjectFactory {
     private final static QName _ListDocument_QNAME = new QName("http://biblio.com/", "listDocument");
     private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
     private final static QName _DoLogin_QNAME = new QName("http://biblio.com/", "doLogin");
+    private final static QName _DeleteClient_QNAME = new QName("http://biblio.com/", "deleteClient");
+    private final static QName _ListEmailClient_QNAME = new QName("http://biblio.com/", "listEmailClient");
     private final static QName _PretResponse_QNAME = new QName("http://biblio.com/", "PretResponse");
     private final static QName _AddUserResponse_QNAME = new QName("http://biblio.com/", "addUserResponse");
     private final static QName _ListClientResponse_QNAME = new QName("http://biblio.com/", "listClientResponse");
@@ -53,6 +55,8 @@ public class ObjectFactory {
     private final static QName _AddBiblioResponse_QNAME = new QName("http://biblio.com/", "addBiblioResponse");
     private final static QName _AddPretResponse_QNAME = new QName("http://biblio.com/", "addPretResponse");
     private final static QName _ClientResponse_QNAME = new QName("http://biblio.com/", "ClientResponse");
+    private final static QName _DeleteClientResponse_QNAME = new QName("http://biblio.com/", "deleteClientResponse");
+    private final static QName _ListEmailClientResponse_QNAME = new QName("http://biblio.com/", "listEmailClientResponse");
     private final static QName _AddClient_QNAME = new QName("http://biblio.com/", "addClient");
     private final static QName _AddUser_QNAME = new QName("http://biblio.com/", "addUser");
 
@@ -69,6 +73,22 @@ public class ObjectFactory {
      */
     public ClientResponse createClientResponse() {
         return new ClientResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteClientResponse }
+     * 
+     */
+    public DeleteClientResponse createDeleteClientResponse() {
+        return new DeleteClientResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListEmailClientResponse }
+     * 
+     */
+    public ListEmailClientResponse createListEmailClientResponse() {
+        return new ListEmailClientResponse();
     }
 
     /**
@@ -229,6 +249,22 @@ public class ObjectFactory {
      */
     public DoLogin createDoLogin() {
         return new DoLogin();
+    }
+
+    /**
+     * Create an instance of {@link DeleteClient }
+     * 
+     */
+    public DeleteClient createDeleteClient() {
+        return new DeleteClient();
+    }
+
+    /**
+     * Create an instance of {@link ListEmailClient }
+     * 
+     */
+    public ListEmailClient createListEmailClient() {
+        return new ListEmailClient();
     }
 
     /**
@@ -420,6 +456,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "deleteClient")
+    public JAXBElement<DeleteClient> createDeleteClient(DeleteClient value) {
+        return new JAXBElement<DeleteClient>(_DeleteClient_QNAME, DeleteClient.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListEmailClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listEmailClient")
+    public JAXBElement<ListEmailClient> createListEmailClient(ListEmailClient value) {
+        return new JAXBElement<ListEmailClient>(_ListEmailClient_QNAME, ListEmailClient.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link PretResponse }{@code >}}
      * 
      */
@@ -570,6 +624,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "ClientResponse")
     public JAXBElement<ClientResponse> createClientResponse(ClientResponse value) {
         return new JAXBElement<ClientResponse>(_ClientResponse_QNAME, ClientResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "deleteClientResponse")
+    public JAXBElement<DeleteClientResponse> createDeleteClientResponse(DeleteClientResponse value) {
+        return new JAXBElement<DeleteClientResponse>(_DeleteClientResponse_QNAME, DeleteClientResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListEmailClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listEmailClientResponse")
+    public JAXBElement<ListEmailClientResponse> createListEmailClientResponse(ListEmailClientResponse value) {
+        return new JAXBElement<ListEmailClientResponse>(_ListEmailClientResponse_QNAME, ListEmailClientResponse.class, null, value);
     }
 
     /**

@@ -124,26 +124,33 @@ public class AddUserAction extends ActionSupport implements SessionAware{
     
     try {
      
-    if(!StringUtils.isAllEmpty( pseudo, motPasse)){
-        
-        idUtilisateur = genId.incrementAndGet();
-    
-    port.addUser(idUtilisateur, refBibliotheque, pseudo, motPasse, email, nom, prenom);
-    
-    System.out.println("test test");
-    vResult = ActionSupport.SUCCESS;
-    this.session.put("employe", vResult);
-    
+    if(!StringUtils.isAllEmpty( pseudo)){
+        if(!StringUtils.isAllEmpty(motPasse)){
+            if(!StringUtils.isAllEmpty(email)){
+                
+                vResult = ActionSupport.INPUT;
+            }
         }
+    }
+    
+    else{
         
-        } catch(Exception pe) {
+            idUtilisateur = genId.incrementAndGet();
+    
+           port.addUser(idUtilisateur, refBibliotheque, pseudo, motPasse, email, nom, prenom);
+    
+           vResult = ActionSupport.SUCCESS;
+           this.session.put("employe", vResult);
+    
+           }
+        
+           } catch(Exception pe) {
             this.addActionError("Veuillez remplir tout les champs correctement");
             
           
-       }
+            }
   
-    
-    
+
             return vResult;
             
     }
