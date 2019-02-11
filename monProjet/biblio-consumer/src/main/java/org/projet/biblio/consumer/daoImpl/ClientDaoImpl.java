@@ -134,7 +134,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
                       @Override
                       public List<Client> getEmailClient() {
                           
-                      String sql = "SELECT * FROM client";
+                      String sql = "SELECT * FROM client ";
                       
                       
                       JdbcTemplate jdbcTemplate = getJdbcTemplate();

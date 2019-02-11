@@ -24,6 +24,8 @@ public interface DocumentDao {
     
     void deleteDocument(Document document);
     
+    List<Document> getDocumentBatch();
+    
     
     
 }

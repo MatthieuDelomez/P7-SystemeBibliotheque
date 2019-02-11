@@ -4,6 +4,7 @@ package org.projet.biblio.consumer.daoImpl;
 import java.util.List;
 import org.projet.biblio.consumer.dao.PretDao;
 import org.projet.biblio.consumer.rowMapper.PretMapper;
+import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -108,6 +109,36 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	}
 
 	}
+                
+                
+                     @Override
+                 public List<InfoPret> getInfoPret() {
+                
+                String sql = "select c.email as email, d.nomouvrage as nomouvrage, p.datefinpret as datefinpret from pret p, client c, document d where c.refClient = p.refClient and d.refouvrage = p.refouvrage;";
+                
+                
+                 JdbcTemplate jdbcTemplate = getJdbcTemplate();
+
+
+	try {
+
+	List<InfoPret> publicationQuery = jdbcTemplate.query(sql,
+
+	new BeanPropertyRowMapper(InfoPret.class));
+
+	return publicationQuery;
+
+
+	} catch (EmptyResultDataAccessException exception) {
+
+	return null;
+
+	}
+
+	}
+                
+                
+                 
                 
                 
                 

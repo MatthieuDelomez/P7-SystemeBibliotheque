@@ -12,6 +12,7 @@ D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consum
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\daoImpl\UtilisateurDaoImpl.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\daoImpl\DocumentDaoImpl.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\rowMapper\BibliothequeMapper.java
+D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\rowMapper\InfoPretRowMapper.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\dao\DocumentDao.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\dao\UtilisateurDao.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\monProjet\biblio-consumer\src\main\java\org\projet\biblio\consumer\daoImpl\AbstractDaoImpl.java

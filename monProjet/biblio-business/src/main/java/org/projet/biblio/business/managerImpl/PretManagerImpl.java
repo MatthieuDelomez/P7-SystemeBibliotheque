@@ -2,6 +2,7 @@ package org.projet.biblio.business.managerImpl;
 
 import java.util.List;
 import org.projet.biblio.business.manager.PretManager;
+import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 
 
@@ -38,6 +39,12 @@ public class PretManagerImpl extends AbstractManager implements PretManager {
     @Override
    public List<Pret> getAllPret() {
          return getDaoFactory().getPretDao().getAllPret();
+
+                   }
+   
+   @Override
+   public List<InfoPret> getInfoPret() {
+         return getDaoFactory().getPretDao().getInfoPret();
 
                    }
     

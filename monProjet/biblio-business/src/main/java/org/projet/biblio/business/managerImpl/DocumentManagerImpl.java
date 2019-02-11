@@ -42,4 +42,12 @@ public class DocumentManagerImpl extends AbstractManager implements DocumentMana
                                       
          }
     
+    @Override
+    public List<Document> getDocumentBatch( ) {
+                                                                    
+          return getDaoFactory().getDocumentDao().getDocumentBatch();
+                                      
+         }
+    
+    
 }

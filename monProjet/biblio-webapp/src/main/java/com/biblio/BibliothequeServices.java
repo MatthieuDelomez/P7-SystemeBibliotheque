@@ -6,6 +6,7 @@ import org.projet.biblio.model.Bibliotheque;
 import com.biblio.resources.AbstractResource;
 import com.responses.ClientResponse;
 import com.responses.DocumentResponse;
+import com.responses.InfoPretResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import org.projet.biblio.consumer.dao.PretDao;
 import org.projet.biblio.consumer.dao.UtilisateurDao;
 import org.projet.biblio.model.Client;
 import org.projet.biblio.model.Document;
+import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 import org.projet.biblio.model.Utilisateur;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -673,38 +675,42 @@ public class BibliothequeServices extends AbstractResource {
            
            
            
-           @WebMethod(operationName = "listEmailClient")
-           public void listEmailClient2(  
-                   @WebParam(name = "listEmailClient", mode = WebParam.Mode.OUT) Holder<List<ClientResponse>> listEmailClients) {
+           @WebMethod(operationName = "listInfoDocument")
+           public void listEmailClient2(  @WebParam(name = "listInfoDocument", mode = WebParam.Mode.OUT) Holder<List<InfoPretResponse>> listInfoDocument
+                                                                ) {
                
 
-                      listEmailClients.value = new ArrayList<>();
+                      listInfoDocument.value = new ArrayList<>();
+                      
                                       
 
-                      List<Client>listClient  = new ArrayList<>();
-                      List<ClientResponse>listClientResponse  = new ArrayList<>();
-                      listClient = clientDao.getAllClient();
-
-
-                      for(Client client : listClient){
-	ClientResponse clientResponse = new ClientResponse();
+                      List<InfoPret>listInfoPret  = new ArrayList<>();
                       
-                      clientResponse.setRefClient(client.getRefClient());
-                      clientResponse.setRefBibliotheque(client.getRefBibliotheque());
-                      clientResponse.setNom(client.getNom());
-                      clientResponse.setPrenom(client.getPrenom());
-                      clientResponse.setEmail(client.getEmail());
                       
-
-	listClientResponse.add(clientResponse);
-
+                      List<InfoPretResponse>listInfoPretResponse  = new ArrayList<>();
+                      
+                      
+                      listInfoPret = pretDao.getInfoPret();
+                      
+                      
+                      for(InfoPret infoPret : listInfoPret) {
+                      InfoPretResponse infoPretResponse = new InfoPretResponse();    
+                      
+                      infoPretResponse.setNomOuvrage(infoPret.getNomOuvrage());
+                      infoPretResponse.setEmail(infoPret.getEmail());
+                      infoPretResponse.setDateFinPret(infoPret.getDateFinPret());
+                      
+                      listInfoPretResponse.add(infoPretResponse);
+                          
                       }
-
-                      listEmailClients.value = listClientResponse;
-               
-           
-                      }
-           
+                      
+                      listInfoDocument.value = listInfoPretResponse;
+                      
+                      
+           }
+                      
+                      
+                   
 
            
     

@@ -2,6 +2,7 @@
 package org.projet.biblio.business.manager;
 
 import java.util.List;
+import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 
 /*
@@ -28,6 +29,8 @@ public interface PretManager {
     Création d'une liste de pret
     */
     List<Pret> getAllPret();
+    
+    List<InfoPret> getInfoPret();
     
     
 }

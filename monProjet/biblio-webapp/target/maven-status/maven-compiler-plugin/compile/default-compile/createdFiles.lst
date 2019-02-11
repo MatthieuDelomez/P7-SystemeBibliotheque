@@ -5,3 +5,4 @@ com\responses\BibliothequeResponse.class
 com\responses\PretResponse.class
 com\responses\ClientResponse.class
 com\responses\DocumentResponse.class
+com\responses\InfoPretResponse.class

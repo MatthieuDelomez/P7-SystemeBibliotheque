@@ -144,5 +144,31 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
                       }
                                                                                    
                       }
+                      
+                      
+                     @Override
+        	public List<Document> getDocumentBatch() {
+
+                      String sql = "SELECT * FROM document";
+
+                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
+
+
+	try {
+
+	List<Document> publicationQuery = jdbcTemplate.query(sql,
+
+	new BeanPropertyRowMapper(Document.class));
+
+	return publicationQuery;
+
+
+	} catch (EmptyResultDataAccessException exception) {
+
+	return null;
+
+	}
+
+	}
 
                       }

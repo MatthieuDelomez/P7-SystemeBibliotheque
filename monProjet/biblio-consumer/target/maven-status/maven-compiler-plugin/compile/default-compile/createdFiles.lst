@@ -13,6 +13,7 @@ org\projet\biblio\consumer\daoImpl\ClientDaoImpl.class
 org\projet\biblio\consumer\daoImpl\AbstractDaoImpl.class
 org\projet\biblio\consumer\rowMapper\ClientMapper.class
 org\projet\biblio\consumer\rowMapper\DocumentMapper.class
+org\projet\biblio\consumer\rowMapper\InfoPretRowMapper.class
 org\projet\biblio\consumer\rowMapper\PretMapper.class
 org\projet\biblio\consumer\dao\ClientDao.class
 org\projet\biblio\consumer\daoImpl\DaoFactoryImpl.class

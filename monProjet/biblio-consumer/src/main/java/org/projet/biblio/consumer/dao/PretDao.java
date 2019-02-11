@@ -1,6 +1,7 @@
 package org.projet.biblio.consumer.dao;
 
 import java.util.List;
+import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 
 /*
@@ -24,4 +25,5 @@ public interface PretDao {
     
     void deletePret(Pret pret);
     
+    List<InfoPret> getInfoPret();
 }

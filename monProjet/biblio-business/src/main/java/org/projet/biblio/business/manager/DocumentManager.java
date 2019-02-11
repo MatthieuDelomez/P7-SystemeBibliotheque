@@ -27,6 +27,8 @@ public interface DocumentManager {
 
 
     List<Document> getAllDocument(Document document);
+    
+    List<Document> getDocumentBatch();
 
 
     
