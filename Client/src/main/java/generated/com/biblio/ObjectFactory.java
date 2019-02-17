@@ -27,9 +27,11 @@ public class ObjectFactory {
     private final static QName _SearchBiblio_QNAME = new QName("http://biblio.com/", "searchBiblio");
     private final static QName _UtilisateurResponse_QNAME = new QName("http://biblio.com/", "UtilisateurResponse");
     private final static QName _AddPret_QNAME = new QName("http://biblio.com/", "addPret");
+    private final static QName _ListInfoDocument_QNAME = new QName("http://biblio.com/", "listInfoDocument");
     private final static QName _DoLoginClient_QNAME = new QName("http://biblio.com/", "doLoginClient");
     private final static QName _AddClientResponse_QNAME = new QName("http://biblio.com/", "addClientResponse");
     private final static QName _SearchPretResponse_QNAME = new QName("http://biblio.com/", "searchPretResponse");
+    private final static QName _InfoPretResponse_QNAME = new QName("http://biblio.com/", "InfoPretResponse");
     private final static QName _ListClient_QNAME = new QName("http://biblio.com/", "listClient");
     private final static QName _DeletePretResponse_QNAME = new QName("http://biblio.com/", "deletePretResponse");
     private final static QName _DoLoginClientResponse_QNAME = new QName("http://biblio.com/", "doLoginClientResponse");
@@ -37,7 +39,6 @@ public class ObjectFactory {
     private final static QName _ListPretResponse_QNAME = new QName("http://biblio.com/", "listPretResponse");
     private final static QName _DoLogin_QNAME = new QName("http://biblio.com/", "doLogin");
     private final static QName _DeleteClient_QNAME = new QName("http://biblio.com/", "deleteClient");
-    private final static QName _ListEmailClient_QNAME = new QName("http://biblio.com/", "listEmailClient");
     private final static QName _PretResponse_QNAME = new QName("http://biblio.com/", "PretResponse");
     private final static QName _AddUserResponse_QNAME = new QName("http://biblio.com/", "addUserResponse");
     private final static QName _ListClientResponse_QNAME = new QName("http://biblio.com/", "listClientResponse");
@@ -56,9 +57,9 @@ public class ObjectFactory {
     private final static QName _AddPretResponse_QNAME = new QName("http://biblio.com/", "addPretResponse");
     private final static QName _ClientResponse_QNAME = new QName("http://biblio.com/", "ClientResponse");
     private final static QName _DeleteClientResponse_QNAME = new QName("http://biblio.com/", "deleteClientResponse");
-    private final static QName _ListEmailClientResponse_QNAME = new QName("http://biblio.com/", "listEmailClientResponse");
     private final static QName _AddClient_QNAME = new QName("http://biblio.com/", "addClient");
     private final static QName _AddUser_QNAME = new QName("http://biblio.com/", "addUser");
+    private final static QName _ListInfoDocumentResponse_QNAME = new QName("http://biblio.com/", "listInfoDocumentResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.biblio
@@ -84,14 +85,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ListEmailClientResponse }
-     * 
-     */
-    public ListEmailClientResponse createListEmailClientResponse() {
-        return new ListEmailClientResponse();
-    }
-
-    /**
      * Create an instance of {@link AddClient }
      * 
      */
@@ -105,6 +98,14 @@ public class ObjectFactory {
      */
     public AddUser createAddUser() {
         return new AddUser();
+    }
+
+    /**
+     * Create an instance of {@link ListInfoDocumentResponse }
+     * 
+     */
+    public ListInfoDocumentResponse createListInfoDocumentResponse() {
+        return new ListInfoDocumentResponse();
     }
 
     /**
@@ -260,14 +261,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ListEmailClient }
-     * 
-     */
-    public ListEmailClient createListEmailClient() {
-        return new ListEmailClient();
-    }
-
-    /**
      * Create an instance of {@link DeletePretResponse }
      * 
      */
@@ -316,6 +309,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link InfoPretResponse }
+     * 
+     */
+    public InfoPretResponse createInfoPretResponse() {
+        return new InfoPretResponse();
+    }
+
+    /**
      * Create an instance of {@link ListClient }
      * 
      */
@@ -348,6 +349,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListInfoDocument }
+     * 
+     */
+    public ListInfoDocument createListInfoDocument() {
+        return new ListInfoDocument();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SearchBiblio }{@code >}}
      * 
      */
@@ -375,6 +384,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListInfoDocument }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listInfoDocument")
+    public JAXBElement<ListInfoDocument> createListInfoDocument(ListInfoDocument value) {
+        return new JAXBElement<ListInfoDocument>(_ListInfoDocument_QNAME, ListInfoDocument.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DoLoginClient }{@code >}}
      * 
      */
@@ -399,6 +417,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "searchPretResponse")
     public JAXBElement<SearchPretResponse> createSearchPretResponse(SearchPretResponse value) {
         return new JAXBElement<SearchPretResponse>(_SearchPretResponse_QNAME, SearchPretResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InfoPretResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "InfoPretResponse")
+    public JAXBElement<InfoPretResponse> createInfoPretResponse(InfoPretResponse value) {
+        return new JAXBElement<InfoPretResponse>(_InfoPretResponse_QNAME, InfoPretResponse.class, null, value);
     }
 
     /**
@@ -462,15 +489,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "deleteClient")
     public JAXBElement<DeleteClient> createDeleteClient(DeleteClient value) {
         return new JAXBElement<DeleteClient>(_DeleteClient_QNAME, DeleteClient.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListEmailClient }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://biblio.com/", name = "listEmailClient")
-    public JAXBElement<ListEmailClient> createListEmailClient(ListEmailClient value) {
-        return new JAXBElement<ListEmailClient>(_ListEmailClient_QNAME, ListEmailClient.class, null, value);
     }
 
     /**
@@ -636,15 +654,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListEmailClientResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://biblio.com/", name = "listEmailClientResponse")
-    public JAXBElement<ListEmailClientResponse> createListEmailClientResponse(ListEmailClientResponse value) {
-        return new JAXBElement<ListEmailClientResponse>(_ListEmailClientResponse_QNAME, ListEmailClientResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddClient }{@code >}}
      * 
      */
@@ -660,6 +669,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://biblio.com/", name = "addUser")
     public JAXBElement<AddUser> createAddUser(AddUser value) {
         return new JAXBElement<AddUser>(_AddUser_QNAME, AddUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListInfoDocumentResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://biblio.com/", name = "listInfoDocumentResponse")
+    public JAXBElement<ListInfoDocumentResponse> createListInfoDocumentResponse(ListInfoDocumentResponse value) {
+        return new JAXBElement<ListInfoDocumentResponse>(_ListInfoDocumentResponse_QNAME, ListInfoDocumentResponse.class, null, value);
     }
 
 }

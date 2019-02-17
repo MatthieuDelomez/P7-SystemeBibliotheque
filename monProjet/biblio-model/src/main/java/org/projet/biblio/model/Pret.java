@@ -1,6 +1,8 @@
 
 package org.projet.biblio.model;
 
+import java.util.Date;
+
 
 public class Pret  {
     
@@ -8,9 +10,9 @@ public class Pret  {
     private int refClient;
     private int refOuvrage;
     
-    private String datePret;
+    private Date datePret;
     private String dureePret;
-    private String dateFinPret;
+    private Date dateFinPret;
     private String nbrExemplaire;
     
     private boolean prolonger;
@@ -29,15 +31,16 @@ public class Pret  {
         return refOuvrage;
     }
 
-    public String getDatePret() {
-        return datePret;
+    
+    public Date getDatePret() {
+        return  datePret;
     }
 
     public String getDureePret() {
         return dureePret;
     }
 
-    public String getDateFinPret() {
+    public Date getDateFinPret() {
         return dateFinPret;
     }
 
@@ -61,7 +64,7 @@ public class Pret  {
         this.refOuvrage = refOuvrage;
     }
 
-    public void setDatePret(String datePret) {
+    public void setDatePret(Date datePret) {
         this.datePret = datePret;
     }
 
@@ -69,7 +72,7 @@ public class Pret  {
         this.dureePret = dureePret;
     }
 
-    public void setDateFinPret(String dateFinPret) {
+    public void setDateFinPret(Date dateFinPret) {
         this.dateFinPret = dateFinPret;
     }
 

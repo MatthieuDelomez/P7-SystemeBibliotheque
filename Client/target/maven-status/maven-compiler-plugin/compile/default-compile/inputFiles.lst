@@ -1,6 +1,7 @@
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddBiblio.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\interceptors\AuthInterceptor.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\SearchBiblio.java
+D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\InfoPretResponse.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListDocument.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\DoLoginClient.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\action\AddDocumentAction.java
@@ -29,9 +30,11 @@ D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\co
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddUser.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\PretResponse.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\response\ClientResponse.java
+D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListInfoDocument.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\package-info.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddDocument.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddUserResponse.java
+D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\ListInfoDocumentResponse.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\AddPretResponse.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\com\client\action\LoginAction.java
 D:\OP\Systeme Biblio\07-02\P7-SystemeBibliotheque-master\Client\src\main\java\generated\com\biblio\SearchBookResponse.java

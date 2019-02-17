@@ -40,7 +40,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                        // ----- Eléments Struts
                       private Map<String, Object> session;
                       
-                      public static  AtomicInteger genId = new AtomicInteger(3);
+                      public static  AtomicInteger genId = new AtomicInteger(1);
                       
                       
                       
@@ -182,13 +182,7 @@ public class AddClientAction extends ActionSupport implements SessionAware {
     public String doAddClient(){
         
     String vResult = ActionSupport.INPUT;
-    
-    /*
-    if (pseudo == null || motPasse == null || email == null) {
-        
-        vResult = ActionSupport.INPUT;
-    }
-    */
+
     ClientResponse clientResponse = new ClientResponse();
     
     clientResponse.setRefclient(refClient);

@@ -7,7 +7,11 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.PretResponse;
 import com.opensymphony.xwork2.ActionSupport;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,19 +24,22 @@ public class PretAction extends ActionSupport {
     protected int refouvrage;
     protected int refpret;
        
-    protected String datefinpret;
-    protected String datepret;
+    protected Date datefinpret;
+    protected Date datepret;
     protected String dureePret;
     protected String nbrexemplaire;
     
     protected boolean prolonger;
     
+    /*
+    Variable pour gérer l'incrémentation des prêts.
+    */
     private List<String> listPret;
     private List<PretResponse> listPretResponse;
     
-    private static AtomicInteger genId = new AtomicInteger(2);
-    
-
+    private static AtomicInteger genId = new AtomicInteger(1);
+     
+  
 
     //=========Getters & Setters=======
     
@@ -76,19 +83,19 @@ public class PretAction extends ActionSupport {
         this.refpret = refpret;
     }
 
-    public String getDatefinpret() {
+    public Date getDatefinpret() {
         return datefinpret;
     }
 
-    public void setDatefinpret(String datefinpret) {
+    public void setDatefinpret(Date datefinpret) {
         this.datefinpret = datefinpret;
     }
 
-    public String getDatepret() {
+    public Date getDatepret() {
         return datepret;
     }
 
-    public void setDatepret(String datepret) {
+    public void setDatepret(Date datepret) {
         this.datepret = datepret;
     }
 
@@ -124,6 +131,17 @@ public class PretAction extends ActionSupport {
         PretAction.genId = genId;
     }
     
+    /*
+    Retourner la date du jour
+    */
+    public Date getTodaydate() {
+        return new Date();
+    }
+    
+    public String display() {
+        return NONE;
+    }
+
 
 
     
@@ -147,32 +165,35 @@ public class PretAction extends ActionSupport {
                       
                       public String doAddPret() {
                           
-                                                 
+                                                
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
                       BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
  
                       String vResult = ActionSupport.INPUT;
 
-                      PretResponse pretResponse = new PretResponse();
+                      PretResponse pretResponse = new PretResponse();                      
+                      
 
                       pretResponse.setRefpret(refpret);
                       pretResponse.setRefclient(refclient);
                       pretResponse.setRefouvrage(refouvrage);
-                      pretResponse.setDatepret(datepret);
+                   //   pretResponse.setDatepret(datepret);
                       pretResponse.setDureePret(dureePret);
-                      pretResponse.setDatefinpret(datefinpret);
+                  //    pretResponse.setDatefinpret(datefinpret);
                       pretResponse.setNbrexemplaire(nbrexemplaire);
                       pretResponse.setProlonger(prolonger);
 
 
                       try {
                           
-                      if (!StringUtils.isAllEmpty(datepret, dureePret, datefinpret)) {
+                      if (!StringUtils.isAllEmpty(dureePret)) {
                           
+                      port.addPret(refpret, refclient, refouvrage, dureePret, nbrexemplaire, prolonger);
+                          
+                      
                       refpret = genId.getAndIncrement();
                       
-                      port.addPret(refpret, refclient, refouvrage, datepret, dureePret, datefinpret, nbrexemplaire, prolonger);
-                      
+
                       vResult = ActionSupport.SUCCESS;          
                       
      
@@ -190,6 +211,7 @@ public class PretAction extends ActionSupport {
                       }
                       
                       
+                      
                       public String doDeletePret() {
                           
                       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();             
@@ -200,13 +222,14 @@ public class PretAction extends ActionSupport {
                       PretResponse pretResponse = new PretResponse();
 
                       pretResponse.setRefpret(refpret);
+                      pretResponse.setDureePret(dureePret);
                       
                       try {
                           
-                      if (!StringUtils.isAllEmpty(datefinpret)) {
+                      if (!StringUtils.isAllEmpty(dureePret)) {
                           
                       
-                     port.deletePret(refpret, datefinpret);
+                     port.deletePret(dureePret, refpret);
                       
                       vResult = ActionSupport.SUCCESS;          
                       

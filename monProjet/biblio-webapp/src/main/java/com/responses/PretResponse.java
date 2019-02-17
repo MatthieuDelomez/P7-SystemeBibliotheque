@@ -1,6 +1,7 @@
 
 package com.responses;
 
+import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -14,9 +15,9 @@ public class PretResponse {
     private int refClient;
     private int refPret;
     
-    private String datePret;
+    private Date datePret;
     private String dureePret;
-    private String dateFinPret;
+    private Date dateFinPret;
     private String nbrExemplaire;
     
     private boolean prolonger;
@@ -52,12 +53,12 @@ public class PretResponse {
         this.refOuvrage = refOuvrage;
     }
 
-    public String getDatePret() {
+    public Date getDatePret() {
         return datePret;
     }
     
     @XmlElement(name = "datepret")
-    public void setDatePret(String datePret) {
+    public void setDatePret(Date datePret) {
         this.datePret = datePret;
     }
 
@@ -70,12 +71,12 @@ public class PretResponse {
         this.dureePret = dureePret;
     }
 
-    public String getDateFinPret() {
+    public Date getDateFinPret() {
         return dateFinPret;
     }
     
     @XmlElement(name = "datefinpret")
-    public void setDateFinPret(String dateFinPret) {
+    public void setDateFinPret(Date dateFinPret) {
         this.dateFinPret = dateFinPret;
     }
 

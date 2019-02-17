@@ -9,7 +9,11 @@ import com.responses.DocumentResponse;
 import com.responses.InfoPretResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -247,14 +251,25 @@ public class BibliothequeServices extends AbstractResource {
            public PretResponse doCreatePret(@WebParam(name="refpret") int refPret ,  
                                                                              @WebParam(name="refclient") int refClient,
                                                                              @WebParam(name="refouvrage") int refOuvrage,
-                                                                             @WebParam(name="datepret") String datePret,
                                                                              @WebParam(name="dureepret") String dureePret,
-                                                                             @WebParam(name="datefinpret") String dateFinPret,
+                                                                             
                                                                              @WebParam(name="nbrexemplaire") String nbrExemplaire,
                                                                              @WebParam(name="prolonger") boolean prolonger  ) {
                
+               
            Pret pret = new Pret(); 
            PretResponse response = new PretResponse();
+           
+           Date datePret = new Date();
+                      
+                      Calendar c = Calendar.getInstance();
+                      c.setTime(datePret);
+                      
+                      c.add(Calendar.MONTH, 1);
+                      
+                      Date dateFinPret = c.getTime();
+                      
+           
                
                pret.setRefPret(refPret);
                pret.setRefClient(refClient);
@@ -276,6 +291,7 @@ public class BibliothequeServices extends AbstractResource {
                response.setProlonger(prolonger);
 
               pretDao.addPret(pret);
+              
 
                
                return response;               
@@ -285,14 +301,14 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName = "deletePret")
-           public PretResponse doSuppPret(@WebParam(name="refpret") int refPret,
-                                                                                                                                   String dateFinPret) {
+           public PretResponse doSuppPret(@WebParam(name="dureepret") String dureePret,
+                                                                            @WebParam(name="refpret")    int refPret) {
                
            Pret pret = new Pret(); 
            PretResponse response = new PretResponse();
                
                pret.setRefPret(refPret);
-               pret.setDateFinPret(dateFinPret);
+               pret.setDureePret(dureePret);
                
                
                
@@ -678,6 +694,7 @@ public class BibliothequeServices extends AbstractResource {
            @WebMethod(operationName = "listInfoDocument")
            public void listEmailClient2(  @WebParam(name = "listInfoDocument", mode = WebParam.Mode.OUT) Holder<List<InfoPretResponse>> listInfoDocument
                                                                 ) {
+               
                
 
                       listInfoDocument.value = new ArrayList<>();

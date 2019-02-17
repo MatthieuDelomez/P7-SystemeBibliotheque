@@ -34,6 +34,7 @@ com\biblio\SearchBook.class
 com\biblio\ListDocument.class
 com\biblio\DeletePret.class
 com\biblio\ListPretResponse.class
+com\biblio\ListInfoDocument.class
 com\biblio\SearchBiblioResponse.class
 com\biblio\SearchBookResponse.class
 com\biblio\ClientResponse.class
@@ -49,4 +50,6 @@ com\client\action\AddClientAction.class
 com\biblio\ListDocumentResponse.class
 com\biblio\BibliothequeServicesService.class
 com\client\interceptors\AuthInterceptor.class
+com\biblio\InfoPretResponse.class
 com\client\interceptors\EmployeAuthInterceptor.class
+com\biblio\ListInfoDocumentResponse.class

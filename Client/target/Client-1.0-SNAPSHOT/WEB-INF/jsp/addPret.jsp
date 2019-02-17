@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
 
 
 <!DOCTYPE html>
@@ -42,12 +43,16 @@
 
 	<s:form action="ajouterPret">
 	<s:textfield name="refclient" label="refclient" value="refclient"/>
-	<s:textfield name="refouvrage" label="refouvrage" value="refouvrage"/>
-        	<s:textfield name="datepret" label="datepret" value="datepret" />
-	<s:textfield name="dureePret" label="dureePret" value="dureePret" />
-	<s:textfield name="datefinpret" label="datefinpret" value="datefinpret" />
-	<s:textfield name="nbrexemplaire" label="nbrexemplaire" value="nbrexemplaire"/>
-        	<s:textfield name="prolonger" label="prolonger" value="prolonger"/>
+	<s:textfield name="refouvrage" label="refouvrage"/>
+                     <sx:datetimepicker name="datepret" displayFormat="YYYY-MM-DD"  />
+                     
+	<s:textfield name="dureePret" label="dureePret"  />
+        
+                      <sx:datetimepicker name="datefinpret" 
+                                                  displayFormat="YYYY-MM-DD"/>
+                      
+	<s:textfield name="nbrexemplaire" label="nbrexemplaire"/>
+        	<s:textfield name="prolonger" label="prolonger" />
 	<s:submit />
 	</s:form>
                       </div>

@@ -1,6 +1,7 @@
 
 package com.responses;
 
+import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -11,7 +12,7 @@ public class InfoPretResponse {
     
     String nomOuvrage;
     String email;
-    String dateFinPret;
+    Date dateFinPret;
 
     public String getNomOuvrage() {
         return nomOuvrage;
@@ -29,11 +30,11 @@ public class InfoPretResponse {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getDateFinPret() {
+    public Date getDateFinPret() {
         return dateFinPret;
     }
 @XmlElement(name = "datefinpret")
-    public void setDateFinPret(String dateFinPret) {
+    public void setDateFinPret(Date dateFinPret) {
         this.dateFinPret = dateFinPret;
     }
     

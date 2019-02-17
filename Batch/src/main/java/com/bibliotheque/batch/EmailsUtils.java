@@ -37,6 +37,7 @@ public class EmailsUtils {
 		props.put("mail.smtp.port", emailProps.getProperty("mail.smtp.port")); // TLS Port
 		props.put("mail.smtp.auth", "true"); // enable authentication
 		props.put("mail.smtp.starttls.enable", "true"); // enable STARTTLS
+                                            props.put("mail.smtp.host", "smtp.gmail.com"); // Configuration du mode Gmail
 
 		// create Authenticator object to pass in Session.getInstance argument
 		Authenticator auth = new Authenticator() {
@@ -44,7 +45,7 @@ public class EmailsUtils {
 			// override the getPasswordAuthentication method
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(emailProps.getProperty("mail.noreply.address"),
-						emailProps.getProperty("mail.noreply.password"));
+						                       emailProps.getProperty("mail.noreply.password"));
 			}
 		};
 		session = Session.getInstance(props, auth);
@@ -67,10 +68,12 @@ public class EmailsUtils {
 			msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
 			msg.addHeader("format", "flowed");
 			msg.addHeader("Content-Transfer-Encoding", "8bit");
-			msg.setFrom(new InternetAddress("nathanael.morel@outlook.fr", "NoReply-JD"));
-			msg.setReplyTo(InternetAddress.parse("nathanael.morel@outlook.fr", false));
+			msg.setFrom(new InternetAddress("testjavamail61@gmail.com", "NoReply-JD"));
+			msg.setReplyTo(InternetAddress.parse("matthieu.delomez@gmail.com", false));
 			msg.setSentDate(new Date());
-
+                        
+                                                                  session.setDebug(true);
+                                                                  
 			msg.setSubject(subject, "UTF-8");
 			msg.setText(body, "UTF-8");
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));

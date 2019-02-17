@@ -1,20 +1,22 @@
 
 package org.projet.biblio.model;
 
+import java.util.Date;
+
 
 public class InfoPret {
     
-    String dateFinPret;
+    Date dateFinPret;
     String nomOuvrage;
     String email;
     
     
 
-    public String getDateFinPret() {
+    public Date getDateFinPret() {
         return dateFinPret;
     }
 
-    public void setDateFinPret(String dateFinPret) {
+    public void setDateFinPret(Date dateFinPret) {
         this.dateFinPret = dateFinPret;
     }
 

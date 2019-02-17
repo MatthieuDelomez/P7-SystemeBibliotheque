@@ -23,7 +23,7 @@ public class InfoPretRowMapper {
                       
                       infoPret.setNomOuvrage(rs.getString("nomouvrage"));
                       
-                      infoPret.setDateFinPret(rs.getString("dateFinPret"));
+                      infoPret.setDateFinPret(rs.getDate("dateFinPret"));
                       
                       return infoPret;
                       

@@ -3,7 +3,9 @@ package com.biblio;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,8 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="datefinpret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="datepret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="datefinpret" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="datepret" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="dureePret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nbrexemplaire" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="prolonger" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
@@ -45,8 +47,10 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class PretResponse {
 
-    protected String datefinpret;
-    protected String datepret;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar datefinpret;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar datepret;
     protected String dureePret;
     protected String nbrexemplaire;
     protected boolean prolonger;
@@ -59,10 +63,10 @@ public class PretResponse {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public String getDatefinpret() {
+    public XMLGregorianCalendar getDatefinpret() {
         return datefinpret;
     }
 
@@ -71,10 +75,10 @@ public class PretResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDatefinpret(String value) {
+    public void setDatefinpret(XMLGregorianCalendar value) {
         this.datefinpret = value;
     }
 
@@ -83,10 +87,10 @@ public class PretResponse {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public String getDatepret() {
+    public XMLGregorianCalendar getDatepret() {
         return datepret;
     }
 
@@ -95,10 +99,10 @@ public class PretResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDatepret(String value) {
+    public void setDatepret(XMLGregorianCalendar value) {
         this.datepret = value;
     }
 

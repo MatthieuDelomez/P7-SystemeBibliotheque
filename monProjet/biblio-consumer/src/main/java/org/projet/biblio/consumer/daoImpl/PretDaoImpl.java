@@ -114,7 +114,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
                      @Override
                  public List<InfoPret> getInfoPret() {
                 
-                String sql = "select c.email as email, d.nomouvrage as nomouvrage, p.datefinpret as datefinpret from pret p, client c, document d where c.refClient = p.refClient and d.refouvrage = p.refouvrage;";
+                String sql = "SELECT c.email AS email, d.nomouvrage AS nomouvrage, p.datefinpret AS datefinpret FROM pret p, client c, document d WHERE datefinpret > CURRENT_DATE and c.refClient = p.refClient and d.refouvrage = p.refouvrage;";
                 
                 
                  JdbcTemplate jdbcTemplate = getJdbcTemplate();
@@ -159,11 +159,11 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
             
                      JdbcTemplate jdbcTemplate = getJdbcTemplate();
                      
-                     String sql = "DELETE FROM pret WHERE refpret = ? AND datefinpret = ?";
+                     String sql = "DELETE FROM pret WHERE refpret = ? AND dureepret = ?";
                      
                      System.out.println(sql);
                      
-                     Object[] args = new Object[] { pret.getRefPret(), pret.getDateFinPret() };
+                     Object[] args = new Object[] { pret.getRefPret(), pret.getDureePret() };
                      
                      
                      try {

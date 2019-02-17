@@ -27,11 +27,11 @@ public class PretMapper implements RowMapper<Pret> {
                                        
                                        pret.setRefOuvrage(rs.getInt("refouvrage"));
                                        
-                                       pret.setDatePret(rs.getString("datepret"));
+                                       pret.setDatePret(rs.getDate("datepret"));
                                        
                                        pret.setDureePret(rs.getString("dureepret"));
                                        
-                                       pret.setDateFinPret(rs.getString("datefinpret"));
+                                       pret.setDateFinPret(rs.getDate("datefinpret"));
                                        
                                        pret.setNbrExemplaire(rs.getString("nbrexemplaire"));
                                        

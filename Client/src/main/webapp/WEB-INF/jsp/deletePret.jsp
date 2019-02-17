@@ -22,7 +22,7 @@
                       
                       <!-- Inclusion du Header -->
                       
-                      <%@ include file="_include/header.jsp"%>
+                      <%@ include file="_include/headerEmploye.jsp"%>
         
     </head>
     
@@ -35,7 +35,7 @@
            
 	<s:form action="supprimerPret">
 	<s:textfield name="refpret" label="Réference du pret"  />
-	<s:textfield name="datefinpret" label="Fin du pret"  />
+                      <s:textfield name="dureePret" label="Durée du pret"  />
 	<s:submit />
 	</s:form>
                      </div >

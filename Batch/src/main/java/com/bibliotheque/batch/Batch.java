@@ -4,9 +4,7 @@ package com.bibliotheque.batch;
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.InfoPretResponse;
-import com.biblio.ListInfoDocument;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -21,19 +19,26 @@ private static final String SUBJECT = "BOOK NOT RETURNED";
                       
                       for(InfoPretResponse infoPretResponse : listInfoPretResponse) {
                           
-                       //   EmailsUtils.sendEmail(infoPretResponse.getEmail(), SUBJECT, "Bonjour votre" + infoPretResponse.getNomouvrage() + "" );
-                          System.out.println(infoPretResponse.getEmail());
+                          EmailsUtils.sendEmail(infoPretResponse.getEmail(), SUBJECT, "Bonjour ,  \n vous avez enprunté le livre :" + infoPretResponse.getNomouvrage() + " " +
+                                                                                                                                                "pendant une période supérieur à 4 semaines. \n\n"
+                                                                                                                                               + "Vous êtes donc prié de restituer votre prêt dans votre bibliothèque.\n" +
+                                                                                                                                                 "Cordialement, \n" +
+                                                                                                                                                  "La direction"); 
+                          
+                          System.out.println("Message envoyé à l'adresse suivant" + infoPretResponse.getEmail());
             
                          }
 		
 	}
 
 	public static void main(String[] args) throws IOException {
+            
+            
 		// Récupération de fichier de configuration sous forme de Properties
-		//Properties emailProps = PropsUtils.getProps(args[1]);
+		Properties emailProps = PropsUtils.getProps("src/email.properties");
 
 		// Configuration EmailUtils
-	//	EmailsUtils.setEmailProperties(emailProps);
+		EmailsUtils.setEmailProperties(emailProps);
 		
                                            List<InfoPretResponse> listInfoDocument = null ;
                 

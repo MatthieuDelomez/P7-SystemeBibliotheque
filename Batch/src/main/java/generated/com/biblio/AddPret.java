@@ -19,9 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="refpret" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="refouvrage" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="datepret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dureepret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="datefinpret" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nbrexemplaire" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="prolonger" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
@@ -37,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
     "refpret",
     "refclient",
     "refouvrage",
-    "datepret",
     "dureepret",
-    "datefinpret",
     "nbrexemplaire",
     "prolonger"
 })
@@ -48,9 +44,7 @@ public class AddPret {
     protected int refpret;
     protected int refclient;
     protected int refouvrage;
-    protected String datepret;
     protected String dureepret;
-    protected String datefinpret;
     protected String nbrexemplaire;
     protected boolean prolonger;
 
@@ -103,30 +97,6 @@ public class AddPret {
     }
 
     /**
-     * Obtient la valeur de la propriété datepret.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDatepret() {
-        return datepret;
-    }
-
-    /**
-     * Définit la valeur de la propriété datepret.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDatepret(String value) {
-        this.datepret = value;
-    }
-
-    /**
      * Obtient la valeur de la propriété dureepret.
      * 
      * @return
@@ -148,30 +118,6 @@ public class AddPret {
      */
     public void setDureepret(String value) {
         this.dureepret = value;
-    }
-
-    /**
-     * Obtient la valeur de la propriété datefinpret.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDatefinpret() {
-        return datefinpret;
-    }
-
-    /**
-     * Définit la valeur de la propriété datefinpret.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDatefinpret(String value) {
-        this.datefinpret = value;
     }
 
     /**
