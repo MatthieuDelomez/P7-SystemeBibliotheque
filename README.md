@@ -20,14 +20,12 @@ Projet N°7: Développez le système d'information d'une librairie.
   <li>
     Client: Application web
   </li>
-  <ul>
-    
+  <ul>    
 <br>
 
 # Framework
 
 <br>
-
 <ul>
   <li>
     Spring Framework 4.3.11
@@ -54,7 +52,6 @@ Projet N°7: Développez le système d'information d'une librairie.
     Spring Web 3.0.5
   </li>
   </ul>
-  
   <br>
   
   # Base de donnée
@@ -76,6 +73,7 @@ Projet N°7: Développez le système d'information d'une librairie.
   # Description
   
   <br> 
+  
   Fontionnalités du Web service :
   
   <ul>
@@ -99,7 +97,9 @@ Projet N°7: Développez le système d'information d'une librairie.
   </li>
   <ul>
     <br>
+    
  Le web service est le seul systeme à ce connecter à la base de données.
+ 
  <br>
     
  # Le batch:
