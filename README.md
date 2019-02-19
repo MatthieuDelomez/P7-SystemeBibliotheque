@@ -78,7 +78,7 @@ Projet N°7: Développez le système d'information d'une librairie.
   <br> 
   Fontionnalités du Web service :
   
-    <ul>
+  <ul>
   <li>
     Authentification de l'utilisateur [Employé / Client]
   </li>
