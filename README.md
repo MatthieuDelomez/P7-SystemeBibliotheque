@@ -54,7 +54,9 @@ Projet N°7: Développez le système d'information d'une librairie.
   </ul>
   
   <br>
+  
   # Base de donnée
+  
   <br>
   <ul>
   <li>
@@ -68,7 +70,9 @@ Projet N°7: Développez le système d'information d'une librairie.
   </li>
   </ul>
   <br>
-  #Description
+  
+  # Description
+  
   <br>
   Web Service Action :
   <ul>
@@ -95,13 +99,14 @@ Projet N°7: Développez le système d'information d'une librairie.
  <br>
     
  # Le batch:
-    <br>
-Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
+    Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
     au web service pour récupérer la liste des ouvrages dont la date est expirée.
-    <br>
+    
     Un fichier properties est necessaire pour le bon fonctionnement du programme, afin de configurer le serveur d'envoi.
     Vous devez donc configurer les données pour l'authetification c'est à dire le username et le mot de passe :
-    <br>
+    
+    
+    
     
     # Config
 mail.smtp.host=smtp.gmail.com [Domaine d'utilisation]
@@ -109,9 +114,10 @@ mail.smtp.port=587
 mail.smtp.starttls.enable=true
 mail.smtp.auth=true
 
-# Authentication
+#Authentication
 mail.auth.user=email_no_reply@gmail.com [Username]
 mail.auth.pass=*********** [Mot de Passe]
+
 <br>
 
 # Déploiement
