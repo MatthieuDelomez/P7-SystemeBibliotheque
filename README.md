@@ -21,7 +21,9 @@ Projet N°7: Développez le système d'information d'une librairie.
   <ul>
     
 <br>
-# Framework 
+
+# Framework
+
 <br>
 
 <ul>
@@ -91,6 +93,7 @@ Projet N°7: Développez le système d'information d'une librairie.
   <ul>
  Le web service est le seul systeme à ce connecter à la base de données.
  <br>
+    
  # Le batch:
     <br>
 Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
@@ -99,6 +102,7 @@ Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
     Un fichier properties est necessaire pour le bon fonctionnement du programme, afin de configurer le serveur d'envoi.
     Vous devez donc configurer les données pour l'authetification c'est à dire le username et le mot de passe :
     <br>
+    
     # Config
 mail.smtp.host=smtp.gmail.com [Domaine d'utilisation]
 mail.smtp.port=587
@@ -110,7 +114,8 @@ mail.auth.user=email_no_reply@gmail.com [Username]
 mail.auth.pass=*********** [Mot de Passe]
 <br>
 
-#Déploiement
+# Déploiement
+
 Le déploiement s'assure avec la resources JNDI pour connecter le web service à la base de données.
 <br>
 <ul>
@@ -141,7 +146,8 @@ Le déploiement s'assure avec la resources JNDI pour connecter le web service à
   
  <br>
  <br>
- #Contact
+ 
+ # Contact
  <ul>
   <li>
     Site: <a title="Site" href="http://www.matthieudelomez.fr">
