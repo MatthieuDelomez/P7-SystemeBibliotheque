@@ -6,7 +6,9 @@ Parcours: OpenClassrooms - Développeur d'application Java/JEE.
 Projet N°7: Développez le système d'information d'une librairie.
 <br>
 <br>
+
 # Architecture
+
 <br>
 <ul>
   <li>
@@ -74,7 +76,10 @@ Projet N°7: Développez le système d'information d'une librairie.
   # Description
   
   <br>
-  Web Service Action :
+  
+  Fontionnalités du Web service :
+  
+  <br>
   <ul>
   <li>
     Authentification de l'utilisateur [Employé / Client]
@@ -99,24 +104,21 @@ Projet N°7: Développez le système d'information d'une librairie.
  <br>
     
  # Le batch:
-    Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
+ 
+ Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
     au web service pour récupérer la liste des ouvrages dont la date est expirée.
     
-    Un fichier properties est necessaire pour le bon fonctionnement du programme, afin de configurer le serveur d'envoi.
-    Vous devez donc configurer les données pour l'authetification c'est à dire le username et le mot de passe :
-    
-    
-    
-    
-    # Config
-mail.smtp.host=smtp.gmail.com [Domaine d'utilisation]
-mail.smtp.port=587
-mail.smtp.starttls.enable=true
-mail.smtp.auth=true
+ Un fichier properties est necessaire pour le bon fonctionnement du programme, afin de configurer le serveur d'envoi. Vous devez donc configurer les données pour l'authetification c'est à dire le username et le mot de passe :
+   
+    #Config
+    mail.smtp.host=smtp.gmail.com [Domaine d'utilisation]
+    mail.smtp.port=587
+    mail.smtp.starttls.enable=true
+    mail.smtp.auth=true
 
-#Authentication
-mail.auth.user=email_no_reply@gmail.com [Username]
-mail.auth.pass=*********** [Mot de Passe]
+    #Authentication
+    mail.auth.user=email_no_reply@gmail.com [Username]
+    mail.auth.pass=*********** [Mot de Passe]
 
 <br>
 
