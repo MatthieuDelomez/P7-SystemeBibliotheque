@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.RowMapper;
 /* 
 Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
 */
-
 public class ClientMapper implements RowMapper<Client> {
     
 

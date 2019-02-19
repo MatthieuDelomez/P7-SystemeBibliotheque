@@ -9,8 +9,6 @@ import com.responses.DocumentResponse;
 import com.responses.InfoPretResponse;
 import com.responses.PretResponse;
 import com.responses.UtilisateurResponse;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -144,28 +142,24 @@ public class BibliothequeServices extends AbstractResource {
     
     /**
      *
-     * @param refOuvrage
      * @param refBibliotheque
      * @param nomOuvrage
      * @param quantiteTotal
      * @return
      */
     @WebMethod(operationName="addDocument") 
-    public DocumentResponse doAddBook(@WebParam(name="refouvrage") int refOuvrage,  
+    public DocumentResponse doAddBook( 
                                                                                 @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                 @WebParam(name="nomouvrage") String nomOuvrage,
                                                                                 @WebParam(name="quantitetotal") String quantiteTotal) {
         
          Document document = new Document(); 
          DocumentResponse response = new DocumentResponse();
-               
-               document.setRefOuvrage(refOuvrage);
+         
                document.setRefBibliotheque(refBibliotheque);
                document.setNomOuvrage(nomOuvrage);
                document.setQuantiteTotal(quantiteTotal);
 
-         
-               response.setRefOuvrage(refOuvrage);
                response.setRefBibliotheque(refBibliotheque);
                response.setNomOuvrage(nomOuvrage);
                response.setQuantiteTotal(quantiteTotal);
@@ -240,9 +234,7 @@ public class BibliothequeServices extends AbstractResource {
      * @param refOuvrage
      * @param refClient
      * @param refPret
-     * @param datePret
      * @param dureePret
-     * @param dateFinPret
      * @param nbrExemplaire
      * @param prolonger
      * @return
@@ -465,7 +457,7 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="addUser")
-           public UtilisateurResponse doCreateUser( @WebParam(name="idutilisateur") int idUtilisateur,
+           public UtilisateurResponse doCreateUser( 
                                                                                           @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                           @WebParam(name="pseudo") String pseudo, 
                                                                                           @WebParam(name="motPasse") String motPasse,
@@ -483,7 +475,6 @@ public class BibliothequeServices extends AbstractResource {
            utilisateur.setEmail(email);
            utilisateur.setRefBibliotheque(refBibliotheque);
            utilisateur.setNom(nom);
-           utilisateur.setIdUtilisateur(idUtilisateur);
            
            response.setMotPasse(motPasse);
            response.setNom(nom);
@@ -492,7 +483,6 @@ public class BibliothequeServices extends AbstractResource {
            response.setEmail(email);
            response.setRefBibliotheque(refBibliotheque);
            response.setNom(nom);
-           response.setIdUtilisateur(idUtilisateur);
 
 
            
@@ -563,7 +553,7 @@ public class BibliothequeServices extends AbstractResource {
            
            
            @WebMethod(operationName ="addClient")
-           public ClientResponse doCreateClient(        @WebParam(name="refclient") int refClient,
+           public ClientResponse doCreateClient(        
                                                                                             @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                             @WebParam(name="nom") String nom,
                                                                                             @WebParam(name="prenom") String prenom,
@@ -579,7 +569,6 @@ public class BibliothequeServices extends AbstractResource {
            
 
            
-           client.setRefClient(refClient);
            client.setRefBibliotheque(refBibliotheque);
            client.setNom(nom);
            client.setPrenom(prenom);
@@ -592,7 +581,6 @@ public class BibliothequeServices extends AbstractResource {
 
 
            
-           response.setRefClient(refClient);
            response.setRefBibliotheque(refBibliotheque);
            response.setNom(nom);
            response.setPrenom(prenom);

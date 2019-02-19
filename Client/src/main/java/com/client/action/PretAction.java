@@ -7,10 +7,7 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.PretResponse;
 import com.opensymphony.xwork2.ActionSupport;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
@@ -37,7 +34,6 @@ public class PretAction extends ActionSupport {
     private List<String> listPret;
     private List<PretResponse> listPretResponse;
     
-    private static AtomicInteger genId = new AtomicInteger(1);
      
   
 
@@ -123,13 +119,7 @@ public class PretAction extends ActionSupport {
         this.prolonger = prolonger;
     }
 
-    public static AtomicInteger getGenId() {
-        return genId;
-    }
 
-    public static void setGenId(AtomicInteger genId) {
-        PretAction.genId = genId;
-    }
     
     /*
     Retourner la date du jour
@@ -190,9 +180,7 @@ public class PretAction extends ActionSupport {
                           
                       port.addPret(refpret, refclient, refouvrage, dureePret, nbrexemplaire, prolonger);
                           
-                      
-                      refpret = genId.getAndIncrement();
-                      
+                                           
 
                       vResult = ActionSupport.SUCCESS;          
                       

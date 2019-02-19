@@ -29,12 +29,14 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 	JdbcTemplate jdbcTemplate = getJdbcTemplate();
 
-                      /* Nom des colonnes se situant dans table de la base de données*/
+                      /*
+                      Méthode INSERT qui a pour objectif de créer un nouveau pret.
+                      */
 
-	String sql = "INSERT INTO pret ( refpret, refclient, refouvrage, datepret, dureepret, datefinpret, nbrexemplaire, prolonger) VALUES (?,?,?,?,?,?,?,?);";
+	String sql = "INSERT INTO pret ( refclient, refouvrage, datepret, dureepret, datefinpret, nbrexemplaire, prolonger) VALUES (?,?,?,?,?,?,?);";
 
 
-	 Object[] args = new Object[] {pret.getRefPret(), pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
+	 Object[] args = new Object[] { pret.getRefClient(), pret.getRefOuvrage(), pret.getDatePret(), pret.getDureePret(), pret.getDateFinPret(),
                                    
                                                                               pret.getNbrExemplaire(), pret.isProlonger() };
 
@@ -51,8 +53,9 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	}
 
 
-
-                     /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                      /*
+                      Méthode SELECT 
+                      */
                      @Override
 	public Pret getPret(Pret pret) {
 
@@ -110,11 +113,16 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 	}
                 
+                /*
+                Méthode pour le Batch :
+                Récupérer le nom de l'ouvrage + email du client + date de fin du pret
                 
-                     @Override
+                Si la date du jour est supérieur à la date de fin du pret alors recupérer les email client
+                */
+                @Override
                  public List<InfoPret> getInfoPret() {
                 
-                String sql = "SELECT c.email AS email, d.nomouvrage AS nomouvrage, p.datefinpret AS datefinpret FROM pret p, client c, document d WHERE datefinpret > CURRENT_DATE and c.refClient = p.refClient and d.refouvrage = p.refouvrage;";
+                String sql = "SELECT c.email AS email, d.nomouvrage AS nomouvrage, p.datefinpret AS datefinpret FROM pret p, client c, document d WHERE datefinpret < CURRENT_DATE and c.refClient = p.refClient and d.refouvrage = p.refouvrage;";
                 
                 
                  JdbcTemplate jdbcTemplate = getJdbcTemplate();
@@ -153,7 +161,9 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	}
         
         
-
+                      /*
+                     Supprimer un pret par la référence et sa durée
+                      */
                     @Override
 	public void deletePret(Pret pret) {
             

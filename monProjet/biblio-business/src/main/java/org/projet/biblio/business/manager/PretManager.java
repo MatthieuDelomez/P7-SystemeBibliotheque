@@ -26,10 +26,13 @@ public interface PretManager {
     void deletePret(Pret pret);
     
     /*
-    Création d'une liste de pret
+    Création d'une liste de pret qui va retourner tout les prêts
     */
     List<Pret> getAllPret();
     
+    /*
+    Liste qui servira à retourner le infomations necessaire pour la configuration du batch
+    */
     List<InfoPret> getInfoPret();
     
     

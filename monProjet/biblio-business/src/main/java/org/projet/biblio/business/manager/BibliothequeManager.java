@@ -12,15 +12,14 @@ public interface BibliothequeManager {
      /*
     Création des méthodes qui seront implémentées dans BibliothequeManagerImpl
     */
+    void addBibliotheque(Bibliotheque bibliotheque); // Ajouter une bibliothèque
     
-    void addBibliotheque(Bibliotheque bibliotheque);
+    Bibliotheque getBibliotheque(Bibliotheque bibliotheque); // Récupérer une bibliothèque
     
-    Bibliotheque getBibliotheque(Bibliotheque bibliotheque);
+    void deleteBibliothequePicture(Bibliotheque bibliotheque); 
     
-    void deleteBibliothequePicture(Bibliotheque bibliotheque);
+    void updateBibliotheque (Bibliotheque bibliotheque); // Mise à jour des bibliothèques
     
-    void updateBibliotheque (Bibliotheque bibliotheque);
-    
-    void deleteBibliotheque (Bibliotheque bibliotheque);
+    void deleteBibliotheque (Bibliotheque bibliotheque); // Supprimer une bibliothèque
     
 }

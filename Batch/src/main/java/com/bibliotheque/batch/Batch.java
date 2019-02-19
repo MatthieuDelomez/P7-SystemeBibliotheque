@@ -11,6 +11,9 @@ import java.util.Properties;
 
 public class Batch {
     
+    /*
+    Entête du Mail
+    */
 private static final String SUBJECT = "BOOK NOT RETURNED";
 
                      
@@ -19,6 +22,11 @@ private static final String SUBJECT = "BOOK NOT RETURNED";
                       
                       for(InfoPretResponse infoPretResponse : listInfoPretResponse) {
                           
+                          /*
+                          Composition du message
+                          return nomOuvrage
+                          return Email
+                          */                     
                           EmailsUtils.sendEmail(infoPretResponse.getEmail(), SUBJECT, "Bonjour ,  \n vous avez enprunté le livre :" + infoPretResponse.getNomouvrage() + " " +
                                                                                                                                                 "pendant une période supérieur à 4 semaines. \n\n"
                                                                                                                                                + "Vous êtes donc prié de restituer votre prêt dans votre bibliothèque.\n" +
@@ -50,7 +58,9 @@ private static final String SUBJECT = "BOOK NOT RETURNED";
                                              BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();      
                                              BibliothequeServices port =  bibliothequeServicesService.getBibliothequeServicesPort();
                                             
-                                             
+                                             /*
+                                             Appel à la méthode qui va récupérer les mails dont la date de fin de pret est dépassée
+                                             */
                                              listInfoDocument = port.listInfoDocument();
                                                                                             
 		

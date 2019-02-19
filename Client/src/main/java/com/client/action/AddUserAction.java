@@ -32,7 +32,6 @@ public class AddUserAction extends ActionSupport implements SessionAware{
                       // ----- Eléments Struts
                       private Map<String, Object> session;
                       
-                      private static AtomicInteger genId = new AtomicInteger(8);
                       
   //=========Getters & Setters=============
 
@@ -92,13 +91,6 @@ public class AddUserAction extends ActionSupport implements SessionAware{
         this.prenom = prenom;
     }
 
-    public static AtomicInteger getGenId() {
-        return genId;
-    }
-
-    public static void setGenId(AtomicInteger genId) {
-        AddUserAction.genId = genId;
-    }
     
     
     
@@ -114,7 +106,6 @@ public class AddUserAction extends ActionSupport implements SessionAware{
     
     UtilisateurResponse utilisateurResponse = new UtilisateurResponse();
     
-    utilisateurResponse.setIdutilisateur(idUtilisateur);
     utilisateurResponse.setRefbibliotheque(refBibliotheque);
     utilisateurResponse.setPseudo(pseudo);
     utilisateurResponse.setMotpasse(motPasse);
@@ -124,20 +115,10 @@ public class AddUserAction extends ActionSupport implements SessionAware{
     
     try {
      
-    if(!StringUtils.isAllEmpty( pseudo)){
-        if(!StringUtils.isAllEmpty(motPasse)){
-            if(!StringUtils.isAllEmpty(email)){
+    if(!StringUtils.isAllEmpty( pseudo, motPasse, email)){
                 
-                vResult = ActionSupport.INPUT;
-            }
-        }
-    }
     
-    else{
-        
-            idUtilisateur = genId.incrementAndGet();
-    
-           port.addUser(idUtilisateur, refBibliotheque, pseudo, motPasse, email, nom, prenom);
+           port.addUser(refBibliotheque, pseudo, motPasse, email, nom, prenom);
     
            vResult = ActionSupport.SUCCESS;
            this.session.put("employe", vResult);

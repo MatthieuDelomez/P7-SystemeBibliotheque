@@ -8,7 +8,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -40,7 +39,6 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                        // ----- Eléments Struts
                       private Map<String, Object> session;
                       
-                      public static  AtomicInteger genId = new AtomicInteger(1);
                       
                       
                       
@@ -161,14 +159,6 @@ public class AddClientAction extends ActionSupport implements SessionAware {
         this.email = email;
     }
 
-    public static AtomicInteger getGenId() {
-        return genId;
-    }
-
-    public static void setGenId(AtomicInteger genId) {
-        AddClientAction.genId = genId;
-    }
-
 
     
    @Override
@@ -214,10 +204,8 @@ public class AddClientAction extends ActionSupport implements SessionAware {
             
             
         else {
-               
-        refClient = genId.incrementAndGet();
-            
-        port.addClient(refClient ,refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
+                           
+        port.addClient(refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
         System.out.println("test test");
         this.session.put("user", vResult);

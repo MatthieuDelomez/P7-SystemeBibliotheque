@@ -10,10 +10,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-/**
- *
- * @author Ben Gourion
- */
+
 public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDao {
     
                                        /*
@@ -29,13 +26,13 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
         
                                        JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
-                                       /* Nom des colonnes se situant dans table de la base de données*/
+                                       /* Méthode INSERT pour ajouter un employé*/
 
-                                      String sql = "INSERT INTO utilisateur (idutilisateur,refbibliotheque, pseudo, motpasse, email, nom,  prenom) VALUES (?,?,?,?,?,?,?);";
+                                      String sql = "INSERT INTO utilisateur (refbibliotheque, pseudo, motpasse, email, nom,  prenom) VALUES (?,?,?,?,?,?);";
 
 		
 
-	               Object[] args = new Object[] { utilisateur.getIdUtilisateur(),utilisateur.getRefBibliotheque(), utilisateur.getPseudo(), utilisateur.getMotPasse(), 
+	               Object[] args = new Object[] { utilisateur.getRefBibliotheque(), utilisateur.getPseudo(), utilisateur.getMotPasse(), 
             
                                                                                              utilisateur.getEmail(),utilisateur.getNom(), utilisateur.getPrenom() };
 
@@ -53,6 +50,9 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
                                         }
 
     
+                                       /*
+                                       Méthode de Login employé
+                                       */
                                        @Override
                                        public Utilisateur getUtilisateur(Utilisateur utilisateur) {
 

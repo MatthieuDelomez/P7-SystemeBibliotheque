@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.projet.biblio.consumer.rowMapper;
 
 import java.sql.ResultSet;
@@ -10,10 +6,9 @@ import java.sql.SQLException;
 import org.projet.biblio.model.Document;
 import org.springframework.jdbc.core.RowMapper;
 
-/**
- *
- * @author Ben Gourion
- */
+/* 
+Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
+*/
 public class DocumentMapper implements RowMapper<Document> {
     
                       @Override

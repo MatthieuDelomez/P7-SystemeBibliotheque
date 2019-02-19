@@ -25,7 +25,6 @@ public class AddDocumentAction extends ActionSupport {
        
        //=========Elements Struts=============
        
-       private static AtomicInteger genId = new AtomicInteger(5);
        
        
        //=========Getters & Setters=============
@@ -62,14 +61,7 @@ public class AddDocumentAction extends ActionSupport {
         this.quantiteTotal = quantiteTotal;
     }
 
-    public static AtomicInteger getGenId() {
-        return genId;
-    }
 
-    public static void setGenId(AtomicInteger genId) {
-        AddDocumentAction.genId = genId;
-    }
-    
     
     
     
@@ -81,7 +73,6 @@ public class AddDocumentAction extends ActionSupport {
         
         DocumentResponse documentResponse = new DocumentResponse();
         
-        documentResponse.setRefouvrage(refOuvrage);
         documentResponse.setRefbibliotheque(refBibliotheque);
         documentResponse.setNomouvrage(nomOuvrage);
         documentResponse.setQuantitetotal(quantiteTotal);
@@ -89,19 +80,11 @@ public class AddDocumentAction extends ActionSupport {
         
         try {
             
-        if(!StringUtils.isAllEmpty(nomOuvrage)) {
-                if(!StringUtils.isAllEmpty(quantiteTotal)){
-                    
-                    vResult = ActionSupport.INPUT;
-                }
-            }
-        
-        
-        else{
+        if(!StringUtils.isAllEmpty(nomOuvrage, quantiteTotal)) {
+                   
             
-        refOuvrage = genId.incrementAndGet();
         
-        port.addDocument(refOuvrage, refBibliotheque, nomOuvrage, quantiteTotal);
+        port.addDocument( refBibliotheque, nomOuvrage, quantiteTotal);
         
         vResult = ActionSupport.SUCCESS;
         

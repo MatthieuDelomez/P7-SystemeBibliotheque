@@ -41,11 +41,11 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
                       /* Nom des colonnes se situant dans table de la base de données*/
 
-	String sql = "INSERT INTO client (refclient, refbibliotheque, nom, prenom, sexe, pseudo,  motpasse, adresse, email, codepostal) VALUES (?,?,?,?,?,?,?,?,?,?);";
+	String sql = "INSERT INTO client ( refbibliotheque, nom, prenom, sexe, pseudo,  motpasse, adresse, email, codepostal) VALUES (?,?,?,?,?,?,?,?,?);";
 
 		
 
-	Object[] args = new Object[] {client.getRefClient(), client.getRefBibliotheque(), client.getNom(),client.getPrenom(), client.getSexe(), client.getPseudo(), client.getMotPasse(), 
+	Object[] args = new Object[] {client.getRefBibliotheque(), client.getNom(),client.getPrenom(), client.getSexe(), client.getPseudo(), client.getMotPasse(), 
             
                                                                              client.getAdresse(), client.getEmail(), client.getCodePostal() };
  

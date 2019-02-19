@@ -50,6 +50,9 @@ public class ClientManagerImpl extends AbstractManager implements ClientManager{
 
                    }
    
+   /*
+   Méthode qui va récupérer les email des clients
+   */
     @Override
    public List<Client> getEmailClient() {
        return getDaoFactory().getClientDao().getEmailClient();

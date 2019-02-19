@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="refclient" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="refbibliotheque" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="prenom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -36,7 +35,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addClient", propOrder = {
-    "refclient",
     "refbibliotheque",
     "nom",
     "prenom",
@@ -49,7 +47,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AddClient {
 
-    protected int refclient;
     protected int refbibliotheque;
     protected String nom;
     protected String prenom;
@@ -59,22 +56,6 @@ public class AddClient {
     protected String adresse;
     protected String email;
     protected String codepostal;
-
-    /**
-     * Obtient la valeur de la propriété refclient.
-     * 
-     */
-    public int getRefclient() {
-        return refclient;
-    }
-
-    /**
-     * Définit la valeur de la propriété refclient.
-     * 
-     */
-    public void setRefclient(int value) {
-        this.refclient = value;
-    }
 
     /**
      * Obtient la valeur de la propriété refbibliotheque.

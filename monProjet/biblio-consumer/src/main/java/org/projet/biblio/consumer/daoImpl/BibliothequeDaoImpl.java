@@ -26,11 +26,11 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
                                        JdbcTemplate jdbcTemplate =  getJdbcTemplate();
 
 
-                                       String sql = "INSERT INTO bibliotheque (refbibliotheque, nom, adresse, ville, codepostal, description) VALUES (?,?,?,?,?,?);";
+                                       String sql = "INSERT INTO bibliotheque ( nom, adresse, ville, codepostal, description) VALUES (?,?,?,?,?);";
 
 		
 
-	                 Object[] args = new Object[] { bibliotheque.getRefBibliotheque(), bibliotheque.getNom(), bibliotheque.getAdresse(), 
+	                 Object[] args = new Object[] {  bibliotheque.getNom(), bibliotheque.getAdresse(), 
             
                                                                                                bibliotheque.getVille(),bibliotheque.getCodePostal(), bibliotheque.getDescription() };
 
