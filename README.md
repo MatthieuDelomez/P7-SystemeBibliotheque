@@ -75,12 +75,10 @@ Projet N°7: Développez le système d'information d'une librairie.
   
   # Description
   
-  <br>
-  
+  <br> 
   Fontionnalités du Web service :
   
-  <br>
-  <ul>
+    <ul>
   <li>
     Authentification de l'utilisateur [Employé / Client]
   </li>
@@ -100,6 +98,7 @@ Projet N°7: Développez le système d'information d'une librairie.
     Récupérer la liste des ouvrages dont la date est expirée
   </li>
   <ul>
+    <br>
  Le web service est le seul systeme à ce connecter à la base de données.
  <br>
     
