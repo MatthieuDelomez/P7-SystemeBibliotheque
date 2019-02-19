@@ -1,5 +1,4 @@
 ﻿INSERT INTO public.pret(
-refPret,
 refClient,
 refOuvrage,
 datePret,
@@ -12,10 +11,9 @@ prolonger
 VALUES(
 1,
 1,
-1,
-'04/12/2018',
+'2019-02-18',
 '4 semaines',
-'01/12/2018',
+'2019-02-18',
 '1',
 FALSE
 )

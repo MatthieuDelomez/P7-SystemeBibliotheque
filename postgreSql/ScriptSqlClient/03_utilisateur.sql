@@ -1,5 +1,4 @@
 ﻿INSERT INTO public.utilisateur(
-idUtilisateur,
 refBibliotheque,
 pseudo,
 motPasse,
@@ -9,7 +8,6 @@ prenom
 )
 
 VALUES(
-01,
 001,
 'Martine59',
 'admin',

@@ -1,5 +1,4 @@
 ﻿INSERT INTO public.bibliotheque(
-refBibliotheque,
 nom,
 adresse,
 ville,
@@ -9,7 +8,6 @@ description
 
 
 VALUES(
-001,
 'New York Public Library',
 '5th Avenue 42nd Street',
 'New York',

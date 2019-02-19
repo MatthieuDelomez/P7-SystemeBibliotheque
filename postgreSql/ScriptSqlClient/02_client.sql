@@ -1,7 +1,6 @@
 ﻿
 
 INSERT INTO public.client(
-refClient,
 refBibliotheque,
 nom,
 prenom,
@@ -14,7 +13,6 @@ codePostal
 )
 
 VALUES(
-1,
 001,
 'Matthieu',
 'Delomez',

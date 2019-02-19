@@ -1,6 +1,8 @@
 
-CREATE TABLE bibliotheque (
-                refBibliotheque INTEGER NOT NULL,
+CREATE SEQUENCE public.bibliotheque_refbibliotheque_seq;
+
+CREATE TABLE public.bibliotheque (
+                refBibliotheque INTEGER NOT NULL DEFAULT nextval('public.bibliotheque_refbibliotheque_seq'),
                 nom VARCHAR(255) NOT NULL,
                 adresse VARCHAR(255) NOT NULL,
                 ville VARCHAR NOT NULL,
@@ -10,8 +12,12 @@ CREATE TABLE bibliotheque (
 );
 
 
-CREATE TABLE utilisateur (
-                idUtilisateur INTEGER NOT NULL,
+ALTER SEQUENCE public.bibliotheque_refbibliotheque_seq OWNED BY public.bibliotheque.refBibliotheque;
+
+CREATE SEQUENCE public.utilisateur_idutilisateur_seq;
+
+CREATE TABLE public.utilisateur (
+                idUtilisateur INTEGER NOT NULL DEFAULT nextval('public.utilisateur_idutilisateur_seq'),
                 refBibliotheque INTEGER NOT NULL,
                 pseudo VARCHAR(255) NOT NULL,
                 motPasse VARCHAR(255) NOT NULL,
@@ -22,19 +28,25 @@ CREATE TABLE utilisateur (
 );
 
 
-CREATE TABLE document (
-                refOuvrage INTEGER NOT NULL,
+ALTER SEQUENCE public.utilisateur_idutilisateur_seq OWNED BY public.utilisateur.idUtilisateur;
+
+CREATE SEQUENCE public.document_refouvrage_seq;
+
+CREATE TABLE public.document (
+                refOuvrage INTEGER NOT NULL DEFAULT nextval('public.document_refouvrage_seq'),
                 refBibliotheque INTEGER NOT NULL,
                 nomOuvrage VARCHAR(255) NOT NULL,
                 quantiteTotal VARCHAR(20) NOT NULL,
-                nbrEmprunte VARCHAR(25) NOT NULL,
-                quantiteRestante VARCHAR(25) NOT NULL,
                 CONSTRAINT document_pk PRIMARY KEY (refOuvrage)
 );
 
 
-CREATE TABLE client (
-                refClient INTEGER NOT NULL,
+ALTER SEQUENCE public.document_refouvrage_seq OWNED BY public.document.refOuvrage;
+
+CREATE SEQUENCE public.client_refclient_seq;
+
+CREATE TABLE public.client (
+                refClient INTEGER NOT NULL DEFAULT nextval('public.client_refclient_seq'),
                 refBibliotheque INTEGER NOT NULL,
                 nom VARCHAR(255) NOT NULL,
                 prenom VARCHAR(250) NOT NULL,
@@ -48,50 +60,56 @@ CREATE TABLE client (
 );
 
 
-CREATE TABLE pret (
-                refPret INTEGER NOT NULL,
+ALTER SEQUENCE public.client_refclient_seq OWNED BY public.client.refClient;
+
+CREATE SEQUENCE public.pret_refpret_seq;
+
+CREATE TABLE public.pret (
+                refPret INTEGER NOT NULL DEFAULT nextval('public.pret_refpret_seq'),
                 refClient INTEGER NOT NULL,
                 refOuvrage INTEGER NOT NULL,
-                datePret VARCHAR(100) NOT NULL,
+                datePret DATE NOT NULL,
                 dureePret VARCHAR(100) NOT NULL,
-                dateFinPret VARCHAR(100) NOT NULL,
+                dateFinPret DATE NOT NULL,
                 nbrExemplaire VARCHAR(100) NOT NULL,
                 prolonger BOOLEAN NOT NULL,
                 CONSTRAINT pret_pk PRIMARY KEY (refPret)
 );
 
 
-ALTER TABLE document ADD CONSTRAINT bibliotheque_document_fk
+ALTER SEQUENCE public.pret_refpret_seq OWNED BY public.pret.refPret;
+
+ALTER TABLE public.document ADD CONSTRAINT bibliotheque_document_fk
 FOREIGN KEY (refBibliotheque)
-REFERENCES bibliotheque (refBibliotheque)
+REFERENCES public.bibliotheque (refBibliotheque)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE utilisateur ADD CONSTRAINT bibliotheque_utilisateur_fk
+ALTER TABLE public.utilisateur ADD CONSTRAINT bibliotheque_utilisateur_fk
 FOREIGN KEY (refBibliotheque)
-REFERENCES bibliotheque (refBibliotheque)
+REFERENCES public.bibliotheque (refBibliotheque)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE client ADD CONSTRAINT bibliotheque_client_fk
+ALTER TABLE public.client ADD CONSTRAINT bibliotheque_client_fk
 FOREIGN KEY (refBibliotheque)
-REFERENCES bibliotheque (refBibliotheque)
+REFERENCES public.bibliotheque (refBibliotheque)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE pret ADD CONSTRAINT document_pret_fk
+ALTER TABLE public.pret ADD CONSTRAINT document_pret_fk
 FOREIGN KEY (refOuvrage)
-REFERENCES document (refOuvrage)
+REFERENCES public.document (refOuvrage)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE pret ADD CONSTRAINT utilisateur_pret_fk
+ALTER TABLE public.pret ADD CONSTRAINT utilisateur_pret_fk
 FOREIGN KEY (refClient)
-REFERENCES client (refClient)
+REFERENCES public.client (refClient)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
