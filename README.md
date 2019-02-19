@@ -1,6 +1,5 @@
 # Systeme d'information de librairie
 <br>
-# ============================================================================
 <br>
 Parcours: OpenClassrooms - Développeur d'application Java/JEE.
 <br>
