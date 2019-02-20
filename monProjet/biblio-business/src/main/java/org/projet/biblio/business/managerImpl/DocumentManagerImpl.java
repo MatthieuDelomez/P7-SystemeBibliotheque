@@ -4,7 +4,12 @@ import java.util.List;
 import org.projet.biblio.business.manager.DocumentManager;
 import org.projet.biblio.model.Document;
 
-
+/**
+ * Creation de la classe DocumentManagerImpl qui implemente l'interface DocumentManager.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 public class DocumentManagerImpl extends AbstractManager implements DocumentManager {
     
 
@@ -42,6 +47,7 @@ public class DocumentManagerImpl extends AbstractManager implements DocumentMana
                                       
          }
     
+    // Liste qui va récupérer les documents pour le Batch
     @Override
     public List<Document> getDocumentBatch( ) {
                                                                     

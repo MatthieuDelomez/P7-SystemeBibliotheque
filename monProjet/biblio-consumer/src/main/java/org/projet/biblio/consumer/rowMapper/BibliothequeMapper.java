@@ -5,14 +5,20 @@ import java.sql.SQLException;
 import org.projet.biblio.model.Bibliotheque;
 import org.springframework.jdbc.core.RowMapper;
 
-/* 
-Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
-*/
+
+/**
+ * Implementation pour définir le mapping entre les lignes de 
+ * résultats d'une requête Sql et les objets java à créer.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
+
 public class BibliothequeMapper implements RowMapper<Bibliotheque> {
     
 
-                      @Override
-           	public Bibliotheque mapRow(ResultSet rs, int rowNum) throws SQLException {
+                                @Override
+           	           public Bibliotheque mapRow(ResultSet rs, int rowNum) throws SQLException {
                     
                                  Bibliotheque bibliotheque = new Bibliotheque();
                     

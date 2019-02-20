@@ -6,9 +6,13 @@ import static org.projet.biblio.business.managerImpl.AbstractManager.getDaoFacto
 import org.projet.biblio.model.Client;
 
 
-/*
-Creation de la classe ClientManagerImpl qui implemente l'interface ClientManager
-*/
+
+/**
+ * Creation de la classe ClientManagerImpl qui implemente l'interface ClientManager.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 
 public class ClientManagerImpl extends AbstractManager implements ClientManager{
 
@@ -42,7 +46,7 @@ public class ClientManagerImpl extends AbstractManager implements ClientManager{
        getDaoFactory().getClientDao().deleteClient(client);   
     }
     
-       /* Implementation de la methode liste des publications /*/
+    /* Implementation de la methode liste des publications /*/
     @Override
    public List<Client> getAllClient() {
        
@@ -51,7 +55,7 @@ public class ClientManagerImpl extends AbstractManager implements ClientManager{
                    }
    
    /*
-   Méthode qui va récupérer les email des clients
+   Méthode qui va récupérer les email des clients.
    */
     @Override
    public List<Client> getEmailClient() {

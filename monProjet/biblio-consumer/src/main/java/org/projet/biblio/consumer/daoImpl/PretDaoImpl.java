@@ -13,8 +13,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
+ * Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC.
+ * 
  *
- * @author Ben Gourion
+ * @author Delomez Matthieu
  */
 public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
@@ -54,7 +56,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 
 
                       /*
-                      Méthode SELECT 
+                      Méthode SELECT  pour pouvoir récupérer un prêt en fonction de sa référence.
                       */
                      @Override
 	public Pret getPret(Pret pret) {
@@ -87,7 +89,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	}
 
 
-                     /*Méthode pour afficher une liste de pret*/
+                     /*Méthode pour afficher une liste de  tout les prets*/
                      @Override
         	public List<Pret> getAllPret() {
 
@@ -115,9 +117,9 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
                 
                 /*
                 Méthode pour le Batch :
-                Récupérer le nom de l'ouvrage + email du client + date de fin du pret
+                Récupérer le nom de l'ouvrage + email du client + date de fin du pret.
                 
-                Si la date du jour est supérieur à la date de fin du pret alors recupérer les email client
+                Si la date du jour est supérieur à la date de fin du pret alors recupérer les email client.
                 */
                 @Override
                  public List<InfoPret> getInfoPret() {

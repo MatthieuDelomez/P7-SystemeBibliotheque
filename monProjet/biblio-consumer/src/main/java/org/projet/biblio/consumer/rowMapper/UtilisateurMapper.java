@@ -6,9 +6,14 @@ import java.sql.SQLException;
 import org.projet.biblio.model.Utilisateur;
 import org.springframework.jdbc.core.RowMapper;
 
-/* 
-Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
-*/
+/**
+ * Implementation pour définir le mapping entre les lignes de 
+ * résultats d'une requête Sql et les objets java à créer.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
+
 public class UtilisateurMapper implements RowMapper<Utilisateur>{
     
     

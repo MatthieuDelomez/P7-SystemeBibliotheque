@@ -8,7 +8,12 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
-
+/**
+ * Classe [Login] qui va permettre aux Clients de se connecter.
+ * 
+ * 
+ * @author Matthieu Delomez
+ */
 public class LoginAction extends ActionSupport implements SessionAware{
     
     
@@ -28,19 +33,36 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
                       
 	 //=========Getters & Setters=======
+
+                      /**
+                      *
+                      * @return pseudo
+                      */
 	public String getPseudo() {
 	return pseudo;
 	}
 
-	public void setPseudo(String pseudo) {
+                      /**
+                      *
+                      * @param pseudo
+                      */
+                     public void setPseudo(String pseudo) {
 	this.pseudo = pseudo;
 	}
 
+                     /**
+                     *
+                     * @return motpasse
+                     */
                       public String getMotPasse() {
                       return motPasse;
                       }
 
-                      public void setMotPasse(String motPasse) {
+                    /**
+                    *
+                    * @param motPasse
+                    */
+                     public void setMotPasse(String motPasse) {
                       this.motPasse = motPasse;
                        }
 
@@ -49,6 +71,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
                       
 
                        /**
+                        * Méthode Login pour que le client puisse se connecter
+                        * avec ses identifiants.
                        *
                        * @return
                        */                      
@@ -85,15 +109,21 @@ public class LoginAction extends ActionSupport implements SessionAware{
                       
                       
                       /*
-                      Action permettant la connexion d'un utilisateur
-                      @return success
+                     *  Action permettant la connexion d'un utilisateur.
+                     *
+                     * @return success
                       */
                       public String doLogout(){
                       return ActionSupport.SUCCESS;
                           
                       }
                       
-                      @Override
+                      
+                     /**
+                     *
+                     * @param pSession
+                     */
+                     @Override
                       public void setSession(Map<String, Object> pSession) {
                       this.session = pSession;
                       }

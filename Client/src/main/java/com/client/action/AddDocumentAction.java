@@ -5,10 +5,12 @@ import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
 import com.biblio.DocumentResponse;
 import com.opensymphony.xwork2.ActionSupport;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.commons.lang3.StringUtils;
 
-
+/**
+ *
+ * @author Ben Gourion
+ */
 public class AddDocumentAction extends ActionSupport {
     
       BibliothequeServicesService bibliothequeServicesService= new BibliothequeServicesService();
@@ -29,47 +31,89 @@ public class AddDocumentAction extends ActionSupport {
        
        //=========Getters & Setters=============
 
+    /**
+     *
+     * @return
+     */
+
     public int getRefOuvrage() {
         return refOuvrage;
     }
 
+    /**
+     *
+     * @param refOuvrage
+     */
     public void setRefOuvrage(int refOuvrage) {
         this.refOuvrage = refOuvrage;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRefBibliotheque() {
         return refBibliotheque;
     }
 
+    /**
+     *
+     * @param refBibliotheque
+     */
     public void setRefBibliotheque(int refBibliotheque) {
         this.refBibliotheque = refBibliotheque;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNomOuvrage() {
         return nomOuvrage;
     }
 
+    /**
+     *
+     * @param nomOuvrage
+     */
     public void setNomOuvrage(String nomOuvrage) {
         this.nomOuvrage = nomOuvrage;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getQuantiteTotal() {
         return quantiteTotal;
     }
 
+    /**
+     *
+     * @param quantiteTotal
+     */
     public void setQuantiteTotal(String quantiteTotal) {
         this.quantiteTotal = quantiteTotal;
     }
 
 
     
-    
-    
     //=========Methodes=============
     
+    
+    /*
+    Méthode pour ajouter un nouveau document.
+    return vResult
+    */
+
+    /**
+     *
+     * @return
+     */
+
     public String doAddDocument() {
         
-        String vResult = ActionSupport.INPUT;
+        String vResult = ActionSupport.INPUT;  
         
         DocumentResponse documentResponse = new DocumentResponse();
         

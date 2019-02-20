@@ -9,7 +9,12 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-
+/**
+ * Classe Dao implémentation pour paramétrer les requetes Sql.
+ * 
+ *
+ * @author Delomez Mattheiu
+ */
 public class BibliothequeDaoImpl extends AbstractDaoImpl implements BibliothequeDao {
     
                                        /*
@@ -18,8 +23,11 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
                                        private DataSource dataSource;
     
 
-                                       /* Méthode pour ajouter une Bibliotheque*/
-                                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                                      /*Classe hérité de la classe Parente AbstractDaoImpl
+                                       * Méthode pour ajouter une Bibliotheque.
+                                       *
+                                       *
+                                       */
                                       @Override
                                        public void addBibliotheque(Bibliotheque bibliotheque) {
         
@@ -49,6 +57,7 @@ public class BibliothequeDaoImpl extends AbstractDaoImpl implements Bibliotheque
 
     
 
+ 
                                        @Override
                                        public Bibliotheque getBibliotheque(Bibliotheque bibliotheque) {
 

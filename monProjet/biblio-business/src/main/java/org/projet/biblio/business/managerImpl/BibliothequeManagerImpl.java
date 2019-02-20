@@ -3,9 +3,14 @@ package org.projet.biblio.business.managerImpl;
 import org.projet.biblio.business.manager.BibliothequeManager;
 import org.projet.biblio.model.Bibliotheque;
 
-/*
-Creation de la classe BibliothequeManagerImpl qui implemente l'interface BibliothequeManager
-*/
+
+/**
+ * Creation de la classe BibliothequeManagerImpl qui implemente l'interface BibliothequeManager.
+ * 
+ *
+ * @author Ben Gourion
+ */
+
 public class BibliothequeManagerImpl extends AbstractManager implements BibliothequeManager {
 
     @Override

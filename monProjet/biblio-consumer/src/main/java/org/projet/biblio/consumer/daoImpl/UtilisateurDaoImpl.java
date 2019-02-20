@@ -10,7 +10,12 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-
+/**
+ * Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDao {
     
                                        /*

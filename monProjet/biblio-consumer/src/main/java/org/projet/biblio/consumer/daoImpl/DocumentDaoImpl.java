@@ -12,16 +12,21 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-
+/**
+ * Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 
 public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
+    
     
                        /* Variable DataSource*/
 
 	private DataSource dataSource;
 
         
-
                       /* Méthode pour ajouter un Utilisateur*/
 
                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
@@ -110,7 +115,10 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
         
         
 
-                      /*Classe hérité de la classe Parente AbstractDaoImpl*/
+                      /*Méthode LIKE pour récupérer les ouvrages en fonction de leur nom.
+                      * Méthode à appliquer dans une navbar.
+                      *
+                      */
                       @Override
                       public List<Document> getAllDocument(Document document) {
 
@@ -139,6 +147,7 @@ public class DocumentDaoImpl extends AbstractDaoImpl implements DocumentDao {
                       }
                       
                       
+                      // Liste de document pour la configuration du batch
                      @Override
         	public List<Document> getDocumentBatch() {
 

@@ -12,6 +12,13 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
+/**
+ * Configuration du batch en utilisant le protocole SMTP.
+ * 
+ * 
+ * @author Delomez Matthieu
+ */
+
 public class EmailsUtils {
     
     private static Session session;

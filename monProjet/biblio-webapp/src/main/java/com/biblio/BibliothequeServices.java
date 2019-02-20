@@ -28,7 +28,13 @@ import org.projet.biblio.model.Pret;
 import org.projet.biblio.model.Utilisateur;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
+/**
+ * Service qui va regrouper toutes les méthodes utiles au module Client,
+ * pour optimiser le bon fonctionnement de l'application.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 @WebService(name="BibliothequeServices") 
 public class BibliothequeServices extends AbstractResource {
     
@@ -291,8 +297,13 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
-           
-           @WebMethod(operationName = "deletePret")
+    /**
+     *
+     * @param dureePret
+     * @param refPret
+     * @return
+     */
+    @WebMethod(operationName = "deletePret")
            public PretResponse doSuppPret(@WebParam(name="dureepret") String dureePret,
                                                                             @WebParam(name="refpret")    int refPret) {
                
@@ -370,9 +381,11 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
-           
-           
-           @WebMethod(operationName ="listPret")
+    /**
+     *
+     * @param listPrets
+     */
+    @WebMethod(operationName ="listPret")
            public void listPret2(@WebParam(name = "listPret", mode = WebParam.Mode.OUT) Holder<List<PretResponse>> listPrets){
 
                     listPrets.value = new ArrayList<>();
@@ -454,9 +467,17 @@ public class BibliothequeServices extends AbstractResource {
 
                }
            
-           
-           
-           @WebMethod(operationName ="addUser")
+    /**
+     *
+     * @param refBibliotheque
+     * @param pseudo
+     * @param motPasse
+     * @param email
+     * @param nom
+     * @param prenom
+     * @return
+     */
+    @WebMethod(operationName ="addUser")
            public UtilisateurResponse doCreateUser( 
                                                                                           @WebParam(name="refbibliotheque") int refBibliotheque,
                                                                                           @WebParam(name="pseudo") String pseudo, 
@@ -550,19 +571,30 @@ public class BibliothequeServices extends AbstractResource {
 
                }
            
-           
-           
-           @WebMethod(operationName ="addClient")
-           public ClientResponse doCreateClient(        
-                                                                                            @WebParam(name="refbibliotheque") int refBibliotheque,
-                                                                                            @WebParam(name="nom") String nom,
-                                                                                            @WebParam(name="prenom") String prenom,
-                                                                                            @WebParam(name="sexe") String sexe,
-                                                                                            @WebParam(name="pseudo") String pseudo, 
-                                                                                            @WebParam(name="motPasse") String motPasse,
-                                                                                            @WebParam(name="adresse") String adresse,
-                                                                                            @WebParam(name="email") String email,
-                                                                                            @WebParam(name="codepostal") String codePostal) {
+    /**
+     *
+     * @param refBibliotheque
+     * @param nom
+     * @param prenom
+     * @param sexe
+     * @param pseudo
+     * @param motPasse
+     * @param adresse
+     * @param email
+     * @param codePostal
+     * @return
+     */
+            @WebMethod(operationName ="addClient")
+            public ClientResponse doCreateClient(        
+            @WebParam(name="refbibliotheque") int refBibliotheque,
+            @WebParam(name="nom") String nom,
+            @WebParam(name="prenom") String prenom,
+            @WebParam(name="sexe") String sexe,
+            @WebParam(name="pseudo") String pseudo, 
+            @WebParam(name="motPasse") String motPasse,
+            @WebParam(name="adresse") String adresse,
+            @WebParam(name="email") String email,
+            @WebParam(name="codepostal") String codePostal) {
                
            ClientResponse response = new ClientResponse();
            Client client = new Client();
@@ -603,7 +635,12 @@ public class BibliothequeServices extends AbstractResource {
                
            }
            
-           @WebMethod(operationName = "deleteClient")
+    /**
+     *
+     * @param refClient
+     * @return
+     */
+    @WebMethod(operationName = "deleteClient")
            public ClientResponse doSuppClient(@WebParam(name="refclient") int refClient) {
                
            Client client = new Client(); 
@@ -640,10 +677,11 @@ public class BibliothequeServices extends AbstractResource {
 
                }
            
-           
-           
-           
-           @WebMethod(operationName ="listClient")
+    /**
+     *
+     * @param listClients
+     */
+    @WebMethod(operationName ="listClient")
            public void listClient2(@WebParam(name = "listClient", mode = WebParam.Mode.OUT) Holder<List<ClientResponse>> listClients){
 
                       listClients.value = new ArrayList<>();
@@ -677,9 +715,11 @@ public class BibliothequeServices extends AbstractResource {
            
                       }
            
-           
-           
-           @WebMethod(operationName = "listInfoDocument")
+    /**
+     *
+     * @param listInfoDocument
+     */
+    @WebMethod(operationName = "listInfoDocument")
            public void listEmailClient2(  @WebParam(name = "listInfoDocument", mode = WebParam.Mode.OUT) Holder<List<InfoPretResponse>> listInfoDocument
                                                                 ) {
                

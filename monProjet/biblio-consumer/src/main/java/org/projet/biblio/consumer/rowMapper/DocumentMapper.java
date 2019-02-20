@@ -6,13 +6,18 @@ import java.sql.SQLException;
 import org.projet.biblio.model.Document;
 import org.springframework.jdbc.core.RowMapper;
 
-/* 
-Implementation pour définir le mapping entre les lignes de résultats d'une requête Sql et les objets java à créer.
-*/
+/**
+ * Implementation pour définir le mapping entre les lignes de 
+ * résultats d'une requête Sql et les objets java à créer.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
+
 public class DocumentMapper implements RowMapper<Document> {
     
-                      @Override
-      	public Document mapRow(ResultSet rs, int rowNum) throws SQLException {
+                                   @Override
+      	              public Document mapRow(ResultSet rs, int rowNum) throws SQLException {
             
                                     Document document = new Document();
                                      

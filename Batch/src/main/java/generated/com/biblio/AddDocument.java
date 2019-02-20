@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="refouvrage" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="refbibliotheque" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nomouvrage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="quantitetotal" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -30,33 +29,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addDocument", propOrder = {
-    "refouvrage",
     "refbibliotheque",
     "nomouvrage",
     "quantitetotal"
 })
 public class AddDocument {
 
-    protected int refouvrage;
     protected int refbibliotheque;
     protected String nomouvrage;
     protected String quantitetotal;
-
-    /**
-     * Obtient la valeur de la propriété refouvrage.
-     * 
-     */
-    public int getRefouvrage() {
-        return refouvrage;
-    }
-
-    /**
-     * Définit la valeur de la propriété refouvrage.
-     * 
-     */
-    public void setRefouvrage(int value) {
-        this.refouvrage = value;
-    }
 
     /**
      * Obtient la valeur de la propriété refbibliotheque.

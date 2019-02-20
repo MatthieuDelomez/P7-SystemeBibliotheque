@@ -13,9 +13,13 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-/*
-Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC
-*/
+
+/**
+ * Pattern Dao pour éxécuter les requêtes Sql avec Spring JDBC.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 
 public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
@@ -63,7 +67,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	 }
 
 
-                       /* Méthode pour récupérer un Client*/
+                       /* Méthode pour Log un Client*/
 
                       /*Classe hérité de la classe Parente AbstractDaoImpl*/
 
@@ -101,7 +105,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	}
                         
                         
-                      /*Méthode pour afficher une liste de client*/
+                      /*Méthode pour afficher une liste de tout les clients*/
                      @Override
         	public List<Client> getAllClient() {
 
@@ -130,7 +134,7 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 
 	}
                 
-                
+                      /*Méthode pour récupérer une liste d'email client*/
                       @Override
                       public List<Client> getEmailClient() {
                           
@@ -176,7 +180,9 @@ public class ClientDaoImpl extends AbstractDaoImpl implements ClientDao {
 	}
 
 
-
+                      /*
+                      Méthode pour supprimer un Client.
+                      */
 	@Override
 	public void deleteClient(Client client) {
             

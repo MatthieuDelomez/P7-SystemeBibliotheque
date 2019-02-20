@@ -4,9 +4,14 @@ import org.projet.biblio.business.manager.UtilisateurManager;
 import org.projet.biblio.model.Utilisateur;
 
 
-/*
-Creation de la classe UtilisateurManagerImpl qui implemente l'interface UtilisateurManager
-*/
+
+/**
+ * Creation de la classe UtilisateurManagerImpl qui implemente l'interface UtilisateurManager.
+ * 
+ *
+ * @author Ben Gourion
+ */
+
 public class UtilisateurManagerImpl extends AbstractManager implements UtilisateurManager{
 
     @Override

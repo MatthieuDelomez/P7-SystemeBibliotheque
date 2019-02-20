@@ -40,10 +40,6 @@ public class AddClientAction extends ActionSupport implements SessionAware {
                       private Map<String, Object> session;
                       
                       
-                      
-                      
-
-                      
 
    //=========Getters & Setters=============
 
@@ -165,15 +161,22 @@ public class AddClientAction extends ActionSupport implements SessionAware {
     public void setSession(Map<String, Object> pSession) {
     this.session = pSession;
     }
+    
+    
 
-    
+   //=========Methodes=============
+
    
-    
+    /*
+    Méthode pour ajouter un nouveau client.
+    return vResult
+    */
     public String doAddClient(){
         
     String vResult = ActionSupport.INPUT;
 
     ClientResponse clientResponse = new ClientResponse();
+    
     
     clientResponse.setRefclient(refClient);
     clientResponse.setRefbibliotheque(refBibliotheque);
@@ -188,48 +191,38 @@ public class AddClientAction extends ActionSupport implements SessionAware {
 
 
     
-
+       /*
+        Bloc Try qui va remplir les condtions d'enregistrement 
+        d'un nouveau client.
+      */   
         try{
             
-           if (StringUtils.isAllEmpty(pseudo)) {
-               if(StringUtils.isAllEmpty(motPasse)){
-                   if(StringUtils.isAllEmpty(email)){
+        if (StringUtils.isAllEmpty(pseudo, motPasse, email)) {
                
-        
-           vResult = ActionSupport.INPUT;
-           
-           }
-           }
-           }
-            
-            
-        else {
-                           
         port.addClient(refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
-        System.out.println("test test");
         this.session.put("user", vResult);
-        vResult = ActionSupport.SUCCESS;        
+        
+        vResult = ActionSupport.SUCCESS; 
 
         }
         
         } catch(Exception pe) {
-            this.addActionError("Veuillez remplir tout les champs correctement");
-            System.out.println("Champs manquant !!");
-            
+            this.addActionError("Veuillez remplir tout les champs correctement");            
         
-          
-       }
+        }
   
-    
-    
             return vResult;
             
-    }
+        }
     
     
-    
-       @Override
+    /*
+    Méthode Execute qui va servir à récupérer 
+    une liste de client à afficher dans la vue.  [Côté employé]
+    return SUCCESS
+    */
+    @Override
     public String execute () {
 
         

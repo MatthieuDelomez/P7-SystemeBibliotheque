@@ -8,9 +8,13 @@ import org.projet.biblio.business.manager.PretManager;
 import org.projet.biblio.business.manager.UtilisateurManager;
 
 
-/*
-Classe ManagerFactoryImpl servant à implementer les methodes se trouvant dans l'interface ManagerFactory
-*/
+/**
+ * Classe ManagerFactoryImpl servant à implementer les methodes se trouvant dans l'interface ManagerFactory.
+ * 
+ *
+ * @author Ben Gourion
+ */
+
 public class ManagerFactoryImpl implements ManagerFactory{
     
 

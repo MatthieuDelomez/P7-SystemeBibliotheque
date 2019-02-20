@@ -7,9 +7,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-/*
-Classe Mère qui fera hériter toutes les classes Dao
-*/
+
+/**
+ * Classe Mère qui fera hériter toutes les classes Dao.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 public abstract class AbstractDaoImpl {
     
 
@@ -17,7 +21,10 @@ public abstract class AbstractDaoImpl {
 
     private static DataSource dataSource;
 
-
+    /**
+     *
+     * @param dataSource
+     */
     public static void setDataSource(DataSource dataSource) {
 
         AbstractDaoImpl.dataSource = dataSource;

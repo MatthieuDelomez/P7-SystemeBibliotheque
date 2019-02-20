@@ -5,7 +5,12 @@ import org.projet.biblio.business.manager.PretManager;
 import org.projet.biblio.model.InfoPret;
 import org.projet.biblio.model.Pret;
 
-
+/**
+ * Classe PretFactoryImpl servant à implementer les methodes se trouvant dans l'interface PretManager.
+ * 
+ *
+ * @author Delomez Matthieu
+ */
 public class PretManagerImpl extends AbstractManager implements PretManager {
 
     @Override
