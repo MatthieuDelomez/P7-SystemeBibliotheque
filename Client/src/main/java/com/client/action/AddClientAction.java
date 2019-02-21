@@ -197,8 +197,17 @@ public class AddClientAction extends ActionSupport implements SessionAware {
       */   
         try{
             
-        if (StringUtils.isAllEmpty(pseudo, motPasse, email)) {
-               
+        if (StringUtils.isAllEmpty(pseudo)) {
+            if(StringUtils.isAllEmpty(motPasse)) {
+                if(StringUtils.isAllEmpty(email)){
+                    
+                    vResult = ActionSupport.INPUT;
+                }
+            }
+        }
+           
+                
+        else {   
         port.addClient(refBibliotheque, nom, prenom,sexe,pseudo,motPasse, adresse, email, codePostal);    
 
         this.session.put("user", vResult);
