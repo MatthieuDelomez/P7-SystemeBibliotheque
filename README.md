@@ -130,25 +130,34 @@ Le déploiement s'assure avec la resources JNDI pour connecter le web service à
     Téléchargez ou clonez le projet via Github
   </li>
   <li>
-    Effectuez la commande mvn build puis un clean compile pour installer les dépendances 
+    Décompréssez votre fichier .zip que vous venez de télécharger
+  </li>
+   <li>
+     Ouvrez le dossier "PostgreSql" 
   </li>
   <li>
-    Déployer le domaine fonctionnel qui se situe dans le dosser PostreSql
+    Télécharger PGAdmin III et créez une nouvelle base de données qui se nomme "Biblio"
+  </li>    
+  <li>
+    Exécutez le script "Domaine fonctionnel.sql" dans l'onglet Sql
   </li>
   <li>
-    Exécutez les scripts Sql dans l'ordre de la numérotation
+    Ouvrez  le dossier "ScriptSqlClient" et exécutez les scripts Sql dans l'ordre de la documentation
   </li>
   <li>
-    Importez le projet dans l'environnement  de développement de votre choix
+    Importez les modules "monProjet", "Client" et "Batch" dans l'environnement de développement de votre choix
   </li>
   <li>
     Configurez votre serveur local
   </li>
   <li>
-    Lancez le service "Biblio-webapp" via la fonction Run
-    <li>
-    Exécutez de nouveau le module "Client" pour lancer l'application
+    Lancez le service "Biblio-webapp" en faisant un clic droit puis "run"
   </li>
+   <li>
+   Exécutez le(s) module(s) "Client" et/ou "Batch" une fois le service lancé
+  </li>
+  <li>
+    
   </ul>
   
  <br>
