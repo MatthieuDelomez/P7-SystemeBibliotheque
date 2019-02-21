@@ -155,9 +155,7 @@ Le déploiement s'assure avec la resources JNDI pour connecter le web service à
   </li>
    <li>
    Exécutez le(s) module(s) "Client" et/ou "Batch" une fois le service lancé
-  </li>
-  <li>
-    
+  </li>    
   </ul>
   
  <br>
