@@ -104,6 +104,8 @@ Projet N°7: Développez le système d'information d'une librairie.
     
  # Le batch:
  
+ Chemin du Batch: Batch/target/batch-1.0-SNAPSHOT.jar
+ 
  Le batch effectue une suite d'envoi d'email automatisé, ce dernier ce connecte
     au web service pour récupérer la liste des ouvrages dont la date est expirée.
     
