@@ -3,6 +3,7 @@ package com.client.action;
 
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
+import com.biblio.ClientResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
@@ -79,25 +80,32 @@ public class LoginAction extends ActionSupport implements SessionAware{
                       public String doLoginClient(){
 
                       String vResult = ActionSupport.INPUT;
+                     
                                                
                        try {
                            
-                      if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
-                          
-                                port.doLoginClient(pseudo, motPasse);
-                      
+                           
+                           
+                     if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
+                         
+                     ClientResponse clientresponse = port.doLoginClient(pseudo, motPasse);
+                                                
+                      if(clientresponse != null) {
                           
                       vResult = ActionSupport.SUCCESS;
                       
                       this.session.put("user", vResult);
+                      
+                      return vResult;
                                       
                        }
                       
                       
+                     }
+                      
                        } catch (Exception pe){
                            
                        this.addActionError("Identifiant ou mot motPasse invalide !");
-                      System.out.println("Prise en compte de la methode !!");
 
 
                                                                   

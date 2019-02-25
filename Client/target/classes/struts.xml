@@ -84,6 +84,7 @@
                      method="doAddClient">
           <result name="input" >WEB-INF/jsp/addClient.jsp</result>
           <result name="success" >WEB-INF/jsp/actu.jsp</result>
+          
       </action>
       
       

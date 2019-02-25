@@ -460,6 +460,8 @@ public class BibliothequeServices extends AbstractResource {
                
                } catch (Exception e){
                    e.printStackTrace();
+                   return null;
+                   
                }
                
                return response;
@@ -549,6 +551,7 @@ public class BibliothequeServices extends AbstractResource {
               
                
                try{
+                   
                
                response.setPseudo(client.getPseudo());
                response.setMotPasse(client.getMotPasse());
@@ -560,11 +563,14 @@ public class BibliothequeServices extends AbstractResource {
                response.setSexe(client.getSexe());
                response.setAdresse(client.getAdresse());
                response.setCodePostal(client.getCodePostal());
-
+                   
 
                } catch (Exception e){
                    e.printStackTrace();
+                   return null;
                }
+               
+               
                
                return response;
            

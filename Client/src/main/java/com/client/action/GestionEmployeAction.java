@@ -3,6 +3,7 @@ package com.client.action;
 
 import com.biblio.BibliothequeServices;
 import com.biblio.BibliothequeServicesService;
+import com.biblio.UtilisateurResponse;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
@@ -143,14 +144,20 @@ public class GestionEmployeAction extends ActionSupport implements SessionAware 
                            
                       if (!StringUtils.isAllEmpty(pseudo, motPasse)) {
                           
-                      port.doLogin(pseudo, motPasse);
+                      UtilisateurResponse utilisateurResponse = port.doLogin(pseudo, motPasse);
+                          
+                     if(utilisateurResponse != null){
                       
                       vResult = ActionSupport.SUCCESS;
                       
                      // Interceptors [Employé]
                       this.session.put("employe", vResult);
+                      
+                      return vResult;
                                       
-                       }
+                      }
+                     
+                      }
                       
                       
                        } catch (Exception pe){

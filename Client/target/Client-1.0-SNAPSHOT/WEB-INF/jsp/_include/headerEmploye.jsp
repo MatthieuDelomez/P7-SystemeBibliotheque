@@ -42,7 +42,7 @@
                                     
                                                                                         <a href="${pageContext.request.contextPath}/accueilEmploye">Home</a></li>
                                 
-                                                                                        <li><a href="${pageContext.request.contextPath}/addUser">Ajouter Utilisateur</a></li>
+                                                                                        <li><a href="${pageContext.request.contextPath}/addUser">Ajouter Employé</a></li>
 
                                                                                          <li><a href="${pageContext.request.contextPath}/pret">Pret</a></li>
                                                                                          

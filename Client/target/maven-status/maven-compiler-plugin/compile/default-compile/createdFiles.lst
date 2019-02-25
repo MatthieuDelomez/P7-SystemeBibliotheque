@@ -32,6 +32,7 @@ com\biblio\ListPret.class
 com\biblio\DoLoginClient.class
 com\biblio\SearchBook.class
 com\biblio\ListDocument.class
+com\biblio\InterruptedException_Exception.class
 com\biblio\DeletePret.class
 com\biblio\ListPretResponse.class
 com\biblio\ListInfoDocument.class
@@ -42,6 +43,7 @@ com\biblio\DoLoginResponse.class
 com\client\action\LoginAction.class
 com\biblio\UtilisateurResponse.class
 com\biblio\AddUserResponse.class
+com\biblio\InterruptedException.class
 com\biblio\ObjectFactory.class
 com\client\action\PretAction.class
 com\biblio\BibliothequeServices.class
